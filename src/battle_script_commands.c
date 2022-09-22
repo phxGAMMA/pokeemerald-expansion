@@ -3958,6 +3958,27 @@ static void Cmd_getexp(void)
     s32 sentIn;
     s32 viaExpShare = 0;
     u32 *exp = &gBattleStruct->expValue;
+    u8 monObedience = 15;
+    if (FlagGet(FLAG_BADGE01_GET))
+        monObedience = 19;
+    if (FlagGet(FLAG_BADGE02_GET))
+        monObedience = 24;
+    if (FlagGet(FLAG_BADGE03_GET))
+        monObedience = 29;
+    if (FlagGet(FLAG_BADGE04_GET))
+        monObedience = 31;
+    if (FlagGet(FLAG_BADGE05_GET))
+        monObedience = 33;
+    if (FlagGet(FLAG_BADGE06_GET))
+        monObedience = 42;
+    if (FlagGet(FLAG_BADGE07_GET))
+        monObedience = 46;
+    if (FlagGet(FLAG_BADGE08_GET))
+        monObedience = 58;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        monObedience = 78;
+    if (FlagGet(FLAG_DEFEATED_METEOR_FALLS_STEVEN))
+        monObedience = 100;
 
     gBattlerFainted = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
     sentIn = gSentPokesToOpponent[(gBattlerFainted & 2) >> 1];
@@ -3991,7 +4012,7 @@ static void Cmd_getexp(void)
             {
                 if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE || GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0)
                     continue;
-                if (gBitTable[i] & sentIn)
+                if (holdEffect == HOLD_EFFECT_EXP_SHARE || gBitTable[i] & sentIn)
                     viaSentIn++;
 
                 item = GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM);
@@ -4001,7 +4022,7 @@ static void Cmd_getexp(void)
                 else
                     holdEffect = ItemId_GetHoldEffect(item);
 
-                if (holdEffect == HOLD_EFFECT_EXP_SHARE)
+                if (holdEffect != HOLD_EFFECT_EXP_SHARE && gSaveBlock2Ptr->optionsExpShareOn == TRUE)
                     viaExpShare++;
             }
             #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
@@ -4050,14 +4071,15 @@ static void Cmd_getexp(void)
             else
                 holdEffect = ItemId_GetHoldEffect(item);
 
-            if (holdEffect != HOLD_EFFECT_EXP_SHARE && !(gBattleStruct->sentInPokes & 1))
+            if (gSaveBlock2Ptr->optionsExpShareOn == FALSE && !(gBattleStruct->sentInPokes & 1))
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
             }
             else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gBattleStruct->expGetterMonId >= 3)
-                  || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+                  || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL
+                  || GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) >= monObedience)
             {
                 *(&gBattleStruct->sentInPokes) >>= 1;
                 gBattleScripting.getexpState = 5;
@@ -4082,25 +4104,41 @@ static void Cmd_getexp(void)
 
                 if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_HP))
                 {
-                    if (gBattleStruct->sentInPokes & 1)
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE || gBattleStruct->sentInPokes & 1)
+                    {
                         gBattleMoveDamage = *exp;
-                    else
-                        gBattleMoveDamage = 0;
-
-                    // only give exp share bonus in later gens if the mon wasn't sent out
+                    }
                 #if B_SPLIT_EXP < GEN_6
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE)
+                    else if (holdEffect != HOLD_EFFECT_EXP_SHARE && gSaveBlock2Ptr->optionsExpShareOn == TRUE)
+                    {
                         gBattleMoveDamage += gExpShareExp;
+                    }
                 #else
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE && gBattleMoveDamage == 0)
+                    else if (holdEffect != HOLD_EFFECT_EXP_SHARE && gSaveBlock2Ptr->optionsExpShareOn == TRUE && gBattleMoveDamage == 0)
+                    {
                         gBattleMoveDamage += gExpShareExp;
+                    }
                 #endif
+                    else
+                    {
+                        gBattleMoveDamage = 0;
+                    }
+
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
+                        gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
+                    if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]))
+                        gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
+                    if (CheckPartyHasHadPokerus(&gPlayerParty[gBattleStruct->expGetterMonId], 0))
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                 #if B_TRAINER_EXP_MULTIPLIER <= GEN_7
                     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
                 #endif
+                #if B_AFFECTION_MECHANICS == TRUE
+                    if (GetMonFriendshipScore(&gPlayerParty[gBattleStruct->expGetterMonId]) == FRIENDSHIP_MAX)
+                        gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
+                #endif
+
                 #if (B_SCALED_EXP >= GEN_5) && (B_SCALED_EXP != GEN_6)
                     {
                         // Note: There is an edge case where if a pokemon receives a large amount of exp, it wouldn't be properly calculated
@@ -4111,28 +4149,6 @@ static void Cmd_getexp(void)
                         gBattleMoveDamage = value + 1;
                     }
                 #endif
-                #if B_AFFECTION_MECHANICS == TRUE
-                    if (GetMonFriendshipScore(&gPlayerParty[gBattleStruct->expGetterMonId]) >= FRIENDSHIP_50_TO_99)
-                        gBattleMoveDamage = (gBattleMoveDamage * 120) / 100;
-                #endif
-
-                    if (IsTradedMon(&gPlayerParty[gBattleStruct->expGetterMonId]))
-                    {
-                        // check if the pokemon doesn't belong to the player
-                        if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && gBattleStruct->expGetterMonId >= 3)
-                        {
-                            i = STRINGID_EMPTYSTRING4;
-                        }
-                        else
-                        {
-                            gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
-                            i = STRINGID_ABOOSTED;
-                        }
-                    }
-                    else
-                    {
-                        i = STRINGID_EMPTYSTRING4;
-                    }
 
                     // get exp getter battlerId
                     if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
@@ -4153,8 +4169,7 @@ static void Cmd_getexp(void)
                     }
 
                     PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleStruct->expGetterBattlerId, gBattleStruct->expGetterMonId);
-                    // buffer 'gained' or 'gained a boosted'
-                    PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
+                    PREPARE_STRING_BUFFER(gBattleTextBuff2, STRINGID_EMPTYSTRING4);
                     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff3, 6, gBattleMoveDamage);
 
                     PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
@@ -4225,6 +4240,8 @@ static void Cmd_getexp(void)
                         SWAP(gBattleMons[battlerId].attack, gBattleMons[battlerId].defense, temp);
                 }
 
+                if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) >= monObedience)
+                    gBattleMoveDamage = 0;
                 gBattleScripting.getexpState = 5;
             }
             else
@@ -6915,33 +6932,8 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     }
     else
     {
-        switch (gTrainers[trainerId].partyFlags)
-        {
-        case 0:
-            {
-                const struct TrainerMonNoItemDefaultMoves *party = gTrainers[trainerId].party.NoItemDefaultMoves;
-                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
-            }
-            break;
-        case F_TRAINER_PARTY_CUSTOM_MOVESET:
-            {
-                const struct TrainerMonNoItemCustomMoves *party = gTrainers[trainerId].party.NoItemCustomMoves;
-                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
-            }
-            break;
-        case F_TRAINER_PARTY_HELD_ITEM:
-            {
-                const struct TrainerMonItemDefaultMoves *party = gTrainers[trainerId].party.ItemDefaultMoves;
-                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
-            }
-            break;
-        case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
-            {
-                const struct TrainerMonItemCustomMoves *party = gTrainers[trainerId].party.ItemCustomMoves;
-                lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
-            }
-            break;
-        }
+        const struct TrainerMon *party = gTrainers[trainerId].party.TrainerMon;
+        lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
 
         for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
         {

@@ -139,7 +139,6 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink::
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	random 64  @ 1/64 chance of an additional drink dropping
 	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
 	checkitemspace VAR_TEMP_0
@@ -149,7 +148,6 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink::
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	random 64  @ 1/64 * the prev 1/64 chance of a third additional drink dropping, ~ 0.02% chance
 	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
 	checkitemspace VAR_TEMP_0
@@ -159,7 +157,6 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink::
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
-	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
 	end
 
@@ -200,7 +197,7 @@ LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
 	.string "Ohh… I'm bone-dry thirsty!$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
-	.string "It's a VENDING MACHINE.\n"
+	.string "It's a Vending Machine.\n"
 	.string "Which drink would you like?$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:

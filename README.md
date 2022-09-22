@@ -1,43 +1,47 @@
-# pokeemerald Expansion
+## What is this?
 
-## What is the pokeemerald Expansion?
+This is a fork of [pokeemerald-expansion](https://github.com/rh-hideout/pokeemerald-expansion)-1.1.1.
 
-The Pokeemerald Expansion is a collection of feature branches that can be integrated into existing [pokeemerald](https://github.com/pret/pokeemerald) projects.
+## Who maintains this fork?
 
-## What features are included?
-- Upgraded battle engine.
-    - Fairy Type.
-    - Physical/Special/Status Category Split.
-    - New moves and abilities up to SwSh.
-    - Options to change behaviors and data by generation.
-    - Mega Evolution and Primal Reversion
-    - Z-Moves
-- Pokémon Species from newer Generations (with the option to disable them if needed).
-    - Updates Hoenn's Regional Dex to match ORAS'.
-    - Updates National Dex incorporating all the new species.
-    - Option to change base stats by generation.
-    - New evolution methods.
-    - Hidden Abilities data (How to make them available is up to the user).
-- Items from newer Generations and updated item effects for battle and field use.
+This fork is maintained by [phxGAMMA](https://github.com/phxGAMMA).
 
-Certain mechanics, moves, abilities and species sprites are missing. For more information, see [the project's milestones](https://github.com/rh-hideout/pokeemerald-expansion/milestones).
+## What is the goal of this fork?
+- Remove inconsistencies left by the three combined branches.
+- Add popular features included in later generations.
 
-### [Documentation on features can be found here](https://github.com/rh-hideout/pokeemerald-expansion/wiki)
+## What community features are included in this fork?
+- [Decapitalization](https://github.com/AsparagusEduardo/pokeemerald/tree/Decapitalization)
+- [Pokemerrp Followers](https://github.com/aarant/pokeemerald/tree/followers)
+- [Pokemerrp Icons](https://github.com/aarant/pokeemerald/tree/icons) (todo)
+- [Pokemerrp Lighting](https://github.com/aarant/pokeemerald/tree/lighting) (todo)
+- [Colored Nature Stats](https://github.com/pret/pokeemerald/wiki/Colored-stats-by-nature-in-summary-screen)
+- [Move Split Icons](https://www.pokecommunity.com/showpost.php?p=10527471)
+- [Type Effectiveness](https://www.pokecommunity.com/showpost.php?p=10167016&postcount=83)
+- [Hidden](https://www.pokecommunity.com/showpost.php?p=10269132) / [Power](https://www.pokecommunity.com/showpost.php?p=10269828) / [Type](https://www.pokecommunity.com/showpost.php?p=10269149)
+- [Overworld Expansion](https://github.com/pret/pokeemerald/wiki/Feature-Branches#overworld-expansion)
+- [Proper Plural *giveitem*](https://github.com/pret/pokeemerald/wiki/Plural-Giveitem)
+- [Bonus Premier Balls](https://github.com/pret/pokeemerald/wiki/LGPE-Style-Bonus-Premier-Balls)
+- [Repeat Medicine Use](https://github.com/pret/pokeemerald/wiki/Repeated-Field-Medicine-Use)
+- [Prompt Reuse Repel](https://github.com/pret/pokeemerald/wiki/Prompt-for-reusing-Repels)
+- [Infinite TM Use](https://github.com/pret/pokeemerald/wiki/Infinite-TM-usage)
 
-## Who maintains the project?
+## What personal features are included in this fork?
+- Perfect Gift Pokémon
+- Badge Based Wild IVs
+- Badge Based Level Caps
+- Badge Based Poké Marts
+- Options Menu Everstone
+- Options Menu Exp. Share
+- Options Menu Difficulty
+- Integrated Escape Rope
+- Overworld TM / HM Ball
+- Gen 3 / 8 Berry Shaking
+- Birch Zigzagoon Pokérus
+- Force Fast Print Speed
 
-The project was originally started by DizzyEgg alongside other contributors.
+## [Additional Credits](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits)
 
-The project has now gotten larger and DizzyEgg is now maintaining the project as part of the ROM Hacking Hideout community. Some members of this community are taking on larger roles to help maintain the project.
+## [RHH Discord Server](https://discord.gg/6CzjAG6GZk)
 
-### Please consider crediting the entire [list of contributors](https://github.com/rh-hideout/pokeemerald-expansion/wiki/Credits) in your project, as they have all worked hard to develop this project :)
-
-## Can I contribute even if I'm not a member of ROM Hacking Hideout?
-
-Yes! Contributions are welcome via Pull Requests and they will be reviewed by maintainers. Don't feel discouraged if we take a bit to review your PR, we'll get to it.
-
-## What is ROM Hacking Hideout?
-
-A Discord-based ROM hacking community that has many members who hack using the disassembly and decompilation projects for Pokémon. Quite a few contributors to the original feature branches by DizzyEgg were members of ROM Hacking Hideout. You can call it RHH for short!
-
-[Click here to join the RHH Discord Server!](https://discord.gg/6CzjAG6GZk)
+## [pret Discord Server](https://discord.gg/d5dubZ3)

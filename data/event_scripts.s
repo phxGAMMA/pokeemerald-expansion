@@ -651,6 +651,7 @@ EventScript_SetBrineyLocation_Route109::
 	return
 
 	.include "data/scripts/pkmn_center_nurse.inc"
+	.include "data/scripts/pkmn_mart_clerk.inc"
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/record_mix.inc"
 	.include "data/scripts/pc.inc"
@@ -691,21 +692,21 @@ EventScript_BackupMrBrineyLocation::
 	.include "data/scripts/set_gym_trainers.inc"
 
 Common_EventScript_ShowBagIsFull::
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	msgbox gText_TheBagIsFull, MSGBOX_DEFAULT
 	release
 	end
 
 Common_EventScript_BagIsFull::
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	msgbox gText_TheBagIsFull, MSGBOX_DEFAULT
 	return
 
 Common_EventScript_ShowNoRoomForDecor::
-	msgbox gText_NoRoomLeftForAnother, MSGBOX_DEFAULT
+	msgbox gText_NoRoomInPC, MSGBOX_DEFAULT
 	release
 	end
 
 Common_EventScript_NoRoomForDecor::
-	msgbox gText_NoRoomLeftForAnother, MSGBOX_DEFAULT
+	msgbox gText_NoRoomInPC, MSGBOX_DEFAULT
 	return
 
 Common_EventScript_SetAbnormalWeather::
@@ -722,6 +723,7 @@ Common_EventScript_OutOfCenterPartyHeal::
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
+    callnative UpdateFollowingPokemon
 	fadescreen FADE_FROM_BLACK
 	return
 
@@ -885,7 +887,7 @@ gText_PlayerWhitedOut::
 
 gText_RegisteredTrainerinPokeNav::
 	.string "Registered {STR_VAR_1} {STR_VAR_2}\n"
-	.string "in the POKéNAV.$"
+	.string "in the Pokénav.$"
 
 gText_ComeBackWithSecretPower::
 	.string "Do you know the TM SECRET POWER?\p"
@@ -940,10 +942,6 @@ gText_PlayerHandedOverTheItem::
 gText_ThankYouForAccessingMysteryGift::
 	.string "Thank you for accessing the\n"
 	.string "MYSTERY GIFT System.$"
-
-gText_PlayerFoundOneTMHM::
-	.string "{PLAYER} found one {STR_VAR_1}\n"
-	.string "{STR_VAR_2}!$"
 
 gText_Sudowoodo_Attacked::
 	.string "The weird tree doesn't like the\n"
@@ -1024,6 +1022,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/mauville_man.inc"
 	.include "data/scripts/field_move_scripts.inc"
 	.include "data/scripts/item_ball_scripts.inc"
+	.include "data/scripts/tmhm_ball_scripts.inc"
 	.include "data/scripts/profile_man.inc"
 	.include "data/scripts/day_care.inc"
 	.include "data/scripts/flash.inc"
@@ -1055,6 +1054,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/move_tutors.inc"
 	.include "data/scripts/trainer_hill.inc"
 	.include "data/scripts/test_signpost.inc"
+    .include "data/scripts/follower.inc"
 	.include "data/text/frontier_brain.inc"
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"

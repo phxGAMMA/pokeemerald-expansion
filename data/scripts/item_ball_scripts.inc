@@ -58,10 +58,6 @@ Route110_EventScript_ItemElixir::
 	finditem ITEM_ELIXIR
 	end
 
-Route111_EventScript_ItemTM37::
-	finditem ITEM_TM37
-	end
-
 Route111_EventScript_ItemStardust::
 	finditem ITEM_STARDUST
 	end
@@ -104,10 +100,6 @@ Route114_EventScript_ItemEnergyPowder::
 
 Route115_EventScript_ItemSuperPotion::
 	finditem ITEM_SUPER_POTION
-	end
-
-Route115_EventScript_ItemTM01::
-	finditem ITEM_TM01
 	end
 
 Route115_EventScript_ItemIron::
@@ -350,8 +342,8 @@ RusturfTunnel_EventScript_ItemMaxEther::
 	finditem ITEM_MAX_ETHER
 	end
 
-GraniteCave_1F_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+GraniteCave_1F_EventScript_ItemPokeDoll::
+	finditem ITEM_POKE_DOLL
 	end
 
 GraniteCave_B1F_EventScript_ItemPokeBall::
@@ -374,14 +366,6 @@ FieryPath_EventScript_ItemFireStone::
 	finditem ITEM_FIRE_STONE
 	end
 
-FieryPath_EventScript_ItemTM06::
-	finditem ITEM_TM06
-	end
-
-MeteorFalls_1F_1R_EventScript_ItemTM23::
-	finditem ITEM_TM23
-	end
-
 MeteorFalls_1F_1R_EventScript_ItemFullHeal::
 	finditem ITEM_FULL_HEAL
 	end
@@ -394,16 +378,12 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP::
 	finditem ITEM_PP_UP
 	end
 
-MeteorFalls_B1F_2R_EventScript_ItemTM02::
-	finditem ITEM_TM02
-	end
-
 NewMauville_Inside_EventScript_ItemUltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
 
-NewMauville_Inside_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+NewMauville_Inside_EventScript_ItemPokeDoll::
+	finditem ITEM_POKE_DOLL
 	end
 
 NewMauville_Inside_EventScript_ItemThunderStone::
@@ -422,16 +402,12 @@ AbandonedShip_Rooms_1F_EventScript_ItemHarborMail::
 	finditem ITEM_HARBOR_MAIL
 	end
 
-AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+AbandonedShip_Rooms_B1F_EventScript_ItemPokeDoll::
+	finditem ITEM_POKE_DOLL
 	end
 
 AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall::
 	finditem ITEM_DIVE_BALL
-	end
-
-AbandonedShip_Room_B1F_EventScript_ItemTM13::
-	finditem ITEM_TM13
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_ItemRevive::
@@ -452,18 +428,6 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner::
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone::
 	finditem ITEM_WATER_STONE
-	end
-
-AbandonedShip_HiddenFloorRooms_EventScript_ItemTM18::
-	finditem ITEM_TM18
-	end
-
-ScorchedSlab_EventScript_ItemTM11::
-	finditem ITEM_TM11
-	end
-
-SafariZone_Northwest_EventScript_ItemTM22::
-	finditem ITEM_TM22
 	end
 
 SafariZone_North_EventScript_ItemCalcium::
@@ -498,16 +462,8 @@ MtPyre_5F_EventScript_ItemLaxIncense::
 	finditem ITEM_LAX_INCENSE
 	end
 
-MtPyre_6F_EventScript_ItemTM30::
-	finditem ITEM_TM30
-	end
-
 MtPyre_Exterior_EventScript_ItemMaxPotion::
 	finditem ITEM_MAX_POTION
-	end
-
-MtPyre_Exterior_EventScript_ItemTM48::
-	finditem ITEM_TM48
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
@@ -554,16 +510,8 @@ ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal::
 	finditem ITEM_ICE_HEAL
 	end
 
-ShoalCave_LowTideIceRoom_EventScript_ItemTM07::
-	finditem ITEM_TM07
-	end
-
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::
 	finditem ITEM_NEVER_MELT_ICE
-	end
-
-SeafloorCavern_Room9_EventScript_ItemTM26::
-	finditem ITEM_TM26
 	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail::
@@ -610,10 +558,6 @@ VictoryRoad_1F_EventScript_ItemPPUp::
 	finditem ITEM_PP_UP
 	end
 
-VictoryRoad_B1F_EventScript_ItemTM29::
-	finditem ITEM_TM29
-	end
-
 VictoryRoad_B1F_EventScript_ItemFullRestore::
 	finditem ITEM_FULL_RESTORE
 	end
@@ -654,6 +598,6 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
-	finditem ITEM_ESCAPE_ROPE
+MagmaHideout_3F_3R_EventScript_ItemPokeDoll::
+	finditem ITEM_POKE_DOLL
 	end

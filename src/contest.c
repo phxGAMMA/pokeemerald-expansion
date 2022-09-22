@@ -1059,14 +1059,7 @@ static void InitContestWindows(void)
 {
     InitWindows(sContestWindowTemplates);
     DeactivateAllTextPrinters();
-    if (gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
-    {
-        gTextFlags.canABSpeedUpPrint = FALSE;
-    }
-    else
-    {
-        gTextFlags.canABSpeedUpPrint = TRUE;
-    }
+    gTextFlags.canSpeedUpPrint = TRUE;
 }
 
 static void LoadContestPalettes(void)

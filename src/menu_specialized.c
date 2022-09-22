@@ -865,7 +865,7 @@ void MoveRelearnerPrintText(u8 *str)
     u8 speed;
 
     FillWindowPixelBuffer(3, PIXEL_FILL(1));
-    gTextFlags.canABSpeedUpPrint = TRUE;
+    gTextFlags.canSpeedUpPrint = TRUE;
     speed = GetPlayerTextSpeedDelay();
     AddTextPrinterParameterized2(3, FONT_NORMAL, str, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, 3);
 }

@@ -679,6 +679,7 @@ static void Task_DoDoorWarp(u8 taskId)
     struct Task *task = &gTasks[taskId];
     s16 *x = &task->data[2];
     s16 *y = &task->data[3];
+    struct ObjectEvent *followerObject = GetFollowerObject();
 
     switch (task->tState)
     {
@@ -686,6 +687,12 @@ static void Task_DoDoorWarp(u8 taskId)
         FreezeObjectEvents();
         PlayerGetDestCoords(x, y);
         PlaySE(GetDoorSoundEffect(*x, *y - 1));
+        if (followerObject)
+        {
+            ClearObjectEventMovement(followerObject, &gSprites[followerObject->spriteId]);
+            gSprites[followerObject->spriteId].animCmdIndex = 0;
+            ObjectEventSetHeldMovement(followerObject, MOVEMENT_ACTION_ENTER_POKEBALL);
+        }
         task->data[1] = FieldAnimateDoorOpen(*x, *y - 1);
         task->tState = 1;
         break;
@@ -1164,6 +1171,7 @@ static void Task_OrbEffect(u8 taskId)
         tState = 4;
         break;
     case 4:
+        ScriptContext_Enable();
         if (--tShakeDelay == 0)
         {
             s32 panning;

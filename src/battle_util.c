@@ -9453,7 +9453,22 @@ u16 CalcTypeEffectivenessMultiplier(u16 move, u8 moveType, u8 battlerAtk, u8 bat
 {
     u16 modifier = UQ_4_12(1.0);
 
-    if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
+    if (move == MOVE_HIDDEN_POWER)
+    {
+        u8 typeBits = ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_HP_IV) & 1) << 0)
+                    | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_ATK_IV) & 1) << 1)
+                    | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_DEF_IV) & 1) << 2)
+                    | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPEED_IV) & 1) << 3)
+                    | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPATK_IV) & 1) << 4)
+                    | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPDEF_IV) & 1) << 5);
+
+        moveType = (15 * typeBits) / 63 + 1;
+        if (moveType >= TYPE_MYSTERY)
+            moveType++;
+        moveType |= 0xC0;
+        modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType & 0x3F, battlerAtk, battlerDef, recordAbilities, modifier);
+    }
+    else
     {
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier);
         if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
@@ -9493,6 +9508,29 @@ u16 GetTypeModifier(u8 atkType, u8 defType)
         return sInverseTypeEffectivenessTable[atkType][defType];
 #endif
     return sTypeEffectivenessTable[atkType][defType];
+}
+
+u16 GetTypeEffectiveness(struct Pokemon *mon, u8 moveType)
+{
+    u16 modifier = UQ_4_12(1.0);
+    u16 abilityDef = GetMonAbility(mon);
+    u16 speciesDef = GetMonData(&mon, MON_DATA_SPECIES);
+    u8 type1 = gBaseStats[speciesDef].type1;
+    u8 type2 = gBaseStats[speciesDef].type2;
+
+    if (moveType != TYPE_MYSTERY)
+    {
+        MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, gBaseStats[speciesDef].type1, 0, FALSE);
+        if (gBaseStats[speciesDef].type2 != gBaseStats[speciesDef].type1)
+            MulByTypeEffectiveness(&modifier, MOVE_POUND, moveType, 0, gBaseStats[speciesDef].type2, 0, FALSE);
+
+        if (moveType == TYPE_GROUND && abilityDef == ABILITY_LEVITATE)
+            modifier = UQ_4_12(0.0);
+        if (abilityDef == ABILITY_WONDER_GUARD && modifier <= UQ_4_12(1.0))
+            modifier = UQ_4_12(0.0);
+    }
+
+    return modifier;
 }
 
 s32 GetStealthHazardDamage(u8 hazardType, u8 battlerId)

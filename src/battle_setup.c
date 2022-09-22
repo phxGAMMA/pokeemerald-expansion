@@ -110,18 +110,18 @@ EWRAM_DATA static u8 sNoOfPossibleTrainerRetScripts = 0;
 // Otherwise, the second transition is used.
 static const u8 sBattleTransitionTable_Wild[][2] =
 {
-    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_SLICE,          B_TRANSITION_WHITE_BARS_FADE},
-    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_CLOCKWISE_WIPE, B_TRANSITION_GRID_SQUARES},
-    [TRANSITION_TYPE_FLASH]  = {B_TRANSITION_BLUR,           B_TRANSITION_GRID_SQUARES},
-    [TRANSITION_TYPE_WATER]  = {B_TRANSITION_WAVE,           B_TRANSITION_RIPPLE},
+    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_SLICE,   B_TRANSITION_BLACKHOLE},
+    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_SHUFFLE, B_TRANSITION_ANGLED_WIPES},
+    [TRANSITION_TYPE_FLASH]  = {B_TRANSITION_BLUR,    B_TRANSITION_SHRED_SPLIT},
+    [TRANSITION_TYPE_WATER]  = {B_TRANSITION_RIPPLE,  B_TRANSITION_WAVE},
 };
 
 static const u8 sBattleTransitionTable_Trainer[][2] =
 {
-    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_POKEBALLS_TRAIL, B_TRANSITION_ANGLED_WIPES},
-    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_SHUFFLE,         B_TRANSITION_BIG_POKEBALL},
-    [TRANSITION_TYPE_FLASH]  = {B_TRANSITION_BLUR,            B_TRANSITION_GRID_SQUARES},
-    [TRANSITION_TYPE_WATER]  = {B_TRANSITION_SWIRL,           B_TRANSITION_RIPPLE},
+    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_SLICE,   B_TRANSITION_BIG_POKEBALL},
+    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_SHUFFLE, B_TRANSITION_RECTANGULAR_SPIRAL},
+    [TRANSITION_TYPE_FLASH]  = {B_TRANSITION_BLUR,    B_TRANSITION_GRID_SQUARES},
+    [TRANSITION_TYPE_WATER]  = {B_TRANSITION_RIPPLE,  B_TRANSITION_SWIRL},
 };
 
 // Battle Frontier (excluding Pyramid and Dome, which have their own tables below)
@@ -759,46 +759,16 @@ static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
     u8 sum;
     u32 count = numMons;
 
+    const struct TrainerMon *party;
+    party = gTrainers[opponentId].party.TrainerMon;
+
     if (gTrainers[opponentId].partySize < count)
         count = gTrainers[opponentId].partySize;
 
     sum = 0;
 
-    switch (gTrainers[opponentId].partyFlags)
-    {
-    case 0:
-        {
-            const struct TrainerMonNoItemDefaultMoves *party;
-            party = gTrainers[opponentId].party.NoItemDefaultMoves;
-            for (i = 0; i < count; i++)
-                sum += party[i].lvl;
-        }
-        break;
-    case F_TRAINER_PARTY_CUSTOM_MOVESET:
-        {
-            const struct TrainerMonNoItemCustomMoves *party;
-            party = gTrainers[opponentId].party.NoItemCustomMoves;
-            for (i = 0; i < count; i++)
-                sum += party[i].lvl;
-        }
-        break;
-    case F_TRAINER_PARTY_HELD_ITEM:
-        {
-            const struct TrainerMonItemDefaultMoves *party;
-            party = gTrainers[opponentId].party.ItemDefaultMoves;
-            for (i = 0; i < count; i++)
-                sum += party[i].lvl;
-        }
-        break;
-    case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
-        {
-            const struct TrainerMonItemCustomMoves *party;
-            party = gTrainers[opponentId].party.ItemCustomMoves;
-            for (i = 0; i < count; i++)
-                sum += party[i].lvl;
-        }
-        break;
-    }
+    for (i = 0; i < count; i++)
+        sum += party[i].lvl;
 
     return sum;
 }

@@ -149,6 +149,7 @@
 #define OT_ID_PLAYER_ID       0
 #define OT_ID_PRESET          1
 #define OT_ID_RANDOM_NO_SHINY 2
+#define OT_ID_RANDOM_SHINY    3
 
 #define MON_GIVEN_TO_PARTY      0
 #define MON_GIVEN_TO_PC         1
@@ -170,6 +171,9 @@
 #define MON_MALE       0x00
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
+
+#define MON_FRIENDLY   0
+#define MON_UNFRIENDLY 1
 
 // Constants for AdjustFriendship
 #define FRIENDSHIP_EVENT_GROW_LEVEL       0
@@ -196,10 +200,12 @@
 #define MAX_CONDITION   255
 
 #define MAX_PER_STAT_IVS 31
+#define MIN_PER_STAT_IVS 0
 #define MAX_IV_MASK 31
 #define USE_RANDOM_IVS (MAX_PER_STAT_IVS + 1)
-#define MAX_PER_STAT_EVS 255
-#define MAX_TOTAL_EVS 510
+#define MAX_PER_STAT_EVS 252
+#define MIN_PER_STAT_EVS 0
+#define MAX_TOTAL_EVS 508
 #if I_VITAMIN_EV_CAP >= GEN_8
 #define EV_ITEM_RAISE_LIMIT MAX_PER_STAT_EVS
 #else
@@ -347,7 +353,5 @@
 #define FLAG_GALARIAN_FORM      (1 << 4)
 #define FLAG_HISUIAN_FORM       (1 << 5)
 #define FLAG_GENDER_DIFFERENCE  (1 << 6)
-
-#define LEGENDARY_PERFECT_IV_COUNT 3
 
 #endif // GUARD_CONSTANTS_POKEMON_H

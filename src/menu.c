@@ -75,8 +75,8 @@ const u16 gStandardMenuPalette[] = INCBIN_U16("graphics/interface/std_menu.gbapa
 
 static const u8 sTextSpeedFrameDelays[] =
 {
-    [OPTIONS_TEXT_SPEED_SLOW] = 8,
-    [OPTIONS_TEXT_SPEED_MID]  = 4,
+    [OPTIONS_TEXT_SPEED_SLOW] = 4,
+    [OPTIONS_TEXT_SPEED_MID]  = 2,
     [OPTIONS_TEXT_SPEED_FAST] = 1
 };
 
@@ -188,22 +188,22 @@ u16 AddTextPrinterParameterized2(u8 windowId, u8 fontId, const u8 *str, u8 speed
     return AddTextPrinter(&printer, speed, callback);
 }
 
-void AddTextPrinterForMessage(bool8 allowSkippingDelayWithButtonPress)
+void AddTextPrinterForMessage(bool8 allowSkippingDelay)
 {
     void (*callback)(struct TextPrinterTemplate *, u16) = NULL;
-    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
+    gTextFlags.canSpeedUpPrint = allowSkippingDelay;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), callback, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 }
 
-void AddTextPrinterForMessage_2(bool8 allowSkippingDelayWithButtonPress)
+void AddTextPrinterForMessage_2(bool8 allowSkippingDelay)
 {
-    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
+    gTextFlags.canSpeedUpPrint = allowSkippingDelay;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 }
 
-void AddTextPrinterWithCustomSpeedForMessage(bool8 allowSkippingDelayWithButtonPress, u8 speed)
+void AddTextPrinterWithCustomSpeedForMessage(bool8 allowSkippingDelay, u8 speed)
 {
-    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
+    gTextFlags.canSpeedUpPrint = allowSkippingDelay;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 }
 
@@ -482,10 +482,7 @@ u32 GetPlayerTextSpeed(void)
 
 u8 GetPlayerTextSpeedDelay(void)
 {
-    u32 speed;
-    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_FAST)
-        gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
-    speed = GetPlayerTextSpeed();
+    u32 speed = GetPlayerTextSpeed();
     return sTextSpeedFrameDelays[speed];
 }
 
@@ -543,9 +540,9 @@ void RemoveMapNamePopUpWindow(void)
     }
 }
 
-void AddTextPrinterWithCallbackForMessage(bool8 canSpeedUp, void (*callback)(struct TextPrinterTemplate *, u16))
+void AddTextPrinterWithCallbackForMessage(bool8 allowSkippingDelay, void (*callback)(struct TextPrinterTemplate *, u16))
 {
-    gTextFlags.canABSpeedUpPrint = canSpeedUp;
+    gTextFlags.canSpeedUpPrint = allowSkippingDelay;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), callback, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 }
 

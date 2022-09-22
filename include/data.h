@@ -4,6 +4,17 @@
 #include "constants/moves.h"
 
 #define SPECIES_SHINY_TAG 5000
+#define N_FOLLOWER_HAPPY_MESSAGES 31
+#define N_FOLLOWER_NEUTRAL_MESSAGES 14
+#define N_FOLLOWER_SAD_MESSAGES 3
+#define N_FOLLOWER_UPSET_MESSAGES 3
+#define N_FOLLOWER_ANGRY_MESSAGES 5
+#define N_FOLLOWER_PENSIVE_MESSAGES 20
+#define N_FOLLOWER_LOVE_MESSAGES 10
+#define N_FOLLOWER_SURPRISE_MESSAGES 20
+#define N_FOLLOWER_CURIOUS_MESSAGES 7
+#define N_FOLLOWER_MUSIC_MESSAGES 14
+#define N_FOLLOWER_POISONED_MESSAGES 1
 
 #define MAX_TRAINER_ITEMS 4
 
@@ -25,66 +36,54 @@ struct MonCoords
 #define GET_MON_COORDS_WIDTH(size)((size >> 4) * 8)
 #define GET_MON_COORDS_HEIGHT(size)((size & 0xF) * 8)
 
-struct TrainerMonNoItemDefaultMoves
+struct TrainerMon
 {
-    u16 iv;
     u8 lvl;
+    u16 shiny;
+    u16 nature;
     u16 species;
-};
-
-struct TrainerMonItemDefaultMoves
-{
-    u16 iv;
-    u8 lvl;
-    u16 species;
+    u16 abilityNum;
     u16 heldItem;
-};
-
-struct TrainerMonNoItemCustomMoves
-{
-    u16 iv;
-    u8 lvl;
-    u16 species;
+    u8 pokeBall;
+    u16 gender;
+    u16 friendship;
     u16 moves[MAX_MON_MOVES];
 };
 
-struct TrainerMonItemCustomMoves
-{
-    u16 iv;
-    u8 lvl;
-    u16 species;
-    u16 heldItem;
-    u16 moves[MAX_MON_MOVES];
-};
-
-#define NO_ITEM_DEFAULT_MOVES(party) { .NoItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = 0
-#define NO_ITEM_CUSTOM_MOVES(party) { .NoItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET
-#define ITEM_DEFAULT_MOVES(party) { .ItemDefaultMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_HELD_ITEM
-#define ITEM_CUSTOM_MOVES(party) { .ItemCustomMoves = party }, .partySize = ARRAY_COUNT(party), .partyFlags = F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM
+#define TRAINER_PARTY(party) { .TrainerMon = party }, .partySize = ARRAY_COUNT(party)
 
 union TrainerMonPtr
 {
-    const struct TrainerMonNoItemDefaultMoves *NoItemDefaultMoves;
-    const struct TrainerMonNoItemCustomMoves *NoItemCustomMoves;
-    const struct TrainerMonItemDefaultMoves *ItemDefaultMoves;
-    const struct TrainerMonItemCustomMoves *ItemCustomMoves;
+    const struct TrainerMon *TrainerMon;
 };
 
 struct Trainer
 {
-    /*0x00*/ u8 partyFlags;
-    /*0x01*/ u8 trainerClass;
-    /*0x02*/ u8 encounterMusic_gender; // last bit is gender
-    /*0x03*/ u8 trainerPic;
-    /*0x04*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
-    /*0x10*/ u16 items[MAX_TRAINER_ITEMS];
-    /*0x18*/ bool8 doubleBattle;
-    /*0x1C*/ u32 aiFlags;
-    /*0x20*/ u8 partySize;
-    /*0x24*/ union TrainerMonPtr party;
+    u8 trainerClass;
+    u8 encounterMusic_gender; // last bit is gender
+    u8 trainerPic;
+    u8 trainerName[TRAINER_NAME_LENGTH + 1];
+    u16 items[MAX_TRAINER_ITEMS];
+    bool8 doubleBattle;
+    u32 aiFlags;
+    u8 partySize;
+    union TrainerMonPtr party;
 };
 
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+
+struct FollowerMsgInfo {
+    const u8 *text;
+    const u8 *script;
+};
+
+struct FollowerMessagePool
+{
+    const struct FollowerMsgInfo * messages;
+    const u8 * script;
+    u16 length;
+};
+
 
 extern const u16 gMinigameDigits_Pal[];
 extern const u32 gMinigameDigits_Gfx[];
@@ -135,5 +134,18 @@ extern const u8 gTrainerClassNames[][13];
 extern const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1];
 extern const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1];
 extern const u8 *const gZMoveNames[];
+
+// Follower text messages
+extern const struct FollowerMsgInfo gFollowerHappyMessages[];
+extern const struct FollowerMsgInfo gFollowerNeutralMessages[];
+extern const struct FollowerMsgInfo gFollowerSadMessages[];
+extern const struct FollowerMsgInfo gFollowerUpsetMessages[];
+extern const struct FollowerMsgInfo gFollowerAngryMessages[];
+extern const struct FollowerMsgInfo gFollowerPensiveMessages[];
+extern const struct FollowerMsgInfo gFollowerLoveMessages[];
+extern const struct FollowerMsgInfo gFollowerSurpriseMessages[];
+extern const struct FollowerMsgInfo gFollowerCuriousMessages[];
+extern const struct FollowerMsgInfo gFollowerMusicMessages[];
+extern const struct FollowerMsgInfo gFollowerPoisonedMessages[];
 
 #endif // GUARD_DATA_H

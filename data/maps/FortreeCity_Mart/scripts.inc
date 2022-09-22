@@ -2,29 +2,7 @@ FortreeCity_Mart_MapScripts::
 	.byte 0
 
 FortreeCity_Mart_EventScript_Clerk::
-	lock
-	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart FortreeCity_Mart_Pokemart
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
-	.align 2
-FortreeCity_Mart_Pokemart:
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_REVIVE
-	.2byte ITEM_SUPER_REPEL
-	.2byte ITEM_WOOD_MAIL
-	.2byte ITEM_NONE
-	release
+	goto Common_EventScript_PkmnMartClerk
 	end
 
 FortreeCity_Mart_EventScript_Woman::
@@ -40,10 +18,10 @@ FortreeCity_Mart_EventScript_Boy::
 	end
 
 FortreeCity_Mart_Text_SuperRepelBetter:
-	.string "SUPER REPEL lasts a long time,\n"
+	.string "Super Repel lasts a long time,\n"
 	.string "and it gets the job done.\p"
 	.string "It's much better than an ordinary\n"
-	.string "REPEL.$"
+	.string "Repel.$"
 
 FortreeCity_Mart_Text_StockUpOnItems:
 	.string "I always stock up on more items than\n"
@@ -52,6 +30,6 @@ FortreeCity_Mart_Text_StockUpOnItems:
 	.string "Better to be safe than sorry!$"
 
 FortreeCity_Mart_Text_RareCandyMakesMonGrow:
-	.string "A RARE CANDY makes a POKéMON grow\n"
+	.string "A Rare Candy makes a Pokémon grow\n"
 	.string "immediately by one level.$"
 

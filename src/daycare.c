@@ -879,8 +879,28 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
     u8 language;
     u8 metLocation;
     u8 isEgg;
+    u8 rnd;
 
-    CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    if ((FlagGet(FLAG_SYS_POKEMON_GIFT_ENABLE) == TRUE)
+        || gBaseStats[species].flags & (FLAG_LEGENDARY | FLAG_MYTHICAL | FLAG_ULTRA_BEAST))
+    {
+        rnd = (Random() % 5);
+        if (rnd == 0)
+            CreateMonWithNature(mon, species, EGG_HATCH_LEVEL, MAX_PER_STAT_IVS, NATURE_HARDY);
+        if (rnd == 1)
+            CreateMonWithNature(mon, species, EGG_HATCH_LEVEL, MAX_PER_STAT_IVS, NATURE_DOCILE);
+        if (rnd == 2)
+            CreateMonWithNature(mon, species, EGG_HATCH_LEVEL, MAX_PER_STAT_IVS, NATURE_SERIOUS);
+        if (rnd == 3)
+            CreateMonWithNature(mon, species, EGG_HATCH_LEVEL, MAX_PER_STAT_IVS, NATURE_BASHFUL);
+        if (rnd == 4)
+            CreateMonWithNature(mon, species, EGG_HATCH_LEVEL, MAX_PER_STAT_IVS, NATURE_QUIRKY);
+    }
+    else
+    {
+        CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    }
+
     metLevel = 0;
     ball = ITEM_POKE_BALL;
     language = LANGUAGE_JAPANESE;

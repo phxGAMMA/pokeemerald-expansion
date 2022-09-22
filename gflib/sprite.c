@@ -1587,6 +1587,8 @@ void FreeAllSpritePalettes(void)
 u8 LoadSpritePalette(const struct SpritePalette *palette)
 {
     u8 index = IndexOfSpritePaletteTag(palette->tag);
+    u8 i;
+    u16 *debugPtr = (u16*) 0x0203d800;
 
     if (index != 0xFF)
         return index;
@@ -1600,6 +1602,10 @@ u8 LoadSpritePalette(const struct SpritePalette *palette)
     else
     {
         sSpritePaletteTags[index] = palette->tag;
+        for (i = 0; i < 16; i++)
+        {
+            debugPtr[i] = sSpritePaletteTags[i];
+        }
         DoLoadSpritePalette(palette->data, index * 16);
         return index;
     }
@@ -1651,7 +1657,12 @@ void FreeSpritePaletteByTag(u16 tag)
 {
     u8 index = IndexOfSpritePaletteTag(tag);
     if (index != 0xFF)
+    {
         sSpritePaletteTags[index] = TAG_NONE;
+    #if DEBUG
+        FillPalette(0, index * 16 + 0x100, 32);
+    #endif
+    }
 }
 
 void SetSubspriteTables(struct Sprite *sprite, const struct SubspriteTable *subspriteTables)

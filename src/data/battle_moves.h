@@ -2884,7 +2884,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_TRI_ATTACK,
         .power = 80,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 20,
@@ -2956,7 +2956,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .effect = EFFECT_RECOIL_25,
         #endif
         .power = 50,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .pp = 1,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -3122,13 +3122,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_CURSE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .type = TYPE_GHOST,
-        #else
-            .type = TYPE_MYSTERY,
-        #endif
         .effect = EFFECT_CURSE,
         .power = 0,
+        .type = TYPE_MYSTERY,
         .accuracy = 0,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -4259,7 +4255,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .power = 1,
         #endif
         .effect = EFFECT_HIDDEN_POWER,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -5596,7 +5592,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_WEATHER_BALL,
         .power = 50,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -6547,7 +6543,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_NATURAL_GIFT,
         .power = 1,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 15,
         .secondaryEffectChance = 0,
@@ -8081,7 +8077,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
         .power = 100,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -9754,7 +9750,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .zMovePower = 160,
         #endif
         .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 5,
         .secondaryEffectChance = 0,
@@ -11822,7 +11818,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .zMovePower = 175,
         #endif
         .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
@@ -12887,7 +12883,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     {
         .effect = EFFECT_TERRAIN_PULSE,
         .power = 50,
-        .type = TYPE_NORMAL,
+        .type = TYPE_MYSTERY,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,

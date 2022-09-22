@@ -1146,11 +1146,7 @@ static void PrintMatchCallMessage(struct Pokenav_MatchCallGfx *gfx)
 
 static bool32 WaitForMatchCallMessageText(struct Pokenav_MatchCallGfx *gfx)
 {
-    if (JOY_HELD(A_BUTTON))
-        gTextFlags.canABSpeedUpPrint = TRUE;
-    else
-        gTextFlags.canABSpeedUpPrint = FALSE;
-
+    gTextFlags.canSpeedUpPrint = TRUE;
     RunTextPrinters();
     return IsTextPrinterActive(gfx->msgBoxWindowId);
 }

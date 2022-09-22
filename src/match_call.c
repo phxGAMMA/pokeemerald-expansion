@@ -1425,11 +1425,7 @@ static void InitMatchCallTextPrinter(int windowId, const u8 *str)
 
 static bool32 RunMatchCallTextPrinter(int windowId)
 {
-    if (JOY_HELD(A_BUTTON))
-        gTextFlags.canABSpeedUpPrint = TRUE;
-    else
-        gTextFlags.canABSpeedUpPrint = FALSE;
-
+    gTextFlags.canSpeedUpPrint = TRUE;
     RunTextPrinters();
     return IsTextPrinterActive(windowId);
 }
@@ -1796,24 +1792,7 @@ static void PopulateSpeciesFromTrainerParty(int matchCallId, u8 *destStr)
     trainerId = GetLastBeatenRematchTrainerId(sMatchCallTrainers[matchCallId].trainerId);
     party = gTrainers[trainerId].party;
     monId = Random() % gTrainers[trainerId].partySize;
-
-    switch (gTrainers[trainerId].partyFlags)
-    {
-    case 0:
-    default:
-        speciesName = gSpeciesNames[party.NoItemDefaultMoves[monId].species];
-        break;
-    case F_TRAINER_PARTY_CUSTOM_MOVESET:
-        speciesName = gSpeciesNames[party.NoItemCustomMoves[monId].species];
-        break;
-    case F_TRAINER_PARTY_HELD_ITEM:
-        speciesName = gSpeciesNames[party.ItemDefaultMoves[monId].species];
-        break;
-    case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
-        speciesName = gSpeciesNames[party.ItemCustomMoves[monId].species];
-        break;
-    }
-
+    speciesName = gSpeciesNames[party.TrainerMon[monId].species];
     StringCopy(destStr, speciesName);
 }
 

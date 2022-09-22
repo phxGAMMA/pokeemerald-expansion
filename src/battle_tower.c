@@ -209,7 +209,7 @@ const u8 gTowerFemaleFacilityClasses[20] =
     FACILITY_CLASS_LASS
 };
 
-const u8 gTowerMaleTrainerGfxIds[30] =
+const u16 gTowerMaleTrainerGfxIds[30] =
 {
     OBJ_EVENT_GFX_HIKER,
     OBJ_EVENT_GFX_TUBER_M,
@@ -243,7 +243,7 @@ const u8 gTowerMaleTrainerGfxIds[30] =
     OBJ_EVENT_GFX_HIKER
 };
 
-const u8 gTowerFemaleTrainerGfxIds[20] =
+const u16 gTowerFemaleTrainerGfxIds[20] =
 {
     OBJ_EVENT_GFX_WOMAN_2,
     OBJ_EVENT_GFX_TUBER_F,
@@ -1257,11 +1257,11 @@ void SetEReaderTrainerGfxId(void)
     SetBattleFacilityTrainerGfxId(TRAINER_EREADER, 0);
 }
 
-u8 GetBattleFacilityTrainerGfxId(u16 trainerId)
+u16 GetBattleFacilityTrainerGfxId(u16 trainerId)
 {
     u32 i;
     u8 facilityClass;
-    u8 trainerObjectGfxId;
+    u16 trainerObjectGfxId;
 
     SetFacilityPtrsGetLevel();
     if (trainerId == TRAINER_EREADER)
@@ -3002,9 +3002,13 @@ void TryHideBattleTowerReporter(void)
 
 static void FillPartnerParty(u16 trainerId)
 {
+    u32 nameHash = 0;
+    u32 personalityValue;
+    u8 fixedIV;
+    u8 ability, gender, friendship;
     s32 i, j;
     u32 ivs, level;
-    u32 friendship;
+    u16 evs;
     u16 monId;
     u32 otID;
     u8 trainerName[(PLAYER_NAME_LENGTH * 3) + 1];
@@ -3041,6 +3045,7 @@ static void FillPartnerParty(u16 trainerId)
     }
     else if (trainerId >= TRAINER_CUSTOM_PARTNER)
     {
+        const struct TrainerMon *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.TrainerMon;
         otID = Random32();
 
         for (i = 0; i < 3; i++)
@@ -3048,61 +3053,103 @@ static void FillPartnerParty(u16 trainerId)
 
         for (i = 0; i < 3 && i < gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].partySize; i++)
         {
-            do
-            {
-                j = Random32();
-            } while (IsShinyOtIdPersonality(otID, j));
 
-            switch (gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].partyFlags)
-            {
-            case 0:
-            {
-                const struct TrainerMonNoItemDefaultMoves *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.NoItemDefaultMoves;
+            if (gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].doubleBattle == TRUE)
+                personalityValue = 0x80;
+            else if (gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].encounterMusic_gender & F_TRAINER_FEMALE)
+                personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
+            else
+                personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
 
-                CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, partyData[i].iv * 31 / 255, TRUE, j, TRUE, otID);
-                break;
+            if (partyData[i].gender == MON_MALE)
+                gender = MON_MALE;
+            else if (partyData[i].gender == MON_FEMALE)
+                gender = MON_FEMALE;
+            else if (partyData[i].gender == MON_GENDERLESS)
+                gender = MON_GENDERLESS;
+            else
+                gender = 0;
+
+            if ((partyData[i].nature > 0) || (partyData[i].gender > 0))
+            {
+                if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_EASY)
+                    CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl - 1, NULL, gender, partyData[i].nature, 0, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY);
+                else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_HARD)
+                    CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl + 1, NULL, gender, partyData[i].nature, 0, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY);
+                else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MED)
+                    CreateMonWithGenderNatureLetter(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, NULL, gender, partyData[i].nature, 0, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY);
             }
-            case F_TRAINER_PARTY_CUSTOM_MOVESET:
+            else
             {
-                const struct TrainerMonNoItemCustomMoves *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.NoItemCustomMoves;
+                if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_EASY)
+                    CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl - 1, NULL, TRUE, personalityValue, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY, 0);
+                else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_HARD)
+                    CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl + 1, NULL, TRUE, personalityValue, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY, 0);
+                else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MED)
+                    CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, NULL, TRUE, personalityValue, partyData[i].shiny ? OT_ID_RANDOM_SHINY : OT_ID_RANDOM_NO_SHINY, 0);
+            }
 
-                CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, partyData[i].iv * 31 / 255, TRUE, j, TRUE, otID);
+            if (partyData[i].abilityNum > 0)
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_ABILITY_NUM, &partyData[i].abilityNum);
 
+            if (partyData[i].friendship > 0)
+            {
+                if (partyData[i].friendship == MON_UNFRIENDLY)
+                    friendship = 0;
+                else if (partyData[i].friendship == MON_FRIENDLY)
+                    friendship = MAX_FRIENDSHIP;
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_FRIENDSHIP, &friendship);
+            }
+
+            if (partyData[i].pokeBall > 0)
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_POKEBALL, &partyData[i].pokeBall);
+
+            if (partyData[i].heldItem > 0)
+                SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
+
+            if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_EASY)
+            {
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    ivs = MAX_PER_STAT_IVS;
+                    evs = MAX_PER_STAT_EVS;
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &ivs);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV + j, &evs);
+                }
+            }
+            else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_HARD)
+            {
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    ivs = MIN_PER_STAT_IVS;
+                    evs = MIN_PER_STAT_EVS;
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &ivs);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV + j, &evs);
+                }
+            }
+            else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MED)
+            {
+                for (j = 0; j < NUM_STATS; j++)
+                {
+                    ivs = MAX_PER_STAT_IVS;
+                    evs = MIN_PER_STAT_EVS;
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_IV + j, &ivs);
+                    SetMonData(&gPlayerParty[i + 3], MON_DATA_HP_EV + j, &evs);
+                }
+            }
+
+            if (partyData[i].moves[0] != 0)
+            {
                 for (j = 0; j < 4; j++)
                 {
                     SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
                     SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
                 }
-                break;
-            }
-            case F_TRAINER_PARTY_HELD_ITEM:
-            {
-                const struct TrainerMonItemDefaultMoves *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.ItemDefaultMoves;
-
-                CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, partyData[i].iv * 31 / 255, TRUE, j, TRUE, otID);
-
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
-                break;
-            }
-            case F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM:
-            {
-                const struct TrainerMonItemCustomMoves *partyData = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].party.ItemCustomMoves;
-
-                CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, partyData[i].iv * 31 / 255, TRUE, j, TRUE, otID);
-
-                SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
-
-                for (j = 0; j < 4; j++)
-                {
-                    SetMonData(&gPlayerParty[i + 3], MON_DATA_MOVE1 + j, &partyData[i].moves[j]);
-                    SetMonData(&gPlayerParty[i + 3], MON_DATA_PP1 + j, &gBattleMoves[partyData[i].moves[j]].pp);
-                }
-                break;
-            }
             }
 
             StringCopy(trainerName, gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].trainerName);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_OT_NAME, trainerName);
+            CalculateMonStats(&gPlayerParty[i + 3]);
         }
     }
     else if (trainerId == TRAINER_EREADER)
@@ -3577,9 +3624,9 @@ static void FillTentTrainerParty_(u16 trainerId, u8 firstMonId, u8 monCount)
     }
 }
 
-u8 FacilityClassToGraphicsId(u8 facilityClass)
+u16 FacilityClassToGraphicsId(u8 facilityClass)
 {
-    u8 trainerObjectGfxId;
+    u16 trainerObjectGfxId;
     u8 i;
 
     // Search male classes.
