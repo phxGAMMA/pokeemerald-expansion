@@ -7,6 +7,7 @@ Route101_MapScripts::
 	.byte 0
 
 Route101_OnTransition:
+	call Common_EventScript_SetupEncounterGfxIdNightDay
 	call ProfBirch_EventScript_UpdateLocation
 	end
 

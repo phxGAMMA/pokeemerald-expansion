@@ -1,4 +1,5 @@
 #include "global.h"
+#include "rtc.h"
 #include "wild_encounter.h"
 #include "pokemon.h"
 #include "metatile_behavior.h"
@@ -374,6 +375,60 @@ static u16 GetCurrentMapWildMonHeaderId(void)
                     alteringCaveId = 0;
 
                 i += alteringCaveId;
+            }
+            else
+            {
+                u16 rnd = Random() % 100 + 1;
+                u16 mapTimeId = GetTimeOfDay();
+                if (mapTimeId == TIME_MORNING)
+                {
+                    if (rnd > 50)
+                        mapTimeId = TIME_MORNING;
+                    else if (rnd > 30)
+                        mapTimeId = TIME_DAY;
+                    else if (rnd > 20)
+                        mapTimeId = TIME_EVENING;
+                    else // (rnd > 0)
+                        mapTimeId = TIME_NIGHT;
+                }
+                else if (mapTimeId == TIME_DAY)
+                {
+                    if (rnd > 80)
+                        mapTimeId = TIME_MORNING;
+                    else if (rnd > 30)
+                        mapTimeId = TIME_DAY;
+                    else if (rnd > 10)
+                        mapTimeId = TIME_EVENING;
+                    else // (rnd > 0)
+                        mapTimeId = TIME_NIGHT;
+                }
+                else if (mapTimeId == TIME_EVENING)
+                {
+                    if (rnd > 90)
+                        mapTimeId = TIME_MORNING;
+                    else if (rnd > 70)
+                        mapTimeId = TIME_DAY;
+                    else if (rnd > 20)
+                        mapTimeId = TIME_EVENING;
+                    else // (rnd > 0)
+                        mapTimeId = TIME_NIGHT;
+                }
+                else // (mapTimeId == TIME_NIGHT)
+                {
+                    if (rnd > 80)
+                        mapTimeId = TIME_MORNING;
+                    else if (rnd > 70)
+                        mapTimeId = TIME_DAY;
+                    else if (rnd > 50)
+                        mapTimeId = TIME_EVENING;
+                    else // (rnd > 0)
+                        mapTimeId = TIME_NIGHT;
+                }
+
+                if (mapTimeId >= TIMES_COUNT)
+                    mapTimeId = 0;
+
+                i += mapTimeId;
             }
 
             return i;
