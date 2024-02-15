@@ -27,16 +27,16 @@ EventScript_SetupRivalOnBikeGfxIdMale::
 	return
 
 @ Unused
-Common_EventScript_SetupRivalGfxIdSameGender::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, EventScript_SetupRivalGfxIdMale2
-	goto_if_eq VAR_RESULT, FEMALE, EventScript_SetupRivalGfxIdFemale2
+Common_EventScript_SetupEncounterGfxIdNightDay::
+	gettimeofday
+	goto_if_eq VAR_0x8000, 3, EventScript_SetupZigzagoonGfxId
+	goto EventScript_SetupPoochyenaGfxId
 	end
 
-EventScript_SetupRivalGfxIdMale2::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+EventScript_SetupZigzagoonGfxId::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ZIGZAGOON_1
 	return
 
-EventScript_SetupRivalGfxIdFemale2::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+EventScript_SetupPoochyenaGfxId::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_POOCHYENA
 	return

@@ -16,6 +16,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "recorded_battle.h"
+#include "rtc.h"
 #include "string_util.h"
 #include "sound.h"
 #include "task.h"
@@ -79,7 +80,10 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
         ZeroEnemyPartyMons();
-        CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        if (GetTimeOfDay() == TIME_NIGHT)
+            CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        else
+            CreateMon(&gEnemyParty[0], SPECIES_POOCHYENA, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }

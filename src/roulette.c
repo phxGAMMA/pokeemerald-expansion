@@ -1561,7 +1561,7 @@ static u8 GetRandomForBallTravelDistance(u16 ballNum, u16 rand)
     case HAS_SHROOMISH:
     case HAS_TAILLOW:
         // one of the two is in party
-        if (gLocalTime.hours > 3 && gLocalTime.hours < 10)
+        if (GetTimeOfDay() == (TIME_MORNING | TIME_DAY))
         {
             if (ballNum < BALLS_PER_ROUND * 2 || (rand & 1))
                 return sRouletteTables[sRoulette->tableId].randDistanceLow / 2;
@@ -1579,7 +1579,7 @@ static u8 GetRandomForBallTravelDistance(u16 ballNum, u16 rand)
         break;
     case HAS_SHROOMISH | HAS_TAILLOW:
         // both are in party
-        if (gLocalTime.hours > 3 && gLocalTime.hours < 11)
+        if (GetTimeOfDay() == (TIME_MORNING | TIME_DAY))
         {
             if (ballNum < BALLS_PER_ROUND || (rand & 1))
                 return sRouletteTables[sRoulette->tableId].randDistanceLow / 2;
@@ -1598,7 +1598,7 @@ static u8 GetRandomForBallTravelDistance(u16 ballNum, u16 rand)
     case 0:
     default:
         // neither is in party
-        if (gLocalTime.hours > 3 && gLocalTime.hours < 10)
+        if (GetTimeOfDay() == (TIME_MORNING | TIME_DAY))
         {
             if (!(rand & 3))
                 return 1;
@@ -1645,7 +1645,7 @@ static void Task_InitBallRoll(u8 taskId)
     randTravelMod = GetRandomForBallTravelDistance(gTasks[taskId].tTotalBallNum, rand);
     randTravelDist = (rand % randTravelMod) - (randTravelMod / 2);
 
-    if (gLocalTime.hours < 13)
+    if (GetTimeOfDay() == (TIME_EVENING | TIME_NIGHT))
         startAngleId = 0;
     else
         startAngleId = 1;

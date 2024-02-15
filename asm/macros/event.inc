@@ -1735,6 +1735,11 @@
 	.2byte \quantity
 	.endm
 
+	@ Sets the value of VAR_0x8000 to the current time of morning, day, evening, night.
+	.macro gettimeofday
+	.byte 0xe3
+	.endm
+
 
 @ Supplementary
 

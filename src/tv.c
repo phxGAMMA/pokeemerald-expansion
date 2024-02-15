@@ -2600,7 +2600,7 @@ void DoPokeNews(void)
         {
             // News event is occurring, make comment depending on how much time is left
             gSaveBlock1Ptr->pokeNews[i].state = POKENEWS_STATE_ACTIVE;
-            if (gLocalTime.hours < 20)
+            if (GetTimeOfDay() != TIME_NIGHT)
                 ShowFieldMessage(sPokeNewsTextGroup_Ongoing[gSaveBlock1Ptr->pokeNews[i].kind]);
             else
                 ShowFieldMessage(sPokeNewsTextGroup_Ending[gSaveBlock1Ptr->pokeNews[i].kind]);
