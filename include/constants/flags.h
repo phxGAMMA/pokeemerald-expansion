@@ -43,9 +43,9 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 #define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_FORCE_NEUTRAL_NATURE     0x21
+#define FLAG_FORCE_ALL_PERFECT_IVS    0x22
+#define FLAG_FORCE_POKERUS            0x23
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
@@ -652,22 +652,22 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
+#define FLAG_UNUSED_0x264  0x264 // battle.h
+#define FLAG_UNUSED_0x265  0x265 // battle.h
+#define FLAG_UNUSED_0x266  0x266 // battle.h
+#define FLAG_UNUSED_0x267  0x267 // battle.h
+#define FLAG_UNUSED_0x268  0x268 // battle.h
+#define FLAG_UNUSED_0x269  0x269 // battle.h
+#define FLAG_UNUSED_0x26A  0x26A // battle.h
+#define FLAG_UNUSED_0x26B  0x26B // battle.h
+#define FLAG_UNUSED_0x26C  0x26C // item.h
+#define FLAG_UNUSED_0x26D  0x26D // item.h
+#define FLAG_UNUSED_0x26E  0x26E // overworld.h
+#define FLAG_UNUSED_0x26F  0x26F // overworld.h
+#define FLAG_UNUSED_0x270  0x270 // overworld.h
+#define FLAG_UNUSED_0x271  0x271 // pokemon.h
+#define FLAG_UNUSED_0x272  0x272 // pokemon.h
+#define FLAG_UNUSED_0x273  0x273 // pokemon.h
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
@@ -1502,15 +1502,15 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
+#define FLAG_SHINE01_GET                            (SYSTEM_FLAGS + 0x85)
+#define FLAG_SHINE02_GET                            (SYSTEM_FLAGS + 0x86)
+#define FLAG_SHINE03_GET                            (SYSTEM_FLAGS + 0x87)
+#define FLAG_SHINE04_GET                            (SYSTEM_FLAGS + 0x88)
+#define FLAG_SHINE05_GET                            (SYSTEM_FLAGS + 0x89)
+#define FLAG_SHINE06_GET                            (SYSTEM_FLAGS + 0x8A)
+#define FLAG_SHINE07_GET                            (SYSTEM_FLAGS + 0x8B)
+#define FLAG_SHINE08_GET                            (SYSTEM_FLAGS + 0x8C)
+#define NUM_SHINES                                  (1 + FLAG_SHINE08_GET - FLAG_SHINE01_GET)
 #define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
 #define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
 #define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag

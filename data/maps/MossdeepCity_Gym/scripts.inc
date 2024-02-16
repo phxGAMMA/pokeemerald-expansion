@@ -570,10 +570,11 @@ MossdeepCity_Gym_Text_ReceivedMindBadge:
 	.string "from TATE and LIZA.$"
 
 MossdeepCity_Gym_Text_ExplainMindBadgeTakeThis:
-	.string "TATE: The MIND BADGE enhances the\n"
-	.string "SP. ATK and SP. DEF of POKéMON.\p"
-	.string "LIZA: It also lets you use the HM move\n"
-	.string "DIVE outside of battle.\p"
+	.string "TATE: The DYNAMO BADGE makes all\n"
+	.string "POKéMON up to Level 45, even those\l"
+	.string "from trades, obey without question.\p"
+	.string "LIZA: And, it lets POKéMON use the\n"
+	.string "HM move DIVE outside of battle.\p"
 	.string "TATE: You should also take this, too.$"
 
 MossdeepCity_Gym_Text_ExplainCalmMind:

@@ -150,7 +150,8 @@ FortreeCity_Text_CitySign:
 
 FortreeCity_Text_GymSign:
 	.string "FORTREE CITY POKéMON GYM\n"
-	.string "LEADER: WINONA\p"
+	.string "LEADER: WINONA\l"
+	.string "LEVEL: 35\p"
 	.string "“The bird user taking flight into\n"
 	.string "the world.”$"
 

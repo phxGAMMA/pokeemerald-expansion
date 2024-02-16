@@ -148,28 +148,69 @@ void BattleAI_SetupFlags(void)
     else
 #endif
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
+    {
         AI_THINKING_STRUCT->aiFlags = GetAiScriptsInRecordedBattle();
+    }
     else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
+    {
         AI_THINKING_STRUCT->aiFlags = AI_FLAG_SAFARI;
+    }
     else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
+    {
         AI_THINKING_STRUCT->aiFlags = AI_FLAG_ROAMING;
+    }
     else if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+    {
         AI_THINKING_STRUCT->aiFlags = AI_FLAG_FIRST_BATTLE;
+    }
     else if (gBattleTypeFlags & BATTLE_TYPE_FACTORY)
+    {
         AI_THINKING_STRUCT->aiFlags = GetAiScriptsInBattleFactory();
+    }
     else if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
-        AI_THINKING_STRUCT->aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
+    {
+        AI_THINKING_STRUCT->aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY
+                             | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT
+                                   | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+                                          | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT;
+    }
     else if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
-        AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[gTrainerBattleOpponent_B].aiFlags;
+    {
+        if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+            AI_THINKING_STRUCT->aiFlags = 0;
+        else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            AI_THINKING_STRUCT->aiFlags |= AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY
+                                  | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT
+                                        | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+                                               | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT;
+        AI_THINKING_STRUCT->aiFlags |= gTrainers[gTrainerBattleOpponent_A].aiFlags | gTrainers[gTrainerBattleOpponent_B].aiFlags;
+    }
     else
-        AI_THINKING_STRUCT->aiFlags = gTrainers[gTrainerBattleOpponent_A].aiFlags;
+    {
+        if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+            AI_THINKING_STRUCT->aiFlags = 0;
+        else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            AI_THINKING_STRUCT->aiFlags |= AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY
+                                  | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT
+                                        | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES
+                                               | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT;
+        AI_THINKING_STRUCT->aiFlags |= gTrainers[gTrainerBattleOpponent_A].aiFlags;
+    }
 
     // check smart wild AI
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER)) && IsWildMonSmart())
+    {
+        if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+            AI_THINKING_STRUCT->aiFlags = 0;
+        else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            AI_THINKING_STRUCT->aiFlags |= AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY
+                                  | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_TRY_TO_FAINT
+                                               | AI_FLAG_HP_AWARE | AI_FLAG_RISKY;
         AI_THINKING_STRUCT->aiFlags |= GetWildAiFlags();
+    }
 
     if (gBattleTypeFlags & (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS) || gTrainers[gTrainerBattleOpponent_A].doubleBattle)
-        AI_THINKING_STRUCT->aiFlags |= AI_FLAG_DOUBLE_BATTLE; // Act smart in doubles and don't attack your partner.
+        AI_THINKING_STRUCT->aiFlags |= AI_FLAG_DOUBLE_BATTLE | AI_FLAG_HELP_PARTNER; // Act smart in doubles and don't attack your partner.
 }
 
 // sBattler_AI set in ComputeBattleAiScores

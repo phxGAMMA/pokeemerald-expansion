@@ -1406,7 +1406,8 @@ SootopolisCity_Movement_DestroyTask::
 
 SootopolisCity_Text_GymSign:
 	.string "SOOTOPOLIS CITY POKéMON GYM\n"
-	.string "LEADER: JUAN\p"
+	.string "LEADER: JUAN\l"
+	.string "LEVEL: 45\p"
 	.string "“The GYM LEADER with the beauty\n"
 	.string "of pure water!”$"
 

@@ -2426,14 +2426,56 @@ u8 DoFieldEndTurnEffects(void)
         case ENDTURN_STATUS_HEAL:
             for (gBattlerAttacker = 0; gBattlerAttacker < gBattlersCount; gBattlerAttacker++)
             {
-                if (B_AFFECTION_MECHANICS == TRUE
-                 && GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER
-                 && GetBattlerAffectionHearts(gBattlerAttacker) >= AFFECTION_FOUR_HEARTS
-                 && (Random() % 100 < 20))
+                if (B_AFFECTION_MECHANICS == TRUE)
                 {
-                    gBattleCommunication[MULTISTRING_CHOOSER] = 1;
-                    BattleScriptExecute(BattleScript_AffectionBasedStatusHeal);
-                    break;
+                    if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+                    {
+                        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER)
+                        {
+                            if ((GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                            {
+                                gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+                                BattleScriptExecute(BattleScript_AffectionBasedStatusHeal);
+                                break;
+                            }
+                        }
+                    }
+                    else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+                    {
+                        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                        {
+                            if ((GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                            {
+                                gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+                                BattleScriptExecute(BattleScript_AffectionBasedStatusHeal);
+                                break;
+                            }
+                        }
+                    }
+                    else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+                    {
+                        if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER || (B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                        {
+                            if ((GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                             || (GetBattlerAffectionHearts(gBattlerAttacker) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                            {
+                                gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+                                BattleScriptExecute(BattleScript_AffectionBasedStatusHeal);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
             gBattleStruct->turnCountersTracker++;
@@ -7149,7 +7191,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             case HOLD_EFFECT_DOUBLE_PRIZE:
                 if (GetBattlerSide(battler) == B_SIDE_PLAYER && !gBattleStruct->moneyMultiplierItem)
                 {
-                    gBattleStruct->moneyMultiplier *= 2;
+                    gBattleStruct->moneyMultiplier *= 4;
                     gBattleStruct->moneyMultiplierItem = 1;
                 }
                 break;
@@ -8140,7 +8182,7 @@ u8 IsMonDisobedient(void)
 {
     s32 rnd;
     s32 calc;
-    u8 obedienceLevel = 0;
+    u8 obedienceLevel = GetObedienceLevel();
     u8 levelReferenced;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
@@ -8158,25 +8200,6 @@ u8 IsMonDisobedient(void)
             return 0;
         if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
             return 0;
-        if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
-            return 0;
-
-        obedienceLevel = 10;
-
-        if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-            obedienceLevel = 20;
-        if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-            obedienceLevel = 30;
-        if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-            obedienceLevel = 40;
-        if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-            obedienceLevel = 50;
-        if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-            obedienceLevel = 60;
-        if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-            obedienceLevel = 70;
-        if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-            obedienceLevel = 80;
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8

@@ -122,14 +122,14 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRUNT_PETALBURG_WOODS] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
+        .trainerName = _("SHELLY"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntPetalburgWoods),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_ShellyPetalburgWoods),
     },
 
     [TRAINER_MARCEL] =
@@ -194,14 +194,14 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_GRUNT_RUSTURF_TUNNEL] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_M,
+        .trainerName = _("MATT"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntRusturfTunnel),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_MattRusturfTunnel),
     },
 
     [TRAINER_GRUNT_WEATHER_INST_1] =
@@ -213,7 +213,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst1),
+        .party = TRAINER_PARTY(sParty_GruntWeatherInstitute1),
     },
 
     [TRAINER_GRUNT_WEATHER_INST_2] =
@@ -225,7 +225,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst2),
+        .party = TRAINER_PARTY(sParty_GruntWeatherInstitute2),
     },
 
     [TRAINER_GRUNT_WEATHER_INST_3] =
@@ -237,31 +237,31 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst3),
+        .party = TRAINER_PARTY(sParty_GruntWeatherInstitute3),
     },
 
     [TRAINER_GRUNT_MUSEUM_1] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
+        .trainerName = _("SHELLY"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntMuseum1),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_ShellyMuseum),
     },
 
     [TRAINER_GRUNT_MUSEUM_2] =
     {
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
-        .trainerName = _("GRUNT"),
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_M,
+        .trainerName = _("MATT"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntMuseum2),
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_MattMuseum),
     },
 
     [TRAINER_GRUNT_SPACE_CENTER_1] =
@@ -321,7 +321,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst4),
+        .party = TRAINER_PARTY(sParty_GruntWeatherInstitute4),
     },
 
     [TRAINER_GRUNT_AQUA_HIDEOUT_5] =
@@ -369,7 +369,7 @@ const struct Trainer gTrainers[] = {
         .items = {ITEM_SUPER_POTION, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_Matt),
+        .party = TRAINER_PARTY(sParty_MattAquaHideout),
     },
 
     [TRAINER_ZANDER] =
@@ -5796,7 +5796,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_AmyAndLiv2),
     },
 
-    [TRAINER_GINA_AND_MIA_1] =
+    [TRAINER_GINA_AND_MIA] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5805,7 +5805,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GinaAndMia1),
+        .party = TRAINER_PARTY(sParty_GinaAndMia),
     },
 
     [TRAINER_MIU_AND_YUKI] =
@@ -5832,7 +5832,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_AmyAndLiv3),
     },
 
-    [TRAINER_GINA_AND_MIA_2] =
+    [TRAINER_GINA_AND_MIA_UNUSED] =
     {
         .trainerClass = TRAINER_CLASS_TWINS,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_TWINS,
@@ -5841,7 +5841,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GinaAndMia2),
+        .party = TRAINER_PARTY(sParty_GinaAndMiaUnused),
     },
 
     [TRAINER_AMY_AND_LIV_4] =
@@ -7161,7 +7161,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_GruntWeatherInst5),
+        .party = TRAINER_PARTY(sParty_GruntWeatherInstitute5),
     },
 
     [TRAINER_TABITHA_MT_CHIMNEY] =

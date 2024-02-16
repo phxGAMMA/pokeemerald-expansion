@@ -1954,6 +1954,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             const struct TrainerMon *partyData = trainer->party;
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
+            u32 species = SPECIES_DITTO;
+            u8 nature = NATURE_SERIOUS;
+            u8 lvl = 0;
+            u8 abilityNum = 2;
+            u8 friendship = 0;
+            u32 ivs;
+            u8 hp, atk, def, spa, spd, spe;
 
             if (trainer->doubleBattle == TRUE)
                 personalityValue = 0x80;
@@ -1962,32 +1969,152 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else
                 personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
 
+            if (partyData[i].species)
+                species = partyData[i].species;
             personalityValue += personalityHash << 8;
             if (partyData[i].gender == TRAINER_MON_MALE)
-                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, partyData[i].species);
+                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, species);
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
-                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
-            if (partyData[i].nature != 0)
-                ModifyPersonalityForNature(&personalityValue, partyData[i].nature - 1);
+                personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, species);
+            if (partyData[i].nature)
+                nature = partyData[i].nature;
+            ModifyPersonalityForNature(&personalityValue, nature - 1);
             if (partyData[i].isShiny)
             {
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[i].species, partyData[i].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            if (partyData[i].lvl)
+            {
+                lvl = partyData[i].lvl;
+                friendship = ((partyData[i].lvl * 250) / 100) + 5;
+            }
+            else
+            {
+                lvl = GetMonScaledLevel(TRUE);
+                friendship = ((GetMonScaledLevel(TRUE) * 250) / 100) + 5;
+            }
+            CreateMon(&party[i], species, lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[i]);
-            SetMonData(&party[i], MON_DATA_IVS, &(partyData[i].iv));
-            if (partyData[i].ev != NULL)
+            if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
             {
-                SetMonData(&party[i], MON_DATA_HP_EV, &(partyData[i].ev[0]));
-                SetMonData(&party[i], MON_DATA_ATK_EV, &(partyData[i].ev[1]));
-                SetMonData(&party[i], MON_DATA_DEF_EV, &(partyData[i].ev[2]));
-                SetMonData(&party[i], MON_DATA_SPATK_EV, &(partyData[i].ev[3]));
-                SetMonData(&party[i], MON_DATA_SPDEF_EV, &(partyData[i].ev[4]));
-                SetMonData(&party[i], MON_DATA_SPEED_EV, &(partyData[i].ev[5]));
+                if (partyData[i].iv)
+                {
+                    ivs = partyData[i].iv;
+                }
+                else
+                {
+                    hp  = 0;
+                    atk = 0;
+                    def = 0;
+                    spa = 0;
+                    spd = 0;
+                    spe = 0;
+                    ivs = TRAINER_PARTY_IVS(hp, atk, def, spe, spa, spd);
+                }
+
+                if (partyData[i].ev != NULL)
+                {
+                    hp  = partyData[i].ev[0];
+                    atk = partyData[i].ev[1];
+                    def = partyData[i].ev[2];
+                    spa = partyData[i].ev[3];
+                    spd = partyData[i].ev[4];
+                    spe = partyData[i].ev[5];
+                }
+                else
+                {
+                    hp  = 0;
+                    atk = 0;
+                    def = 0;
+                    spa = 0;
+                    spd = 0;
+                    spe = 0;
+                }
             }
+            else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            {
+                if (partyData[i].iv)
+                {
+                    ivs = partyData[i].iv;
+                }
+                else
+                {
+                    hp  = 31;
+                    atk = 31;
+                    def = 31;
+                    spa = 31;
+                    spd = 31;
+                    spe = 31;
+                    ivs = TRAINER_PARTY_IVS(hp, atk, def, spe, spa, spd);
+                }
+
+                if (partyData[i].ev != NULL)
+                {
+                    hp  = partyData[i].ev[0];
+                    atk = partyData[i].ev[1];
+                    def = partyData[i].ev[2];
+                    spa = partyData[i].ev[3];
+                    spd = partyData[i].ev[4];
+                    spe = partyData[i].ev[5];
+                }
+                else
+                {
+                    hp  = 252;
+                    atk = 0;
+                    def = 0;
+                    spa = 0;
+                    spd = 0;
+                    spe = 252;
+                }
+            }
+            else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+            {
+                if (partyData[i].iv)
+                {
+                    ivs = partyData[i].iv;
+                }
+                else
+                {
+                    hp  = 31;
+                    atk = 31;
+                    def = 31;
+                    spa = 31;
+                    spd = 31;
+                    spe = 31;
+                    ivs = TRAINER_PARTY_IVS(hp, atk, def, spe, spa, spd);
+                }
+
+                if (partyData[i].ev != NULL)
+                {
+                    hp  = partyData[i].ev[0];
+                    atk = partyData[i].ev[1];
+                    def = partyData[i].ev[2];
+                    spa = partyData[i].ev[3];
+                    spd = partyData[i].ev[4];
+                    spe = partyData[i].ev[5];
+                }
+                else
+                {
+                    hp  = 0;
+                    atk = 0;
+                    def = 0;
+                    spa = 0;
+                    spd = 0;
+                    spe = 0;
+                }
+            }
+            SetMonData(&party[i], MON_DATA_IVS, &ivs);
+            SetMonData(&party[i], MON_DATA_HP_EV, &hp);
+            SetMonData(&party[i], MON_DATA_ATK_EV, &atk);
+            SetMonData(&party[i], MON_DATA_DEF_EV, &def);
+            SetMonData(&party[i], MON_DATA_SPATK_EV, &spa);
+            SetMonData(&party[i], MON_DATA_SPDEF_EV, &spd);
+            SetMonData(&party[i], MON_DATA_SPEED_EV, &spe);
+            if (species == SPECIES_DITTO)
+                SetMonData(&party[i], MON_DATA_ABILITY_NUM, &abilityNum);
             if (partyData[i].ability != ABILITY_NONE)
             {
                 const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[i].species];
@@ -2000,7 +2127,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 if (j < maxAbilities)
                     SetMonData(&party[i], MON_DATA_ABILITY_NUM, &j);
             }
-            SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(partyData[i].friendship));
+            if (partyData[i].friendship)
+                friendship = partyData[i].friendship;
+            SetMonData(&party[i], MON_DATA_FRIENDSHIP, &friendship);
             if (partyData[i].ball != ITEM_NONE)
             {
                 ball = partyData[i].ball;
@@ -2963,7 +3092,7 @@ static void BattleStartClearSetData(void)
     memset(&gBattleResults, 0, sizeof(gBattleResults));
     memset(&gBattleScripting, 0, sizeof(gBattleScripting));
 
-    gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
     gBattleScripting.expOnCatch = (B_EXP_CATCH >= GEN_6);
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
@@ -3007,7 +3136,7 @@ static void BattleStartClearSetData(void)
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
     {
-        if (!(gBattleTypeFlags & BATTLE_TYPE_LINK) && gSaveBlock2Ptr->optionsBattleSceneOff == TRUE)
+        if (!(gBattleTypeFlags & BATTLE_TYPE_LINK) && gSaveBlock2Ptr->optionsBattleSceneOn == FALSE)
             gHitMarker |= HITMARKER_NO_ANIMATIONS;
     }
     else if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)) && GetBattleSceneInRecordedBattle())
@@ -4142,14 +4271,20 @@ static void HandleTurnActionSelectionState(void)
                         *(gBattleStruct->stateIdAfterSelScript + battler) = STATE_BEFORE_ACTION_CHOSEN;
                         return;
                     }
-
-                    if (((gBattleTypeFlags & (BATTLE_TYPE_LINK
-                                            | BATTLE_TYPE_FRONTIER_NO_PYRAMID
-                                            | BATTLE_TYPE_EREADER_TRAINER
-                                            | BATTLE_TYPE_RECORDED_LINK))
-                                            && !gTestRunnerEnabled)
-                                            // Or if currently held by Sky Drop
-                                            || gStatuses3[battler] & STATUS3_SKY_DROPPED)
+                    if ((gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY
+                            && GetBattlerSide(battler) == B_SIDE_OPPONENT
+                            && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                        || (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED
+                            && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                        || (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD
+                            && GetBattlerSide(battler) == B_SIDE_PLAYER
+                            && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                        || (gBattleTypeFlags & (BATTLE_TYPE_LINK
+                                              | BATTLE_TYPE_FRONTIER_NO_PYRAMID
+                                              | BATTLE_TYPE_EREADER_TRAINER
+                                              | BATTLE_TYPE_RECORDED_LINK)
+                            && !gTestRunnerEnabled)
+                        || (gStatuses3[battler] & STATUS3_SKY_DROPPED))
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;

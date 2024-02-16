@@ -789,10 +789,19 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
             if (LURE_STEP_COUNT != 0)
                 totalRerolls += 1;
 
-            while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
+            if (FlagGet(FLAG_FORCE_NEUTRAL_NATURE))
             {
-                personality = Random32();
-                totalRerolls--;
+                u8 nature = Random() % 5 * 6;
+                while (nature != GetNatureFromPersonality(personality))
+                    personality = Random32();
+            }
+            else
+            {
+                while (GET_SHINY_VALUE(value, personality) >= SHINY_ODDS && totalRerolls > 0)
+                {
+                    personality = Random32();
+                    totalRerolls--;
+                }
             }
         }
     }
@@ -848,7 +857,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
 
-        if (gSpeciesInfo[species].allPerfectIVs)
+        if (gSpeciesInfo[species].allPerfectIVs || FlagGet(FLAG_FORCE_ALL_PERFECT_IVS))
         {
             iv = MAX_PER_STAT_IVS;
             SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
@@ -901,6 +910,12 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                     break;
                 }
             }
+        }
+
+        if (FlagGet(FLAG_FORCE_POKERUS))
+        {
+            u8 pokerus = 0x10;
+            SetBoxMonData(boxMon, MON_DATA_POKERUS, &pokerus);
         }
     }
 
@@ -3121,6 +3136,7 @@ const u32 sExpCandyExperienceTable[] = {
     [EXP_3000 - 1] = 3000,
     [EXP_10000 - 1] = 10000,
     [EXP_30000 - 1] = 30000,
+    [EXP_50000 - 1] = 50000,
 };
 
 // Returns TRUE if the item has no effect on the Pokémon, FALSE otherwise
@@ -3142,6 +3158,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     u8 effectFlags;
     s8 evChange;
     u16 evCount;
+    u8 obedienceLevel = GetObedienceLevel();
 
     // Get item hold effect
     heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, NULL);
@@ -3180,7 +3197,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
         case 3:
             // Rare Candy / EXP Candy
             if ((itemEffect[i] & ITEM3_LEVEL_UP)
-             && GetMonData(mon, MON_DATA_LEVEL, NULL) != MAX_LEVEL)
+             && GetMonData(mon, MON_DATA_LEVEL, NULL) < obedienceLevel)
             {
                 u8 param = ItemId_GetHoldEffectParam(item);
                 dataUnsigned = 0;
@@ -3193,8 +3210,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                 {
                     u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
                     dataUnsigned = sExpCandyExperienceTable[param - 1] + GetMonData(mon, MON_DATA_EXP, NULL);
-                    if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
-                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
+                    if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][obedienceLevel])
+                        dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][obedienceLevel];
                 }
 
                 if (dataUnsigned != 0) // Failsafe
@@ -3803,7 +3820,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
         holdEffect = ItemId_GetHoldEffect(heldItem);
 
     // Prevent evolution with Everstone, unless we're just viewing the party menu with an evolution item
-    if (holdEffect == HOLD_EFFECT_PREVENT_EVOLVE
+    if ((holdEffect == HOLD_EFFECT_PREVENT_EVOLVE || gSaveBlock2Ptr->optionsEverstoneOn == TRUE)
         && mode != EVO_MODE_ITEM_CHECK
     #if P_KADABRA_EVERSTONE >= GEN_4
         && species != SPECIES_KADABRA
@@ -4477,7 +4494,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
         {
             s8 mod = sFriendshipEventModifiers[event][friendshipLevel];
             if (mod > 0 && holdEffect == HOLD_EFFECT_FRIENDSHIP_UP)
-                mod = (150 * mod) / 100;
+                mod = (200 * mod) / 100;
             friendship += mod;
             if (mod > 0)
             {
@@ -4499,6 +4516,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 {
     u8 evs[NUM_STATS];
     u16 evIncrease = 0;
+    u8 evGain = 0;
     u16 totalEVs = 0;
     u16 heldItem;
     u8 holdEffect;
@@ -4519,6 +4537,11 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         holdEffect = ItemId_GetHoldEffect(heldItem);
     }
 
+    if (gSaveBlock2Ptr->optionsMachoBraceOn == TRUE
+        || holdEffect == HOLD_EFFECT_MACHO_BRACE
+        || holdEffect == HOLD_EFFECT_POWER_ITEM)
+            evGain++;
+
     stat = ItemId_GetSecondaryId(heldItem);
     bonus = ItemId_GetHoldEffectParam(heldItem);
 
@@ -4534,7 +4557,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
             break;
 
         if (CheckPartyHasHadPokerus(mon, 0))
-            multiplier = 2;
+            multiplier = 4;
         else
             multiplier = 1;
 
@@ -4543,37 +4566,37 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
         case STAT_HP:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_HP)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_HP + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_HP * multiplier;
             break;
         case STAT_ATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_ATK)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Attack + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Attack * multiplier;
             break;
         case STAT_DEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_DEF)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Defense + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Defense * multiplier;
             break;
         case STAT_SPEED:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPEED)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_Speed + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_Speed * multiplier;
             break;
         case STAT_SPATK:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPATK)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpAttack + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpAttack * multiplier;
             break;
         case STAT_SPDEF:
             if (holdEffect == HOLD_EFFECT_POWER_ITEM && stat == STAT_SPDEF)
                 evIncrease = (gSpeciesInfo[defeatedSpecies].evYield_SpDefense + bonus) * multiplier;
-            else
+            else if (evGain)
                 evIncrease = gSpeciesInfo[defeatedSpecies].evYield_SpDefense * multiplier;
             break;
         }
@@ -6111,4 +6134,86 @@ u16 GetSpeciesPreEvolution(u16 species)
     }
 
     return SPECIES_NONE;
+}
+
+u8 GetObedienceLevel(void)
+{
+    u8 obedienceLevel = 10;
+    if (FlagGet(FLAG_BADGE01_GET))
+        obedienceLevel = 15;
+    if (FlagGet(FLAG_BADGE02_GET))
+        obedienceLevel = 20;
+    if (FlagGet(FLAG_BADGE03_GET))
+        obedienceLevel = 25;
+    if (FlagGet(FLAG_BADGE04_GET))
+        obedienceLevel = 30;
+    if (FlagGet(FLAG_BADGE05_GET))
+        obedienceLevel = 35;
+    if (FlagGet(FLAG_BADGE06_GET))
+        obedienceLevel = 40;
+    if (FlagGet(FLAG_BADGE07_GET))
+        obedienceLevel = 45;
+    if (FlagGet(FLAG_BADGE08_GET))
+        obedienceLevel = 50;
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+        obedienceLevel = 60;
+    return obedienceLevel;
+}
+
+u8 GetMonScaledLevel(bool8 isTrainer)
+{
+    u8 partyMon;
+    u8 boxCount, boxMon;
+    s32 levelCount = 0;
+    s32 monCount = 0;
+    u8 monLevel, minLevel, maxLevel;
+    u8 obedienceLevel = GetObedienceLevel();
+
+    for (partyMon = 0; partyMon < PARTY_SIZE; partyMon++)
+    {
+        if (GetMonData(&gPlayerParty[partyMon], MON_DATA_SANITY_HAS_SPECIES, NULL)
+            && !(GetMonData(&gPlayerParty[partyMon], MON_DATA_IS_EGG, NULL))
+            && !(GetMonData(&gPlayerParty[partyMon], MON_DATA_SANITY_IS_BAD_EGG, NULL)))
+        {
+            monLevel = GetLevelFromMonExp(&gPlayerParty[partyMon]);
+            if (monLevel >= obedienceLevel - 5)
+                levelCount += monLevel;
+            monCount++;
+        }
+    }
+
+    for (boxCount = 0; boxCount < TOTAL_BOXES_COUNT; boxCount++)
+    {
+        for (boxMon = 0; boxMon < IN_BOX_COUNT; boxMon++)
+        {
+            if (GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_SANITY_HAS_SPECIES, NULL)
+                && !(GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_IS_EGG, NULL))
+                && !(GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_SANITY_IS_BAD_EGG, NULL)))
+            {
+                monLevel = GetLevelFromBoxMonExp(&gPokemonStoragePtr->boxes[boxCount][boxMon]);
+                if (monLevel >= obedienceLevel - 5)
+                    levelCount += monLevel;
+                monCount++;
+            }
+        }
+    }
+
+    maxLevel = levelCount / monCount;
+    if (maxLevel < obedienceLevel - 5)
+        maxLevel = obedienceLevel - 5;
+    if (maxLevel > obedienceLevel)
+        maxLevel = obedienceLevel;
+    minLevel = maxLevel - 5;
+
+    if (isTrainer == TRUE)
+    {
+        if (IS_LEAGUE_BATTLE)
+            return obedienceLevel;
+        else
+            return maxLevel - 4 + 1;
+    }
+    else
+    {
+        return minLevel + Random() % (maxLevel - minLevel) + 1;
+    }
 }

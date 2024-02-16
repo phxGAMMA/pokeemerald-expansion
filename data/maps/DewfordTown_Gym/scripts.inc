@@ -401,10 +401,10 @@ DewfordTown_Gym_Text_ReceivedKnuckleBadge:
 
 DewfordTown_Gym_Text_KnuckleBadgeInfoTakeThis:
 	.string "The KNUCKLE BADGE makes all POKéMON\n"
-	.string "up to Level 30, even those you get in\l"
+	.string "up to Level 20, even those from\l"
 	.string "trades, obey without question.\p"
-	.string "And, you'll be able to use the HM move\n"
-	.string "FLASH outside of battle.\p"
+	.string "And, it lets POKéMON use the\n"
+	.string "HM move FLASH outside of battle.\p"
 	.string "If you'd like, use this TECHNICAL\n"
 	.string "MACHINE, too.$"
 
