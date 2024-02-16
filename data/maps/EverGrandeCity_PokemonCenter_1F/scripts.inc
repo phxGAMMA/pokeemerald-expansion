@@ -3,11 +3,10 @@
 
 EverGrandeCity_PokemonCenter_1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EverGrandeCity_PokemonCenter_1F_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+	map_script MAP_SCRIPT_ON_LOAD, CableClub_OnLoad
 	.byte 0
 
 EverGrandeCity_PokemonCenter_1F_OnTransition:
-	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
 	call_if_unset FLAG_MET_SCOTT_IN_EVERGRANDE, EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott
 	end
 
@@ -17,8 +16,14 @@ EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott::
 	return
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_NURSE
 	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+EverGrandeCity_PokemonCenter_1F_EventScript_Assistant::
+	call Common_EventScript_PkmnCenterAssistant
 	waitmessage
 	waitbuttonpress
 	release

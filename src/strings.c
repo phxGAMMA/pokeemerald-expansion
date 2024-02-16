@@ -1852,3 +1852,8 @@ const u8 gText_TrainerTipsRegister[] = _("REGISTER");
 const u8 gText_TrainerTipsEvolution[] = _("EVOLUTION");
 const u8 gText_TrainerTipsPockets[] = _("POCKETS");
 const u8 gText_TrainerTipsDecoration[] = _("DECORATION");
+
+// Pokémon Center Assistant
+const u8 gText_RelearnMove[] = _("RELEARN MOVE");
+const u8 gText_DeleteMove[] = _("DELETE MOVE");
+const u8 gText_RateName[] = _("RATE NAME");

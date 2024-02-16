@@ -4,6 +4,7 @@ FortreeCity_MapScripts::
 	.byte 0
 
 FortreeCity_OnTransition:
+	setrespawn HEAL_LOCATION_FORTREE_CITY
 	setflag FLAG_VISITED_FORTREE_CITY
 	end
 

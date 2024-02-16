@@ -3064,4 +3064,9 @@ extern const u8 gText_TrainerTipsEvolution[];
 extern const u8 gText_TrainerTipsPockets[];
 extern const u8 gText_TrainerTipsDecoration[];
 
+// Pokémon Center Assistant
+extern const u8 gText_RelearnMove[];
+extern const u8 gText_DeleteMove[];
+extern const u8 gText_RateName[];
+
 #endif // GUARD_STRINGS_H

@@ -1975,6 +1975,7 @@ static const struct SpriteFrameImage sPicTable_UnionRoomAttendant[] = {
     overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 1),
     overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 2),
     overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 2),
+    overworld_frame(gObjectEventPic_UnionRoomAttendant, 2, 4, 3),
 };
 
 static const struct SpriteFrameImage sPicTable_Sudowoodo[] = {

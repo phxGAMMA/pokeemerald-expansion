@@ -1,4 +1,5 @@
 CableClub_OnTransition:
+	special InitUnionRoom
 	call CableClub_EventScript_HideOrShowMysteryGiftMan
 	end
 
@@ -49,6 +50,7 @@ CableClub_EventScript_MysteryGiftThankYou2::
 	end
 
 CableClub_OnWarp:
+	special InitUnionRoom
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_SINGLE_BATTLE, CableClub_EventScript_CheckTurnAttendant
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_DOUBLE_BATTLE, CableClub_EventScript_CheckTurnAttendant
 	map_script_2 VAR_CABLE_CLUB_STATE, USING_MULTI_BATTLE, CableClub_EventScript_CheckTurnAttendant
@@ -66,6 +68,7 @@ CableClub_EventScript_DontTurnAttendant::
 	end
 
 CableClub_OnLoad:
+	special InitUnionRoom
 	goto_if_eq VAR_CABLE_CLUB_STATE, USING_SINGLE_BATTLE, CableClub_EventScript_OnLoadFromColosseum
 	goto_if_eq VAR_CABLE_CLUB_STATE, USING_DOUBLE_BATTLE, CableClub_EventScript_OnLoadFromColosseum
 	goto_if_eq VAR_CABLE_CLUB_STATE, USING_MULTI_BATTLE, CableClub_EventScript_OnLoadFromColosseum
@@ -1255,10 +1258,6 @@ EventScript_CloseMossdeepGameCornerBarrier::
 	setmetatile 5, 2, METATILE_MossdeepGameCorner_CounterClosed_Top, TRUE
 	setmetatile 5, 3, METATILE_MossdeepGameCorner_CounterClosed_Bottom, TRUE
 	return
-
-CableClub_OnResume:
-	special InitUnionRoom
-	end
 
 MossdeepCity_GameCorner_1F_EventScript_InfoMan2::
 	lock

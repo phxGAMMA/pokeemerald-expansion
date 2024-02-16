@@ -15,6 +15,7 @@ DewfordTown_MapScripts::
 	.byte 0
 
 DewfordTown_OnTransition:
+	setrespawn HEAL_LOCATION_DEWFORD_TOWN
 	setflag FLAG_VISITED_DEWFORD_TOWN
 	end
 
