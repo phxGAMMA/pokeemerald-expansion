@@ -3055,4 +3055,9 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
+// Pokémon Center Assistant
+extern const u8 gText_RelearnMove[];
+extern const u8 gText_DeleteMove[];
+extern const u8 gText_RateName[];
+
 #endif // GUARD_STRINGS_H

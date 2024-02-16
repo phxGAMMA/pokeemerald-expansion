@@ -3,6 +3,7 @@ EverGrandeCity_MapScripts::
 	.byte 0
 
 EverGrandeCity_OnTransition:
+	setrespawn HEAL_LOCATION_EVER_GRANDE_CITY
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 

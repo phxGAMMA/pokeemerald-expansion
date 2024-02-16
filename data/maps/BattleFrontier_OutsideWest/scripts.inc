@@ -12,6 +12,7 @@ BattleFrontier_OutsideWest_MapScripts::
 	.byte 0
 
 BattleFrontier_OutsideWest_OnTransition:
+	setrespawn HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	end

@@ -4,6 +4,7 @@ PacifidlogTown_MapScripts::
 	.byte 0
 
 PacifidlogTown_OnTransition:
+	setrespawn HEAL_LOCATION_PACIFIDLOG_TOWN
 	setflag FLAG_VISITED_PACIFIDLOG_TOWN
 	end
 

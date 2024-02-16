@@ -7,6 +7,7 @@ OldaleTown_MapScripts::
 	.byte 0
 
 OldaleTown_OnTransition:
+	setrespawn HEAL_LOCATION_OLDALE_TOWN
 	call Common_EventScript_SetupRivalGfxId
 	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
