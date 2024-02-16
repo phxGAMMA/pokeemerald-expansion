@@ -980,9 +980,15 @@ static void CB2_GiveStarter(void)
 {
     u16 starterMon;
 
+    FlagSet(FLAG_FORCE_NEUTRAL_NATURE);
+    FlagSet(FLAG_FORCE_ALL_PERFECT_IVS);
+    FlagSet(FLAG_FORCE_POKERUS);
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
     ScriptGiveMon(starterMon, 5, ITEM_NONE, 0, 0, 0);
+    FlagClear(FLAG_FORCE_NEUTRAL_NATURE);
+    FlagClear(FLAG_FORCE_ALL_PERFECT_IVS);
+    FlagClear(FLAG_FORCE_POKERUS);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);

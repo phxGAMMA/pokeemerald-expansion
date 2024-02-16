@@ -241,6 +241,8 @@ static EWRAM_DATA u16 sPartyMenuItemId = 0;
 EWRAM_DATA u8 gBattlePartyCurrentOrder[PARTY_SIZE / 2] = {0}; // bits 0-3 are the current pos of Slot 1, 4-7 are Slot 2, and so on
 static EWRAM_DATA u8 sInitialLevel = 0;
 static EWRAM_DATA u8 sFinalLevel = 0;
+static EWRAM_DATA u32 sInitialExp = 0;
+static EWRAM_DATA u32 sFinalExp = 0;
 
 // IWRAM common
 void (*gItemUseCB)(u8, TaskFunc);
@@ -5472,9 +5474,12 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;
     u8 holdEffectParam = ItemId_GetHoldEffectParam(*itemPtr);
+    u16 targetSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    u8 obedienceLevel = GetObedienceLevel();
 
+    sInitialExp = GetMonData(mon, MON_DATA_EXP);
     sInitialLevel = GetMonData(mon, MON_DATA_LEVEL);
-    if (sInitialLevel != MAX_LEVEL)
+    if (sInitialLevel < obedienceLevel)
     {
         BufferMonStatsToTaskData(mon, arrayPtr);
         cannotUseEffect = ExecuteTableBasedItemEffect(mon, *itemPtr, gPartyMenu.slotId, 0);
@@ -5487,7 +5492,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     PlaySE(SE_SELECT);
     if (cannotUseEffect)
     {
-        u16 targetSpecies = SPECIES_NONE;
+        targetSpecies = SPECIES_NONE;
 
         // Resets values to 0 so other means of teaching moves doesn't overwrite levels
         sInitialLevel = 0;
@@ -5529,7 +5534,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
             }
             else // Exp Candies
             {
-                ConvertIntToDecimalStringN(gStringVar2, sExpCandyExperienceTable[holdEffectParam - 1], STR_CONV_MODE_LEFT_ALIGN, 6);
+                sFinalExp = sExpCandyExperienceTable[holdEffectParam - 1] + sInitialExp;
+                if (sFinalExp > gExperienceTables[gSpeciesInfo[targetSpecies].growthRate][obedienceLevel])
+                    sFinalExp = gExperienceTables[gSpeciesInfo[targetSpecies].growthRate][obedienceLevel];
+                ConvertIntToDecimalStringN(gStringVar2, sFinalExp - sInitialExp, STR_CONV_MODE_LEFT_ALIGN, 6);
                 ConvertIntToDecimalStringN(gStringVar3, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
                 StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
             }

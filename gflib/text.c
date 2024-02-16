@@ -851,8 +851,9 @@ bool8 TextPrinterWaitAutoMode(struct TextPrinter *textPrinter)
 {
     struct TextPrinterSubStruct *subStruct = (struct TextPrinterSubStruct *)(&textPrinter->subStructFields);
 
-    if (subStruct->autoScrollDelay == 49)
+    if (subStruct->autoScrollDelay == 120)
     {
+        subStruct->autoScrollDelay = 0;
         return TRUE;
     }
     else
@@ -865,18 +866,15 @@ bool8 TextPrinterWaitAutoMode(struct TextPrinter *textPrinter)
 bool16 TextPrinterWaitWithDownArrow(struct TextPrinter *textPrinter)
 {
     bool8 result = FALSE;
-    if (gTextFlags.autoScroll != 0)
+    TextPrinterDrawDownArrow(textPrinter);
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
-        result = TextPrinterWaitAutoMode(textPrinter);
+        result = TRUE;
+        PlaySE(SE_SELECT);
     }
     else
     {
-        TextPrinterDrawDownArrow(textPrinter);
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            result = TRUE;
-            PlaySE(SE_SELECT);
-        }
+        result = TextPrinterWaitAutoMode(textPrinter);
     }
     return result;
 }
@@ -884,17 +882,14 @@ bool16 TextPrinterWaitWithDownArrow(struct TextPrinter *textPrinter)
 bool16 TextPrinterWait(struct TextPrinter *textPrinter)
 {
     bool16 result = FALSE;
-    if (gTextFlags.autoScroll != 0)
+    if (JOY_NEW(A_BUTTON | B_BUTTON))
     {
-        result = TextPrinterWaitAutoMode(textPrinter);
+        result = TRUE;
+        PlaySE(SE_SELECT);
     }
     else
     {
-        if (JOY_NEW(A_BUTTON | B_BUTTON))
-        {
-            result = TRUE;
-            PlaySE(SE_SELECT);
-        }
+        result = TextPrinterWaitAutoMode(textPrinter);
     }
     return result;
 }

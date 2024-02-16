@@ -3004,6 +3004,7 @@ void TryHideBattleTowerReporter(void)
 static void FillPartnerParty(u16 trainerId)
 {
     s32 i, j;
+    u32 iv, ev;
     u32 ivs, level, personality;
     u32 friendship;
     u16 monId;
@@ -3073,16 +3074,33 @@ static void FillPartnerParty(u16 trainerId)
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
             CustomTrainerPartyAssignMoves(&gPlayerParty[i+3], &partyData[i]);
 
-            SetMonData(&gPlayerParty[i+3], MON_DATA_IVS, &(partyData[i].iv));
-            if (partyData[i].ev != NULL)
+            if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
             {
-                SetMonData(&gPlayerParty[i+3], MON_DATA_HP_EV, &(partyData[i].ev[0]));
-                SetMonData(&gPlayerParty[i+3], MON_DATA_ATK_EV, &(partyData[i].ev[1]));
-                SetMonData(&gPlayerParty[i+3], MON_DATA_DEF_EV, &(partyData[i].ev[2]));
-                SetMonData(&gPlayerParty[i+3], MON_DATA_SPATK_EV, &(partyData[i].ev[3]));
-                SetMonData(&gPlayerParty[i+3], MON_DATA_SPDEF_EV, &(partyData[i].ev[4]));
-                SetMonData(&gPlayerParty[i+3], MON_DATA_SPEED_EV, &(partyData[i].ev[5]));
+                iv = 31;
+                ev = 124;
             }
+            else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            {
+                iv = 0;
+                ev = 0;
+            }
+            else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+            {
+                iv = 0;
+                ev = 124;
+            }
+            SetMonData(&gPlayerParty[i+3], MON_DATA_HP_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_ATK_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_DEF_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPATK_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPDEF_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPEED_IV, &iv);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_HP_EV, &ev);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_ATK_EV, &ev);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_DEF_EV, &ev);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPATK_EV, &ev);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPDEF_EV, &ev);
+            SetMonData(&gPlayerParty[i+3], MON_DATA_SPEED_EV, &ev);
             if (partyData[i].ability != ABILITY_NONE)
             {
                 const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[partyData[i].species];

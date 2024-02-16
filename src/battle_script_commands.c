@@ -1739,8 +1739,45 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)
         calc = (calc * 5) / 3; // 1.66 Gravity acc boost
 
-    if (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS)
-        calc = (calc * 90) / 100;
+    if (B_AFFECTION_MECHANICS == TRUE)
+    {
+        if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+        {
+            if (GetBattlerSide(battlerDef) == B_SIDE_PLAYER)
+            {
+                if ((GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                    calc = (calc * 90) / 100;
+            }
+        }
+        else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+        {
+            if (GetBattlerSide(battlerDef) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            {
+                if ((GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                    calc = (calc * 90) / 100;
+            }
+        }
+        else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+        {
+            if (GetBattlerSide(battlerDef) == B_SIDE_PLAYER || (B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+            {
+                if ((GetBattlerAffectionHearts(battlerDef) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                 || (GetBattlerAffectionHearts(battlerDef) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                    calc = (calc * 90) / 100;
+            }
+        }
+    }
 
     return calc;
 }
@@ -1896,6 +1933,7 @@ static void Cmd_ppreduce(void)
 s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordAbility, u32 abilityAtk, u32 abilityDef, u32 holdEffectAtk)
 {
     s32 critChance = 0;
+    u8 critBonus = 0;
 
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT || gStatuses3[battlerAtk] & STATUS3_CANT_SCORE_A_CRIT
        || abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR)
@@ -1910,12 +1948,52 @@ s32 CalcCritChanceStageArgs(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     }
     else
     {
+        if (B_AFFECTION_MECHANICS == TRUE)
+        {
+            if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+            {
+                if (GetBattlerSide(battlerAtk) == B_SIDE_PLAYER)
+                {
+                    if ((GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                        critBonus = 1 * (GetBattlerAffectionHearts(battlerAtk));
+                }
+            }
+            else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+            {
+                if (GetBattlerSide(battlerAtk) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+                {
+                    if ((GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                        critBonus = 1 * (GetBattlerAffectionHearts(battlerAtk));
+                }
+            }
+            else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+            {
+                if (GetBattlerSide(battlerAtk) == B_SIDE_PLAYER || (B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                {
+                    if ((GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS && Random() % 100 < 25)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FOUR_HEARTS && Random() % 100 < 20)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_THREE_HEARTS && Random() % 100 < 15)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_TWO_HEARTS && Random() % 100 < 10)
+                     || (GetBattlerAffectionHearts(battlerAtk) == AFFECTION_ONE_HEART && Random() % 100 < 5))
+                        critBonus = 1 * (GetBattlerAffectionHearts(battlerAtk));
+                }
+            }
+        }
+
         critChance  = 2 * ((gBattleMons[battlerAtk].status2 & STATUS2_FOCUS_ENERGY) != 0)
                     + (gBattleMoves[gCurrentMove].highCritRatio)
                     + (holdEffectAtk == HOLD_EFFECT_SCOPE_LENS)
                     + 2 * (holdEffectAtk == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[battlerAtk].species == SPECIES_CHANSEY)
                     + 2 * BENEFITS_FROM_LEEK(battlerAtk, holdEffectAtk)
-                    + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
+                    + 2 * (critBonus)
                     + (abilityAtk == ABILITY_SUPER_LUCK)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
 
@@ -2047,12 +2125,44 @@ static void Cmd_adjustdamage(void)
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
         gSpecialStatuses[gBattlerTarget].focusSashed = TRUE;
     }
-    else if (B_AFFECTION_MECHANICS == TRUE && GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER && affectionScore >= AFFECTION_THREE_HEARTS)
+    else if (B_AFFECTION_MECHANICS == TRUE)
     {
-        if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 20)
-         || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 15)
-         || (affectionScore == AFFECTION_THREE_HEARTS && rand < 10))
-            gSpecialStatuses[gBattlerTarget].affectionEndured = TRUE;
+        if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY)
+        {
+            if (GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER)
+            {
+                if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 25)
+                 || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 20)
+                 || (affectionScore == AFFECTION_THREE_HEARTS && rand < 15)
+                 || (affectionScore == AFFECTION_TWO_HEARTS && rand < 10)
+                 || (affectionScore == AFFECTION_ONE_HEART && rand < 5))
+                    gSpecialStatuses[gBattlerTarget].affectionEndured = TRUE;
+            }
+        }
+        else if (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD)
+        {
+            if (GetBattlerSide(gBattlerTarget) == B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+            {
+                if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 25)
+                 || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 20)
+                 || (affectionScore == AFFECTION_THREE_HEARTS && rand < 15)
+                 || (affectionScore == AFFECTION_TWO_HEARTS && rand < 10)
+                 || (affectionScore == AFFECTION_ONE_HEART && rand < 5))
+                    gSpecialStatuses[gBattlerTarget].affectionEndured = TRUE;
+            }
+        }
+        else // (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_MED)
+        {
+            if (GetBattlerSide(gBattlerTarget) == B_SIDE_PLAYER || (B_SIDE_OPPONENT && gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+            {
+                if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 25)
+                 || (affectionScore == AFFECTION_FOUR_HEARTS && rand < 20)
+                 || (affectionScore == AFFECTION_THREE_HEARTS && rand < 15)
+                 || (affectionScore == AFFECTION_TWO_HEARTS && rand < 10)
+                 || (affectionScore == AFFECTION_ONE_HEART && rand < 5))
+                    gSpecialStatuses[gBattlerTarget].affectionEndured = TRUE;
+            }
+        }
     }
 
     if (gBattleMoves[gCurrentMove].effect != EFFECT_FALSE_SWIPE
@@ -4069,6 +4179,7 @@ static void Cmd_getexp(void)
     u32 holdEffect;
     s32 i; // also used as stringId
     u8 *expMonId = &gBattleStruct->expGetterMonId;
+    u8 obedienceLevel = GetObedienceLevel();
 
     gBattlerFainted = GetBattlerForBattleScript(cmd->battler);
 
@@ -4105,7 +4216,7 @@ static void Cmd_getexp(void)
                     viaSentIn++;
 
                 holdEffect = GetMonHoldEffect(&gPlayerParty[i]);
-                if (holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                if (holdEffect == HOLD_EFFECT_EXP_SHARE || gSaveBlock2Ptr->optionsExpShareOn == TRUE)
                 {
                     expShareBits |= gBitTable[i];
                     viaExpShare++;
@@ -4174,14 +4285,14 @@ static void Cmd_getexp(void)
             bool32 wasSentOut = ((gBattleStruct->expSentInMons & gBitTable[*expMonId]) != 0);
             holdEffect = GetMonHoldEffect(&gPlayerParty[*expMonId]);
 
-            if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !wasSentOut && !IsGen6ExpShareEnabled())
+            if ((holdEffect != HOLD_EFFECT_EXP_SHARE && !wasSentOut && gSaveBlock2Ptr->optionsExpShareOn == FALSE)
              || GetMonData(&gPlayerParty[*expMonId], MON_DATA_SPECIES_OR_EGG) == SPECIES_EGG)
             {
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
             }
             else if ((gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && *expMonId >= 3)
-                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) == MAX_LEVEL)
+                  || GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) >= obedienceLevel)
             {
                 gBattleScripting.getexpState = 5;
                 gBattleMoveDamage = 0; // used for exp
@@ -4209,7 +4320,7 @@ static void Cmd_getexp(void)
                     else
                         gBattleMoveDamage = 0;
 
-                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || IsGen6ExpShareEnabled())
+                    if ((holdEffect == HOLD_EFFECT_EXP_SHARE || gSaveBlock2Ptr->optionsExpShareOn == TRUE)
                         && (B_SPLIT_EXP < GEN_6 || gBattleMoveDamage == 0)) // only give exp share bonus in later gens if the mon wasn't sent out
                     {
                         gBattleMoveDamage += gBattleStruct->expShareExpValue;
@@ -4253,11 +4364,11 @@ static void Cmd_getexp(void)
                     PREPARE_STRING_BUFFER(gBattleTextBuff2, i);
                     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff3, 6, gBattleMoveDamage);
 
-                    if (wasSentOut || holdEffect == HOLD_EFFECT_EXP_SHARE)
+                    if (wasSentOut || (holdEffect == HOLD_EFFECT_EXP_SHARE && gSaveBlock2Ptr->optionsExpShareOn == FALSE))
                     {
                         PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
                     }
-                    else if (IsGen6ExpShareEnabled() && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
+                    else if (gSaveBlock2Ptr->optionsExpShareOn == TRUE && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
                     {
                         gLastUsedItem = ITEM_EXP_SHARE;
                         PrepareStringBattle(STRINGID_TEAMGAINEDEXP, gBattleStruct->expGetterBattlerId);
@@ -4321,6 +4432,8 @@ static void Cmd_getexp(void)
                         SWAP(gBattleMons[battler].attack, gBattleMons[battler].defense, temp);
                 }
 
+                if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) >= obedienceLevel)
+                    gBattleMoveDamage = 0;
                 gBattleScripting.getexpState = 5;
             }
             else
@@ -7304,6 +7417,8 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     {
         const struct TrainerMon *party = gTrainers[trainerId].party;
         lastMonLevel = party[gTrainers[trainerId].partySize - 1].lvl;
+        if (lastMonLevel == 0)
+            lastMonLevel = GetMonScaledLevel(TRUE);
 
         for (; gTrainerMoneyTable[i].classId != 0xFF; i++)
         {
@@ -15767,15 +15882,15 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
     u32 holdEffect = GetMonHoldEffect(&gPlayerParty[expGetterMonId]);
 
     if (IsTradedMon(&gPlayerParty[expGetterMonId]))
-        *expAmount = (*expAmount * 150) / 100;
+        *expAmount = (*expAmount * 200) / 100;
     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
-        *expAmount = (*expAmount * 150) / 100;
+        *expAmount = (*expAmount * 200) / 100;
     if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
-        *expAmount = (*expAmount * 4915) / 4096;
+        *expAmount = (*expAmount * 5734) / 4096;
     if (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(expGetterMonId) >= AFFECTION_FOUR_HEARTS)
-        *expAmount = (*expAmount * 4915) / 4096;
+        *expAmount = (*expAmount * 5734) / 4096;
     if (CheckBagHasItem(ITEM_EXP_CHARM, 1)) //is also for other exp boosting Powers if/when implemented
-        *expAmount = (*expAmount * 150) / 100;
+        *expAmount = (*expAmount * 200) / 100;
 
     if (B_SCALED_EXP >= GEN_5 && B_SCALED_EXP != GEN_6)
     {

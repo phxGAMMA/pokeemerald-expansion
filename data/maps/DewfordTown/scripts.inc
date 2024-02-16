@@ -651,6 +651,7 @@ DewfordTown_Text_TownSign:
 DewfordTown_Text_GymSign:
 	.string "DEWFORD TOWN POKéMON GYM\n"
 	.string "LEADER: BRAWLY\l"
+	.string "LEVEL: 15\p"
 	.string "“A big wave in fighting!”$"
 
 DewfordTown_Text_HallSign:
