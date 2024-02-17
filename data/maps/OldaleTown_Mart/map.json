@@ -19,7 +19,7 @@
       "x": 1,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -56,14 +56,14 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 1,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN",
       "dest_warp_id": "3"
     },
     {
-      "x": 4,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN",

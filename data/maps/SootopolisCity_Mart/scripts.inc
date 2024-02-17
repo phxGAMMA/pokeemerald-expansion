@@ -2,6 +2,10 @@ SootopolisCity_Mart_MapScripts::
 	.byte 0
 
 SootopolisCity_Mart_EventScript_Clerk::
+	goto Common_EventScript_PkmnMartClerk
+	end
+
+SootopolisCity_Mart_EventScript_Cashier::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
@@ -13,15 +17,18 @@ SootopolisCity_Mart_EventScript_Clerk::
 
 	.align 2
 SootopolisCity_Mart_Pokemart:
-	.2byte ITEM_ULTRA_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_MAX_POTION
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_ORANGE_MAIL
+	.2byte ITEM_HARBOR_MAIL
+	.2byte ITEM_GLITTER_MAIL
+	.2byte ITEM_MECH_MAIL
+	.2byte ITEM_WOOD_MAIL
+	.2byte ITEM_WAVE_MAIL
+	.2byte ITEM_BEAD_MAIL
 	.2byte ITEM_SHADOW_MAIL
+	.2byte ITEM_TROPIC_MAIL
+	.2byte ITEM_DREAM_MAIL
+	.2byte ITEM_FAB_MAIL
+	.2byte ITEM_RETRO_MAIL
 	.2byte ITEM_NONE
 	release
 	end
