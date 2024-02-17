@@ -2,6 +2,10 @@ MossdeepCity_Mart_MapScripts::
 	.byte 0
 
 MossdeepCity_Mart_EventScript_Clerk::
+	goto Common_EventScript_PkmnMartClerk
+	end
+
+MossdeepCity_Mart_EventScript_Cashier::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
@@ -13,15 +17,23 @@ MossdeepCity_Mart_EventScript_Clerk::
 
 	.align 2
 MossdeepCity_Mart_Pokemart:
-	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_HEAL_BALL
 	.2byte ITEM_NET_BALL
+	.2byte ITEM_NEST_BALL
 	.2byte ITEM_DIVE_BALL
-	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_REVIVE
-	.2byte ITEM_MAX_REPEL
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFENSE
+	.2byte ITEM_DUSK_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_QUICK_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_LEVEL_BALL
+	.2byte ITEM_LURE_BALL
+	.2byte ITEM_MOON_BALL
+	.2byte ITEM_FRIEND_BALL
+	.2byte ITEM_LOVE_BALL
+	.2byte ITEM_FAST_BALL
+	.2byte ITEM_HEAVY_BALL
+	.2byte ITEM_DREAM_BALL
 	.2byte ITEM_NONE
 	release
 	end
@@ -51,8 +63,6 @@ MossdeepCity_Mart_Text_MaxRepelLastsLongest:
 	.string "the longest.$"
 
 MossdeepCity_Mart_Text_NetAndDiveBallsRare:
-	.string "The NET and DIVE BALLS are rare POKé\n"
-	.string "BALLS that are only made in MOSSDEEP.\p"
 	.string "A NET BALL is effective against\n"
 	.string "BUG-type and WATER-type POKéMON.\p"
 	.string "A DIVE BALL works best on POKéMON\n"
