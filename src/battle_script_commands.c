@@ -579,7 +579,7 @@ static void Cmd_setuserstatus3(void);
 static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
-static void Cmd_unused2(void);
+static void Cmd_trycheckchallengemodeflag(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
@@ -607,7 +607,7 @@ static void Cmd_settelekinesis(void);
 static void Cmd_swapstatstages(void);
 static void Cmd_averagestats(void);
 static void Cmd_jumpifoppositegenders(void);
-static void Cmd_unused(void);
+static void Cmd_partyhasroom(void);
 static void Cmd_tryworryseed(void);
 static void Cmd_callnative(void);
 
@@ -838,7 +838,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_assistattackselect,                      //0xDE
     Cmd_trysetmagiccoat,                         //0xDF
     Cmd_trysetsnatch,                            //0xE0
-    Cmd_unused2,                                 //0xE1
+    Cmd_trycheckchallengemodeflag,               //0xE1
     Cmd_switchoutabilities,                      //0xE2
     Cmd_jumpifhasnohp,                           //0xE3
     Cmd_getsecretpowereffect,                    //0xE4
@@ -866,7 +866,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_swapstatstages,                          //0xFA
     Cmd_averagestats,                            //0xFB
     Cmd_jumpifoppositegenders,                   //0xFC
-    Cmd_unused,                                  //0xFD
+    Cmd_partyhasroom,                            //0xFD
     Cmd_tryworryseed,                            //0xFE
     Cmd_callnative,                              //0xFF
 };
@@ -3294,7 +3294,11 @@ void SetMoveEffect(bool32 primary, u32 certain)
             case MOVE_EFFECT_HAPPY_HOUR:
                 if (GetBattlerSide(gBattlerAttacker) == B_SIDE_PLAYER && !gBattleStruct->moneyMultiplierMove)
                 {
-                    gBattleStruct->moneyMultiplier *= 2;
+                    if (gBattleMons[gBattlerAttacker].species == SPECIES_MEOWTH
+                    && (gBattleMons[gBattlerAttacker].item == ITEM_AMULET_COIN))
+                        gBattleStruct->moneyMultiplier *= 8;
+                    else
+                        gBattleStruct->moneyMultiplier *= 4;
                     gBattleStruct->moneyMultiplierMove = 1;
                 }
                 gBattlescriptCurrInstr++;
@@ -4491,7 +4495,12 @@ bool32 NoAliveMonsForPlayer(void)
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
             && (!(gBattleTypeFlags & BATTLE_TYPE_ARENA) || !(gBattleStruct->arenaLostPlayerMons & gBitTable[i])))
         {
-            HP_count += GetMonData(&gPlayerParty[i], MON_DATA_HP);
+            if (gSpeciesInfo[GetMonData(&gPlayerParty[i], MON_DATA_SPECIES)].isHeroic
+             && GetMonData(&gPlayerParty[i], MON_DATA_HP) == 0
+             && FlagGet(FLAG_ENABLE_CHALLENGE_MODE))
+                return (HP_count == 0);
+            else
+                HP_count += GetMonData(&gPlayerParty[i], MON_DATA_HP);
         }
     }
 
@@ -14359,8 +14368,14 @@ static void Cmd_trysetsnatch(void)
     }
 }
 
-static void Cmd_unused2(void)
+static void Cmd_trycheckchallengemodeflag(void)
 {
+    CMD_ARGS(const u8 *failInstr);
+
+    if (FlagGet(FLAG_ENABLE_CHALLENGE_MODE))
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->failInstr;
 }
 
 static void Cmd_switchoutabilities(void)
@@ -15508,8 +15523,15 @@ static void Cmd_jumpifoppositegenders(void)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-static void Cmd_unused(void)
+static void Cmd_partyhasroom(void)
 {
+    CMD_ARGS(const u8 *successInstr);
+
+    if (CalculatePlayerPartyCount() >= PARTY_SIZE)
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->successInstr;
+    return;
 }
 
 static void Cmd_tryworryseed(void)

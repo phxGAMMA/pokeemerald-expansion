@@ -43,15 +43,12 @@ gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
-	.string "I get it now!\p"
-	.string "$"
+	.string "Ah, {PLAYER}{KUN}!\n"
+	.string "What do you seek?$"
 
 gText_Birch_AreYouReady::
 	.string "All right, are you ready?\p"
-	.string "Your very own adventure is about\n"
+	.string "Your very own story is about\n"
 	.string "to unfold.\p"
 	.string "Take courage, and leap into the\n"
 	.string "world of POKéMON where dreams,\l"

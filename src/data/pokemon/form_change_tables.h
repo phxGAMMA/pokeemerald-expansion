@@ -49,6 +49,7 @@ static const struct FormChange sPidgeotFormChangeTable[] = {
 static const struct FormChange sPikachuFormChangeTable[] =
 {
     {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_PIKACHU_GIGANTAMAX},
+    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_PIKACHU_HERO},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_PIKACHU
@@ -57,6 +58,7 @@ static const struct FormChange sPikachuFormChangeTable[] =
 static const struct FormChange sMeowthFormChangeTable[] =
 {
     {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_MEOWTH_GIGANTAMAX},
+    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_MEOWTH_HERO},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_MEOWTH
@@ -148,6 +150,7 @@ static const struct FormChange sLaprasFormChangeTable[] = {
 #if P_FAMILY_EEVEE
 static const struct FormChange sEeveeFormChangeTable[] = {
     {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_EEVEE_GIGANTAMAX},
+    {FORM_CHANGE_BATTLE_SWITCH, SPECIES_EEVEE_HERO},
     {FORM_CHANGE_TERMINATOR},
 };
 #endif //P_FAMILY_EEVEE

@@ -1158,9 +1158,9 @@
 	.4byte \failInstr
 	.endm
 
-	.macro unused2 ptr:req
+	.macro trycheckchallengemodeflag failInstr:req
 	.byte 0xe1
-	.4byte \ptr
+	.4byte \failInstr
 	.endm
 
 	.macro switchoutabilities battler:req
@@ -1286,7 +1286,7 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro unused ptr:req
+	.macro partyhasroom ptr:req
 	.byte 0xfd
 	.4byte \ptr
 	.endm

@@ -165,6 +165,13 @@ BattleScript_TryPrintCaughtMonInfo:
     waitstate
     setbyte gBattleCommunication, 0
     displaydexinfo
+    trycheckchallengemodeflag BattleScript_TryNicknameCaughtMon
+BattleScript_TryAddCaughtMon::
+    partyhasroom BattleScript_TryNicknameCaughtMon
+    openpartyscreen BS_PLAYER1 | PARTY_SCREEN_OPTIONAL, BattleScript_GiveMonPartySizeContinue
+BattleScript_GiveMonPartySizeContinue::
+    partyhasroom BattleScript_TryNicknameCaughtMon
+    goto BattleScript_SuccessBallThrowEnd
 BattleScript_TryNicknameCaughtMon::
     printstring STRINGID_GIVENICKNAMECAPTURED
     waitstate

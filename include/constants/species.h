@@ -1731,8 +1731,15 @@
 // Let's Go Pikachu & Let's Go Eevee
 #define SPECIES_PIKACHU_PARTNER                         PLACEHOLDER_START + 53
 #define SPECIES_EEVEE_PARTNER                           PLACEHOLDER_START + 54
+// Challenge Mode
+#define SPECIES_PIKACHU_ZERO                            PLACEHOLDER_START + 55
+#define SPECIES_MEOWTH_ZERO                             PLACEHOLDER_START + 56
+#define SPECIES_EEVEE_ZERO                              PLACEHOLDER_START + 57
+#define SPECIES_PIKACHU_HERO                            PLACEHOLDER_START + 58
+#define SPECIES_MEOWTH_HERO                             PLACEHOLDER_START + 59
+#define SPECIES_EEVEE_HERO                              PLACEHOLDER_START + 60
 
-#define GIGANTAMAX_START                                SPECIES_EEVEE_PARTNER
+#define GIGANTAMAX_START                                SPECIES_EEVEE_HERO
 
 // Gigantamax Forms
 #define SPECIES_VENUSAUR_GIGANTAMAX                     GIGANTAMAX_START + 1

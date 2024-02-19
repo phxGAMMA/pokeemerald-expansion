@@ -3403,6 +3403,10 @@ bool32 HandleFaintedMonActions(void)
                 if (gBattleMons[gBattleStruct->faintedActionsBattlerId].hp == 0
                  && !(gAbsentBattlerFlags & gBitTable[gBattleStruct->faintedActionsBattlerId]))
                 {
+                    if (!gSpeciesInfo[GetMonData(&gPlayerParty[gBattlerFainted], MON_DATA_SPECIES)].isHeroic
+                     && GetBattlerSide(gBattlerFainted) == B_SIDE_PLAYER
+                     && FlagGet(FLAG_ENABLE_CHALLENGE_MODE))
+                        ZeroMonData(&gPlayerParty[gBattlerFainted]);
                     BattleScriptExecute(BattleScript_HandleFaintedMon);
                     gBattleStruct->faintedActionsState = 5;
                     return TRUE;
@@ -4868,8 +4872,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             side = GetBattlerSide(battler);
             mon = &GetSideParty(side)[gBattlerPartyIndexes[battler]];
 
-            if (!gSpecialStatuses[battler].switchInAbilityDone
-             && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_PALAFIN_HERO
+            if (!gSpecialStatuses[battler].switchInAbilityDone && GetBattlerAbility(battler) == ABILITY_ZERO_TO_HERO
+             && GetMonData(mon, MON_DATA_SPECIES) == (SPECIES_PALAFIN_HERO || SPECIES_PIKACHU_HERO  || SPECIES_EEVEE_HERO || SPECIES_MEOWTH_HERO)
              && !(gBattleStruct->transformZeroToHero[side] & gBitTable[gBattlerPartyIndexes[battler]]))
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
@@ -7191,7 +7195,11 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             case HOLD_EFFECT_DOUBLE_PRIZE:
                 if (GetBattlerSide(battler) == B_SIDE_PLAYER && !gBattleStruct->moneyMultiplierItem)
                 {
-                    gBattleStruct->moneyMultiplier *= 4;
+                    if (gBattleMons[battler].species == SPECIES_MEOWTH
+                    && (gBattleMons[battler].item == ITEM_AMULET_COIN))
+                        gBattleStruct->moneyMultiplier *= 8;
+                    else
+                        gBattleStruct->moneyMultiplier *= 4;
                     gBattleStruct->moneyMultiplierItem = 1;
                 }
                 break;
@@ -9597,7 +9605,7 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_EVIOLITE:
-        if (CanEvolve(gBattleMons[battlerDef].species))
+        if (CanEvolve(gBattleMons[battlerDef].species) || gBattleMons[battlerDef].species == SPECIES_EEVEE)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case HOLD_EFFECT_ASSAULT_VEST:

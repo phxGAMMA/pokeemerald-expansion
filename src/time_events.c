@@ -44,9 +44,19 @@ bool8 IsMirageIslandPresent(void)
     u16 rnd = GetMirageRnd() >> 16;
     int i;
 
-    for (i = 0; i < PARTY_SIZE; i++)
-        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
-            return TRUE;
+    if (FlagGet(FLAG_DEFEATED_METEOR_FALLS_STEVEN) == TRUE
+     && FlagGet(FLAG_DEFEATED_ROUTE_130_ENIGMA) == FALSE)
+    {
+        return TRUE;
+    }
+    else
+    {
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
+                return TRUE;
+        }
+    }
 
     return FALSE;
 }

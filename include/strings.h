@@ -343,6 +343,8 @@ extern const u8 gText_ContinueMenuPokedex[];
 extern const u8 gText_ContinueMenuBadges[];
 extern const u8 gText_BirchBoy[];
 extern const u8 gText_BirchGirl[];
+extern const u8 gText_BirchAdventure[];
+extern const u8 gText_BirchChallenge[];
 extern const u8 gText_DefaultNameStu[];
 extern const u8 gText_DefaultNameMilton[];
 extern const u8 gText_DefaultNameTom[];

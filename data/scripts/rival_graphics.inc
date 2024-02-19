@@ -26,6 +26,20 @@ EventScript_SetupRivalOnBikeGfxIdMale::
 	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE
 	return
 
+Common_EventScript_SetupEnigmaGfxId::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, EventScript_SetupEnigmaGfxIdFemale
+	goto_if_eq VAR_RESULT, FEMALE, EventScript_SetupEnigmaGfxIdMale
+	end
+
+EventScript_SetupEnigmaGfxIdFemale::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_LEAF
+	return
+
+EventScript_SetupEnigmaGfxIdMale::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RED
+	return
+
 @ Unused
 Common_EventScript_SetupRivalGfxIdSameGender::
 	checkplayergender
