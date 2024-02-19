@@ -220,10 +220,10 @@ const u8 gText_xVar1[] = _("×{STR_VAR_1}");
 const u8 gText_Berry2[] = _(" BERRY"); // Unused
 const u8 gText_Coins[] = _("{STR_VAR_1} COINS");
 const u8 gText_CloseBag[] = _("CLOSE BAG");
-const u8 gText_Var1IsSelected[] = _("{STR_VAR_1} is\nselected.");
+const u8 gText_Var1IsSelected[] = _("Do what\naction?");
 const u8 gText_CantWriteMail[] = _("You can't write\nMAIL here.");
 const u8 gText_NoPokemon[] = _("There is no\nPOKéMON.");
-const u8 gText_MoveVar1Where[] = _("Move the\n{STR_VAR_1}\nwhere?");
+const u8 gText_MoveVar1Where[] = _("Move this\nitem where?");
 const u8 gText_Var1CantBeHeld[] = _("The {STR_VAR_1} can't be held.");
 const u8 gText_Var1CantBeHeldHere[] = _("The {STR_VAR_1} can't be held\nhere.");
 const u8 gText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}(s)?");
@@ -252,7 +252,7 @@ const u8 gText_BoxFull[] = _("The BOX is full.{PAUSE_UNTIL_PRESS}");
 const u8 gText_PowderQty[] = _("POWDER QTY: {STR_VAR_1}{PAUSE_UNTIL_PRESS}");
 const u8 gText_TheField[] = _("the field");
 const u8 gText_TheBattle[] = _("the battle");
-const u8 gText_ThePokemonList[] = _("the POKéMON LIST");
+const u8 gText_ThePokemonList[] = _("the list");
 const u8 gText_TheShop[] = _("the shop");
 const u8 gText_ThePC[] = _("the PC");
 
@@ -280,7 +280,7 @@ const u8 *const gPyramidBagMenu_ReturnToStrings[] =
     [PYRAMIDBAG_LOC_CHOOSE_TOSS] = gText_TheField
 };
 
-const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
+const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}?");
 const u8 gText_ItemsPocket[] = _("ITEMS");
 const u8 gText_PokeBallsPocket[] = _("POKé BALLS");
 const u8 gText_TMHMPocket[] = _("TMs & HMs");
