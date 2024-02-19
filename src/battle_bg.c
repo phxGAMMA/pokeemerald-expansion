@@ -1437,19 +1437,21 @@ bool8 LoadChosenBattleElement(u8 caseId)
 
 void DrawTerrainTypeBattleBackground(void)
 {
+    LZDecompressVram(gBattleTerrainTiles_Rayquaza, (void *)(BG_CHAR_ADDR(2)));
+    LZDecompressVram(gBattleTerrainTilemap_Rayquaza, (void *)(BG_SCREEN_ADDR(26)));
     switch (gFieldStatuses & STATUS_FIELD_TERRAIN_ANY)
     {
     case STATUS_FIELD_GRASSY_TERRAIN:
-        LoadMoveBg(BG_GRASSY_TERRAIN);
+        LoadCompressedPalette(gBattleTerrainPalette_Grassy, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     case STATUS_FIELD_MISTY_TERRAIN:
-        LoadMoveBg(BG_MISTY_TERRAIN);
+        LoadCompressedPalette(gBattleTerrainPalette_Misty, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     case STATUS_FIELD_ELECTRIC_TERRAIN:
-        LoadMoveBg(BG_ELECTRIC_TERRAIN);
+        LoadCompressedPalette(gBattleTerrainPalette_Electric, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     case STATUS_FIELD_PSYCHIC_TERRAIN:
-        LoadMoveBg(BG_PSYCHIC_TERRAIN);
+        LoadCompressedPalette(gBattleTerrainPalette_Psychic, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     default:
         DrawMainBattleBackground();

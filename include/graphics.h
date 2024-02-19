@@ -478,6 +478,10 @@ extern const u32 gBattleTerrainPalette_StadiumPhoebe[];
 extern const u32 gBattleTerrainPalette_StadiumGlacia[];
 extern const u32 gBattleTerrainPalette_StadiumDrake[];
 extern const u32 gBattleTerrainPalette_StadiumWallace[];
+extern const u32 gBattleTerrainPalette_Grassy[];
+extern const u32 gBattleTerrainPalette_Misty[];
+extern const u32 gBattleTerrainPalette_Electric[];
+extern const u32 gBattleTerrainPalette_Psychic[];
 
 // pokedex
 extern const u32 gPokedexInterface_Gfx[];
