@@ -1046,7 +1046,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     if (IsBattlerMegaEvolved(battler) || IsBattlerPrimalReverted(battler) || IsDynamaxed(battler))
     {
         objVram = ConvertIntToDecimalStringN(text, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
-        xPos = 5 * (3 - (objVram - (text + 2))) - 1;
+        xPos = 5 * (3 - (objVram - (text + 2))) - 2;
         MegaIndicator_UpdateLevel(healthboxSpriteId, lvl);
         MegaIndicator_SetVisibilities(healthboxSpriteId, FALSE);
     }
@@ -1367,7 +1367,7 @@ void ChangeMegaTriggerSprite(u8 spriteId, u8 animId)
 #define SINGLES_MEGA_TRIGGER_POS_X_OPTIMAL (30)
 #define SINGLES_MEGA_TRIGGER_POS_X_PRIORITY (31)
 #define SINGLES_MEGA_TRIGGER_POS_X_SLIDE (15)
-#define SINGLES_MEGA_TRIGGER_POS_Y_DIFF (-11)
+#define SINGLES_MEGA_TRIGGER_POS_Y_DIFF (-8)
 
 #define DOUBLES_MEGA_TRIGGER_POS_X_OPTIMAL (30)
 #define DOUBLES_MEGA_TRIGGER_POS_X_PRIORITY (31)
@@ -3067,7 +3067,7 @@ static void ClearAbilityName(u8 spriteId1, u8 spriteId2)
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         5, 12,
                         4,
-                        7, 9, 1);
+                        7, 2, 1);
 }
 
 static void PrintBattlerOnAbilityPopUp(u8 battlerId, u8 spriteId1, u8 spriteId2)
@@ -3119,7 +3119,7 @@ static void PrintAbilityOnAbilityPopUp(u32 ability, u8 spriteId1, u8 spriteId2)
                         (void*)(OBJ_VRAM0) + (gSprites[spriteId2].oam.tileNum * 32) + 256,
                         5, 12,
                         4,
-                        7, 9, 1);
+                        7, 2, 1);
 }
 
 #define PIXEL_COORDS_TO_OFFSET(x, y)(            \
