@@ -117,6 +117,13 @@ static const u16 sStarterMon[STARTER_MON_COUNT] =
     SPECIES_MUDKIP,
 };
 
+static const u16 sChallengeMon[STARTER_MON_COUNT] =
+{
+    SPECIES_PIKACHU_ZERO,
+    SPECIES_MEOWTH_ZERO,
+    SPECIES_EEVEE_ZERO,
+};
+
 static const struct BgTemplate sBgTemplates[3] =
 {
     {
@@ -352,7 +359,10 @@ u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    if (FlagGet(FLAG_ENABLE_CHALLENGE_MODE))
+        return sChallengeMon[chosenStarterId];
+    else
+        return sStarterMon[chosenStarterId];
 }
 
 static void VblankCB_StarterChoose(void)

@@ -2056,6 +2056,84 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 
 #endif //P_CAP_PIKACHU_FORMS
 
+#define PIKACHU_ZERO_MISC_INFO                                                       \
+        .catchRate = 3,                                                              \
+        .evYield_Speed = 2,                                                          \
+        .types = { TYPE_ELECTRIC, TYPE_ELECTRIC },                                   \
+        .itemRare = ITEM_LIGHT_BALL,                                                 \
+        .genderRatio = MON_MALE,                                                     \
+        .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED }, \
+        .eggCycles = 50,                                                             \
+        .friendship = STANDARD_FRIENDSHIP,                                           \
+        .growthRate = GROWTH_MEDIUM_FAST,                                            \
+        .abilities = { ABILITY_MOODY, ABILITY_NONE, ABILITY_ZERO_TO_HERO },          \
+        .bodyColor = BODY_COLOR_YELLOW,                                              \
+        .speciesName = _("Pikachu"),                                                 \
+        .cryId = CRY_PIKACHU,                                                        \
+        .natDexNum = NATIONAL_DEX_PIKACHU,                                           \
+        .categoryName = _("Mouse"),                                                  \
+        .footprint = gMonFootprint_Pikachu,                                          \
+        LEARNSETS(PikachuZero),                                                      \
+        .formSpeciesIdTable = sPikachuFormSpeciesIdTable,                            \
+        .formChangeTable = sPikachuFormChangeTable,                                  \
+        .cannotBeTraded = TRUE,                                                      \
+        .isHeroic = TRUE
+
+    [SPECIES_PIKACHU_ZERO] =
+    {
+        PIKACHU_ZERO_MISC_INFO,
+        PIKACHU_REGULAR_SIZE_INFO,
+        .baseHP        = 60,
+        .baseAttack    = 90,
+        .baseDefense   = 55,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 80,
+        .expYield = 100,
+        .description = COMPOUND_STRING(
+            "It stores electricity in the electric sacs\n"
+            "on its cheeks. When it releases pent-up\n"
+            "energy in a burst, the electric power is\n"
+            "equal to a lightning bolt."),
+        FRONT_PIC(Pikachu, 48, 48),
+        .frontPicYOffset = 9,
+        .frontAnimFrames = sAnims_Pikachu,
+        .frontAnimId = ANIM_FLASH_YELLOW,
+        .frontAnimDelay = 25,
+        BACK_PIC(Pikachu, 64, 56),
+        .backPicYOffset = 4,
+        .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
+        PALETTES(Pikachu),
+        ICON(Pikachu, 2),
+    },
+
+    [SPECIES_PIKACHU_HERO] =
+    {
+        PIKACHU_ZERO_MISC_INFO,
+        .baseHP        = 70,
+        .baseAttack    = 110,
+        .baseDefense   = 80,
+        .baseSpeed     = 180,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 100,
+        .expYield = 200,
+        .description = COMPOUND_STRING(
+            "It stores electricity in the electric sacs\n"
+            "on its cheeks. When it releases pent-up\n"
+            "energy in a burst, the electric power is\n"
+            "equal to a lightning bolt."),
+        FRONT_PIC(PikachuGigantamax, 64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = sAnims_PikachuGigantamax,
+        .frontAnimId = ANIM_FLASH_YELLOW,
+        .frontAnimDelay = 25,
+        BACK_PIC(PikachuGigantamax, 64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
+        PALETTES(PikachuGigantamax),
+        ICON(PikachuGigantamax, 2),
+    },
+
 #if P_GIGANTAMAX_FORMS
     [SPECIES_PIKACHU_GIGANTAMAX] =
     {
@@ -3884,6 +3962,14 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .footprint = gMonFootprint_Meowth,                                  \
         .formSpeciesIdTable = sMeowthFormSpeciesIdTable
 
+#define MEOWTH_REGULAR_SIZE_INFO    \
+        .height = 4,                \
+        .weight = 42,               \
+        .pokemonScale = 480,        \
+        .pokemonOffset = 19,        \
+        .trainerScale = 256,        \
+        .trainerOffset = 0
+
 #define PERSIAN_MISC_INFO                                   \
         .catchRate = 90,                                    \
         .expYield = 154,                                    \
@@ -3904,6 +3990,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_MEOWTH] =
     {
         MEOWTH_MISC_INFO,
+        MEOWTH_REGULAR_SIZE_INFO,
         .baseHP        = 40,
         .baseAttack    = 45,
         .baseDefense   = 35,
@@ -3915,17 +4002,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .itemRare = ITEM_QUICK_CLAW,
         .abilities = { ABILITY_PICKUP, ABILITY_TECHNICIAN, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_YELLOW,
-        .height = 4,
-        .weight = 42,
         .description = COMPOUND_STRING(
             "Meowth withdraw their sharp claws into\n"
             "their paws to silently sneak about.\n"
             "For some reason, this Pokémon loves\n"
             "shiny coins that glitter with light."),
-        .pokemonScale = 480,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
         FRONT_PIC(Meowth, 48, 48),
         .frontPicYOffset = 10,
         .frontAnimFrames = sAnims_Meowth,
@@ -3981,6 +4062,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_MEOWTH_ALOLAN] =
     {
         MEOWTH_MISC_INFO,
+        MEOWTH_REGULAR_SIZE_INFO,
         .baseHP        = 40,
         .baseAttack    = 35,
         .baseDefense   = 35,
@@ -3992,17 +4074,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .itemRare = ITEM_QUICK_CLAW,
         .abilities = { ABILITY_PICKUP, ABILITY_TECHNICIAN, ABILITY_RATTLED },
         .bodyColor = BODY_COLOR_GRAY,
-        .height = 4,
-        .weight = 42,
         .description = COMPOUND_STRING(
             "It's accustomed to luxury because it used\n"
             "to live with Alolan royalty. Highly smart\n"
             "and proud, it's famously difficult to\n"
             "handle, but that also makes it popular."),
-        .pokemonScale = 480,
-        .pokemonOffset = 19,
-        .trainerScale = 256,
-        .trainerOffset = 0,
         FRONT_PIC(MeowthAlolan, 48, 48),
         .frontPicYOffset = 8,
         .frontAnimFrames = sAnims_MeowthAlolan,
@@ -4139,6 +4215,85 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         LEARNSETS(Perrserker),
     },
 #endif //P_GALARIAN_FORMS
+
+#define MEOWTH_ZERO_MISC_INFO                                                        \
+        .catchRate = 3,                                                              \
+        .evYield_Speed = 2,                                                          \
+        .types = { TYPE_NORMAL, TYPE_NORMAL },                                       \
+        .itemRare = ITEM_AMULET_COIN,                                                \
+        .genderRatio = PERCENT_FEMALE(50),                                           \
+        .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED }, \
+        .eggCycles = 50,                                                             \
+        .friendship = STANDARD_FRIENDSHIP,                                           \
+        .growthRate = GROWTH_MEDIUM_FAST,                                            \
+        .abilities = { ABILITY_MOODY, ABILITY_NONE, ABILITY_ZERO_TO_HERO },          \
+        .bodyColor = BODY_COLOR_YELLOW,                                              \
+        .speciesName = _("Meowth"),                                                  \
+        .cryId = CRY_MEOWTH,                                                         \
+        .natDexNum = NATIONAL_DEX_MEOWTH,                                            \
+        .categoryName = _("Scratch Cat"),                                            \
+        .footprint = gMonFootprint_Meowth,                                           \
+        LEARNSETS(MeowthZero),                                                       \
+        .formSpeciesIdTable = sMeowthFormSpeciesIdTable,                             \
+        .formChangeTable = sMeowthFormChangeTable,                                   \
+        .cannotBeTraded = TRUE,                                                      \
+        .isHeroic = TRUE
+
+    [SPECIES_MEOWTH_ZERO] =
+    {
+        MEOWTH_ZERO_MISC_INFO,
+        MEOWTH_REGULAR_SIZE_INFO,
+        .baseHP        = 65,
+        .baseAttack    = 70,
+        .baseDefense   = 60,
+        .baseSpeed     = 115,
+        .baseSpAttack  = 65,
+        .baseSpDefense = 65,
+        .expYield = 100,
+        .description = COMPOUND_STRING(
+            "Meowth withdraw their sharp claws into\n"
+            "their paws to silently sneak about.\n"
+            "For some reason, this Pokémon loves\n"
+            "shiny coins that glitter with light."),
+        FRONT_PIC(Meowth, 48, 48),
+        .frontPicYOffset = 10,
+        .frontAnimFrames = sAnims_Meowth,
+        .frontAnimId = ANIM_V_JUMPS_SMALL,
+        .frontAnimDelay = 40,
+        BACK_PIC(Meowth, 56, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        PALETTES(Meowth),
+        ICON(Meowth, 1),
+    },
+
+    [SPECIES_MEOWTH_HERO] =
+    {
+        MEOWTH_ZERO_MISC_INFO,
+        MEOWTH_REGULAR_SIZE_INFO,
+        .baseHP        = 80,
+        .baseAttack    = 90,
+        .baseDefense   = 70,
+        .baseSpeed     = 180,
+        .baseSpAttack  = 80,
+        .baseSpDefense = 80,
+        .expYield = 200,
+        .description = COMPOUND_STRING(
+            "Meowth withdraw their sharp claws into\n"
+            "their paws to silently sneak about.\n"
+            "For some reason, this Pokémon loves\n"
+            "shiny coins that glitter with light."),
+        FRONT_PIC(MeowthGigantamax, 48, 48),
+        .frontPicYOffset = 10,
+        .frontAnimFrames = sAnims_MeowthGigantamax,
+        .frontAnimId = ANIM_V_JUMPS_SMALL,
+        .frontAnimDelay = 40,
+        BACK_PIC(MeowthGigantamax, 56, 56),
+        .backPicYOffset = 6,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
+        PALETTES(MeowthGigantamax),
+        ICON(MeowthGigantamax, 1),
+    },
 
 #if P_GIGANTAMAX_FORMS
     [SPECIES_MEOWTH_GIGANTAMAX] =
@@ -10594,20 +10749,23 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sEeveeFormSpeciesIdTable,                                 \
         .formChangeTable = sEeveeFormChangeTable
 
+#define EEVEE_REGULAR_SIZE_INFO     \
+        .height = 3,                \
+        .weight = 65,               \
+        .pokemonScale = 479,        \
+        .pokemonOffset = 18,        \
+        .trainerScale = 256,        \
+        .trainerOffset = 0
+
     [SPECIES_EEVEE] =
     {
         EEVEE_MISC_INFO,
-        .height = 3,
-        .weight = 65,
+        EEVEE_REGULAR_SIZE_INFO,
         .description = COMPOUND_STRING(
             "An Eevee has an unstable genetic makeup\n"
             "that suddenly mutates due to its\n"
             "environment. Radiation from various\n"
             "Stones causes this Pokémon to evolve."),
-        .pokemonScale = 476,
-        .pokemonOffset = 18,
-        .trainerScale = 256,
-        .trainerOffset = 0,
         FRONT_PIC(Eevee, 40, 48),
         FRONT_PIC_FEMALE(Eevee, 40, 48),
         .frontPicYOffset = 11,
@@ -10629,6 +10787,83 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                                 {EVO_SPECIFIC_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM, SPECIES_GLACEON},
                                 {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON},
                                 {EVO_FRIENDSHIP_MOVE_TYPE, TYPE_FAIRY, SPECIES_SYLVEON}),
+    },
+
+#define EEVEE_ZERO_MISC_INFO                                                         \
+        .types = { TYPE_NORMAL, TYPE_NORMAL },                                       \
+        .catchRate = 3,                                                              \
+        .evYield_SpDefense = 1,                                                      \
+        .itemRare = ITEM_EVIOLITE,                                                   \
+        .genderRatio = MON_FEMALE,                                                   \
+        .eggCycles = 50,                                                             \
+        .friendship = STANDARD_FRIENDSHIP,                                           \
+        .growthRate = GROWTH_MEDIUM_FAST,                                            \
+        .eggGroups = { EGG_GROUP_NO_EGGS_DISCOVERED, EGG_GROUP_NO_EGGS_DISCOVERED }, \
+        .abilities = { ABILITY_MOODY, ABILITY_NONE, ABILITY_ZERO_TO_HERO },          \
+        .bodyColor = BODY_COLOR_BROWN,                                               \
+        .speciesName = _("Eevee"),                                                   \
+        .cryId = CRY_EEVEE,                                                          \
+        .natDexNum = NATIONAL_DEX_EEVEE,                                             \
+        .categoryName = _("Evolution"),                                              \
+        .footprint = gMonFootprint_Eevee,                                            \
+        LEARNSETS(EeveeZero),                                                        \
+        .formSpeciesIdTable = sEeveeFormSpeciesIdTable,                              \
+        .formChangeTable = sEeveeFormChangeTable,                                    \
+        .cannotBeTraded = TRUE,                                                      \
+        .isHeroic = TRUE
+
+    [SPECIES_EEVEE_ZERO] =
+    {
+        EEVEE_ZERO_MISC_INFO,
+        EEVEE_REGULAR_SIZE_INFO,
+        .baseHP        = 55,
+        .baseAttack    = 55,
+        .baseDefense   = 50,
+        .baseSpeed     = 55,
+        .baseSpAttack  = 45,
+        .baseSpDefense = 65,
+        .expYield = 100,
+        .description = COMPOUND_STRING(
+            "An Eevee has an unstable genetic makeup\n"
+            "that suddenly mutates due to its\n"
+            "environment. Radiation from various\n"
+            "Stones causes this Pokémon to evolve."),
+        FRONT_PIC_FEMALE(Eevee, 40, 48),
+        .frontPicYOffset = 11,
+        .frontAnimFrames = sAnims_Eevee,
+        .frontAnimId = ANIM_V_STRETCH,
+        BACK_PIC_FEMALE(Eevee, 56, 48),
+        .backPicYOffset = 10,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        PALETTES(Eevee),
+        ICON(Eevee, 2),
+    },
+
+    [SPECIES_EEVEE_HERO] =
+    {
+        EEVEE_ZERO_MISC_INFO,
+        EEVEE_REGULAR_SIZE_INFO,
+        .baseHP        = 110,
+        .baseAttack    = 110,
+        .baseDefense   = 100,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 90,
+        .baseSpDefense = 130,
+        .expYield = 200,
+        .description = COMPOUND_STRING(
+            "An Eevee has an unstable genetic makeup\n"
+            "that suddenly mutates due to its\n"
+            "environment. Radiation from various\n"
+            "Stones causes this Pokémon to evolve."),
+        FRONT_PIC(EeveeGigantamax, 64, 64),
+        .frontPicYOffset = 8,
+        .frontAnimFrames = sAnims_EeveeGigantamax,
+        .frontAnimId = ANIM_V_STRETCH,
+        BACK_PIC(EeveeGigantamax, 64, 64),
+        .backPicYOffset = 7,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        PALETTES(EeveeGigantamax),
+        ICON(EeveeGigantamax, 2),
     },
 
 #if P_GIGANTAMAX_FORMS

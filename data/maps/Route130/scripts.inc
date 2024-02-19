@@ -1,8 +1,11 @@
+.set LOCALID_ENIGMA, 6
+
 Route130_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route130_OnTransition
 	.byte 0
 
 Route130_OnTransition:
+	call Common_EventScript_SetupEnigmaGfxId
 	call_if_ge VAR_SOOTOPOLIS_CITY_STATE, 4, Route130_EventScript_CheckSetAbnormalWeather
 	specialvar VAR_RESULT, IsMirageIslandPresent
 	goto_if_eq VAR_RESULT, TRUE, Route130_EventScript_SetMirageIslandLayout
@@ -48,3 +51,38 @@ Route130_EventScript_Santiago::
 	msgbox Route130_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+Route130_EventScript_Enigma::
+	lock
+	faceplayer
+	fadeoutbgm 0
+	msgbox Route130_Text_EnigmaElipsis, MSGBOX_DEFAULT
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, Route130_EventScript_StartEnigmaBattleLeaf
+	goto_if_eq VAR_RESULT, FEMALE, Route130_EventScript_StartEnigmaBattleRed
+	end
+
+Route130_EventScript_StartEnigmaBattleLeaf::
+	trainerbattle_no_intro TRAINER_LEAF, Route130_Text_EnigmaElipsis
+	goto Route130_EventScript_AfterEnigmaBattle
+	end
+
+Route130_EventScript_StartEnigmaBattleRed::
+	trainerbattle_no_intro TRAINER_RED, Route130_Text_EnigmaElipsis
+	goto Route130_EventScript_AfterEnigmaBattle
+	end
+
+Route130_EventScript_AfterEnigmaBattle::
+	msgbox Route130_Text_EnigmaElipsis, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EXIT
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ENIGMA
+	setflag FLAG_DEFEATED_ROUTE_130_ENIGMA
+	setflag FLAG_HIDE_ROUTE_130_ENIGMA
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route130_Text_EnigmaElipsis:
+	.string "… … … … … … … …\n"
+	.string "… … … … … … … …$"

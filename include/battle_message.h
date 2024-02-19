@@ -297,6 +297,7 @@ extern const u8 gText_Are[];
 extern const u8 gText_Are2[];
 extern const u8 gText_BadEgg[];
 extern const u8 gText_BattleWallyName[];
+extern const u8 gText_BattleEnigmaName[];
 extern const u8 gText_Win[];
 extern const u8 gText_Loss[];
 extern const u8 gText_Draw[];

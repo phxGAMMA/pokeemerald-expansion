@@ -12,7 +12,16 @@ EventScript_PCMainMenu::
 	waitmessage
 	special ScriptMenu_CreatePCMultichoice
 	waitstate
+	goto_if_set FLAG_ENABLE_CHALLENGE_MODE, EventScript_AccessChallengePC
 	goto EventScript_AccessPC
+	end
+
+EventScript_AccessChallengePC::
+	switch VAR_RESULT
+	case 0, EventScript_AccessPlayersPC
+	case 1, EventScript_AccessHallOfFame
+	case 2, EventScript_TurnOffPC
+	case MULTI_B_PRESSED, EventScript_TurnOffPC
 	end
 
 EventScript_AccessPC::
