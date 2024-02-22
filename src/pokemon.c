@@ -1732,27 +1732,25 @@ u8 CountAliveMonsInBattle(u8 caseId, u32 battler)
 
 u8 GetDefaultMoveTarget(u8 battlerId)
 {
-    u8 opposing = BATTLE_OPPOSITE(GetBattlerSide(battlerId));
+    u8 opposing;
+
+    if (gAbsentBattlerFlags & gBitTable[GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)])
+        opposing = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    else
+        opposing = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_DOUBLE))
-        return GetBattlerAtPosition(opposing);
-    if (CountAliveMonsInBattle(BATTLE_ALIVE_EXCEPT_BATTLER, battlerId) > 1)
     {
-        u8 position;
-
-        if ((Random() & 1) == 0)
-            position = BATTLE_PARTNER(opposing);
-        else
-            position = opposing;
-
-        return GetBattlerAtPosition(position);
+        return GetBattlerAtPosition(opposing);
     }
     else
     {
-        if ((gAbsentBattlerFlags & gBitTable[opposing]))
-            return GetBattlerAtPosition(BATTLE_PARTNER(opposing));
-        else
+        if ((gAbsentBattlerFlags & gBitTable[gLastCursorTarget]))
             return GetBattlerAtPosition(opposing);
+        else if (GetBattlerAtPosition(battlerId) == gLastCursorTarget)
+            return GetBattlerAtPosition(BATTLE_PARTNER(gLastCursorTarget));
+        else
+            return GetBattlerAtPosition(gLastCursorTarget);
     }
 }
 
