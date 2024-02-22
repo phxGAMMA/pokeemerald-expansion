@@ -10164,9 +10164,27 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
 
     if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
     {
-        modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
-        if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
-            modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+        if (move == MOVE_HIDDEN_POWER)
+        {
+            u8 typeBits = ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_HP_IV) & 1) << 0)
+                        | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_ATK_IV) & 1) << 1)
+                        | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_DEF_IV) & 1) << 2)
+                        | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_SPEED_IV) & 1) << 3)
+                        | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_SPATK_IV) & 1) << 4)
+                        | ((GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_SPDEF_IV) & 1) << 5);
+
+            moveType = (15 * typeBits) / 63 + 1;
+            if (moveType >= TYPE_MYSTERY)
+                moveType++;
+            moveType |= 0xC0;
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType & 0x3F, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+        }
+        else
+        {
+            modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+            if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
+                modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
+        }
     }
 
     if (recordAbilities)
