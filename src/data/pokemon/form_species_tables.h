@@ -1761,3 +1761,457 @@ static const u16 sOgerponFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_OGERPON
+
+#if D_FAMILY_BOTAMON
+static const u16 sBotamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+static const u16 sPunimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+static const u16 sChibomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+static const u16 sLeafmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+static const u16 sNiyokimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+static const u16 sYuramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+static const u16 sPururumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+static const u16 sPabumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+static const u16 sPichimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+static const u16 sTsubumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+static const u16 sPoyomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+static const u16 sYukimiBotamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+static const u16 sKoromonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+static const u16 sTsunomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+static const u16 sDemiVeemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+static const u16 sMinomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_GIGIMON
+static const u16 sGigimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GIGIMON
+#if D_FAMILY_YOKOMON
+static const u16 sYokomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+static const u16 sTanemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+static const u16 sPoromonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_VIXIMON
+static const u16 sViximonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_VIXIMON
+#if D_FAMILY_MOTIMON
+static const u16 sMotimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+static const u16 sBukamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+static const u16 sUpamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_GUMMYMON
+static const u16 sGummymonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GUMMYMON
+#if D_FAMILY_TOKOMON
+static const u16 sTokomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+static const u16 sNyaromonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+static const u16 sAgumonFormSpeciesIdTable[] = {
+    SPECIES_AGUMON_BLACK,
+    SPECIES_AGUMON_X,
+    SPECIES_WAR_GREYMON_WARP,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+static const u16 sGabumonFormSpeciesIdTable[] = {
+    SPECIES_GABUMON_BLACK,
+    SPECIES_GABUMON_X,
+    SPECIES_METAL_GARURUMON_WARP,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+static const u16 sVeemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+static const u16 sWormmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_GUILMON
+static const u16 sGuilmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GUILMON
+#if D_FAMILY_BIYOMON
+static const u16 sBiyomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+static const u16 sPalmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+static const u16 sHawkmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_RENAMON
+static const u16 sRenamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_RENAMON
+#if D_FAMILY_TENTOMON
+static const u16 sTentomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+static const u16 sGomamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+static const u16 sArmadillomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_TERRIERMON
+static const u16 sTerriermonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TERRIERMON
+#if D_FAMILY_PATAMON
+static const u16 sPatamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+static const u16 sSalamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+static const u16 sGreymonFormSpeciesIdTable[] = {
+    SPECIES_GREYMON_BLACK,
+    SPECIES_GREYMON_X,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+static const u16 sGarurumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+static const u16 sExVeemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+static const u16 sStingmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_GROWLMON
+static const u16 sGrowlmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GROWLMON
+#if D_FAMILY_BIRDRAMON
+static const u16 sBirdramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+static const u16 sTogemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+static const u16 sAquilamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KYUBIMON
+static const u16 sKyubimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_KYUBIMON
+#if D_FAMILY_KABUTERIMON
+static const u16 sKabuterimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+static const u16 sIkakkumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+static const u16 sAnkylomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_GARGOMON
+static const u16 sGargomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GARGOMON
+#if D_FAMILY_ANGEMON
+static const u16 sAngemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+static const u16 sGatomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+static const u16 sMetalGreymonFormSpeciesIdTable[] = {
+    SPECIES_METAL_GREYMON_BLACK,
+    SPECIES_METAL_GREYMON_X,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+static const u16 sWereGarurumonFormSpeciesIdTable[] = {
+    SPECIES_GARURUMON_BLACK,
+    SPECIES_GARURUMON_X,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+static const u16 sPaildramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_WAR_GROWLMON
+static const u16 sWarGrowlmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_WAR_GROWLMON
+#if D_FAMILY_GARUDAMON
+static const u16 sGarudamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+static const u16 sLilymonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+static const u16 sSilphymonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_TAOMON
+static const u16 sTaomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_TAOMON
+#if D_FAMILY_MEGA_KABUTERIMON
+static const u16 sMegaKabuterimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+static const u16 sZudomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+static const u16 sShakkoumonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_RAPIDMON
+static const u16 sRapidmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_RAPIDMON
+#if D_FAMILY_MAGNA_ANGEMON
+static const u16 sMagnaAngemonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+static const u16 sAngewomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+static const u16 sWarGreymonFormSpeciesIdTable[] = {
+    SPECIES_WAR_GREYMON_BLACK,
+    SPECIES_WAR_GREYMON_X,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+static const u16 sMetalGarurumonFormSpeciesIdTable[] = {
+    SPECIES_METAL_GARURUMON_BLACK,
+    SPECIES_METAL_GARURUMON_X,
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sDragonImperialdramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_GALLANTMON
+static const u16 sGallantmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_GALLANTMON
+#if D_FAMILY_SAKUYAMON
+static const u16 sSakuyamonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_SAKUYAMON
+#if D_FAMILY_MEGA_GARGOMON
+static const u16 sMegaGargomonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MEGA_GARGOMON
+#if D_FAMILY_SERAPHIMON
+static const u16 sSeraphimonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+static const u16 sMagnadramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const u16 sOmnimonFormSpeciesIdTable[] = {
+    SPECIES_OMNIMON_BLACK,
+    SPECIES_OMNIMON_X,
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sFighterImperialdramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if D_FAMILY_CRIMSON_GALLANTMON
+#if P_FUSION_FORMS
+static const u16 sCrimsonGallantmonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_CRIMSON_GALLANTMON
+
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sPaladinImperialdramonFormSpeciesIdTable[] = {
+    FORM_SPECIES_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON

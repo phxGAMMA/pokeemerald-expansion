@@ -264,6 +264,14 @@ const struct SpeciesInfo gSpeciesInfo[] =
     #include "species_info/gen_7.h"
     #include "species_info/gen_8.h"
     #include "species_info/gen_9.h"
+    #include "species_info/stg_1_training_i.h"
+    #include "species_info/stg_2_training_ii.h"
+    #include "species_info/stg_3_rookie.h"
+    #include "species_info/stg_4_champion.h"
+    #include "species_info/stg_5_ultimate.h"
+    #include "species_info/stg_6_mega_i.h"
+    #include "species_info/stg_7_mega_ii.h"
+    #include "species_info/stg_8_mega_iii.h"
 
     [SPECIES_EGG] =
     {

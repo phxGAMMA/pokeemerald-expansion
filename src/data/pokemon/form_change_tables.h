@@ -1070,5 +1070,452 @@ static const struct FormChange sOgerponFormChangeTable[] = {
 };
 #endif //P_FAMILY_OGERPON
 
+#if D_FAMILY_BOTAMON
+static const struct FormChange sBotamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+static const struct FormChange sPunimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+static const struct FormChange sChibomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+static const struct FormChange sLeafmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+static const struct FormChange sNiyokimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+static const struct FormChange sYuramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+static const struct FormChange sPururumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+static const struct FormChange sPabumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+static const struct FormChange sPichimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+static const struct FormChange sTsubumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+static const struct FormChange sPoyomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+static const struct FormChange sYukimiBotamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+static const struct FormChange sKoromonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+static const struct FormChange sTsunomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+static const struct FormChange sDemiVeemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+static const struct FormChange sMinomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_GIGIMON
+static const struct FormChange sGigimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GIGIMON
+#if D_FAMILY_YOKOMON
+static const struct FormChange sYokomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+static const struct FormChange sTanemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+static const struct FormChange sPoromonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_VIXIMON
+static const struct FormChange sViximonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_VIXIMON
+#if D_FAMILY_MOTIMON
+static const struct FormChange sMotimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+static const struct FormChange sBukamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+static const struct FormChange sUpamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_GUMMYMON
+static const struct FormChange sGummymonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GUMMYMON
+#if D_FAMILY_TOKOMON
+static const struct FormChange sTokomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+static const struct FormChange sNyaromonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+static const struct FormChange sAgumonFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM, SPECIES_WAR_GREYMON_WARP, ITEM_CHARIZARDITE_X},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+static const struct FormChange sGabumonFormChangeTable[] = {
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM, SPECIES_METAL_GARURUMON_WARP, ITEM_CHARIZARDITE_Y},
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+static const struct FormChange sVeemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+static const struct FormChange sWormmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_GUILMON
+static const struct FormChange sGuilmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GUILMON
+#if D_FAMILY_BIYOMON
+static const struct FormChange sBiyomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+static const struct FormChange sPalmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+static const struct FormChange sHawkmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_RENAMON
+static const struct FormChange sRenamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_RENAMON
+#if D_FAMILY_TENTOMON
+static const struct FormChange sTentomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+static const struct FormChange sGomamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+static const struct FormChange sArmadillomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_TERRIERMON
+static const struct FormChange sTerriermonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TERRIERMON
+#if D_FAMILY_PATAMON
+static const struct FormChange sPatamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+static const struct FormChange sSalamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+static const struct FormChange sGreymonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+static const struct FormChange sGarurumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+static const struct FormChange sExVeemonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS, SPECIES_EX_VEEMON, SPECIES_STINGMON, SPECIES_PAILDRAMON},
+    {FUSION_TERMINATOR},
+};
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+static const struct FormChange sStingmonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS, SPECIES_STINGMON, SPECIES_EX_VEEMON, SPECIES_PAILDRAMON},
+    {FUSION_TERMINATOR},
+};
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_GROWLMON
+static const struct FormChange sGrowlmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GROWLMON
+#if D_FAMILY_BIRDRAMON
+static const struct FormChange sBirdramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+static const struct FormChange sTogemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+static const struct FormChange sAquilamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KYUBIMON
+static const struct FormChange sKyubimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_KYUBIMON
+#if D_FAMILY_KABUTERIMON
+static const struct FormChange sKabuterimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+static const struct FormChange sIkakkumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+static const struct FormChange sAnkylomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_GARGOMON
+static const struct FormChange sGargomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GARGOMON
+#if D_FAMILY_ANGEMON
+static const struct FormChange sAngemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+static const struct FormChange sGatomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+static const struct FormChange sMetalGreymonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+static const struct FormChange sWereGarurumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+static const struct FormChange sPaildramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_WAR_GROWLMON
+static const struct FormChange sWarGrowlmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_WAR_GROWLMON
+#if D_FAMILY_GARUDAMON
+static const struct FormChange sGarudamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+static const struct FormChange sLilymonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+static const struct FormChange sSilphymonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_TAOMON
+static const struct FormChange sTaomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_TAOMON
+#if D_FAMILY_MEGA_KABUTERIMON
+static const struct FormChange sMegaKabuterimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+static const struct FormChange sZudomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+static const struct FormChange sShakkoumonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_RAPIDMON
+static const struct FormChange sRapidmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_RAPIDMON
+#if D_FAMILY_MAGNA_ANGEMON
+static const struct FormChange sMagnaAngemonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+static const struct FormChange sAngewomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+static const struct FormChange sWarGreymonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS,   SPECIES_WAR_GREYMON,       SPECIES_METAL_GARURUMON,       SPECIES_OMNIMON},
+    {0, ITEM_DNA_SPLICERS,   SPECIES_WAR_GREYMON_BLACK, SPECIES_METAL_GARURUMON_BLACK, SPECIES_OMNIMON_BLACK},
+    {0, ITEM_DNA_SPLICERS,   SPECIES_WAR_GREYMON_X,     SPECIES_METAL_GARURUMON_X,     SPECIES_OMNIMON_X},
+    {FUSION_TERMINATOR},
+};
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+static const struct FormChange sMetalGarurumonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS,   SPECIES_METAL_GARURUMON,       SPECIES_WAR_GREYMON,       SPECIES_OMNIMON},
+    {0, ITEM_DNA_SPLICERS,   SPECIES_METAL_GARURUMON_BLACK, SPECIES_WAR_GREYMON_BLACK, SPECIES_OMNIMON_BLACK},
+    {0, ITEM_DNA_SPLICERS,   SPECIES_METAL_GARURUMON_X,     SPECIES_WAR_GREYMON_X,     SPECIES_OMNIMON_X},
+    {FUSION_TERMINATOR},
+};
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct FormChange sDragonImperialdramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_GALLANTMON
+static const struct FormChange sGallantmonFormChangeTable[] = {
+    {FUSION_TERMINATOR},
+};
+#endif //D_FAMILY_GALLANTMON
+#if D_FAMILY_SAKUYAMON
+static const struct FormChange sSakuyamonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_SAKUYAMON
+#if D_FAMILY_MEGA_GARGOMON
+static const struct FormChange sMegaGargomonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MEGA_GARGOMON
+#if D_FAMILY_SERAPHIMON
+static const struct FormChange sSeraphimonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+static const struct FormChange sMagnadramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const struct FormChange sOmnimonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS, SPECIES_OMNIMON, SPECIES_FIGHTER_IMPERIALDRAMON, SPECIES_PALADIN_IMPERIALDRAMON},
+    {FUSION_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct FormChange sFighterImperialdramonFormChangeTable[] = {
+    {0, ITEM_DNA_SPLICERS, SPECIES_FIGHTER_IMPERIALDRAMON, SPECIES_OMNIMON, SPECIES_PALADIN_IMPERIALDRAMON},
+    {FUSION_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if D_FAMILY_CRIMSON_GALLANTMON
+#if P_FUSION_FORMS
+static const struct FormChange sCrimsonGallantmonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_CRIMSON_GALLANTMON
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct FormChange sPaladinImperialdramonFormChangeTable[] = {
+    {FORM_CHANGE_TERMINATOR},
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON
+
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN

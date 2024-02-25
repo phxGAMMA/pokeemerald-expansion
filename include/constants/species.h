@@ -1770,7 +1770,139 @@
 #define SPECIES_URSHIFU_SINGLE_STRIKE_STYLE_GIGANTAMAX  GIGANTAMAX_START + 33
 #define SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX   GIGANTAMAX_START + 34
 
-#define SPECIES_EGG SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX + 1
+#define DIGIMON_TRAINING_I_START                        SPECIES_URSHIFU_RAPID_STRIKE_STYLE_GIGANTAMAX
+
+#define SPECIES_BOTAMON                                 DIGIMON_TRAINING_I_START + 1
+#define SPECIES_PUNIMON                                 DIGIMON_TRAINING_I_START + 2
+#define SPECIES_CHIBOMON                                DIGIMON_TRAINING_I_START + 3
+#define SPECIES_LEAFMON                                 DIGIMON_TRAINING_I_START + 4
+#define SPECIES_NIYOKIMON                               DIGIMON_TRAINING_I_START + 5
+#define SPECIES_YURAMON                                 DIGIMON_TRAINING_I_START + 6
+#define SPECIES_PURURUMON                               DIGIMON_TRAINING_I_START + 7
+#define SPECIES_PABUMON                                 DIGIMON_TRAINING_I_START + 8
+#define SPECIES_PICHIMON                                DIGIMON_TRAINING_I_START + 9
+#define SPECIES_TSUBUMON                                DIGIMON_TRAINING_I_START + 10
+#define SPECIES_POYOMON                                 DIGIMON_TRAINING_I_START + 11
+#define SPECIES_YUKIMI_BOTAMON                          DIGIMON_TRAINING_I_START + 12
+
+#define DIGIMON_TRAINING_II_START                       SPECIES_YUKIMI_BOTAMON
+
+#define SPECIES_KOROMON                                 DIGIMON_TRAINING_II_START + 1
+#define SPECIES_TSUNOMON                                DIGIMON_TRAINING_II_START + 2
+#define SPECIES_DEMI_VEEMON                             DIGIMON_TRAINING_II_START + 3
+#define SPECIES_MINOMON                                 DIGIMON_TRAINING_II_START + 4
+#define SPECIES_GIGIMON                                 DIGIMON_TRAINING_II_START + 5
+#define SPECIES_YOKOMON                                 DIGIMON_TRAINING_II_START + 6
+#define SPECIES_TANEMON                                 DIGIMON_TRAINING_II_START + 7
+#define SPECIES_POROMON                                 DIGIMON_TRAINING_II_START + 8
+#define SPECIES_VIXIMON                                 DIGIMON_TRAINING_II_START + 9
+#define SPECIES_MOTIMON                                 DIGIMON_TRAINING_II_START + 10
+#define SPECIES_BUKAMON                                 DIGIMON_TRAINING_II_START + 11
+#define SPECIES_UPAMON                                  DIGIMON_TRAINING_II_START + 12
+#define SPECIES_GUMMYMON                                DIGIMON_TRAINING_II_START + 13
+#define SPECIES_TOKOMON                                 DIGIMON_TRAINING_II_START + 14
+#define SPECIES_NYAROMON                                DIGIMON_TRAINING_II_START + 15
+
+#define DIGIMON_ROOKIE_START                            SPECIES_NYAROMON
+
+#define SPECIES_AGUMON                                  DIGIMON_ROOKIE_START + 1
+#define SPECIES_GABUMON                                 DIGIMON_ROOKIE_START + 2
+#define SPECIES_VEEMON                                  DIGIMON_ROOKIE_START + 3
+#define SPECIES_WORMMON                                 DIGIMON_ROOKIE_START + 4
+#define SPECIES_GUILMON                                 DIGIMON_ROOKIE_START + 5
+#define SPECIES_BIYOMON                                 DIGIMON_ROOKIE_START + 6
+#define SPECIES_PALMON                                  DIGIMON_ROOKIE_START + 7
+#define SPECIES_HAWKMON                                 DIGIMON_ROOKIE_START + 8
+#define SPECIES_RENAMON                                 DIGIMON_ROOKIE_START + 9
+#define SPECIES_TENTOMON                                DIGIMON_ROOKIE_START + 10
+#define SPECIES_GOMAMON                                 DIGIMON_ROOKIE_START + 11
+#define SPECIES_ARMADILLOMON                            DIGIMON_ROOKIE_START + 12
+#define SPECIES_TERRIERMON                              DIGIMON_ROOKIE_START + 13
+#define SPECIES_PATAMON                                 DIGIMON_ROOKIE_START + 14
+#define SPECIES_SALAMON                                 DIGIMON_ROOKIE_START + 15
+
+#define DIGIMON_CHAMPION_START                          SPECIES_SALAMON
+
+#define SPECIES_GREYMON                                 DIGIMON_CHAMPION_START + 1
+#define SPECIES_GARURUMON                               DIGIMON_CHAMPION_START + 2
+#define SPECIES_EX_VEEMON                               DIGIMON_CHAMPION_START + 3
+#define SPECIES_STINGMON                                DIGIMON_CHAMPION_START + 4
+#define SPECIES_GROWLMON                                DIGIMON_CHAMPION_START + 5
+#define SPECIES_BIRDRAMON                               DIGIMON_CHAMPION_START + 6
+#define SPECIES_TOGEMON                                 DIGIMON_CHAMPION_START + 7
+#define SPECIES_AQUILAMON                               DIGIMON_CHAMPION_START + 8
+#define SPECIES_KYUBIMON                                DIGIMON_CHAMPION_START + 9
+#define SPECIES_KABUTERIMON                             DIGIMON_CHAMPION_START + 10
+#define SPECIES_IKAKKUMON                               DIGIMON_CHAMPION_START + 11
+#define SPECIES_ANKYLOMON                               DIGIMON_CHAMPION_START + 12
+#define SPECIES_GARGOMON                                DIGIMON_CHAMPION_START + 13
+#define SPECIES_ANGEMON                                 DIGIMON_CHAMPION_START + 14
+#define SPECIES_GATOMON                                 DIGIMON_CHAMPION_START + 15
+
+#define DIGIMON_ULTIMATE_START                          SPECIES_GATOMON
+
+#define SPECIES_METAL_GREYMON                           DIGIMON_ULTIMATE_START + 1
+#define SPECIES_WERE_GARURUMON                          DIGIMON_ULTIMATE_START + 2
+#define SPECIES_PAILDRAMON                              DIGIMON_ULTIMATE_START + 3
+#define SPECIES_WAR_GROWLMON                            DIGIMON_ULTIMATE_START + 4
+#define SPECIES_GARUDAMON                               DIGIMON_ULTIMATE_START + 5
+#define SPECIES_LILYMON                                 DIGIMON_ULTIMATE_START + 6
+#define SPECIES_SILPHYMON                               DIGIMON_ULTIMATE_START + 7
+#define SPECIES_TAOMON                                  DIGIMON_ULTIMATE_START + 8
+#define SPECIES_MEGA_KABUTERIMON                        DIGIMON_ULTIMATE_START + 9
+#define SPECIES_ZUDOMON                                 DIGIMON_ULTIMATE_START + 10
+#define SPECIES_SHAKKOUMON                              DIGIMON_ULTIMATE_START + 11
+#define SPECIES_RAPIDMON                                DIGIMON_ULTIMATE_START + 12
+#define SPECIES_MAGNA_ANGEMON                           DIGIMON_ULTIMATE_START + 13
+#define SPECIES_ANGEWOMON                               DIGIMON_ULTIMATE_START + 14
+
+#define DIGIMON_MEGA_I_START                            SPECIES_ANGEWOMON
+
+#define SPECIES_WAR_GREYMON                             DIGIMON_MEGA_I_START + 1
+#define SPECIES_METAL_GARURUMON                         DIGIMON_MEGA_I_START + 2
+#define SPECIES_DRAGON_IMPERIALDRAMON                   DIGIMON_MEGA_I_START + 3
+#define SPECIES_GALLANTMON                              DIGIMON_MEGA_I_START + 4
+#define SPECIES_SAKUYAMON                               DIGIMON_MEGA_I_START + 5
+#define SPECIES_MEGA_GARGOMON                           DIGIMON_MEGA_I_START + 6
+#define SPECIES_SERAPHIMON                              DIGIMON_MEGA_I_START + 7
+#define SPECIES_MAGNADRAMON                             DIGIMON_MEGA_I_START + 8
+
+#define DIGIMON_MEGA_II_START                           SPECIES_MAGNADRAMON
+
+#define SPECIES_OMNIMON                                 DIGIMON_MEGA_II_START + 1
+#define SPECIES_FIGHTER_IMPERIALDRAMON                  DIGIMON_MEGA_II_START + 2
+#define SPECIES_CRIMSON_GALLANTMON                      DIGIMON_MEGA_II_START + 3
+
+#define DIGIMON_MEGA_III_START                          SPECIES_FIGHTER_IMPERIALDRAMON
+
+#define SPECIES_PALADIN_IMPERIALDRAMON                  DIGIMON_MEGA_III_START + 1
+
+#define DIGIMON_FORMS_START                             SPECIES_PALADIN_IMPERIALDRAMON
+
+#define SPECIES_AGUMON_BLACK                            DIGIMON_FORMS_START + 1
+#define SPECIES_AGUMON_X                                DIGIMON_FORMS_START + 2
+#define SPECIES_GABUMON_BLACK                           DIGIMON_FORMS_START + 3
+#define SPECIES_GABUMON_X                               DIGIMON_FORMS_START + 4
+#define SPECIES_GREYMON_BLACK                           DIGIMON_FORMS_START + 5
+#define SPECIES_GREYMON_X                               DIGIMON_FORMS_START + 6
+#define SPECIES_GARURUMON_BLACK                         DIGIMON_FORMS_START + 7
+#define SPECIES_GARURUMON_X                             DIGIMON_FORMS_START + 8
+#define SPECIES_METAL_GREYMON_BLACK                     DIGIMON_FORMS_START + 9
+#define SPECIES_METAL_GREYMON_X                         DIGIMON_FORMS_START + 10
+#define SPECIES_WERE_GARURUMON_BLACK                    DIGIMON_FORMS_START + 11
+#define SPECIES_WERE_GARURUMON_X                        DIGIMON_FORMS_START + 12
+#define SPECIES_WAR_GREYMON_BLACK                       DIGIMON_FORMS_START + 13
+#define SPECIES_WAR_GREYMON_X                           DIGIMON_FORMS_START + 14
+#define SPECIES_WAR_GREYMON_WARP                        DIGIMON_FORMS_START + 15
+#define SPECIES_METAL_GARURUMON_BLACK                   DIGIMON_FORMS_START + 16
+#define SPECIES_METAL_GARURUMON_X                       DIGIMON_FORMS_START + 17
+#define SPECIES_METAL_GARURUMON_WARP                    DIGIMON_FORMS_START + 18
+#define SPECIES_OMNIMON_BLACK                           DIGIMON_FORMS_START + 19
+#define SPECIES_OMNIMON_X                               DIGIMON_FORMS_START + 20
+
+#define EGG_START                                       SPECIES_OMNIMON_X
+
+#define SPECIES_EGG                                     EGG_START + 1
 
 #define NUM_SPECIES SPECIES_EGG
 

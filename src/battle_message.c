@@ -2104,6 +2104,9 @@ static const u8 sATypeMove_Table[NUMBER_OF_MON_TYPES][17] =
     [TYPE_DRAGON]   = _("a DRAGON move"),
     [TYPE_DARK]     = _("a DARK move"),
     [TYPE_FAIRY]    = _("a FAIRY move"),
+    [TYPE_DATA]     = _("a DATA move"),
+    [TYPE_VIRUS]    = _("a VIRUS move"),
+    [TYPE_VACCINE]  = _("a VACCINE move"),
 };
 
 const u8 gText_BattleTourney[] = _("BATTLE TOURNEY");

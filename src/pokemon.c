@@ -3824,6 +3824,30 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
 
             switch (evolutions[i].method)
             {
+            case EVO_FRIENDSHIP_NO_HEARTS:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) == AFFECTION_NO_HEARTS)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_ONE_HEART:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) >= AFFECTION_ONE_HEART)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_TWO_HEARTS:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) >= AFFECTION_TWO_HEARTS)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_THREE_HEARTS:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) >= AFFECTION_THREE_HEARTS)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_FOUR_HEARTS:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) >= AFFECTION_FOUR_HEARTS)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_FRIENDSHIP_FIVE_HEARTS:
+                if (evolutions[i].param <= level && GetMonAffectionHearts(mon) == AFFECTION_FIVE_HEARTS)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
             case EVO_FRIENDSHIP:
                 if (friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = evolutions[i].targetSpecies;

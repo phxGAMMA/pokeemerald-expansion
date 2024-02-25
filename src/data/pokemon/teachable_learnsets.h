@@ -38975,3 +38975,438 @@ static const u16 sOgerponTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_OGERPON
+
+#if D_FAMILY_BOTAMON
+static const u16 sBotamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+static const u16 sPunimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+static const u16 sChibomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+static const u16 sLeafmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+static const u16 sNiyokimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+static const u16 sYuramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+static const u16 sPururumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+static const u16 sPabumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+static const u16 sPichimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+static const u16 sTsubumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+static const u16 sPoyomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+static const u16 sYukimiBotamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+static const u16 sKoromonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+static const u16 sTsunomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+static const u16 sDemiVeemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+static const u16 sMinomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_GIGIMON
+static const u16 sGigimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GIGIMON
+#if D_FAMILY_YOKOMON
+static const u16 sYokomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+static const u16 sTanemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+static const u16 sPoromonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_VIXIMON
+static const u16 sViximonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_VIXIMON
+#if D_FAMILY_MOTIMON
+static const u16 sMotimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+static const u16 sBukamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+static const u16 sUpamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_GUMMYMON
+static const u16 sGummymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GUMMYMON
+#if D_FAMILY_TOKOMON
+static const u16 sTokomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+static const u16 sNyaromonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+static const u16 sAgumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+static const u16 sGabumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+static const u16 sVeemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+static const u16 sWormmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_GUILMON
+static const u16 sGuilmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GUILMON
+#if D_FAMILY_BIYOMON
+static const u16 sBiyomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+static const u16 sPalmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+static const u16 sHawkmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_RENAMON
+static const u16 sRenamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_RENAMON
+#if D_FAMILY_TENTOMON
+static const u16 sTentomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+static const u16 sGomamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+static const u16 sArmadillomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_TERRIERMON
+static const u16 sTerriermonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TERRIERMON
+#if D_FAMILY_PATAMON
+static const u16 sPatamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+static const u16 sSalamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+static const u16 sGreymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+static const u16 sGarurumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+static const u16 sExVeemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+static const u16 sStingmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_GROWLMON
+static const u16 sGrowlmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GROWLMON
+#if D_FAMILY_BIRDRAMON
+static const u16 sBirdramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+static const u16 sTogemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+static const u16 sAquilamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KYUBIMON
+static const u16 sKyubimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_KYUBIMON
+#if D_FAMILY_KABUTERIMON
+static const u16 sKabuterimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+static const u16 sIkakkumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+static const u16 sAnkylomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_GARGOMON
+static const u16 sGargomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GARGOMON
+#if D_FAMILY_ANGEMON
+static const u16 sAngemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+static const u16 sGatomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+static const u16 sMetalGreymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+static const u16 sWereGarurumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+static const u16 sPaildramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_WAR_GROWLMON
+static const u16 sWarGrowlmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_WAR_GROWLMON
+#if D_FAMILY_GARUDAMON
+static const u16 sGarudamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+static const u16 sLilymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+static const u16 sSilphymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_TAOMON
+static const u16 sTaomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_TAOMON
+#if D_FAMILY_MEGA_KABUTERIMON
+static const u16 sMegaKabuterimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+static const u16 sZudomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+static const u16 sShakkoumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_RAPIDMON
+static const u16 sRapidmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_RAPIDMON
+#if D_FAMILY_MAGNA_ANGEMON
+static const u16 sMagnaAngemonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+static const u16 sAngewomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+static const u16 sWarGreymonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+static const u16 sMetalGarurumonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sDragonImperialdramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_GALLANTMON
+static const u16 sGallantmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_GALLANTMON
+#if D_FAMILY_SAKUYAMON
+static const u16 sSakuyamonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_SAKUYAMON
+#if D_FAMILY_MEGA_GARGOMON
+static const u16 sMegaGargomonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MEGA_GARGOMON
+#if D_FAMILY_SERAPHIMON
+static const u16 sSeraphimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+static const u16 sMagnadramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const u16 sOmnimonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sFighterImperialdramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if D_FAMILY_CRIMSON_GALLANTMON
+#if P_FUSION_FORMS
+static const u16 sCrimsonGallantmonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_CRIMSON_GALLANTMON
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const u16 sPaladinImperialdramonTeachableLearnset[] = {
+    MOVE_UNAVAILABLE,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON

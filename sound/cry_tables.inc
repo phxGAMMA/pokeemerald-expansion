@@ -2402,6 +2402,275 @@ gCryTable::
 	cry Cry_Ogerpon
 .endif @ P_FAMILY_OGERPON
 
+.if D_FAMILY_BOTAMON == TRUE
+    cry Cry_Botamon
+.endif @ D_FAMILY_BOTAMON
+.if D_FAMILY_PUNIMON == TRUE
+    cry Cry_Punimon
+.endif @ D_FAMILY_PUNIMON
+.if D_FAMILY_CHIBOMON == TRUE
+    cry Cry_Chibomon
+.endif @ D_FAMILY_CHIBOMON
+.if D_FAMILY_LEAFMON == TRUE
+    cry Cry_Leafmon
+.endif @ D_FAMILY_LEAFMON
+.if D_FAMILY_NIYOKIMON == TRUE
+    cry Cry_Niyokimon
+.endif @ D_FAMILY_NIYOKIMON
+.if D_FAMILY_YURAMON == TRUE
+    cry Cry_Yuramon
+.endif @ D_FAMILY_YURAMON
+.if D_FAMILY_PURURUMON == TRUE
+    cry Cry_Pururumon
+.endif @ D_FAMILY_PURURUMON
+.if D_FAMILY_PABUMON == TRUE
+    cry Cry_Pabumon
+.endif @ D_FAMILY_PABUMON
+.if D_FAMILY_PICHIMON == TRUE
+    cry Cry_Pichimon
+.endif @ D_FAMILY_PICHIMON
+.if D_FAMILY_TSUBUMON == TRUE
+    cry Cry_Tsubumon
+.endif @ D_FAMILY_TSUBUMON
+.if D_FAMILY_POYOMON == TRUE
+    cry Cry_Poyomon
+.endif @ D_FAMILY_POYOMON
+.if D_FAMILY_YUKIMI_BOTAMON == TRUE
+    cry Cry_Yukimi_Botamon
+.endif @ D_FAMILY_YUKIMI_BOTAMON
+
+.if D_FAMILY_KOROMON == TRUE
+    cry Cry_Koromon
+.endif @ D_FAMILY_KOROMON
+.if D_FAMILY_TSUNOMON == TRUE
+    cry Cry_Tsunomon
+.endif @ D_FAMILY_TSUNOMON
+.if D_FAMILY_DEMI_VEEMON == TRUE
+    cry Cry_Demi_Veemon
+.endif @ D_FAMILY_DEMI_VEEMON
+.if D_FAMILY_MINOMON == TRUE
+    cry Cry_Minomon
+.endif @ D_FAMILY_MINOMON
+.if D_FAMILY_GIGIMON == TRUE
+    cry Cry_Gigimon
+.endif @ D_FAMILY_GIGIMON
+.if D_FAMILY_YOKOMON == TRUE
+    cry Cry_Yokomon
+.endif @ D_FAMILY_YOKOMON
+.if D_FAMILY_TANEMON == TRUE
+    cry Cry_Tanemon
+.endif @ D_FAMILY_TANEMON
+.if D_FAMILY_POROMON == TRUE
+    cry Cry_Poromon
+.endif @ D_FAMILY_POROMON
+.if D_FAMILY_VIXIMON == TRUE
+    cry Cry_Viximon
+.endif @ D_FAMILY_VIXIMON
+.if D_FAMILY_MOTIMON == TRUE
+    cry Cry_Motimon
+.endif @ D_FAMILY_MOTIMON
+.if D_FAMILY_BUKAMON == TRUE
+    cry Cry_Bukamon
+.endif @ D_FAMILY_BUKAMON
+.if D_FAMILY_UPAMON == TRUE
+    cry Cry_Upamon
+.endif @ D_FAMILY_UPAMON
+.if D_FAMILY_TOKOMON == TRUE
+.if D_FAMILY_GUMMYMON == TRUE
+    cry Cry_Gummymon
+.endif @ D_FAMILY_GUMMYMON
+    cry Cry_Tokomon
+.endif @ D_FAMILY_TOKOMON
+.if D_FAMILY_NYAROMON == TRUE
+    cry Cry_Nyaromon
+.endif @ D_FAMILY_NYAROMON
+
+.if D_FAMILY_AGUMON == TRUE
+    cry Cry_Agumon
+.endif @ D_FAMILY_AGUMON
+.if D_FAMILY_GABUMON == TRUE
+    cry Cry_Gabumon
+.endif @ D_FAMILY_GABUMON
+.if D_FAMILY_VEEMON == TRUE
+    cry Cry_Veemon
+.endif @ D_FAMILY_VEEMON
+.if D_FAMILY_WORMMON == TRUE
+    cry Cry_Wormmon
+.endif @ D_FAMILY_WORMMON
+.if D_FAMILY_GUILMON == TRUE
+    cry Cry_Guilmon
+.endif @ D_FAMILY_GUILMON
+.if D_FAMILY_BIYOMON == TRUE
+    cry Cry_Biyomon
+.endif @ D_FAMILY_BIYOMON
+.if D_FAMILY_PALMON == TRUE
+    cry Cry_Palmon
+.endif @ D_FAMILY_PALMON
+.if D_FAMILY_HAWKMON == TRUE
+    cry Cry_Hawkmon
+.endif @ D_FAMILY_HAWKMON
+.if D_FAMILY_RENAMON == TRUE
+    cry Cry_Renamon
+.endif @ D_FAMILY_RENAMON
+.if D_FAMILY_TENTOMON == TRUE
+    cry Cry_Tentomon
+.endif @ D_FAMILY_TENTOMON
+.if D_FAMILY_GOMAMON == TRUE
+    cry Cry_Gomamon
+.endif @ D_FAMILY_GOMAMON
+.if D_FAMILY_ARMADILLOMON == TRUE
+    cry Cry_Armadillomon
+.endif @ D_FAMILY_ARMADILLOMON
+.if D_FAMILY_TERRIERMON == TRUE
+    cry Cry_Terriermon
+.endif @ D_FAMILY_TERRIERMON
+.if D_FAMILY_PATAMON == TRUE
+    cry Cry_Patamon
+.endif @ D_FAMILY_PATAMON
+.if D_FAMILY_SALAMON == TRUE
+    cry Cry_Salamon
+.endif @ D_FAMILY_SALAMON
+
+.if D_FAMILY_GREYMON == TRUE
+    cry Cry_Greymon
+.endif @ D_FAMILY_GREYMON
+.if D_FAMILY_GARURUMON == TRUE
+    cry Cry_Garurumon
+.endif @ D_FAMILY_GARURUMON
+.if D_FAMILY_EX_VEEMON == TRUE
+    cry Cry_Ex_Veemon
+.endif @ D_FAMILY_EX_VEEMON
+.if D_FAMILY_STINGMON == TRUE
+    cry Cry_Stingmon
+.endif @ D_FAMILY_STINGMON
+.if D_FAMILY_GROWLMON == TRUE
+    cry Cry_Growlmon
+.endif @ D_FAMILY_GROWLMON
+.if D_FAMILY_BIRDRAMON == TRUE
+    cry Cry_Birdramon
+.endif @ D_FAMILY_BIRDRAMON
+.if D_FAMILY_TOGEMON == TRUE
+    cry Cry_Togemon
+.endif @ D_FAMILY_TOGEMON
+.if D_FAMILY_AQUILAMON == TRUE
+    cry Cry_Aquilamon
+.endif @ D_FAMILY_AQUILAMON
+.if D_FAMILY_KYUBIMON == TRUE
+    cry Cry_Kyubimon
+.endif @ D_FAMILY_KYUBIMON
+.if D_FAMILY_KABUTERIMON == TRUE
+    cry Cry_Kabuterimon
+.endif @ D_FAMILY_KABUTERIMON
+.if D_FAMILY_IKAKKUMON == TRUE
+    cry Cry_Ikakkumon
+.endif @ D_FAMILY_IKAKKUMON
+.if D_FAMILY_ANKYLOMON == TRUE
+    cry Cry_Ankylomon
+.endif @ D_FAMILY_ANKYLOMON
+.if D_FAMILY_GARGOMON == TRUE
+    cry Cry_Gargomon
+.endif @ D_FAMILY_GARGOMON
+.if D_FAMILY_ANGEMON == TRUE
+    cry Cry_Angemon
+.endif @ D_FAMILY_ANGEMON
+.if D_FAMILY_GATOMON == TRUE
+    cry Cry_Gatomon
+.endif @ D_FAMILY_GATOMON
+
+.if D_FAMILY_METAL_GREYMON == TRUE
+    cry Cry_Metal_Greymon
+.endif @ D_FAMILY_METAL_GREYMON
+.if D_FAMILY_WERE_GARURUMON == TRUE
+    cry Cry_Were_Garurumon
+.endif @ D_FAMILY_WERE_GARURUMON
+.if D_FAMILY_PAILDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Paildramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PAILDRAMON
+.if D_FAMILY_WAR_GROWLMON == TRUE
+    cry Cry_War_Growlmon
+.endif @ D_FAMILY_WAR_GROWLMON
+.if D_FAMILY_GARUDAMON == TRUE
+    cry Cry_Garudamon
+.endif @ D_FAMILY_GARUDAMON
+.if D_FAMILY_LILYMON == TRUE
+    cry Cry_Lilymon
+.endif @ D_FAMILY_LILYMON
+.if D_FAMILY_SILPHYMON == TRUE
+    cry Cry_Silphymon
+.endif @ D_FAMILY_SILPHYMON
+.if D_FAMILY_TAOMON == TRUE
+    cry Cry_Taomon
+.endif @ D_FAMILY_TAOMON
+.if D_FAMILY_MEGA_KABUTERIMON == TRUE
+    cry Cry_Mega_Kabuterimon
+.endif @ D_FAMILY_MEGA_KABUTERIMON
+.if D_FAMILY_ZUDOMON == TRUE
+    cry Cry_Zudomon
+.endif @ D_FAMILY_ZUDOMON
+.if D_FAMILY_SHAKKOUMON == TRUE
+    cry Cry_Shakkoumon
+.endif @ D_FAMILY_SHAKKOUMON
+.if D_FAMILY_RAPIDMON == TRUE
+    cry Cry_Rapidmon
+.endif @ D_FAMILY_RAPIDMON
+.if D_FAMILY_MAGNA_ANGEMON == TRUE
+    cry Cry_Magna_Angemon
+.endif @ D_FAMILY_MAGNA_ANGEMON
+.if D_FAMILY_ANGEWOMON == TRUE
+    cry Cry_Angewomon
+.endif @ D_FAMILY_ANGEWOMON
+
+.if D_FAMILY_WAR_GREYMON == TRUE
+    cry Cry_War_Greymon
+.endif @ D_FAMILY_WAR_GREYMON
+.if D_FAMILY_METAL_GARURUMON == TRUE
+    cry Cry_Metal_Garurumon
+.endif @ D_FAMILY_METAL_GARURUMON
+.if D_FAMILY_DRAGON_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Dragon_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_DRAGON_IMPERIALDRAMON
+.if D_FAMILY_GALLANTMON == TRUE
+    cry Cry_Gallantmon
+.endif @ D_FAMILY_GALLANTMON
+.if D_FAMILY_SAKUYAMON == TRUE
+    cry Cry_Sakuyamon
+.endif @ D_FAMILY_SAKUYAMON
+.if D_FAMILY_MEGA_GARGOMON == TRUE
+    cry Cry_Mega_Gargomon
+.endif @ D_FAMILY_MEGA_GARGOMON
+.if D_FAMILY_SERAPHIMON == TRUE
+    cry Cry_Serphimon
+.endif @ D_FAMILY_SERAPHIMON
+.if D_FAMILY_MAGNADRAMON == TRUE
+    cry Cry_Magnadramon
+.endif @ D_FAMILY_MAGNADRAMON
+
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Omnimon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+.if D_FAMILY_FIGHTER_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Fighter_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_FIGHTER_IMPERIALDRAMON
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Crimson_Gallantmon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+
+.if D_FAMILY_PALADIN_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry Cry_Paladin_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PALADIN_IMPERIALDRAMON
+
 	.align 2
 gCryTable_Reverse::
 .if P_FAMILY_BULBASAUR == TRUE
@@ -4805,3 +5074,272 @@ gCryTable_Reverse::
 .if P_FAMILY_OGERPON == TRUE
 	cry_reverse Cry_Ogerpon
 .endif @ P_FAMILY_OGERPON
+
+.if D_FAMILY_BOTAMON == TRUE
+    cry_reverse Cry_Botamon
+.endif @ D_FAMILY_BOTAMON
+.if D_FAMILY_PUNIMON == TRUE
+    cry_reverse Cry_Punimon
+.endif @ D_FAMILY_PUNIMON
+.if D_FAMILY_CHIBOMON == TRUE
+    cry_reverse Cry_Chibomon
+.endif @ D_FAMILY_CHIBOMON
+.if D_FAMILY_LEAFMON == TRUE
+    cry_reverse Cry_Leafmon
+.endif @ D_FAMILY_LEAFMON
+.if D_FAMILY_NIYOKIMON == TRUE
+    cry_reverse Cry_Niyokimon
+.endif @ D_FAMILY_NIYOKIMON
+.if D_FAMILY_YURAMON == TRUE
+    cry_reverse Cry_Yuramon
+.endif @ D_FAMILY_YURAMON
+.if D_FAMILY_PURURUMON == TRUE
+    cry_reverse Cry_Pururumon
+.endif @ D_FAMILY_PURURUMON
+.if D_FAMILY_PABUMON == TRUE
+    cry_reverse Cry_Pabumon
+.endif @ D_FAMILY_PABUMON
+.if D_FAMILY_PICHIMON == TRUE
+    cry_reverse Cry_Pichimon
+.endif @ D_FAMILY_PICHIMON
+.if D_FAMILY_TSUBUMON == TRUE
+    cry_reverse Cry_Tsubumon
+.endif @ D_FAMILY_TSUBUMON
+.if D_FAMILY_POYOMON == TRUE
+    cry_reverse Cry_Poyomon
+.endif @ D_FAMILY_POYOMON
+.if D_FAMILY_YUKIMI_BOTAMON == TRUE
+    cry_reverse Cry_Yukimi_Botamon
+.endif @ D_FAMILY_YUKIMI_BOTAMON
+
+.if D_FAMILY_KOROMON == TRUE
+    cry_reverse Cry_Koromon
+.endif @ D_FAMILY_KOROMON
+.if D_FAMILY_TSUNOMON == TRUE
+    cry_reverse Cry_Tsunomon
+.endif @ D_FAMILY_TSUNOMON
+.if D_FAMILY_DEMI_VEEMON == TRUE
+    cry_reverse Cry_Demi_Veemon
+.endif @ D_FAMILY_DEMI_VEEMON
+.if D_FAMILY_MINOMON == TRUE
+    cry_reverse Cry_Minomon
+.endif @ D_FAMILY_MINOMON
+.if D_FAMILY_GIGIMON == TRUE
+    cry_reverse Cry_Gigimon
+.endif @ D_FAMILY_GIGIMON
+.if D_FAMILY_YOKOMON == TRUE
+    cry_reverse Cry_Yokomon
+.endif @ D_FAMILY_YOKOMON
+.if D_FAMILY_TANEMON == TRUE
+    cry_reverse Cry_Tanemon
+.endif @ D_FAMILY_TANEMON
+.if D_FAMILY_POROMON == TRUE
+    cry_reverse Cry_Poromon
+.endif @ D_FAMILY_POROMON
+.if D_FAMILY_VIXIMON == TRUE
+    cry_reverse Cry_Viximon
+.endif @ D_FAMILY_VIXIMON
+.if D_FAMILY_MOTIMON == TRUE
+    cry_reverse Cry_Motimon
+.endif @ D_FAMILY_MOTIMON
+.if D_FAMILY_BUKAMON == TRUE
+    cry_reverse Cry_Bukamon
+.endif @ D_FAMILY_BUKAMON
+.if D_FAMILY_UPAMON == TRUE
+    cry_reverse Cry_Upamon
+.endif @ D_FAMILY_UPAMON
+.if D_FAMILY_TOKOMON == TRUE
+.if D_FAMILY_GUMMYMON == TRUE
+    cry_reverse Cry_Gummymon
+.endif @ D_FAMILY_GUMMYMON
+    cry_reverse Cry_Tokomon
+.endif @ D_FAMILY_TOKOMON
+.if D_FAMILY_NYAROMON == TRUE
+    cry_reverse Cry_Nyaromon
+.endif @ D_FAMILY_NYAROMON
+
+.if D_FAMILY_AGUMON == TRUE
+    cry_reverse Cry_Agumon
+.endif @ D_FAMILY_AGUMON
+.if D_FAMILY_GABUMON == TRUE
+    cry_reverse Cry_Gabumon
+.endif @ D_FAMILY_GABUMON
+.if D_FAMILY_VEEMON == TRUE
+    cry_reverse Cry_Veemon
+.endif @ D_FAMILY_VEEMON
+.if D_FAMILY_WORMMON == TRUE
+    cry_reverse Cry_Wormmon
+.endif @ D_FAMILY_WORMMON
+.if D_FAMILY_GUILMON == TRUE
+    cry_reverse Cry_Guilmon
+.endif @ D_FAMILY_GUILMON
+.if D_FAMILY_BIYOMON == TRUE
+    cry_reverse Cry_Biyomon
+.endif @ D_FAMILY_BIYOMON
+.if D_FAMILY_PALMON == TRUE
+    cry_reverse Cry_Palmon
+.endif @ D_FAMILY_PALMON
+.if D_FAMILY_HAWKMON == TRUE
+    cry_reverse Cry_Hawkmon
+.endif @ D_FAMILY_HAWKMON
+.if D_FAMILY_RENAMON == TRUE
+    cry_reverse Cry_Renamon
+.endif @ D_FAMILY_RENAMON
+.if D_FAMILY_TENTOMON == TRUE
+    cry_reverse Cry_Tentomon
+.endif @ D_FAMILY_TENTOMON
+.if D_FAMILY_GOMAMON == TRUE
+    cry_reverse Cry_Gomamon
+.endif @ D_FAMILY_GOMAMON
+.if D_FAMILY_ARMADILLOMON == TRUE
+    cry_reverse Cry_Armadillomon
+.endif @ D_FAMILY_ARMADILLOMON
+.if D_FAMILY_TERRIERMON == TRUE
+    cry_reverse Cry_Terriermon
+.endif @ D_FAMILY_TERRIERMON
+.if D_FAMILY_PATAMON == TRUE
+    cry_reverse Cry_Patamon
+.endif @ D_FAMILY_PATAMON
+.if D_FAMILY_SALAMON == TRUE
+    cry_reverse Cry_Salamon
+.endif @ D_FAMILY_SALAMON
+
+.if D_FAMILY_GREYMON == TRUE
+    cry_reverse Cry_Greymon
+.endif @ D_FAMILY_GREYMON
+.if D_FAMILY_GARURUMON == TRUE
+    cry_reverse Cry_Garurumon
+.endif @ D_FAMILY_GARURUMON
+.if D_FAMILY_EX_VEEMON == TRUE
+    cry_reverse Cry_Ex_Veemon
+.endif @ D_FAMILY_EX_VEEMON
+.if D_FAMILY_STINGMON == TRUE
+    cry_reverse Cry_Stingmon
+.endif @ D_FAMILY_STINGMON
+.if D_FAMILY_GROWLMON == TRUE
+    cry_reverse Cry_Growlmon
+.endif @ D_FAMILY_GROWLMON
+.if D_FAMILY_BIRDRAMON == TRUE
+    cry_reverse Cry_Birdramon
+.endif @ D_FAMILY_BIRDRAMON
+.if D_FAMILY_TOGEMON == TRUE
+    cry_reverse Cry_Togemon
+.endif @ D_FAMILY_TOGEMON
+.if D_FAMILY_AQUILAMON == TRUE
+    cry_reverse Cry_Aquilamon
+.endif @ D_FAMILY_AQUILAMON
+.if D_FAMILY_KYUBIMON == TRUE
+    cry_reverse Cry_Kyubimon
+.endif @ D_FAMILY_KYUBIMON
+.if D_FAMILY_KABUTERIMON == TRUE
+    cry_reverse Cry_Kabuterimon
+.endif @ D_FAMILY_KABUTERIMON
+.if D_FAMILY_IKAKKUMON == TRUE
+    cry_reverse Cry_Ikakkumon
+.endif @ D_FAMILY_IKAKKUMON
+.if D_FAMILY_ANKYLOMON == TRUE
+    cry_reverse Cry_Ankylomon
+.endif @ D_FAMILY_ANKYLOMON
+.if D_FAMILY_GARGOMON == TRUE
+    cry_reverse Cry_Gargomon
+.endif @ D_FAMILY_GARGOMON
+.if D_FAMILY_ANGEMON == TRUE
+    cry_reverse Cry_Angemon
+.endif @ D_FAMILY_ANGEMON
+.if D_FAMILY_GATOMON == TRUE
+    cry_reverse Cry_Gatomon
+.endif @ D_FAMILY_GATOMON
+
+.if D_FAMILY_METAL_GREYMON == TRUE
+    cry_reverse Cry_Metal_Greymon
+.endif @ D_FAMILY_METAL_GREYMON
+.if D_FAMILY_WERE_GARURUMON == TRUE
+    cry_reverse Cry_Were_Garurumon
+.endif @ D_FAMILY_WERE_GARURUMON
+.if D_FAMILY_PAILDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Paildramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PAILDRAMON
+.if D_FAMILY_WAR_GROWLMON == TRUE
+    cry_reverse Cry_War_Growlmon
+.endif @ D_FAMILY_WAR_GROWLMON
+.if D_FAMILY_GARUDAMON == TRUE
+    cry_reverse Cry_Garudamon
+.endif @ D_FAMILY_GARUDAMON
+.if D_FAMILY_LILYMON == TRUE
+    cry_reverse Cry_Lilymon
+.endif @ D_FAMILY_LILYMON
+.if D_FAMILY_SILPHYMON == TRUE
+    cry_reverse Cry_Silphymon
+.endif @ D_FAMILY_SILPHYMON
+.if D_FAMILY_TAOMON == TRUE
+    cry_reverse Cry_Taomon
+.endif @ D_FAMILY_TAOMON
+.if D_FAMILY_MEGA_KABUTERIMON == TRUE
+    cry_reverse Cry_Mega_Kabuterimon
+.endif @ D_FAMILY_MEGA_KABUTERIMON
+.if D_FAMILY_ZUDOMON == TRUE
+    cry_reverse Cry_Zudomon
+.endif @ D_FAMILY_ZUDOMON
+.if D_FAMILY_SHAKKOUMON == TRUE
+    cry_reverse Cry_Shakkoumon
+.endif @ D_FAMILY_SHAKKOUMON
+.if D_FAMILY_RAPIDMON == TRUE
+    cry_reverse Cry_Rapidmon
+.endif @ D_FAMILY_RAPIDMON
+.if D_FAMILY_MAGNA_ANGEMON == TRUE
+    cry_reverse Cry_Magna_Angemon
+.endif @ D_FAMILY_MAGNA_ANGEMON
+.if D_FAMILY_ANGEWOMON == TRUE
+    cry_reverse Cry_Angewomon
+.endif @ D_FAMILY_ANGEWOMON
+
+.if D_FAMILY_WAR_GREYMON == TRUE
+    cry_reverse Cry_War_Greymon
+.endif @ D_FAMILY_WAR_GREYMON
+.if D_FAMILY_METAL_GARURUMON == TRUE
+    cry_reverse Cry_Metal_Garurumon
+.endif @ D_FAMILY_METAL_GARURUMON
+.if D_FAMILY_DRAGON_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Dragon_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_DRAGON_IMPERIALDRAMON
+.if D_FAMILY_GALLANTMON == TRUE
+    cry_reverse Cry_Gallantmon
+.endif @ D_FAMILY_GALLANTMON
+.if D_FAMILY_SAKUYAMON == TRUE
+    cry_reverse Cry_Sakuyamon
+.endif @ D_FAMILY_SAKUYAMON
+.if D_FAMILY_MEGA_GARGOMON == TRUE
+    cry_reverse Cry_Mega_Gargomon
+.endif @ D_FAMILY_MEGA_GARGOMON
+.if D_FAMILY_SERAPHIMON == TRUE
+    cry_reverse Cry_Serphimon
+.endif @ D_FAMILY_SERAPHIMON
+.if D_FAMILY_MAGNADRAMON == TRUE
+    cry_reverse Cry_Magnadramon
+.endif @ D_FAMILY_MAGNADRAMON
+
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Omnimon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+.if D_FAMILY_FIGHTER_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Fighter_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_FIGHTER_IMPERIALDRAMON
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Crimson_Gallantmon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+
+.if D_FAMILY_PALADIN_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    cry_reverse Cry_Paladin_Imperialdramon
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PALADIN_IMPERIALDRAMON

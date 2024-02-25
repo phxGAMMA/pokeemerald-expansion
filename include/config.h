@@ -64,16 +64,24 @@
 #define ITEM_EXPANSION
 
 // Generation constants used in configs to define behavior
-#define GEN_1 0
-#define GEN_2 1
-#define GEN_3 2
-#define GEN_4 3
-#define GEN_5 4
-#define GEN_6 5
-#define GEN_7 6
-#define GEN_8 7
-#define GEN_9 8
-#define GEN_LATEST GEN_9
+#define GEN_1           0
+#define GEN_2           1
+#define GEN_3           2
+#define GEN_4           3
+#define GEN_5           4
+#define GEN_6           5
+#define GEN_7           6
+#define GEN_8           7
+#define GEN_9           8
+#define STG_TRAINING_I  9
+#define STG_TRAINING_II 10
+#define STG_ROOKIE      11
+#define STG_CHAMPION    12
+#define STG_ULTIMATE    13
+#define STG_MEGA_I      14
+#define STG_MEGA_II     15
+#define STG_MEGA_III    16
+#define GEN_LATEST      STG_MEGA_III
 
 // General settings
 #define EXPANSION_INTRO              TRUE    // If TRUE, a custom RHH intro will play after the vanilla copyright screen.

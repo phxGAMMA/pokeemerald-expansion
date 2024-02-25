@@ -6110,6 +6110,441 @@ Cry_Ogerpon::
 	.incbin "sound/direct_sound_samples/cries/ogerpon.bin"
 .endif @ P_FAMILY_OGERPON
 
+.if D_FAMILY_BOTAMON == TRUE
+    .align 2
+Cry_Botamon::
+    .incbin "sound/direct_sound_samples/cries/botamon.bin"
+.endif @ D_FAMILY_BOTAMON
+.if D_FAMILY_PUNIMON == TRUE
+    .align 2
+Cry_Punimon::
+    .incbin "sound/direct_sound_samples/cries/punimon.bin"
+.endif @ D_FAMILY_PUNIMON
+.if D_FAMILY_CHIBOMON == TRUE
+    .align 2
+Cry_Chibomon::
+    .incbin "sound/direct_sound_samples/cries/chibomon.bin"
+.endif @ D_FAMILY_CHIBOMON
+.if D_FAMILY_LEAFMON == TRUE
+    .align 2
+Cry_Leafmon::
+    .incbin "sound/direct_sound_samples/cries/leafmon.bin"
+.endif @ D_FAMILY_LEAFMON
+.if D_FAMILY_NIYOKIMON == TRUE
+    .align 2
+Cry_Niyokimon::
+    .incbin "sound/direct_sound_samples/cries/niyokimon.bin"
+.endif @ D_FAMILY_NIYOKIMON
+.if D_FAMILY_YURAMON == TRUE
+    .align 2
+Cry_Yuramon::
+    .incbin "sound/direct_sound_samples/cries/yuramon.bin"
+.endif @ D_FAMILY_YURAMON
+.if D_FAMILY_PURURUMON == TRUE
+    .align 2
+Cry_Pururumon::
+    .incbin "sound/direct_sound_samples/cries/pururumon.bin"
+.endif @ D_FAMILY_PURURUMON
+.if D_FAMILY_PABUMON == TRUE
+    .align 2
+Cry_Pabumon::
+    .incbin "sound/direct_sound_samples/cries/pabumon.bin"
+.endif @ D_FAMILY_PABUMON
+.if D_FAMILY_PICHIMON == TRUE
+    .align 2
+Cry_Pichimon::
+    .incbin "sound/direct_sound_samples/cries/pichimon.bin"
+.endif @ D_FAMILY_PICHIMON
+.if D_FAMILY_TSUBUMON == TRUE
+    .align 2
+Cry_Tsubumon::
+    .incbin "sound/direct_sound_samples/cries/tsubumon.bin"
+.endif @ D_FAMILY_TSUBUMON
+.if D_FAMILY_POYOMON == TRUE
+    .align 2
+Cry_Poyomon::
+    .incbin "sound/direct_sound_samples/cries/poyomon.bin"
+.endif @ D_FAMILY_POYOMON
+.if D_FAMILY_YUKIMI_BOTAMON == TRUE
+    .align 2
+Cry_Yukimi_Botamon::
+    .incbin "sound/direct_sound_samples/cries/yukimi_botamon.bin"
+.endif @ D_FAMILY_YUKIMI_BOTAMON
+
+.if D_FAMILY_KOROMON == TRUE
+    .align 2
+Cry_Koromon::
+    .incbin "sound/direct_sound_samples/cries/koromon.bin"
+.endif @ D_FAMILY_KOROMON
+.if D_FAMILY_TSUNOMON == TRUE
+    .align 2
+Cry_Tsunomon::
+    .incbin "sound/direct_sound_samples/cries/tsunomon.bin"
+.endif @ D_FAMILY_TSUNOMON
+.if D_FAMILY_DEMI_VEEMON == TRUE
+    .align 2
+Cry_Demi_Veemon::
+    .incbin "sound/direct_sound_samples/cries/demi_veemon.bin"
+.endif @ D_FAMILY_DEMI_VEEMON
+.if D_FAMILY_MINOMON == TRUE
+    .align 2
+Cry_Minomon::
+    .incbin "sound/direct_sound_samples/cries/minomon.bin"
+.endif @ D_FAMILY_MINOMON
+.if D_FAMILY_GIGIMON == TRUE
+    .align 2
+Cry_Gigimon::
+    .incbin "sound/direct_sound_samples/cries/gigimon.bin"
+.endif @ D_FAMILY_GIGIMON
+.if D_FAMILY_YOKOMON == TRUE
+    .align 2
+Cry_Yokomon::
+    .incbin "sound/direct_sound_samples/cries/yokomon.bin"
+.endif @ D_FAMILY_YOKOMON
+.if D_FAMILY_TANEMON == TRUE
+    .align 2
+Cry_Tanemon::
+    .incbin "sound/direct_sound_samples/cries/tanemon.bin"
+.endif @ D_FAMILY_TANEMON
+.if D_FAMILY_POROMON == TRUE
+    .align 2
+Cry_Poromon::
+    .incbin "sound/direct_sound_samples/cries/poromon.bin"
+.endif @ D_FAMILY_POROMON
+.if D_FAMILY_VIXIMON == TRUE
+    .align 2
+Cry_Viximon::
+    .incbin "sound/direct_sound_samples/cries/viximon.bin"
+.endif @ D_FAMILY_VIXIMON
+.if D_FAMILY_MOTIMON == TRUE
+    .align 2
+Cry_Motimon::
+    .incbin "sound/direct_sound_samples/cries/motimon.bin"
+.endif @ D_FAMILY_MOTIMON
+.if D_FAMILY_BUKAMON == TRUE
+    .align 2
+Cry_Bukamon::
+    .incbin "sound/direct_sound_samples/cries/bukamon.bin"
+.endif @ D_FAMILY_BUKAMON
+.if D_FAMILY_UPAMON == TRUE
+    .align 2
+Cry_Upamon::
+    .incbin "sound/direct_sound_samples/cries/upamon.bin"
+.endif @ D_FAMILY_UPAMON
+.if D_FAMILY_GUMMYMON == TRUE
+    .align 2
+Cry_Gummymon::
+    .incbin "sound/direct_sound_samples/cries/gummymon.bin"
+.endif @ D_FAMILY_GUMMYMON
+.if D_FAMILY_TOKOMON == TRUE
+    .align 2
+Cry_Tokomon::
+    .incbin "sound/direct_sound_samples/cries/tokomon.bin"
+.endif @ D_FAMILY_TOKOMON
+.if D_FAMILY_NYAROMON == TRUE
+    .align 2
+Cry_Nyaromon::
+    .incbin "sound/direct_sound_samples/cries/nyaromon.bin"
+.endif @ D_FAMILY_NYAROMON
+
+.if D_FAMILY_AGUMON == TRUE
+    .align 2
+Cry_Agumon::
+    .incbin "sound/direct_sound_samples/cries/agumon.bin"
+.endif @ D_FAMILY_AGUMON
+.if D_FAMILY_GABUMON == TRUE
+    .align 2
+Cry_Gabumon::
+    .incbin "sound/direct_sound_samples/cries/gabumon.bin"
+.endif @ D_FAMILY_GABUMON
+.if D_FAMILY_VEEMON == TRUE
+    .align 2
+Cry_Veemon::
+    .incbin "sound/direct_sound_samples/cries/veemon.bin"
+.endif @ D_FAMILY_VEEMON
+.if D_FAMILY_WORMMON == TRUE
+    .align 2
+Cry_Wormmon::
+    .incbin "sound/direct_sound_samples/cries/wormmon.bin"
+.endif @ D_FAMILY_WORMMON
+.if D_FAMILY_GUILMON == TRUE
+    .align 2
+Cry_Guilmon::
+    .incbin "sound/direct_sound_samples/cries/guilmon.bin"
+.endif @ D_FAMILY_GUILMON
+.if D_FAMILY_BIYOMON == TRUE
+    .align 2
+Cry_Biyomon::
+    .incbin "sound/direct_sound_samples/cries/biyomon.bin"
+.endif @ D_FAMILY_BIYOMON
+.if D_FAMILY_PALMON == TRUE
+    .align 2
+Cry_Palmon::
+    .incbin "sound/direct_sound_samples/cries/palmon.bin"
+.endif @ D_FAMILY_PALMON
+.if D_FAMILY_HAWKMON == TRUE
+    .align 2
+Cry_Hawkmon::
+    .incbin "sound/direct_sound_samples/cries/hawkmon.bin"
+.endif @ D_FAMILY_HAWKMON
+.if D_FAMILY_RENAMON == TRUE
+    .align 2
+Cry_Renamon::
+    .incbin "sound/direct_sound_samples/cries/renamon.bin"
+.endif @ D_FAMILY_RENAMON
+.if D_FAMILY_TENTOMON == TRUE
+    .align 2
+Cry_Tentomon::
+    .incbin "sound/direct_sound_samples/cries/tentomon.bin"
+.endif @ D_FAMILY_TENTOMON
+.if D_FAMILY_GOMAMON == TRUE
+    .align 2
+Cry_Gomamon::
+    .incbin "sound/direct_sound_samples/cries/gomamon.bin"
+.endif @ D_FAMILY_GOMAMON
+.if D_FAMILY_ARMADILLOMON == TRUE
+    .align 2
+Cry_Armadillomon::
+    .incbin "sound/direct_sound_samples/cries/armadillomon.bin"
+.endif @ D_FAMILY_ARMADILLOMON
+.if D_FAMILY_TERRIERMON == TRUE
+    .align 2
+Cry_Terriermon::
+    .incbin "sound/direct_sound_samples/cries/terriermon.bin"
+.endif @ D_FAMILY_TERRIERMON
+.if D_FAMILY_PATAMON == TRUE
+    .align 2
+Cry_Patamon::
+    .incbin "sound/direct_sound_samples/cries/patamon.bin"
+.endif @ D_FAMILY_PATAMON
+.if D_FAMILY_SALAMON == TRUE
+    .align 2
+Cry_Salamon::
+    .incbin "sound/direct_sound_samples/cries/salamon.bin"
+.endif @ D_FAMILY_SALAMON
+
+.if D_FAMILY_GREYMON == TRUE
+    .align 2
+Cry_Greymon::
+    .incbin "sound/direct_sound_samples/cries/greymon.bin"
+.endif @ D_FAMILY_GREYMON
+.if D_FAMILY_GARURUMON == TRUE
+    .align 2
+Cry_Garurumon::
+    .incbin "sound/direct_sound_samples/cries/garurumon.bin"
+.endif @ D_FAMILY_GARURUMON
+.if D_FAMILY_EX_VEEMON == TRUE
+    .align 2
+Cry_Ex_Veemon::
+    .incbin "sound/direct_sound_samples/cries/ex_veemon.bin"
+.endif @ D_FAMILY_EX_VEEMON
+.if D_FAMILY_STINGMON == TRUE
+    .align 2
+Cry_Stingmon::
+    .incbin "sound/direct_sound_samples/cries/stingmon.bin"
+.endif @ D_FAMILY_STINGMON
+.if D_FAMILY_GROWLMON == TRUE
+    .align 2
+Cry_Growlmon::
+    .incbin "sound/direct_sound_samples/cries/growlmon.bin"
+.endif @ D_FAMILY_GROWLMON
+.if D_FAMILY_BIRDRAMON == TRUE
+    .align 2
+Cry_Birdramon::
+    .incbin "sound/direct_sound_samples/cries/birdramon.bin"
+.endif @ D_FAMILY_BIRDRAMON
+.if D_FAMILY_TOGEMON == TRUE
+    .align 2
+Cry_Togemon::
+    .incbin "sound/direct_sound_samples/cries/togemon.bin"
+.endif @ D_FAMILY_TOGEMON
+.if D_FAMILY_AQUILAMON == TRUE
+    .align 2
+Cry_Aquilamon::
+    .incbin "sound/direct_sound_samples/cries/aquilamon.bin"
+.endif @ D_FAMILY_AQUILAMON
+.if D_FAMILY_KYUBIMON == TRUE
+    .align 2
+Cry_Kyubimon::
+    .incbin "sound/direct_sound_samples/cries/kyubimon.bin"
+.endif @ D_FAMILY_KYUBIMON
+.if D_FAMILY_KABUTERIMON == TRUE
+    .align 2
+Cry_Kabuterimon::
+    .incbin "sound/direct_sound_samples/cries/kabuterimon.bin"
+.endif @ D_FAMILY_KABUTERIMON
+.if D_FAMILY_IKAKKUMON == TRUE
+    .align 2
+Cry_Ikakkumon::
+    .incbin "sound/direct_sound_samples/cries/ikakkumon.bin"
+.endif @ D_FAMILY_IKAKKUMON
+.if D_FAMILY_ANKYLOMON == TRUE
+    .align 2
+Cry_Ankylomon::
+    .incbin "sound/direct_sound_samples/cries/ankylomon.bin"
+.endif @ D_FAMILY_ANKYLOMON
+.if D_FAMILY_GARGOMON == TRUE
+    .align 2
+Cry_Gargomon::
+    .incbin "sound/direct_sound_samples/cries/gargomon.bin"
+.endif @ D_FAMILY_GARGOMON
+.if D_FAMILY_ANGEMON == TRUE
+    .align 2
+Cry_Angemon::
+    .incbin "sound/direct_sound_samples/cries/angemon.bin"
+.endif @ D_FAMILY_ANGEMON
+.if D_FAMILY_GATOMON == TRUE
+    .align 2
+Cry_Gatomon::
+    .incbin "sound/direct_sound_samples/cries/gatomon.bin"
+.endif @ D_FAMILY_GATOMON
+
+.if D_FAMILY_METAL_GREYMON == TRUE
+    .align 2
+Cry_Metal_Greymon::
+    .incbin "sound/direct_sound_samples/cries/metal_greymon.bin"
+.endif @ D_FAMILY_METAL_GREYMON
+.if D_FAMILY_WERE_GARURUMON == TRUE
+    .align 2
+Cry_Were_Garurumon::
+    .incbin "sound/direct_sound_samples/cries/were_garurumon.bin"
+.endif @ D_FAMILY_WERE_GARURUMON
+.if D_FAMILY_PAILDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Paildramon::
+    .incbin "sound/direct_sound_samples/cries/paildramon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PAILDRAMON
+.if D_FAMILY_WAR_GROWLMON == TRUE
+    .align 2
+Cry_War_Growlmon::
+    .incbin "sound/direct_sound_samples/cries/war_growlmon.bin"
+.endif @ D_FAMILY_WAR_GROWLMON
+.if D_FAMILY_GARUDAMON == TRUE
+    .align 2
+Cry_Garudamon::
+    .incbin "sound/direct_sound_samples/cries/garudamon.bin"
+.endif @ D_FAMILY_GARUDAMON
+.if D_FAMILY_LILYMON == TRUE
+    .align 2
+Cry_Lilymon::
+    .incbin "sound/direct_sound_samples/cries/lilymon.bin"
+.endif @ D_FAMILY_LILYMON
+.if D_FAMILY_SILPHYMON == TRUE
+    .align 2
+Cry_Silphymon::
+    .incbin "sound/direct_sound_samples/cries/silphymon.bin"
+.endif @ D_FAMILY_SILPHYMON
+.if D_FAMILY_TAOMON == TRUE
+    .align 2
+Cry_Taomon::
+    .incbin "sound/direct_sound_samples/cries/taomon.bin"
+.endif @ D_FAMILY_TAOMON
+.if D_FAMILY_MEGA_KABUTERIMON == TRUE
+    .align 2
+Cry_Mega_Kabuterimon::
+    .incbin "sound/direct_sound_samples/cries/mega_kabuterimon.bin"
+.endif @ D_FAMILY_MEGA_KABUTERIMON
+.if D_FAMILY_ZUDOMON == TRUE
+    .align 2
+Cry_Zudomon::
+    .incbin "sound/direct_sound_samples/cries/zudomon.bin"
+.endif @ D_FAMILY_ZUDOMON
+.if D_FAMILY_SHAKKOUMON == TRUE
+    .align 2
+Cry_Shakkoumon::
+    .incbin "sound/direct_sound_samples/cries/shakkoumon.bin"
+.endif @ D_FAMILY_SHAKKOUMON
+.if D_FAMILY_RAPIDMON == TRUE
+    .align 2
+Cry_Rapidmon::
+    .incbin "sound/direct_sound_samples/cries/rapidmon.bin"
+.endif @ D_FAMILY_RAPIDMON
+.if D_FAMILY_MAGNA_ANGEMON == TRUE
+    .align 2
+Cry_Magna_Angemon::
+    .incbin "sound/direct_sound_samples/cries/magna_angemon.bin"
+.endif @ D_FAMILY_MAGNA_ANGEMON
+.if D_FAMILY_ANGEWOMON == TRUE
+    .align 2
+Cry_Angewomon::
+    .incbin "sound/direct_sound_samples/cries/angewomon.bin"
+.endif @ D_FAMILY_ANGEWOMON
+
+.if D_FAMILY_WAR_GREYMON == TRUE
+    .align 2
+Cry_War_Greymon::
+    .incbin "sound/direct_sound_samples/cries/war_greymon.bin"
+.endif @ D_FAMILY_WAR_GREYMON
+.if D_FAMILY_METAL_GARURUMON == TRUE
+    .align 2
+Cry_Metal_Garurumon::
+    .incbin "sound/direct_sound_samples/cries/metal_garurumon.bin"
+.endif @ D_FAMILY_METAL_GARURUMON
+.if D_FAMILY_DRAGON_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Dragon_Imperialdramon::
+    .incbin "sound/direct_sound_samples/cries/dragon_imperialdramon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_DRAGON_IMPERIALDRAMON
+.if D_FAMILY_GALLANTMON == TRUE
+    .align 2
+Cry_Gallantmon::
+    .incbin "sound/direct_sound_samples/cries/gallantmon.bin"
+.endif @ D_FAMILY_GALLANTMON
+.if D_FAMILY_SAKUYAMON == TRUE
+    .align 2
+Cry_Sakuyamon::
+    .incbin "sound/direct_sound_samples/cries/sakuyamon.bin"
+.endif @ D_FAMILY_SAKUYAMON
+.if D_FAMILY_MEGA_GARGOMON == TRUE
+    .align 2
+Cry_Mega_Gargomon::
+    .incbin "sound/direct_sound_samples/cries/mega_gargomon.bin"
+.endif @ D_FAMILY_MEGA_GARGOMON
+.if D_FAMILY_SERAPHIMON == TRUE
+    .align 2
+Cry_Serphimon::
+    .incbin "sound/direct_sound_samples/cries/seraphimon.bin"
+.endif @ D_FAMILY_SERAPHIMON
+.if D_FAMILY_MAGNADRAMON == TRUE
+    .align 2
+Cry_Magnadramon::
+    .incbin "sound/direct_sound_samples/cries/magnadramon.bin"
+.endif @ D_FAMILY_MAGNADRAMON
+
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Omnimon::
+    .incbin "sound/direct_sound_samples/cries/omnimon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+.if D_FAMILY_FIGHTER_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Fighter_Imperialdramon::
+    .incbin "sound/direct_sound_samples/cries/fighter_imperialdramon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_FIGHTER_IMPERIALDRAMON
+.if D_FAMILY_OMNIMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Crimson_Gallantmon::
+    .incbin "sound/direct_sound_samples/cries/crimson_gallantmon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_OMNIMON
+
+.if D_FAMILY_PALADIN_IMPERIALDRAMON == TRUE
+.if P_FUSION_FORMS == TRUE
+    .align 2
+Cry_Paladin_Imperialdramon::
+    .incbin "sound/direct_sound_samples/cries/paladin_imperialdramon.bin"
+.endif @ P_FUSION_FORMS
+.endif @ D_FAMILY_PALADIN_IMPERIALDRAMON
+
 	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"

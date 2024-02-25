@@ -3,26 +3,30 @@
 
 // Pokemon types
 #define TYPE_NONE             255
-#define TYPE_NORMAL           0
+#define TYPE_NORMAL           0 // Neutral
 #define TYPE_FIGHTING         1
-#define TYPE_FLYING           2
+#define TYPE_FLYING           2 // Wind
 #define TYPE_POISON           3
-#define TYPE_GROUND           4
+#define TYPE_GROUND           4 // Earth
 #define TYPE_ROCK             5
 #define TYPE_BUG              6
 #define TYPE_GHOST            7
 #define TYPE_STEEL            8
 #define TYPE_MYSTERY          9
-#define TYPE_FIRE             10
-#define TYPE_WATER            11
-#define TYPE_GRASS            12
-#define TYPE_ELECTRIC         13
+#define TYPE_FIRE             10 // Fire
+#define TYPE_WATER            11 // Water
+#define TYPE_GRASS            12 // Plant
+#define TYPE_ELECTRIC         13 // Electric
 #define TYPE_PSYCHIC          14
 #define TYPE_ICE              15
 #define TYPE_DRAGON           16
-#define TYPE_DARK             17
-#define TYPE_FAIRY            18
-#define NUMBER_OF_MON_TYPES   19
+#define TYPE_DARK             17 // Dark
+#define TYPE_FAIRY            18 // Light
+// Digimon attributes
+#define TYPE_DATA             19
+#define TYPE_VIRUS            20
+#define TYPE_VACCINE          21
+#define NUMBER_OF_MON_TYPES   22
 
 // Pokemon egg groups
 #define EGG_GROUP_NONE                0
@@ -301,6 +305,12 @@
 #define EVO_MOVE_THREE_SEGMENT            44     // Pokémon levels up, knows specified move, has a personality value with a modulus of 1-99
 #define EVO_LEVEL_FAMILY_OF_THREE         45     // Pokémon reaches the specified level with a personality value with a modulus of 0
 #define EVO_LEVEL_FAMILY_OF_FOUR          46     // Pokémon reaches the specified level with a personality value with a modulus of 1-99
+#define EVO_FRIENDSHIP_NO_HEARTS          47
+#define EVO_FRIENDSHIP_ONE_HEART          48
+#define EVO_FRIENDSHIP_TWO_HEARTS         49
+#define EVO_FRIENDSHIP_THREE_HEARTS       50 
+#define EVO_FRIENDSHIP_FOUR_HEARTS        51
+#define EVO_FRIENDSHIP_FIVE_HEARTS        52
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0

@@ -23147,3 +23147,438 @@ static const struct LevelUpMove sOgerponLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 #endif
+
+#if D_FAMILY_BOTAMON
+static const struct LevelUpMove sBotamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+static const struct LevelUpMove sPunimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+static const struct LevelUpMove sChibomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+static const struct LevelUpMove sLeafmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+static const struct LevelUpMove sNiyokimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+static const struct LevelUpMove sYuramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+static const struct LevelUpMove sPururumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+static const struct LevelUpMove sPabumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+static const struct LevelUpMove sPichimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+static const struct LevelUpMove sTsubumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+static const struct LevelUpMove sPoyomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+static const struct LevelUpMove sYukimiBotamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+static const struct LevelUpMove sKoromonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+static const struct LevelUpMove sTsunomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+static const struct LevelUpMove sDemiVeemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+static const struct LevelUpMove sMinomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_GIGIMON
+static const struct LevelUpMove sGigimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GIGIMON
+#if D_FAMILY_YOKOMON
+static const struct LevelUpMove sYokomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+static const struct LevelUpMove sTanemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+static const struct LevelUpMove sPoromonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_VIXIMON
+static const struct LevelUpMove sViximonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_VIXIMON
+#if D_FAMILY_MOTIMON
+static const struct LevelUpMove sMotimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+static const struct LevelUpMove sBukamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+static const struct LevelUpMove sUpamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_GUMMYMON
+static const struct LevelUpMove sGummymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GUMMYMON
+#if D_FAMILY_TOKOMON
+static const struct LevelUpMove sTokomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+static const struct LevelUpMove sNyaromonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+static const struct LevelUpMove sAgumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+static const struct LevelUpMove sGabumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+static const struct LevelUpMove sVeemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+static const struct LevelUpMove sWormmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_GUILMON
+static const struct LevelUpMove sGuilmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GUILMON
+#if D_FAMILY_BIYOMON
+static const struct LevelUpMove sBiyomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+static const struct LevelUpMove sPalmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+static const struct LevelUpMove sHawkmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_RENAMON
+static const struct LevelUpMove sRenamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_RENAMON
+#if D_FAMILY_TENTOMON
+static const struct LevelUpMove sTentomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+static const struct LevelUpMove sGomamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+static const struct LevelUpMove sArmadillomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_TERRIERMON
+static const struct LevelUpMove sTerriermonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TERRIERMON
+#if D_FAMILY_PATAMON
+static const struct LevelUpMove sPatamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+static const struct LevelUpMove sSalamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+static const struct LevelUpMove sGreymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+static const struct LevelUpMove sGarurumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+static const struct LevelUpMove sExVeemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+static const struct LevelUpMove sStingmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_GROWLMON
+static const struct LevelUpMove sGrowlmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GROWLMON
+#if D_FAMILY_BIRDRAMON
+static const struct LevelUpMove sBirdramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+static const struct LevelUpMove sTogemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+static const struct LevelUpMove sAquilamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KYUBIMON
+static const struct LevelUpMove sKyubimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_KYUBIMON
+#if D_FAMILY_KABUTERIMON
+static const struct LevelUpMove sKabuterimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+static const struct LevelUpMove sIkakkumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+static const struct LevelUpMove sAnkylomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_GARGOMON
+static const struct LevelUpMove sGargomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GARGOMON
+#if D_FAMILY_ANGEMON
+static const struct LevelUpMove sAngemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+static const struct LevelUpMove sGatomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+static const struct LevelUpMove sMetalGreymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+static const struct LevelUpMove sWereGarurumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sPaildramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_WAR_GROWLMON
+static const struct LevelUpMove sWarGrowlmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_WAR_GROWLMON
+#if D_FAMILY_GARUDAMON
+static const struct LevelUpMove sGarudamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+static const struct LevelUpMove sLilymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+static const struct LevelUpMove sSilphymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_TAOMON
+static const struct LevelUpMove sTaomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_TAOMON
+#if D_FAMILY_MEGA_KABUTERIMON
+static const struct LevelUpMove sMegaKabuterimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+static const struct LevelUpMove sZudomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+static const struct LevelUpMove sShakkoumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_RAPIDMON
+static const struct LevelUpMove sRapidmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_RAPIDMON
+#if D_FAMILY_MAGNA_ANGEMON
+static const struct LevelUpMove sMagnaAngemonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+static const struct LevelUpMove sAngewomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+static const struct LevelUpMove sWarGreymonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+static const struct LevelUpMove sMetalGarurumonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sDragonImperialdramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_GALLANTMON
+static const struct LevelUpMove sGallantmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_GALLANTMON
+#if D_FAMILY_SAKUYAMON
+static const struct LevelUpMove sSakuyamonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_SAKUYAMON
+#if D_FAMILY_MEGA_GARGOMON
+static const struct LevelUpMove sMegaGargomonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MEGA_GARGOMON
+#if D_FAMILY_SERAPHIMON
+static const struct LevelUpMove sSeraphimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+static const struct LevelUpMove sMagnadramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sOmnimonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sFighterImperialdramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if D_FAMILY_CRIMSON_GALLANTMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sCrimsonGallantmonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_CRIMSON_GALLANTMON
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const struct LevelUpMove sPaladinImperialdramonLevelUpLearnset[] = {
+    LEVEL_UP_END
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON

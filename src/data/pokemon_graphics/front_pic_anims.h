@@ -10104,6 +10104,773 @@ PLACEHOLDER_ANIM_SINGLE_FRAME(Fezandipiti);
 PLACEHOLDER_ANIM_SINGLE_FRAME(Ogerpon);
 #endif //P_FAMILY_OGERPON
 
+#if D_FAMILY_BOTAMON
+static const union AnimCmd sAnim_Botamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+static const union AnimCmd sAnim_Punimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+static const union AnimCmd sAnim_Chibomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+static const union AnimCmd sAnim_Leafmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+static const union AnimCmd sAnim_Niyokimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+static const union AnimCmd sAnim_Yuramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+static const union AnimCmd sAnim_Pururumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+static const union AnimCmd sAnim_Pabumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+static const union AnimCmd sAnim_Pichimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+static const union AnimCmd sAnim_Tsubumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+static const union AnimCmd sAnim_Poyomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+static const union AnimCmd sAnim_YukimiBotamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+static const union AnimCmd sAnim_Koromon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+static const union AnimCmd sAnim_Tsunomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+static const union AnimCmd sAnim_DemiVeemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+static const union AnimCmd sAnim_Minomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_GIGIMON
+static const union AnimCmd sAnim_Gigimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GIGIMON
+#if D_FAMILY_YOKOMON
+static const union AnimCmd sAnim_Yokomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+static const union AnimCmd sAnim_Tanemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+static const union AnimCmd sAnim_Poromon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_VIXIMON
+static const union AnimCmd sAnim_Viximon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_VIXIMON
+#if D_FAMILY_MOTIMON
+static const union AnimCmd sAnim_Motimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+static const union AnimCmd sAnim_Bukamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+static const union AnimCmd sAnim_Upamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_GUMMYMON
+static const union AnimCmd sAnim_Gummymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GUMMYMON
+#if D_FAMILY_TOKOMON
+static const union AnimCmd sAnim_Tokomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+static const union AnimCmd sAnim_Nyaromon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+static const union AnimCmd sAnim_Agumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+static const union AnimCmd sAnim_Gabumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+static const union AnimCmd sAnim_Veemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+static const union AnimCmd sAnim_Wormmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_GUILMON
+static const union AnimCmd sAnim_Guilmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GUILMON
+#if D_FAMILY_BIYOMON
+static const union AnimCmd sAnim_Biyomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+static const union AnimCmd sAnim_Palmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+static const union AnimCmd sAnim_Hawkmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_RENAMON
+static const union AnimCmd sAnim_Renamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_RENAMON
+#if D_FAMILY_TENTOMON
+static const union AnimCmd sAnim_Tentomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+static const union AnimCmd sAnim_Gomamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+static const union AnimCmd sAnim_Armadillomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_TERRIERMON
+static const union AnimCmd sAnim_Terriermon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TERRIERMON
+#if D_FAMILY_PATAMON
+static const union AnimCmd sAnim_Patamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+static const union AnimCmd sAnim_Salamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+static const union AnimCmd sAnim_Greymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+static const union AnimCmd sAnim_Garurumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+static const union AnimCmd sAnim_ExVeemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+static const union AnimCmd sAnim_Stingmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_GROWLMON
+static const union AnimCmd sAnim_Growlmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GROWLMON
+#if D_FAMILY_BIRDRAMON
+static const union AnimCmd sAnim_Birdramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+static const union AnimCmd sAnim_Togemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+static const union AnimCmd sAnim_Aquilamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KYUBIMON
+static const union AnimCmd sAnim_Kyubimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_KYUBIMON
+#if D_FAMILY_KABUTERIMON
+static const union AnimCmd sAnim_Kabuterimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+static const union AnimCmd sAnim_Ikakkumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+static const union AnimCmd sAnim_Ankylomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_GARGOMON
+static const union AnimCmd sAnim_Gargomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GARGOMON
+#if D_FAMILY_ANGEMON
+static const union AnimCmd sAnim_Angemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+static const union AnimCmd sAnim_Gatomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+static const union AnimCmd sAnim_MetalGreymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+static const union AnimCmd sAnim_WereGarurumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_Paildramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_WAR_GROWLMON
+static const union AnimCmd sAnim_WarGrowlmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_WAR_GROWLMON
+#if D_FAMILY_GARUDAMON
+static const union AnimCmd sAnim_Garudamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+static const union AnimCmd sAnim_Lilymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+static const union AnimCmd sAnim_Silphymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_TAOMON
+static const union AnimCmd sAnim_Taomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_TAOMON
+#if D_FAMILY_MEGA_KABUTERIMON
+static const union AnimCmd sAnim_MegaKabuterimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+static const union AnimCmd sAnim_Zudomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+static const union AnimCmd sAnim_Shakkoumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_RAPIDMON
+static const union AnimCmd sAnim_Rapidmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_RAPIDMON
+#if D_FAMILY_MAGNA_ANGEMON
+static const union AnimCmd sAnim_MagnaAngemon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+static const union AnimCmd sAnim_Angewomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+static const union AnimCmd sAnim_WarGreymon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+static const union AnimCmd sAnim_MetalGarurumon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_DragonImperialdramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_GALLANTMON
+static const union AnimCmd sAnim_Gallantmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_GALLANTMON
+#if D_FAMILY_SAKUYAMON
+static const union AnimCmd sAnim_Sakuyamon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_SAKUYAMON
+#if D_FAMILY_MEGA_GARGOMON
+static const union AnimCmd sAnim_MegaGargomon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MEGA_GARGOMON
+#if D_FAMILY_SERAPHIMON
+static const union AnimCmd sAnim_Seraphimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+static const union AnimCmd sAnim_Magnadramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_Omnimon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_FighterImperialdramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_CrimsonGallantmon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+static const union AnimCmd sAnim_PaladinImperialdramon_1[] =
+{
+    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(1, 30),
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON
+
 static const union AnimCmd sAnim_Egg_1[] =
 {
     ANIMCMD_FRAME(0, 6),
@@ -12753,4 +13520,224 @@ SINGLE_ANIMATION(Fezandipiti);
 #if P_FAMILY_OGERPON
 SINGLE_ANIMATION(Ogerpon);
 #endif //P_FAMILY_OGERPON
+
+#if D_FAMILY_BOTAMON
+SINGLE_ANIMATION(Botamon);
+#endif //D_FAMILY_BOTAMON
+#if D_FAMILY_PUNIMON
+SINGLE_ANIMATION(Punimon);
+#endif //D_FAMILY_PUNIMON
+#if D_FAMILY_CHIBOMON
+SINGLE_ANIMATION(Chibomon);
+#endif //D_FAMILY_CHIBOMON
+#if D_FAMILY_LEAFMON
+SINGLE_ANIMATION(Leafmon);
+#endif //D_FAMILY_LEAFMON
+#if D_FAMILY_NIYOKIMON
+SINGLE_ANIMATION(Niyokimon);
+#endif //D_FAMILY_NIYOKIMON
+#if D_FAMILY_YURAMON
+SINGLE_ANIMATION(Yuramon);
+#endif //D_FAMILY_YURAMON
+#if D_FAMILY_PURURUMON
+SINGLE_ANIMATION(Pururumon);
+#endif //D_FAMILY_PURURUMON
+#if D_FAMILY_PABUMON
+SINGLE_ANIMATION(Pabumon);
+#endif //D_FAMILY_PABUMON
+#if D_FAMILY_PICHIMON
+SINGLE_ANIMATION(Pichimon);
+#endif //D_FAMILY_PICHIMON
+#if D_FAMILY_TSUBUMON
+SINGLE_ANIMATION(Tsubumon);
+#endif //D_FAMILY_TSUBUMON
+#if D_FAMILY_POYOMON
+SINGLE_ANIMATION(Poyomon);
+#endif //D_FAMILY_POYOMON
+#if D_FAMILY_YUKIMI_BOTAMON
+SINGLE_ANIMATION(YukimiBotamon);
+#endif //D_FAMILY_YUKIMI_BOTAMON
+
+#if D_FAMILY_KOROMON
+SINGLE_ANIMATION(Koromon);
+#endif //D_FAMILY_KOROMON
+#if D_FAMILY_TSUNOMON
+SINGLE_ANIMATION(Tsunomon);
+#endif //D_FAMILY_TSUNOMON
+#if D_FAMILY_DEMI_VEEMON
+SINGLE_ANIMATION(DemiVeemon);
+#endif //D_FAMILY_DEMI_VEEMON
+#if D_FAMILY_MINOMON
+SINGLE_ANIMATION(Minomon);
+#endif //D_FAMILY_MINOMON
+#if D_FAMILY_YOKOMON
+SINGLE_ANIMATION(Yokomon);
+#endif //D_FAMILY_YOKOMON
+#if D_FAMILY_TANEMON
+SINGLE_ANIMATION(Tanemon);
+#endif //D_FAMILY_TANEMON
+#if D_FAMILY_POROMON
+SINGLE_ANIMATION(Poromon);
+#endif //D_FAMILY_POROMON
+#if D_FAMILY_MOTIMON
+SINGLE_ANIMATION(Motimon);
+#endif //D_FAMILY_MOTIMON
+#if D_FAMILY_BUKAMON
+SINGLE_ANIMATION(Bukamon);
+#endif //D_FAMILY_BUKAMON
+#if D_FAMILY_UPAMON
+SINGLE_ANIMATION(Upamon);
+#endif //D_FAMILY_UPAMON
+#if D_FAMILY_TOKOMON
+SINGLE_ANIMATION(Tokomon);
+#endif //D_FAMILY_TOKOMON
+#if D_FAMILY_NYAROMON
+SINGLE_ANIMATION(Nyaromon);
+#endif //D_FAMILY_NYAROMON
+
+#if D_FAMILY_AGUMON
+SINGLE_ANIMATION(Agumon);
+#endif //D_FAMILY_AGUMON
+#if D_FAMILY_GABUMON
+SINGLE_ANIMATION(Gabumon);
+#endif //D_FAMILY_GABUMON
+#if D_FAMILY_VEEMON
+SINGLE_ANIMATION(Veemon);
+#endif //D_FAMILY_VEEMON
+#if D_FAMILY_WORMMON
+SINGLE_ANIMATION(Wormmon);
+#endif //D_FAMILY_WORMMON
+#if D_FAMILY_BIYOMON
+SINGLE_ANIMATION(Biyomon);
+#endif //D_FAMILY_BIYOMON
+#if D_FAMILY_PALMON
+SINGLE_ANIMATION(Palmon);
+#endif //D_FAMILY_PALMON
+#if D_FAMILY_HAWKMON
+SINGLE_ANIMATION(Hawkmon);
+#endif //D_FAMILY_HAWKMON
+#if D_FAMILY_TENTOMON
+SINGLE_ANIMATION(Tentomon);
+#endif //D_FAMILY_TENTOMON
+#if D_FAMILY_GOMAMON
+SINGLE_ANIMATION(Gomamon);
+#endif //D_FAMILY_GOMAMON
+#if D_FAMILY_ARMADILLOMON
+SINGLE_ANIMATION(Armadillomon);
+#endif //D_FAMILY_ARMADILLOMON
+#if D_FAMILY_PATAMON
+SINGLE_ANIMATION(Patamon);
+#endif //D_FAMILY_PATAMON
+#if D_FAMILY_SALAMON
+SINGLE_ANIMATION(Salamon);
+#endif //D_FAMILY_SALAMON
+
+#if D_FAMILY_GREYMON
+SINGLE_ANIMATION(Greymon);
+#endif //D_FAMILY_GREYMON
+#if D_FAMILY_GARURUMON
+SINGLE_ANIMATION(Garurumon);
+#endif //D_FAMILY_GARURUMON
+#if D_FAMILY_EX_VEEMON
+SINGLE_ANIMATION(ExVeemon);
+#endif //D_FAMILY_EX_VEEMON
+#if D_FAMILY_STINGMON
+SINGLE_ANIMATION(Stingmon);
+#endif //D_FAMILY_STINGMON
+#if D_FAMILY_BIRDRAMON
+SINGLE_ANIMATION(Birdramon);
+#endif //D_FAMILY_BIRDRAMON
+#if D_FAMILY_TOGEMON
+SINGLE_ANIMATION(Togemon);
+#endif //D_FAMILY_TOGEMON
+#if D_FAMILY_AQUILAMON
+SINGLE_ANIMATION(Aquilamon);
+#endif //D_FAMILY_AQUILAMON
+#if D_FAMILY_KABUTERIMON
+SINGLE_ANIMATION(Kabuterimon);
+#endif //D_FAMILY_KABUTERIMON
+#if D_FAMILY_IKAKKUMON
+SINGLE_ANIMATION(Ikakkumon);
+#endif //D_FAMILY_IKAKKUMON
+#if D_FAMILY_ANKYLOMON
+SINGLE_ANIMATION(Ankylomon);
+#endif //D_FAMILY_ANKYLOMON
+#if D_FAMILY_ANGEMON
+SINGLE_ANIMATION(Angemon);
+#endif //D_FAMILY_ANGEMON
+#if D_FAMILY_GATOMON
+SINGLE_ANIMATION(Gatomon);
+#endif //D_FAMILY_GATOMON
+
+#if D_FAMILY_METAL_GREYMON
+SINGLE_ANIMATION(MetalGreymon);
+#endif //D_FAMILY_METAL_GREYMON
+#if D_FAMILY_WERE_GARURUMON
+SINGLE_ANIMATION(WereGarurumon);
+#endif //D_FAMILY_WERE_GARURUMON
+#if D_FAMILY_PAILDRAMON
+#if P_FUSION_FORMS
+SINGLE_ANIMATION(Paildramon);
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PAILDRAMON
+#if D_FAMILY_GARUDAMON
+SINGLE_ANIMATION(Garudamon);
+#endif //D_FAMILY_GARUDAMON
+#if D_FAMILY_LILYMON
+SINGLE_ANIMATION(Lilymon);
+#endif //D_FAMILY_LILYMON
+#if D_FAMILY_SILPHYMON
+SINGLE_ANIMATION(Silphymon);
+#endif //D_FAMILY_SILPHYMON
+#if D_FAMILY_MEGA_KABUTERIMON
+SINGLE_ANIMATION(MegaKabuterimon);
+#endif //D_FAMILY_MEGA_KABUTERIMON
+#if D_FAMILY_ZUDOMON
+SINGLE_ANIMATION(Zudomon);
+#endif //D_FAMILY_ZUDOMON
+#if D_FAMILY_SHAKKOUMON
+SINGLE_ANIMATION(Shakkoumon);
+#endif //D_FAMILY_SHAKKOUMON
+#if D_FAMILY_MAGNA_ANGEMON
+SINGLE_ANIMATION(MagnaAngemon);
+#endif //D_FAMILY_MAGNA_ANGEMON
+#if D_FAMILY_ANGEWOMON
+SINGLE_ANIMATION(Angewomon);
+#endif //D_FAMILY_ANGEWOMON
+
+#if D_FAMILY_WAR_GREYMON
+SINGLE_ANIMATION(WarGreymon);
+#endif //D_FAMILY_WAR_GREYMON
+#if D_FAMILY_METAL_GARURUMON
+SINGLE_ANIMATION(MetalGarurumon);
+#endif //D_FAMILY_METAL_GARURUMON
+#if D_FAMILY_DRAGON_IMPERIALDRAMON
+#if P_FUSION_FORMS
+SINGLE_ANIMATION(DragonImperialdramon);
+#endif //FUSION_FORMS
+#endif //D_FAMILY_DRAGON_IMPERIALDRAMON
+#if D_FAMILY_SERAPHIMON
+SINGLE_ANIMATION(Seraphimon);
+#endif //D_FAMILY_SERAPHIMON
+#if D_FAMILY_MAGNADRAMON
+SINGLE_ANIMATION(Magnadramon);
+#endif //D_FAMILY_MAGNADRAMON
+
+#if D_FAMILY_OMNIMON
+#if P_FUSION_FORMS
+SINGLE_ANIMATION(Omnimon);
+#endif //FUSION_FORMS
+#endif //D_FAMILY_OMNIMON
+#if D_FAMILY_FIGHTER_IMPERIALDRAMON
+#if P_FUSION_FORMS
+SINGLE_ANIMATION(FighterImperialdramon);
+#endif //FUSION_FORMS
+#endif //D_FAMILY_FIGHTER_IMPERIALDRAMON
+
+#if D_FAMILY_PALADIN_IMPERIALDRAMON
+#if P_FUSION_FORMS
+SINGLE_ANIMATION(PaladinImperialdramon);
+#endif //FUSION_FORMS
+#endif //D_FAMILY_PALADIN_IMPERIALDRAMON
+
 SINGLE_ANIMATION(Egg);
