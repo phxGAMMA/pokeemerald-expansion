@@ -83,6 +83,13 @@
     #define NIGHT_HOUR_END     6
 #endif
 
+#define MORNING_HOUR_SHIFT     (MORNING_HOUR_BEGIN - 1)
+#define MORNING_HOUR           MORNING_HOUR_BEGIN
+#define DAY_HOUR               DAY_HOUR_BEGIN
+#define EVENING_HOUR_SHIFT     (EVENING_HOUR_BEGIN - 1)
+#define EVENING_HOUR           EVENING_HOUR_BEGIN
+#define NIGHT_HOUR             NIGHT_HOUR_BEGIN
+
 #define TIME_MORNING           0
 #define TIME_DAY               1
 #define TIME_EVENING           2
