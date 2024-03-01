@@ -67,6 +67,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "rtc.h"
 
 struct CableClubPlayer
 {
@@ -189,6 +190,10 @@ void (*gFieldCallback)(void);
 bool8 (*gFieldCallback2)(void);
 u8 gLocalLinkPlayerId; // This is our player id in a multiplayer mode.
 u8 gFieldLinkPlayerCount;
+
+u8 gTimeOfDay;
+struct TimeBlendSettings currentTimeBlend;
+u8 gTimeUpdateCounter;
 
 EWRAM_DATA static u8 sObjectEventLoadFlag = 0;
 EWRAM_DATA struct WarpData gLastUsedWarp = {0};
@@ -805,8 +810,6 @@ bool8 SetDiveWarpDive(u16 x, u16 y)
 
 void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
 {
-    s32 paletteIndex;
-
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
@@ -833,10 +836,9 @@ if (I_VS_SEEKER_CHARGING != 0)
     RunOnTransitionMapScript();
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
-    LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
+    LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE);
 
-    for (paletteIndex = NUM_PALS_IN_PRIMARY; paletteIndex < NUM_PALS_TOTAL; paletteIndex++)
-        ApplyWeatherColorMapToPal(paletteIndex);
+    ApplyWeatherColorMapToPal(NUM_PALS_IN_PRIMARY, NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY);
 
     InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
@@ -1492,6 +1494,144 @@ void CB1_Overworld(void)
         DoCB1_Overworld(gMain.newKeys, gMain.heldKeys);
 }
 
+#define TINT_DAY     0
+#define TINT_SHIFT   0xA8B0E0
+#define TINT_NIGHT   Q_8_8(0.456) | Q_8_8(0.456) << 8 | Q_8_8(0.615) << 16
+
+const struct BlendSettings gTimeOfDayBlend[] =
+{
+    [TIME_MORNING] = {.coeff = 4,  .blendColor = TINT_SHIFT, .isTint = TRUE},
+    [TIME_DAY]     = {.coeff = 0,  .blendColor = TINT_DAY,   .isTint = FALSE},
+    [TIME_EVENING] = {.coeff = 4,  .blendColor = TINT_SHIFT, .isTint = TRUE},
+    [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
+};
+
+u8 UpdateTimeOfDay(void)
+{
+    s32 hours, minutes;
+    RtcCalcLocalTime();
+    hours = gLocalTime.hours;
+    minutes = gLocalTime.minutes;
+
+    if (hours < MORNING_HOUR_SHIFT)
+    {
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_NIGHT;
+    }
+    else if (hours < MORNING_HOUR)
+    {
+        currentTimeBlend.time0 = TIME_NIGHT;
+        currentTimeBlend.time1 = TIME_MORNING;
+        currentTimeBlend.weight = 256 - 256 * ((hours - MORNING_HOUR_SHIFT) * 60 + minutes)
+                                     / ((MORNING_HOUR - MORNING_HOUR_SHIFT) * 60);
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_NIGHT;
+    }
+    else if (hours < DAY_HOUR)
+    {
+        currentTimeBlend.time0 = TIME_MORNING;
+        currentTimeBlend.time1 = TIME_DAY;
+        currentTimeBlend.weight = 256 - 256 * ((hours - MORNING_HOUR) * 60 + minutes)
+                                         / ((DAY_HOUR - MORNING_HOUR) * 60);
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2 + 128;
+        gTimeOfDay = TIME_DAY;
+    }
+    else if (hours < EVENING_HOUR_SHIFT)
+    {
+        currentTimeBlend.weight = currentTimeBlend.altWeight = 256;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_DAY;
+    }
+    else if (hours < EVENING_HOUR)
+    {
+        currentTimeBlend.time0 = TIME_DAY;
+        currentTimeBlend.time1 = TIME_EVENING;
+        currentTimeBlend.weight = 256 - 256 * ((hours - EVENING_HOUR_SHIFT) * 60 + minutes)
+                                     / ((EVENING_HOUR - EVENING_HOUR_SHIFT) * 60);
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2 + 128;
+        gTimeOfDay = TIME_DAY;
+    }
+    else if (hours < NIGHT_HOUR)
+    {
+        currentTimeBlend.time0 = TIME_EVENING;
+        currentTimeBlend.time1 = TIME_NIGHT;
+        currentTimeBlend.weight = 256 - 256 * ((hours - EVENING_HOUR) * 60 + minutes)
+                                       / ((NIGHT_HOUR - EVENING_HOUR) * 60);
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2;
+        gTimeOfDay = TIME_NIGHT;
+    }
+    else
+    {
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_NIGHT;
+    }
+    return gTimeOfDay;
+}
+
+bool8 MapHasNaturalLight(u8 mapType)
+{
+    return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE;
+}
+
+void UpdateAltBgPalettes(u16 palettes)
+{
+    const struct Tileset *primary = gMapHeader.mapLayout->primaryTileset;
+    const struct Tileset *secondary = gMapHeader.mapLayout->secondaryTileset;
+    u32 i = 1;
+    if (!MapHasNaturalLight(gMapHeader.mapType))
+        return;
+    palettes &= ~((1 << NUM_PALS_IN_PRIMARY) - 1) | primary->swapPalettes;
+    palettes &= ((1 << NUM_PALS_IN_PRIMARY) - 1) | (secondary->swapPalettes << NUM_PALS_IN_PRIMARY);
+    palettes &= 0x1FFE;
+    palettes >>= 1;
+    if (!palettes)
+        return;
+    while (palettes)
+    {
+        if (palettes & 1)
+        {
+            if (i < NUM_PALS_IN_PRIMARY)
+                AvgPaletteWeighted(&((u16 *)primary->palettes)[PLTT_ID(i)], &((u16 *)primary->palettes)[PLTT_ID((i + 9) % 16)], gPlttBufferUnfaded + PLTT_ID(i), currentTimeBlend.altWeight);
+            else
+                AvgPaletteWeighted(&((u16 *)secondary->palettes)[PLTT_ID(i)], &((u16 *)secondary->palettes)[PLTT_ID((i + 9) % 16)], gPlttBufferUnfaded + PLTT_ID(i), currentTimeBlend.altWeight);
+        }
+        i++;
+        palettes >>= 1;
+    }
+}
+
+void UpdatePalettesWithTime(u32 palettes)
+{
+    if (MapHasNaturalLight(gMapHeader.mapType))
+    {
+        u32 i;
+        u32 mask = 1 << 16;
+        if (palettes >= 0x10000)
+            for (i = 0; i < 16; i++, mask <<= 1)
+                if (GetSpritePaletteTagByPaletteNum(i) >> 15)
+                    palettes &= ~(mask);
+
+        palettes &= 0xFFFF1FFF;
+        if (!palettes)
+            return;
+        TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
+    }
+}
+
+u8 UpdateSpritePaletteWithTime(u8 paletteNum)
+{
+    if (MapHasNaturalLight(gMapHeader.mapType))
+    {
+        u16 offset;
+        if (GetSpritePaletteTagByPaletteNum(paletteNum) >> 15)
+            return paletteNum;
+        offset = (paletteNum + 16) << 4;
+        TimeMixPalettes(1, gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
+    }
+    return paletteNum;
+}
+
 static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
@@ -1503,6 +1643,21 @@ static void OverworldBasic(void)
     UpdatePaletteFade();
     UpdateTilesetAnimations();
     DoScheduledBgTilemapCopiesToVram();
+    if (++gTimeUpdateCounter > 60)
+    {
+        struct TimeBlendSettings cachedBlend = {
+            .time0 = currentTimeBlend.time0,
+            .time1 = currentTimeBlend.time1,
+            .weight = currentTimeBlend.weight,
+        };
+        gTimeUpdateCounter = 0;
+        UpdateTimeOfDay();
+        if (cachedBlend.time0 != currentTimeBlend.time0 || cachedBlend.time1 != currentTimeBlend.time1 || cachedBlend.weight != currentTimeBlend.weight)
+        {
+            UpdateAltBgPalettes(PALETTES_BG);
+            UpdatePalettesWithTime(PALETTES_ALL);
+        }
+    }
 }
 
 // This CB2 is used when starting
@@ -1518,7 +1673,10 @@ void CB2_Overworld(void)
         SetVBlankCallback(NULL);
     OverworldBasic();
     if (fading)
+    {
         SetFieldVBlankCallback();
+        return;
+    }
 }
 
 void SetMainCallback1(MainCallback cb)
@@ -2167,10 +2325,7 @@ static void ResumeMap(bool32 a1)
     ResetAllPicSprites();
     ResetCameraUpdateInfo();
     InstallCameraPanAheadCallback();
-    if (!a1)
-        InitObjectEventPalettes(0);
-    else
-        InitObjectEventPalettes(1);
+    FreeAllSpritePalettes();
 
     FieldEffectActiveListClear();
     StartWeather();
