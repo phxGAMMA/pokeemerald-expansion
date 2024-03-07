@@ -234,7 +234,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_NANAB_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_GROUP_A_1",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -247,7 +247,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_NANAB_2",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_GROUP_A_2",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -260,7 +260,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_NANAB_3",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_110_GROUP_A_3",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -688,22 +688,6 @@
       "y": 25,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_TREE4_1"
-    },
-    {
-      "type": "sign",
-      "x": 33,
-      "y": 39,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_EventScript_TrainerTipsPrlzSleep"
-    },
-    {
-      "type": "sign",
-      "x": 37,
-      "y": 70,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route110_EventScript_TrainerTipsRegisterItems"
     },
     {
       "type": "sign",

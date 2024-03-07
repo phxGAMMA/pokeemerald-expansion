@@ -34,7 +34,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_PINAP_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_GROUP_A_1",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -47,7 +47,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_CHESTO_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_GROUP_A_2",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -138,7 +138,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_CHESTO_2",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_GROUP_A_3",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -151,7 +151,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_PINAP_2",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_116_GROUP_A_4",
       "script": "BerryTreeScript",
       "flag": "0"
     },
@@ -476,22 +476,6 @@
       "y": 11,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_BLUE_CAVE2_1"
-    },
-    {
-      "type": "sign",
-      "x": 16,
-      "y": 12,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route116_EventScript_TrainerTipsBToStopEvolution"
-    },
-    {
-      "type": "sign",
-      "x": 29,
-      "y": 10,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route116_EventScript_TrainerTipsBagHasPockets"
     },
     {
       "type": "secret_base",

@@ -41,6 +41,8 @@ SafariZone_EventScript_OutOfBalls::
 
 EventScript_PokeBlockFeeder::
 	lockall
+	checkitem ITEM_POKEBLOCK_CASE
+	goto_if_eq VAR_RESULT, FALSE, SafariZone_EventScript_FeederNoCase
 	special GetPokeblockFeederInFront
 	goto_if_ne VAR_RESULT, 0xFFFF, SafariZone_EventScript_PokeblockPresent
 	msgbox SafariZone_Text_PlacePokeblockOnFeeder, MSGBOX_YESNO
@@ -58,7 +60,8 @@ SafariZone_EventScript_ChoosePokeblock::
 SafariZone_EventScript_PokeblockPlaced::
 	message SafariZone_Text_PokeblockWasPlaced
 	waitmessage
-	waitbuttonpress
+	closemessage
+	special RaidDenWildEncounter
 	releaseall
 	end
 
@@ -66,6 +69,11 @@ SafariZone_EventScript_PokeblockPresent::
 	message SafariZone_Text_PokeblockStillHere
 	waitmessage
 	waitbuttonpress
+	releaseall
+	end
+
+SafariZone_EventScript_FeederNoCase:
+	msgbox SafariZone_Text_DontHavePokeblockCase, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -92,6 +100,10 @@ SafariZone_Text_PokeblockStillHere:
 SafariZone_Text_PokeblockWasPlaced:
 	.string "The {STR_VAR_1} was placed\n"
 	.string "on the {POKEBLOCK} FEEDER.$"
+
+SafariZone_Text_DontHavePokeblockCase:
+	.string "You don't have a {POKEBLOCK} CASE.\n"
+	.string "The {POKEBLOCK} FEEDER can't be used.$"
 
 Route121_SafariZoneEntrance_Text_WelcomeToSafariZone:
 	.string "Welcome to the SAFARI ZONE!\p"

@@ -738,20 +738,52 @@ SootopolisCity_EventScript_KiriGiveBerry::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY
 	msgbox SootopolisCity_Text_GiveYouThisBerryToo, MSGBOX_DEFAULT
-	random 2
-	goto_if_eq VAR_RESULT, 0, SootopolisCity_EventScript_GiveFigyBerry
-	goto_if_eq VAR_RESULT, 1, SootopolisCity_EventScript_GiveIapapaBerry
+	random 6
+	goto_if_eq VAR_RESULT, 0, SootopolisCity_EventScript_GiveMicleBerry
+	goto_if_eq VAR_RESULT, 1, SootopolisCity_EventScript_GiveCustapBerry
+	goto_if_eq VAR_RESULT, 2, SootopolisCity_EventScript_GiveJabocaBerry
+	goto_if_eq VAR_RESULT, 3, SootopolisCity_EventScript_GiveRowapBerry
+	goto_if_eq VAR_RESULT, 4, SootopolisCity_EventScript_GiveKeeBerry
+	goto_if_eq VAR_RESULT, 5, SootopolisCity_EventScript_GiveMarangaBerry
 	end
 
-SootopolisCity_EventScript_GiveFigyBerry::
-	giveitem ITEM_FIGY_BERRY
+SootopolisCity_EventScript_GiveMicleBerry::
+	giveitem ITEM_MICLE_BERRY
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
 	release
 	end
 
-SootopolisCity_EventScript_GiveIapapaBerry::
-	giveitem ITEM_IAPAPA_BERRY
+SootopolisCity_EventScript_GiveCustapBerry::
+	giveitem ITEM_CUSTAP_BERRY
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_EventScript_GiveJabocaBerry::
+	giveitem ITEM_JABOCA_BERRY
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_EventScript_GiveRowapBerry::
+	giveitem ITEM_ROWAP_BERRY
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_EventScript_GiveKeeBerry::
+	giveitem ITEM_KEE_BERRY
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
+	release
+	end
+
+SootopolisCity_EventScript_GiveMarangaBerry::
+	giveitem ITEM_MARANGA_BERRY
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox SootopolisCity_Text_WhatKindOfWishInYourName, MSGBOX_DEFAULT
 	release

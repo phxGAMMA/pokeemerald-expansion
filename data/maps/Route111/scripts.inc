@@ -388,10 +388,6 @@ Route111_EventScript_OldLadysRestStopSign::
 	msgbox Route111_Text_OldLadysRestStopSign, MSGBOX_SIGN
 	end
 
-Route111_EventScript_TrainerTipsSpAtkSpDef::
-	msgbox Route111_Text_TrainerTipsSpAtkSpDef, MSGBOX_SIGN
-	end
-
 Route111_EventScript_Man1::
 	msgbox Route111_Text_ToughToKeepWinningUpTheRanks, MSGBOX_NPC
 	end
@@ -666,14 +662,6 @@ Route111_Text_RouteSign113:
 Route111_Text_OldLadysRestStopSign:
 	.string "OLD LADY'S REST STOP\n"
 	.string "“Come in and rest your tired bones.”$"
-
-Route111_Text_TrainerTipsSpAtkSpDef:
-	.string "TRAINER TIPS\p"
-	.string "One of the indicators of a POKéMON's\n"
-	.string "powerfulness is SP. ATK. It stands for\l"
-	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, SP. DEF stands for “SPECIAL\n"
-	.string "DEFENSE.”$"
 
 Route111_Text_ShouldBeMirageTowerAroundHere:
 	.string "There should be a tower made of sand\n"

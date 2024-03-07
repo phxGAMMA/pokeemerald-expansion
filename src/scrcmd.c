@@ -1939,6 +1939,15 @@ bool8 ScrCmd_playslotmachine(struct ScriptContext *ctx)
     return TRUE;
 }
 
+static const u16 sBlockBerries[] =
+{
+    ITEM_BLUK_BERRY,
+    ITEM_NANAB_BERRY,
+    ITEM_PINAP_BERRY,
+    ITEM_RAZZ_BERRY,
+    ITEM_WEPEAR_BERRY,
+};
+
 bool8 ScrCmd_setberrytree(struct ScriptContext *ctx)
 {
     u8 treeId = ScriptReadByte(ctx);
@@ -1946,9 +1955,8 @@ bool8 ScrCmd_setberrytree(struct ScriptContext *ctx)
     u8 growthStage = ScriptReadByte(ctx);
 
     if (berry == 0)
-        PlantBerryTree(treeId, berry, growthStage, FALSE);
-    else
-        PlantBerryTree(treeId, berry, growthStage, FALSE);
+        berry = ITEM_TO_BERRY(sBlockBerries[Random() % NELEMS(sBlockBerries)]);
+    PlantBerryTree(treeId, berry, growthStage, FALSE);
     return FALSE;
 }
 

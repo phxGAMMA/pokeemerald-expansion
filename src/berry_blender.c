@@ -104,7 +104,7 @@ enum {
 #define PALTAG_MISC              46546
 
 // Last berry that an NPC can put in
-#define NUM_NPC_BERRIES ITEM_TO_BERRY(ITEM_ASPEAR_BERRY)
+#define NUM_NPC_BERRIES ITEM_TO_BERRY(ITEM_BELUE_BERRY)
 
 enum {
     // Windows 0-3 are used implicitly in several loops over BLENDER_MAX_PLAYERS
@@ -869,29 +869,19 @@ static const s16 sBerrySpriteData[][5] =
     {250, 140,  10,  -2,  -1},
 };
 
-// There are only 5 different berries the NPCs will ever use
-// Each of these sets represents 3 berries chosen to be used by the NPCs
-// If the player's berry is one of the 5 possible berries, a set is chosen that excludes it
-static const u8 sOpponentBerrySets[NUM_NPC_BERRIES * 2][3] =
-{
-    // These sets are used if the player chose one of the 5 NPC berries
-    {ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1, ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1,  ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1},   // player chose Cheri Berry
-    {ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1,  ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1, ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1},   // player chose Chesto Berry
-    {ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1, ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1,  ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1},  // player chose Pecha Berry
-    {ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1,  ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1, ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1},   // player chose Rawst Berry
-    {ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1,  ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1,  ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1},  // player chose Aspear Berry
-
-    // These sets are used if the player chose a different berry (set is selected by player's berry % 5)
-    {ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1,  ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1,  ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1},   // player chose Leppa, Figy, ...
-    {ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1, ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1,  ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1},  // player chose Oran, Wiki, ...
-    {ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1,  ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1, ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1},   // player chose Persim, Mago, ...
-    {ITEM_TO_BERRY(ITEM_RAWST_BERRY) - 1,  ITEM_TO_BERRY(ITEM_CHERI_BERRY) - 1,  ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1},  // player chose Lum, Aguav, ...
-    {ITEM_TO_BERRY(ITEM_ASPEAR_BERRY) - 1, ITEM_TO_BERRY(ITEM_CHESTO_BERRY) - 1, ITEM_TO_BERRY(ITEM_PECHA_BERRY) - 1},   // player chose Sitrus, Iapapa, ...
+static const u8 sOpponentBerries[] = {
+    ITEM_TO_BERRY(ITEM_RAZZ_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_BLUK_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_NANAB_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_WEPEAR_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_PINAP_BERRY) - 1
 };
 
-// Berry master's berries follow the same rules as above, but instead of explicitly listing
-// the alternate sets if the player chooses one of these berries, it implicitly uses these berries - 5, i.e. Tamato - Nomel
 static const u8 sBerryMasterBerries[] = {
+    ITEM_TO_BERRY(ITEM_CORNN_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_MAGOST_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_RABUTA_BERRY) - 1,
+    ITEM_TO_BERRY(ITEM_NOMEL_BERRY) - 1,
     ITEM_TO_BERRY(ITEM_SPELON_BERRY) - 1,
     ITEM_TO_BERRY(ITEM_PAMTRE_BERRY) - 1,
     ITEM_TO_BERRY(ITEM_WATMEL_BERRY) - 1,
@@ -1563,8 +1553,8 @@ static void SetOpponentsBerryData(u16 playerBerryItemId, u8 playersNum, struct B
     }
     for (i = 0; i < playersNum - 1; i++)
     {
-        opponentBerryId = sOpponentBerrySets[opponentSetId][i];
-        berryMasterDiff = ITEM_TO_BERRY(playerBerryItemId) - ITEM_TO_BERRY(ITEM_SPELON_BERRY);
+        opponentBerryId = sOpponentBerries[opponentSetId];
+        berryMasterDiff = ITEM_TO_BERRY(playerBerryItemId) - ITEM_TO_BERRY(ITEM_BELUE_BERRY);
         if (!FlagGet(FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER) && gSpecialVar_0x8004 == 1)
         {
             opponentSetId %= ARRAY_COUNT(sBerryMasterBerries);

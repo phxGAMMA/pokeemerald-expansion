@@ -739,6 +739,9 @@ SlateportCity_EventScript_BerryPowderClerk::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_POWDER_JAR, SlateportCity_EventScript_ReceivedPowderJar
 	msgbox SlateportCity_Text_ExplainBerries, MSGBOX_DEFAULT
+	giveitem ITEM_POKEBLOCK_CASE
+	setflag FLAG_RECEIVED_POKEBLOCK_CASE
+	msgbox SlateportCity_Text_ExplainPokeblocks, MSGBOX_DEFAULT
 	giveitem ITEM_POWDER_JAR
 	setflag FLAG_RECEIVED_POWDER_JAR
 	msgbox SlateportCity_Text_ExplainBerryPowder, MSGBOX_DEFAULT
@@ -1298,14 +1301,27 @@ SlateportCity_Text_ExplainBerries:
 	.string "I've got something good for someone\n"
 	.string "like you.$"
 
+SlateportCity_Text_ExplainPokeblocks:
+	.string "POKéBLOCKS are tasty treats made\n"
+	.string "from crushed BERRIES.\p"
+	.string "Did you know that?\p"
+	.string "Feeding your POKéMON POKéBLOCKS\n"
+	.string "can boost it's CONTEST stats.\p"
+	.string "Did you know that?\p"
+	.string "You can make POKéBLOCKS at the\n"
+	.string "BERRY BLENDER nearby.\p"
+	.string "Did you know that?\p"
+	.string "I see you're intrigued by POKéBLOCKS.\p"
+	.string "For someone as curious as you,\n"
+	.string "I have something extra special.$"
+
 SlateportCity_Text_ExplainBerryPowder:
 	.string "I recently had machines installed at\n"
 	.string "POKéMON CENTERS for crushing BERRIES.\p"
+	.string "Did you know that?\p"
 	.string "The BERRY CRUSH machines are at\n"
 	.string "the DIRECT CORNER upstairs.\p"
-	.string "Did you know?\p"
-	.string "Could you make BERRY POWDER for\n"
-	.string "me using those machines?\p"
+	.string "Did you know that?\p"
 	.string "I can make you all sorts of medicine\n"
 	.string "if you bring me lots of BERRY POWDER.$"
 
