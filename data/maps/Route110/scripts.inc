@@ -120,14 +120,6 @@ Route110_EventScript_MauvilleCitySign::
 	msgbox Route110_Text_MauvilleCitySign, MSGBOX_SIGN
 	end
 
-Route110_EventScript_TrainerTipsPrlzSleep::
-	msgbox Route110_Text_TrainerTipsPrlzSleep, MSGBOX_SIGN
-	end
-
-Route110_EventScript_TrainerTipsRegisterItems::
-	msgbox Route110_Text_TrainerTipsRegisterItems, MSGBOX_SIGN
-	end
-
 Route110_EventScript_TrickHouseSign::
 	msgbox Route110_Text_TrickHouseSign, MSGBOX_SIGN
 	end
@@ -937,18 +929,6 @@ Route110_Text_SeasideParkingSign:
 Route110_Text_MauvilleCitySign:
 	.string "ROUTE 110\n"
 	.string "{UP_ARROW} MAUVILLE CITY$"
-
-Route110_Text_TrainerTipsPrlzSleep:
-	.string "TRAINER TIPS\p"
-	.string "The foe can be made helpless by\n"
-	.string "paralyzing it or causing it to sleep.\p"
-	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
-
-Route110_Text_TrainerTipsRegisterItems:
-	.string "TRAINER TIPS\p"
-	.string "The items in the BAG can be reorganized\n"
-	.string "by pressing SELECT.$"
 
 Route110_Text_TrickHouseSign:
 	.string "“Three steps {RIGHT_ARROW} and two steps {UP_ARROW}\n"

@@ -42,10 +42,6 @@ Route113_EventScript_GlassWorkshopSign::
 	msgbox Route113_Text_GlassWorkshopSign, MSGBOX_SIGN
 	end
 
-Route113_EventScript_TrainerTipsRegisterKeyItems::
-	msgbox Route113_Text_TrainerTipsRegisterKeyItems, MSGBOX_SIGN
-	end
-
 Route113_EventScript_Jaylen::
 	trainerbattle_single TRAINER_JAYLEN, Route113_Text_JaylenIntro, Route113_Text_JaylenDefeat
 	msgbox Route113_Text_JaylenPostBattle, MSGBOX_AUTOCLOSE
@@ -152,13 +148,6 @@ Route113_Text_RouteSign111:
 Route113_Text_RouteSignFallarbor:
 	.string "ROUTE 113\n"
 	.string "{LEFT_ARROW} FALLARBOR TOWN$"
-
-Route113_Text_TrainerTipsRegisterKeyItems:
-	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
-	.string "Simply press SELECT to use\n"
-	.string "the registered item conveniently.$"
 
 Route113_Text_GlassWorkshopSign:
 	.string "GLASS WORKSHOP\n"

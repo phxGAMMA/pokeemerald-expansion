@@ -370,10 +370,6 @@ Route109_EventScript_SeashoreHouseSign::
 	msgbox Route109_Text_SeashoreHouseSign, MSGBOX_SIGN
 	end
 
-Route109_EventScript_TrainerTipsSign::
-	msgbox Route109_Text_TrainerTipsSign, MSGBOX_SIGN
-	end
-
 Route109_EventScript_David::
 	trainerbattle_single TRAINER_DAVID, Route109_Text_DavidIntro, Route109_Text_DavidDefeated
 	msgbox Route109_Text_DavidPostBattle, MSGBOX_AUTOCLOSE
@@ -556,9 +552,3 @@ Route109_Text_SeashoreHouseSign:
 	.string "“May hot battles rage on hot sands!\n"
 	.string "The place for hot TRAINERS!”$"
 
-Route109_Text_TrainerTipsSign:
-	.string "TRAINER TIPS\p"
-	.string "POKéMON at the same level may not\n"
-	.string "always have identical stats.\p"
-	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"

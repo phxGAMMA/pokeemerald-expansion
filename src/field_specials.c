@@ -2390,6 +2390,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_TRAINER_TIPS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 15;
+        task->tLeft = 15;
+        task->tTop = 1;
+        task->tWidth = 14;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2549,6 +2559,24 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_PokemonMoves,
         gText_Underpowered,
         gText_WhenInDanger,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TRAINER_TIPS] =
+    {
+        gText_TrainerTipsSave,
+        gText_TrainerTipsRunning,
+        gText_TrainerTipsExperience,
+        gText_TrainerTipsPP,
+        gText_TrainerTipsDoubles,
+        gText_TrainerTipsFishing,
+        gText_TrainerTipsEffort,
+        gText_TrainerTipsStatus,
+        gText_TrainerTipsReorganize,
+        gText_TrainerTipsStats,
+        gText_TrainerTipsRegister,
+        gText_TrainerTipsEvolution,
+        gText_TrainerTipsPockets,
+        gText_TrainerTipsDecoration,
         gText_Exit
     }
 };

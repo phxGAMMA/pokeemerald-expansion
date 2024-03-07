@@ -358,14 +358,6 @@
       "script": "Route109_EventScript_SeashoreHouseSign"
     },
     {
-      "type": "sign",
-      "x": 29,
-      "y": 10,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route109_EventScript_TrainerTipsSign"
-    },
-    {
       "type": "hidden_item",
       "x": 16,
       "y": 23,

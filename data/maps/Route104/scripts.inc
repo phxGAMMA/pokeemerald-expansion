@@ -314,10 +314,6 @@ Route104_EventScript_FlowerShopSign::
 	msgbox Route104_Text_PrettyPetalFlowShop, MSGBOX_SIGN
 	end
 
-Route104_EventScript_TrainerTipsDoubleBattles::
-	msgbox Route104_Text_TrainerTipsDoubleBattles, MSGBOX_SIGN
-	end
-
 Route104_EventScript_Boy1::
 	msgbox Route104_Text_ThrowBallAtWeakenedPokemon, MSGBOX_NPC
 	end
@@ -1069,17 +1065,6 @@ Route104_Text_RouteSignRustboro:
 
 Route104_Text_PrettyPetalFlowShop:
 	.string "PRETTY PETAL FLOWER SHOP$"
-
-Route104_Text_TrainerTipsDoubleBattles:
-	.string "TRAINER TIPS\p"
-	.string "In the HOENN region there are pairs\n"
-	.string "of TRAINERS who challenge others\l"
-	.string "for 2-on-2 POKéMON battles called\l"
-	.string "DOUBLE BATTLES.\p"
-	.string "In a DOUBLE BATTLE, the TRAINER must\n"
-	.string "send out two POKéMON, the one at the\l"
-	.string "left of the list and the top one.\l"
-	.string "Watch how POKéMON are lined up.$"
 
 Route104_Text_MayWeShouldRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"

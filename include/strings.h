@@ -3055,4 +3055,20 @@ extern const u8 gText_ExpShareOff[];
 
 extern const u8 gText_BasePointsResetToZero[];
 
+// Trainer Tips
+extern const u8 gText_TrainerTipsSave[];
+extern const u8 gText_TrainerTipsRunning[];
+extern const u8 gText_TrainerTipsExperience[];
+extern const u8 gText_TrainerTipsPP[];
+extern const u8 gText_TrainerTipsDoubles[];
+extern const u8 gText_TrainerTipsFishing[];
+extern const u8 gText_TrainerTipsEffort[];
+extern const u8 gText_TrainerTipsStatus[];
+extern const u8 gText_TrainerTipsReorganize[];
+extern const u8 gText_TrainerTipsStats[];
+extern const u8 gText_TrainerTipsRegister[];
+extern const u8 gText_TrainerTipsEvolution[];
+extern const u8 gText_TrainerTipsPockets[];
+extern const u8 gText_TrainerTipsDecoration[];
+
 #endif // GUARD_STRINGS_H

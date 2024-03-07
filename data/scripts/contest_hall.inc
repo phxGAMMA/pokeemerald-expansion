@@ -20,20 +20,11 @@ LilycoveCity_ContestLobby_EventScript_SpeakToContestReceptionist::
 	faceplayer
 	goto_if_ne VAR_CONTEST_PRIZE_PICKUP, 0, LilycoveCity_ContestLobby_EventScript_PickUpPrize
 	call_if_set FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_ReceptionWelcome
-	call_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, LilycoveCity_ContestLobby_EventScript_GivePokeblockCase
 	goto LilycoveCity_ContestLobby_EventScript_AskEnterContest
 	end
 
 LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 	msgbox LilycoveCity_ContestLobby_Text_ContestReception, MSGBOX_DEFAULT
-	return
-
-LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
-	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
-	giveitem ITEM_POKEBLOCK_CASE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_POKEBLOCK_CASE
-	msgbox LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp, MSGBOX_DEFAULT
 	return
 
 LilycoveCity_ContestLobby_EventScript_PickUpPrize::
@@ -1371,22 +1362,6 @@ LilycoveCity_ContestLobby_EventScript_DelayIfContestWithRSPlayer::
 LilycoveCity_ContestLobby_EventScript_DelayForRSPlayer::
 	delay 9
 	return
-
-LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase:
-	.string "Hello!\p"
-	.string "This is the reception counter for\n"
-	.string "POKéMON CONTESTS.\p"
-	.string "Oh? It appears that you don't have\n"
-	.string "a {POKEBLOCK} CASE yet.\p"
-	.string "In that case, we need to provide you\n"
-	.string "with this!$"
-
-LilycoveCity_ContestLobby_Text_NowThatWeveClearedThatUp:
-	.string "Okay, now that we've cleared that\n"
-	.string "up…\p"
-	.string "Hello!\p"
-	.string "This is the reception counter for\n"
-	.string "POKéMON CONTESTS.$"
 
 LilycoveCity_ContestLobby_Text_ContestReception:
 	.string "Hello!\p"

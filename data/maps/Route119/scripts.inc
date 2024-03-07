@@ -466,10 +466,6 @@ Route119_EventScript_Boy2::
 	msgbox Route119_Text_CanYourMonMakeSecretBase, MSGBOX_NPC
 	end
 
-Route119_EventScript_TrainerTipsDecoration::
-	msgbox Route119_Text_TrainerTipsDecoration, MSGBOX_SIGN
-	end
-
 Route119_EventScript_ScottWonAtFortreeGymCall::
 	lockall
 	pokenavcall Route119_Text_ScottYouWonAtFortreeGym
@@ -604,11 +600,3 @@ Route119_Text_RouteSignFortree:
 Route119_Text_WeatherInstitute:
 	.string "WEATHER INSTITUTE$"
 
-Route119_Text_TrainerTipsDecoration:
-	.string "TRAINER TIPS\p"
-	.string "Up to sixteen decorations and\n"
-	.string "furniture items can be placed in\l"
-	.string "a SECRET BASE.\p"
-	.string "Pick your favorite items and create\n"
-	.string "your very own SECRET BASE exactly the\l"
-	.string "way you want.$"

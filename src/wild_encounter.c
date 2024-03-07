@@ -66,6 +66,7 @@ EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
 EWRAM_DATA bool8 gIsFishingEncounter = 0;
 EWRAM_DATA bool8 gIsSurfingEncounter = 0;
+EWRAM_DATA bool8 gIsRaidEncounter = 0;
 
 #include "data/wild_encounters.h"
 
@@ -430,6 +431,7 @@ u8 PickWildMonNature(void)
 static void CreateWildMon(u16 species, u8 level)
 {
     bool32 checkCuteCharm;
+    u8 abilityNum = Random() % 3;
 
     ZeroEnemyPartyMons();
     checkCuteCharm = OW_CUTE_CHARM < GEN_9;
@@ -463,6 +465,8 @@ static void CreateWildMon(u16 species, u8 level)
     }
 
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
+    if (gIsRaidEncounter == TRUE)
+        SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
 }
 #ifdef BUGFIX
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr, count)
@@ -1129,4 +1133,595 @@ bool8 StandardWildEncounter_Debug(void)
 
     DoStandardWildBattle_Debug();
     return TRUE;
+}
+
+static const u16 sSevenStarSpecies[] =
+{
+    SPECIES_MEW,
+    SPECIES_CELEBI,
+    SPECIES_JIRACHI,
+    SPECIES_DEOXYS
+};
+
+static const u16 sSixStarSpecies[] =
+{
+    SPECIES_VENUSAUR,
+    SPECIES_CHARIZARD,
+    SPECIES_BLASTOISE,
+    SPECIES_CROBAT,
+    SPECIES_ANNIHILAPE,
+    SPECIES_MAGNEZONE,
+    SPECIES_RHYPERIOR,
+    SPECIES_KINGDRA,
+    SPECIES_DRAGONITE,
+    SPECIES_MEWTWO,
+    SPECIES_MEGANIUM,
+    SPECIES_TYPHLOSION,
+    SPECIES_FERALIGATR,
+    SPECIES_URSALUNA,
+    SPECIES_MAMOSWINE,
+    SPECIES_TYRANITAR,
+    SPECIES_LUGIA,
+    SPECIES_HO_OH,
+    SPECIES_SCEPTILE,
+    SPECIES_BLAZIKEN,
+    SPECIES_SWAMPERT,
+    SPECIES_OBSTAGOON,
+    SPECIES_DUSKNOIR,
+    SPECIES_SALAMENCE,
+    SPECIES_METAGROSS,
+    SPECIES_KYOGRE,
+    SPECIES_GROUDON
+};
+
+static const u16 sFiveStarSpecies[] =
+{
+    SPECIES_PIDGEOT,
+    SPECIES_NIDOQUEEN,
+    SPECIES_NIDOKING,
+    SPECIES_VILEPLUME,
+    SPECIES_BELLOSSOM,
+    SPECIES_POLIWRATH,
+    SPECIES_POLITOED,
+    SPECIES_ALAKAZAM,
+    SPECIES_MACHAMP,
+    SPECIES_VICTREEBEL,
+    SPECIES_GOLEM,
+    SPECIES_SIRFETCHD,
+    SPECIES_GENGAR,
+    SPECIES_STEELIX,
+    SPECIES_LICKILICKY,
+    SPECIES_BLISSEY,
+    SPECIES_TANGROWTH,
+    SPECIES_MR_RIME,
+    SPECIES_ELECTIVIRE,
+    SPECIES_MAGMORTAR,
+    SPECIES_PORYGON_Z,
+    SPECIES_ARTICUNO,
+    SPECIES_ZAPDOS,
+    SPECIES_MOLTRES,
+    SPECIES_TOGEKISS,
+    SPECIES_AMPHAROS,
+    SPECIES_JUMPLUFF,
+    SPECIES_AMBIPOM,
+    SPECIES_YANMEGA,
+    SPECIES_HONCHKROW,
+    SPECIES_MISMAGIUS,
+    SPECIES_FARIGIRAF,
+    SPECIES_DUDUNSPARCE,
+    SPECIES_GLISCOR,
+    SPECIES_OVERQWIL,
+    SPECIES_WEAVILE,
+    SPECIES_SNEASLER,
+    SPECIES_CURSOLA,
+    SPECIES_WYRDEER,
+    SPECIES_RAIKOU,
+    SPECIES_ENTEI,
+    SPECIES_SUICUNE,
+    SPECIES_LUDICOLO,
+    SPECIES_SHIFTRY,
+    SPECIES_GARDEVOIR,
+    SPECIES_GALLADE,
+    SPECIES_SLAKING,
+    SPECIES_EXPLOUD,
+    SPECIES_PROBOPASS,
+    SPECIES_AGGRON,
+    SPECIES_ROSERADE,
+    SPECIES_FLYGON,
+    SPECIES_WALREIN,
+    SPECIES_REGIROCK,
+    SPECIES_REGICE,
+    SPECIES_REGISTEEL,
+    SPECIES_LATIAS,
+    SPECIES_LATIOS
+};
+
+static const u16 sFourStarSpecies[] =
+{
+    SPECIES_IVYSAUR,
+    SPECIES_CHARMELEON,
+    SPECIES_WARTORTLE,
+    SPECIES_RATICATE,
+    SPECIES_FEAROW,
+    SPECIES_ARBOK,
+    SPECIES_RAICHU,
+    SPECIES_SANDSLASH,
+    SPECIES_CLEFABLE,
+    SPECIES_NINETALES,
+    SPECIES_WIGGLYTUFF,
+    SPECIES_GOLBAT,
+    SPECIES_PARASECT,
+    SPECIES_VENOMOTH,
+    SPECIES_DUGTRIO,
+    SPECIES_PERSIAN,
+    SPECIES_PERRSERKER,
+    SPECIES_GOLDUCK,
+    SPECIES_PRIMEAPE,
+    SPECIES_ARCANINE,
+    SPECIES_TENTACRUEL,
+    SPECIES_RAPIDASH,
+    SPECIES_SLOWBRO,
+    SPECIES_SLOWKING,
+    SPECIES_MAGNETON,
+    SPECIES_DODRIO,
+    SPECIES_DEWGONG,
+    SPECIES_MUK,
+    SPECIES_CLOYSTER,
+    SPECIES_HYPNO,
+    SPECIES_KINGLER,
+    SPECIES_ELECTRODE,
+    SPECIES_EXEGGUTOR,
+    SPECIES_MAROWAK,
+    SPECIES_WEEZING,
+    SPECIES_RHYDON,
+    SPECIES_SEADRA,
+    SPECIES_SEAKING,
+    SPECIES_STARMIE,
+    SPECIES_GYARADOS,
+    SPECIES_VAPOREON,
+    SPECIES_JOLTEON,
+    SPECIES_FLAREON,
+    SPECIES_ESPEON,
+    SPECIES_UMBREON,
+    SPECIES_LEAFEON,
+    SPECIES_GLACEON,
+    SPECIES_SYLVEON,
+    SPECIES_PORYGON2,
+    SPECIES_OMASTAR,
+    SPECIES_KABUTOPS,
+    SPECIES_DRAGONAIR,
+    SPECIES_BAYLEEF,
+    SPECIES_QUILAVA,
+    SPECIES_CROCONAW,
+    SPECIES_FURRET,
+    SPECIES_NOCTOWL,
+    SPECIES_LEDIAN,
+    SPECIES_ARIADOS,
+    SPECIES_LANTURN,
+    SPECIES_XATU,
+    SPECIES_AZUMARILL,
+    SPECIES_SUNFLORA,
+    SPECIES_QUAGSIRE,
+    SPECIES_FORRETRESS,
+    SPECIES_GRANBULL,
+    SPECIES_URSARING,
+    SPECIES_MAGCARGO,
+    SPECIES_PILOSWINE,
+    SPECIES_OCTILLERY,
+    SPECIES_HOUNDOOM,
+    SPECIES_DONPHAN,
+    SPECIES_PUPITAR,
+    SPECIES_GROVYLE,
+    SPECIES_COMBUSKEN,
+    SPECIES_MARSHTOMP,
+    SPECIES_MIGHTYENA,
+    SPECIES_LINOONE,
+    SPECIES_SWELLOW,
+    SPECIES_PELIPPER,
+    SPECIES_MASQUERAIN,
+    SPECIES_BRELOOM,
+    SPECIES_NINJASK,
+    SPECIES_SHEDINJA,
+    SPECIES_HARIYAMA,
+    SPECIES_DELCATTY,
+    SPECIES_MEDICHAM,
+    SPECIES_MANECTRIC,
+    SPECIES_SWALOT,
+    SPECIES_SHARPEDO,
+    SPECIES_WAILORD,
+    SPECIES_CAMERUPT,
+    SPECIES_GRUMPIG,
+    SPECIES_CACTURNE,
+    SPECIES_ALTARIA,
+    SPECIES_WHISCASH,
+    SPECIES_CRAWDAUNT,
+    SPECIES_CLAYDOL,
+    SPECIES_CRADILY,
+    SPECIES_ARMALDO,
+    SPECIES_MILOTIC,
+    SPECIES_BANETTE,
+    SPECIES_DUSCLOPS,
+    SPECIES_GLALIE,
+    SPECIES_FROSLASS,
+    SPECIES_HUNTAIL,
+    SPECIES_GOREBYSS,
+    SPECIES_SHELGON,
+    SPECIES_METANG
+};
+
+static const u16 sThreeStarSpecies[] =
+{
+    SPECIES_BUTTERFREE,
+    SPECIES_BEEDRILL,
+    SPECIES_PIDGEOTTO,
+    SPECIES_NIDORINA,
+    SPECIES_NIDORINO,
+    SPECIES_GLOOM,
+    SPECIES_POLIWHIRL,
+    SPECIES_KADABRA,
+    SPECIES_MACHOKE,
+    SPECIES_WEEPINBELL,
+    SPECIES_GRAVELER,
+    SPECIES_FARFETCHD,
+    SPECIES_HAUNTER,
+    SPECIES_ONIX,
+    SPECIES_HITMONLEE,
+    SPECIES_HITMONCHAN,
+    SPECIES_HITMONTOP,
+    SPECIES_LICKITUNG,
+    SPECIES_CHANSEY,
+    SPECIES_TANGELA,
+    SPECIES_KANGASKHAN,
+    SPECIES_MR_MIME,
+    SPECIES_SCYTHER,
+    SPECIES_SCIZOR,
+    SPECIES_KLEAVOR,
+    SPECIES_JYNX,
+    SPECIES_ELECTABUZZ,
+    SPECIES_MAGMAR,
+    SPECIES_PINSIR,
+    SPECIES_TAUROS,
+    SPECIES_LAPRAS,
+    SPECIES_DITTO,
+    SPECIES_PORYGON,
+    SPECIES_AERODACTYL,
+    SPECIES_SNORLAX,
+    SPECIES_TOGETIC,
+    SPECIES_FLAAFFY,
+    SPECIES_SUDOWOODO,
+    SPECIES_SKIPLOOM,
+    SPECIES_AIPOM,
+    SPECIES_YANMA,
+    SPECIES_MURKROW,
+    SPECIES_MISDREAVUS,
+    SPECIES_UNOWN,
+    SPECIES_WOBBUFFET,
+    SPECIES_GIRAFARIG,
+    SPECIES_DUNSPARCE,
+    SPECIES_GLIGAR,
+    SPECIES_QWILFISH,
+    SPECIES_SHUCKLE,
+    SPECIES_SNEASEL,
+    SPECIES_CORSOLA,
+    SPECIES_DELIBIRD,
+    SPECIES_MANTINE,
+    SPECIES_SKARMORY,
+    SPECIES_STANTLER,
+    SPECIES_SMEARGLE,
+    SPECIES_MILTANK,
+    SPECIES_BEAUTIFLY,
+    SPECIES_DUSTOX,
+    SPECIES_LOMBRE,
+    SPECIES_NUZLEAF,
+    SPECIES_KIRLIA,
+    SPECIES_VIGOROTH,
+    SPECIES_LOUDRED,
+    SPECIES_NOSEPASS,
+    SPECIES_SABLEYE,
+    SPECIES_MAWILE,
+    SPECIES_LAIRON,
+    SPECIES_PLUSLE,
+    SPECIES_MINUN,
+    SPECIES_VOLBEAT,
+    SPECIES_ILLUMISE,
+    SPECIES_ROSELIA,
+    SPECIES_TORKOAL,
+    SPECIES_SPINDA,
+    SPECIES_VIBRAVA,
+    SPECIES_ZANGOOSE,
+    SPECIES_SEVIPER,
+    SPECIES_LUNATONE,
+    SPECIES_SOLROCK,
+    SPECIES_CASTFORM,
+    SPECIES_KECLEON,
+    SPECIES_TROPIUS,
+    SPECIES_CHIMECHO,
+    SPECIES_ABSOL,
+    SPECIES_SEALEO,
+    SPECIES_RELICANTH,
+    SPECIES_LUVDISC
+};
+
+static const u16 sTwoStarSpecies[] =
+{
+    SPECIES_BULBASAUR,
+    SPECIES_CHARMANDER,
+    SPECIES_SQUIRTLE,
+    SPECIES_METAPOD,
+    SPECIES_KAKUNA,
+    SPECIES_RATTATA,
+    SPECIES_SPEAROW,
+    SPECIES_EKANS,
+    SPECIES_PIKACHU,
+    SPECIES_SANDSHREW,
+    SPECIES_CLEFAIRY,
+    SPECIES_VULPIX,
+    SPECIES_JIGGLYPUFF,
+    SPECIES_ZUBAT,
+    SPECIES_PARAS,
+    SPECIES_VENONAT,
+    SPECIES_DIGLETT,
+    SPECIES_MEOWTH,
+    SPECIES_PSYDUCK,
+    SPECIES_MANKEY,
+    SPECIES_GROWLITHE,
+    SPECIES_TENTACOOL,
+    SPECIES_PONYTA,
+    SPECIES_SLOWPOKE,
+    SPECIES_MAGNEMITE,
+    SPECIES_DODUO,
+    SPECIES_SEEL,
+    SPECIES_GRIMER,
+    SPECIES_SHELLDER,
+    SPECIES_DROWZEE,
+    SPECIES_KRABBY,
+    SPECIES_VOLTORB,
+    SPECIES_EXEGGCUTE,
+    SPECIES_CUBONE,
+    SPECIES_KOFFING,
+    SPECIES_RHYHORN,
+    SPECIES_HORSEA,
+    SPECIES_GOLDEEN,
+    SPECIES_STARYU,
+    SPECIES_MAGIKARP,
+    SPECIES_EEVEE,
+    SPECIES_OMANYTE,
+    SPECIES_KABUTO,
+    SPECIES_DRATINI,
+    SPECIES_CHIKORITA,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TOTODILE,
+    SPECIES_SENTRET,
+    SPECIES_HOOTHOOT,
+    SPECIES_LEDYBA,
+    SPECIES_SPINARAK,
+    SPECIES_CHINCHOU,
+    SPECIES_NATU,
+    SPECIES_SUNKERN,
+    SPECIES_WOOPER,
+    SPECIES_PINECO,
+    SPECIES_SNUBBULL,
+    SPECIES_TEDDIURSA,
+    SPECIES_SLUGMA,
+    SPECIES_SWINUB,
+    SPECIES_REMORAID,
+    SPECIES_HOUNDOUR,
+    SPECIES_PHANPY,
+    SPECIES_LARVITAR,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_MUDKIP,
+    SPECIES_POOCHYENA,
+    SPECIES_ZIGZAGOON,
+    SPECIES_SILCOON,
+    SPECIES_CASCOON,
+    SPECIES_TAILLOW,
+    SPECIES_WINGULL,
+    SPECIES_SURSKIT,
+    SPECIES_SHROOMISH,
+    SPECIES_NINCADA,
+    SPECIES_MAKUHITA,
+    SPECIES_SKITTY,
+    SPECIES_MEDITITE,
+    SPECIES_ELECTRIKE,
+    SPECIES_GULPIN,
+    SPECIES_CARVANHA,
+    SPECIES_WAILMER,
+    SPECIES_NUMEL,
+    SPECIES_SPOINK,
+    SPECIES_CACNEA,
+    SPECIES_SWABLU,
+    SPECIES_BARBOACH,
+    SPECIES_CORPHISH,
+    SPECIES_BALTOY,
+    SPECIES_LILEEP,
+    SPECIES_ANORITH,
+    SPECIES_FEEBAS,
+    SPECIES_SHUPPET,
+    SPECIES_DUSKULL,
+    SPECIES_SNORUNT,
+    SPECIES_CLAMPERL,
+    SPECIES_BAGON,
+    SPECIES_BELDUM
+};
+
+static const u16 sOneStarSpecies[] =
+{
+    SPECIES_CATERPIE,
+    SPECIES_WEEDLE,
+    SPECIES_PIDGEY,
+    SPECIES_NIDORAN_F,
+    SPECIES_NIDORAN_M,
+    SPECIES_ODDISH,
+    SPECIES_POLIWAG,
+    SPECIES_ABRA,
+    SPECIES_MACHOP,
+    SPECIES_BELLSPROUT,
+    SPECIES_GEODUDE,
+    SPECIES_GASTLY,
+    SPECIES_MAREEP,
+    SPECIES_HOPPIP,
+    SPECIES_WURMPLE,
+    SPECIES_LOTAD,
+    SPECIES_SEEDOT,
+    SPECIES_RALTS,
+    SPECIES_SLAKOTH,
+    SPECIES_WHISMUR,
+    SPECIES_ARON,
+    SPECIES_TRAPINCH,
+    SPECIES_SPHEAL
+};
+
+static const u16 sNoStarSpecies[] =
+{
+    SPECIES_PICHU,
+    SPECIES_CLEFFA,
+    SPECIES_IGGLYBUFF,
+    SPECIES_TYROGUE,
+    SPECIES_HAPPINY,
+    SPECIES_MIME_JR,
+    SPECIES_SMOOCHUM,
+    SPECIES_ELEKID,
+    SPECIES_MAGBY,
+    SPECIES_MUNCHLAX,
+    SPECIES_TOGEPI,
+    SPECIES_AZURILL,
+    SPECIES_BONSLY,
+    SPECIES_WYNAUT,
+    SPECIES_MANTYKE,
+    SPECIES_BUDEW,
+    SPECIES_CHINGLING
+};
+
+#define SEVEN_STAR 7
+#define SIX_STAR   6
+#define FIVE_STAR  5
+#define FOUR_STAR  4
+#define THREE_STAR 3
+#define TWO_STAR   2
+#define ONE_STAR   1
+#define NO_STAR    0
+
+static u16 PickRaidSpecies(void)
+{
+    u16 rnd = Random() % 100 + 1;
+    u8 raidStarLevel = 0;
+    u16 species;
+/*
+    if (FlagGet(FLAG_SYS_POST_GAME_CLEAR))
+    {
+        if (rnd > 80)
+            raidStarLevel = SEVEN_STAR;
+        else if (rnd > 50)
+            raidStarLevel = SIX_STAR;
+        else if (rnd > 30)
+            raidStarLevel = FIVE_STAR;
+        else if (rnd > 15)
+            raidStarLevel = FOUR_STAR;
+        else // (rnd > 0)
+            raidStarLevel = THREE_STAR;
+    }
+    else
+*/
+    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    {
+        if (rnd > 70)
+            raidStarLevel = SIX_STAR;
+        else if (rnd > 40)
+            raidStarLevel = FIVE_STAR;
+        else if (rnd > 20)
+            raidStarLevel = FOUR_STAR;
+        else // (rnd > 0)
+            raidStarLevel = THREE_STAR;
+    }
+    else if (FlagGet(FLAG_BADGE06_GET))
+    {
+        if (rnd > 70)
+            raidStarLevel = FIVE_STAR;
+        else if (rnd > 40)
+            raidStarLevel = FOUR_STAR;
+        else if (rnd > 20)
+            raidStarLevel = THREE_STAR;
+        else // (rnd > 0)
+            raidStarLevel = TWO_STAR;
+    }
+    else if (FlagGet(FLAG_BADGE03_GET))
+    {
+        if (rnd > 60)
+            raidStarLevel = THREE_STAR;
+        else if (rnd > 20)
+            raidStarLevel = TWO_STAR;
+        else // (rnd > 0)
+            raidStarLevel = ONE_STAR;
+    }
+    else
+    {
+        if (rnd > 80)
+            raidStarLevel = ONE_STAR;
+    }
+
+    switch (raidStarLevel)
+    {
+    case SEVEN_STAR:
+        if (raidStarLevel == SEVEN_STAR && !FlagGet(FLAG_DAILY_SEVEN_STAR_RAID))
+            raidStarLevel--;
+        species = sSevenStarSpecies[Random() % NELEMS(sSevenStarSpecies)];
+        FlagSet(FLAG_DAILY_SEVEN_STAR_RAID);
+        break;
+    case SIX_STAR:
+        if (raidStarLevel == SIX_STAR && !FlagGet(FLAG_DAILY_SIX_STAR_RAID))
+            raidStarLevel--;
+        species = sSixStarSpecies[Random() % NELEMS(sSixStarSpecies)];
+        FlagSet(FLAG_DAILY_SIX_STAR_RAID);
+        break;
+    case FIVE_STAR:
+        if (raidStarLevel == FIVE_STAR && !FlagGet(FLAG_DAILY_FIVE_STAR_RAID))
+            raidStarLevel--;
+        species = sFiveStarSpecies[Random() % NELEMS(sFiveStarSpecies)];
+        FlagSet(FLAG_DAILY_FIVE_STAR_RAID);
+        break;
+    case FOUR_STAR:
+        if (raidStarLevel == FOUR_STAR && !FlagGet(FLAG_DAILY_FOUR_STAR_RAID))
+            raidStarLevel--;
+        species = sFourStarSpecies[Random() % NELEMS(sFourStarSpecies)];
+        FlagSet(FLAG_DAILY_FOUR_STAR_RAID);
+        break;
+    case THREE_STAR:
+        if (raidStarLevel == THREE_STAR && !FlagGet(FLAG_DAILY_THREE_STAR_RAID))
+            raidStarLevel--;
+        species = sThreeStarSpecies[Random() % NELEMS(sThreeStarSpecies)];
+        FlagSet(FLAG_DAILY_THREE_STAR_RAID);
+        break;
+    case TWO_STAR:
+        if (raidStarLevel == TWO_STAR && !FlagGet(FLAG_DAILY_TWO_STAR_RAID))
+            raidStarLevel--;
+        species = sTwoStarSpecies[Random() % NELEMS(sTwoStarSpecies)];
+        FlagSet(FLAG_DAILY_TWO_STAR_RAID);
+        break;
+    case ONE_STAR:
+        if (raidStarLevel == ONE_STAR && !FlagGet(FLAG_DAILY_ONE_STAR_RAID))
+            raidStarLevel--;
+        species = sOneStarSpecies[Random() % NELEMS(sOneStarSpecies)];
+        FlagSet(FLAG_DAILY_ONE_STAR_RAID);
+        break;
+    case NO_STAR:
+        species = sNoStarSpecies[Random() % NELEMS(sNoStarSpecies)];
+        break;
+    }
+
+    return species;
+}
+
+void RaidDenWildEncounter(void)
+{
+    u16 species = PickRaidSpecies();
+
+    FlagSet(B_SMART_WILD_AI_FLAG);
+    FlagSet(B_FLAG_DYNAMAX_BATTLE);
+    gIsRaidEncounter = TRUE;
+    CreateWildMon(species, Random() % 100 + 1);
+    BattleSetup_StartWildBattle();
+    gIsRaidEncounter = FALSE;
+    FlagClear(B_FLAG_DYNAMAX_BATTLE);
+    FlagClear(B_SMART_WILD_AI_FLAG);
 }

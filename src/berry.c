@@ -1564,8 +1564,6 @@ static bool32 BerryTreeGrow(struct BerryTree *tree)
         tree->watered4 = 0;
         tree->berryYield = 0;
         tree->stage = BERRY_STAGE_SPROUTED;
-        if (++tree->regrowthCount == 10)
-            *tree = gBlankBerryTree;
         break;
     }
     return TRUE;
@@ -1584,7 +1582,7 @@ void BerryTreeTimeUpdate(s32 minutes)
         {
             if (minutes >= GetStageDurationByBerryType(tree->berry) * 71)
             {
-                *tree = gBlankBerryTree;
+                tree->stage = BERRY_STAGE_SPROUTED;
             }
             else
             {
@@ -1631,7 +1629,7 @@ void PlantBerryTree(u8 id, u8 berry, u8 stage, bool8 allowGrowth)
 
 void RemoveBerryTree(u8 id)
 {
-    gSaveBlock1Ptr->berryTrees[id] = gBlankBerryTree;
+    gSaveBlock1Ptr->berryTrees[id].stage = BERRY_STAGE_SPROUTED;
 }
 
 u8 GetBerryTypeByBerryTreeId(u8 id)
