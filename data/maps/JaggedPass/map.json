@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Eric",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Autumn",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "JaggedPass_EventScript_Julio",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     }
   ],
   "warp_events": [

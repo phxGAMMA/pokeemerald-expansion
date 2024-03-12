@@ -1068,10 +1068,10 @@ Route104_Text_PrettyPetalFlowShop:
 
 Route104_Text_MayWeShouldRegister:
 	.string "MAY: Oh, hi, {PLAYER}{KUN}!\p"
-	.string "DEVON upgraded your POKéNAV with\n"
-	.string "the MATCH CALL system, huh?\p"
+	.string "Your MOM gave you a POKéNAV, huh?\p"
 	.string "We should register each other so we\n"
-	.string "can get in contact anytime.$"
+	.string "can get in contact anytime.\p"
+	.string "… … … … … …$"
 
 Route104_Text_RegisteredMay:
 	.string "{PLAYER} registered MAY\n"
@@ -1114,10 +1114,10 @@ Route104_Text_MayPostBattle:
 
 Route104_Text_BrendanWeShouldRegister:
 	.string "BRENDAN: Oh, hey, {PLAYER}!\p"
-	.string "Cool, you had DEVON install the MATCH\n"
-	.string "CALL system on your POKéNAV!\p"
+	.string "Your MOM gave you a POKéNAV! Cool!\p"
 	.string "Let's register each other in our\n"
-	.string "POKéNAVS so we can keep in touch.$"
+	.string "POKéNAVS so we can keep in touch.\p"
+	.string "… … … … … …$"
 
 Route104_Text_RegisteredBrendan:
 	.string "{PLAYER} registered BRENDAN\n"

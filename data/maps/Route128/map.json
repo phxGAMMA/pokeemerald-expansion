@@ -111,7 +111,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route128_EventScript_Wayne",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route128_EventScript_Ruben",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
@@ -137,7 +137,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route128_EventScript_Alexa",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
@@ -150,7 +150,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route128_EventScript_Carlee",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
@@ -163,7 +163,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route128_EventScript_Harrison",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     }
   ],
   "warp_events": [],

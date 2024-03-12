@@ -132,7 +132,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route110_EventScript_Jasmine",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
@@ -145,7 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route110_EventScript_Anthony",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
@@ -184,7 +184,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
       "script": "Route110_EventScript_Edward",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -197,7 +197,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route110_EventScript_Jaclyn",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",
@@ -223,7 +223,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "Route110_EventScript_Dale",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -379,7 +379,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "Route110_EventScript_Jacob",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
@@ -418,7 +418,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route110_EventScript_Timmy",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
@@ -444,7 +444,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "Route110_EventScript_Kaleb",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
@@ -457,7 +457,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
       "script": "Route110_EventScript_Alyssa",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -470,7 +470,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route110_EventScript_Joseph",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",

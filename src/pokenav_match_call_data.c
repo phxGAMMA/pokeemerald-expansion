@@ -160,7 +160,6 @@ static void MatchCall_GetNameAndDescByRematchIdx(u32, const u8 **, const u8 **);
 // .rodata
 
 static const match_call_text_data_t sMrStoneTextScripts[] = {
-    { MatchCall_Text_MrStone1,  0xFFFF,                              FLAG_ENABLE_MR_STONE_POKENAV },
     { MatchCall_Text_MrStone2,  FLAG_ENABLE_MR_STONE_POKENAV,        0xFFFF },
     { MatchCall_Text_MrStone3,  FLAG_DELIVERED_STEVEN_LETTER,        0xFFFF },
     { MatchCall_Text_MrStone4,  FLAG_RECEIVED_EXP_SHARE,             0xFFFF },
@@ -178,7 +177,7 @@ static const struct MatchCallStructNPC sMrStoneMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_RUSTBORO_CITY,
-    .flag = 0xFFFF,
+    .flag = FLAG_ENABLE_MR_STONE_POKENAV,
     .desc = gText_MrStoneMatchCallDesc,
     .name = gText_MrStoneMatchCallName,
     .textData = sMrStoneTextScripts
@@ -218,7 +217,7 @@ static const struct MatchCallBirch sProfBirchMatchCallHeader =
 };
 
 static const match_call_text_data_t sMomTextScripts[] = {
-    { MatchCall_Text_Mom1, 0xFFFF,                      0xFFFF },
+    { MatchCall_Text_Mom1, 0xFFFF,                      FLAG_ENABLE_MOM_MATCH_CALL },
     { MatchCall_Text_Mom2, FLAG_DEFEATED_PETALBURG_GYM, 0xFFFF },
     { MatchCall_Text_Mom3, FLAG_SYS_GAME_CLEAR,         0xFFFF },
     { NULL,                0xFFFF,                      0xFFFF }
@@ -228,7 +227,7 @@ static const struct MatchCallStructNPC sMomMatchCallHeader =
 {
     .type = MC_TYPE_NPC,
     .mapSec = MAPSEC_LITTLEROOT_TOWN,
-    .flag = FLAG_ENABLE_MOM_MATCH_CALL,
+    .flag = 0xFFFF,
     .desc = gText_MomMatchCallDesc,
     .name = gText_MomMatchCallName,
     .textData = sMomTextScripts
@@ -578,19 +577,15 @@ static const struct MatchCallStructTrainer sWallaceMatchCallHeader =
 };
 
 static const match_call_t sMatchCallHeaders[] = {
-    [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
-    [MC_HEADER_PROF_BIRCH] = {.birch  = &sProfBirchMatchCallHeader},
-    [MC_HEADER_BRENDAN]    = {.rival  = &sBrendanMatchCallHeader},
-    [MC_HEADER_MAY]        = {.rival  = &sMayMatchCallHeader},
-    [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
-    [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
     [MC_HEADER_MOM]        = {.npc    = &sMomMatchCallHeader},
+    [MC_HEADER_MR_STONE]   = {.npc    = &sMrStoneMatchCallHeader},
     [MC_HEADER_STEVEN]     = {.npc    = &sStevenMatchCallHeader},
     [MC_HEADER_SCOTT]      = {.npc    = &sScottMatchCallHeader},
     [MC_HEADER_ROXANNE]    = {.leader = &sRoxanneMatchCallHeader},
     [MC_HEADER_BRAWLY]     = {.leader = &sBrawlyMatchCallHeader},
     [MC_HEADER_WATTSON]    = {.leader = &sWattsonMatchCallHeader},
     [MC_HEADER_FLANNERY]   = {.leader = &sFlanneryMatchCallHeader},
+    [MC_HEADER_NORMAN]     = {.leader = &sNormanMatchCallHeader},
     [MC_HEADER_WINONA]     = {.leader = &sWinonaMatchCallHeader},
     [MC_HEADER_TATE_LIZA]  = {.leader = &sTateLizaMatchCallHeader},
     [MC_HEADER_JUAN]       = {.leader = &sJuanMatchCallHeader},
@@ -598,7 +593,11 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_PHOEBE]     = {.leader = &sPhoebeMatchCallHeader},
     [MC_HEADER_GLACIA]     = {.leader = &sGlaciaMatchCallHeader},
     [MC_HEADER_DRAKE]      = {.leader = &sDrakeMatchCallHeader},
-    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader}
+    [MC_HEADER_WALLACE]    = {.leader = &sWallaceMatchCallHeader},
+    [MC_HEADER_WALLY]      = {.wally  = &sWallyMatchCallHeader},
+    [MC_HEADER_BRENDAN]    = {.rival  = &sBrendanMatchCallHeader},
+    [MC_HEADER_MAY]        = {.rival  = &sMayMatchCallHeader},
+    [MC_HEADER_PROF_BIRCH] = {.birch  = &sProfBirchMatchCallHeader}
 };
 
 static bool32 (*const sMatchCallGetEnabledFuncs[])(match_call_t) = {

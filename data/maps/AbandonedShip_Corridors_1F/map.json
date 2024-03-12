@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "AbandonedShip_Corridors_1F_EventScript_Charlie",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     }
   ],
   "warp_events": [
