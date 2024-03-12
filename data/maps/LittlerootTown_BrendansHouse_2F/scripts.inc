@@ -395,28 +395,24 @@ PlayersHouse_2F_Text_WhichPage:
 	.string "Which page do you want to read?$"
 
 PlayersHouse_2F_Text_TrainerTipsSave:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "Record your progress with SAVE.$"
 
 PlayersHouse_2F_Text_TrainerTipsRunning:
-	.string "TRAINER TIPS\p"
-	.string "“Press the B Button to run while\n"
-	.string "wearing your RUNNING SHOES.\p"
-	.string "“Lace up your RUNNING SHOES and hit\n"
-	.string "the road running!”$"
+	.string "TRAINER TIPS:\p"
+	.string "Hold the B Button to run.$"
 
 PlayersHouse_2F_Text_TrainerTipsExperience:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "Any POKéMON that appears even once\n"
-	.string "in a battle is awarded EXP Points.\p"
-	.string "To raise a weak POKéMON, put it at the\n"
-	.string "left of the team list.\p"
-	.string "As soon as a battle starts, switch it\n"
-	.string "out. It will earn EXP Points without\l"
+	.string "in a battle is awarded full EXP Points.\p"
+	.string "To raise weak POKéMON, turn on the\n"
+	.string "EXP. Share in the OPTIONS menu.\p"
+	.string "They will earn EXP Points without\n"
 	.string "being exposed to any harm.$"
 
 PlayersHouse_2F_Text_TrainerTipsPP:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "In addition to Hit Points (HP), POKéMON\n"
 	.string "have Power Points (PP) that are used to\l"
 	.string "make moves during battle.\p"
@@ -424,79 +420,68 @@ PlayersHouse_2F_Text_TrainerTipsPP:
 	.string "taken to a POKéMON CENTER.$"
 
 PlayersHouse_2F_Text_TrainerTipsDoubles:
-	.string "TRAINER TIPS\p"
-	.string "In the HOENN region there are pairs\n"
-	.string "of TRAINERS who challenge others\l"
-	.string "for 2-on-2 POKéMON battles called\l"
-	.string "DOUBLE BATTLES.\p"
+	.string "TRAINER TIPS:\p"
 	.string "In a DOUBLE BATTLE, the TRAINER must\n"
 	.string "send out two POKéMON, the one at the\l"
 	.string "left of the list and the top one.\l"
 	.string "Watch how POKéMON are lined up.$"
 
 PlayersHouse_2F_Text_TrainerTipsFishing:
-	.string "TRAINER TIPS\p"
-	.string "Advice on catching POKéMON with a ROD:\n"
+	.string "TRAINER TIPS:\p"
 	.string "Press the A Button if you get a bite.$"
 
 PlayersHouse_2F_Text_TrainerTipsEffort:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "POKéMON at the same level may not\n"
 	.string "always have identical stats.\p"
 	.string "POKéMON raised by TRAINERS are said\n"
-	.string "to grow stronger than wild POKéMON.$"
+	.string "to grow stronger with effort.$"
 
 PlayersHouse_2F_Text_TrainerTipsStatus:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "The foe can be made helpless by\n"
 	.string "paralyzing it or causing it to sleep.\p"
-	.string "It is an important technique for\n"
-	.string "POKéMON battles.$"
+	.string "Using status moves is an important\n"
+	.string "technique for POKéMON battles.$"
 
 PlayersHouse_2F_Text_TrainerTipsReorganize:
-	.string "TRAINER TIPS\p"
-	.string "The items in the BAG can be reorganized\n"
-	.string "by pressing SELECT.$"
+	.string "TRAINER TIPS:\p"
+	.string "Items in the BAG can be sorted\n"
+	.string "with the SELECT Button.$"
 
 PlayersHouse_2F_Text_TrainerTipsStats:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "One of the indicators of a POKéMON's\n"
-	.string "powerfulness is SP. ATK. It stands for\l"
+	.string "powerfulness are its stats.p"
+	.string "SP. ATK. stands for\n"
 	.string "“SPECIAL ATTACK.”\p"
-	.string "Likewise, SP. DEF stands for “SPECIAL\n"
-	.string "DEFENSE.”$"
+	.string "Likewise, SP. DEF stands for\n"
+	.string "“SPECIAL DEFENSE.”$"
 
 PlayersHouse_2F_Text_TrainerTipsRegister:
-	.string "TRAINER TIPS\p"
-	.string "You may register one of the KEY ITEMS\n"
-	.string "in your BAG as SELECT.\p"
-	.string "Simply press SELECT to use\n"
+	.string "TRAINER TIPS:\p"
+	.string "You may register up to three\n"
+	.string "KEY ITEMS from your BAG at any time.\p"
+	.string "Simply press L, R, or SELECT to use\n"
 	.string "the registered item conveniently.$"
 
 PlayersHouse_2F_Text_TrainerTipsEvolution:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "If you want to stop a POKéMON from\n"
 	.string "evolving, press the B Button while it\l"
-	.string "is trying to evolve.\l"
-	.string "The startled POKéMON will stop.\p"
-	.string "This is called an evolution cancel.$"
+	.string "is trying to evolve.$"
 
 PlayersHouse_2F_Text_TrainerTipsPockets:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "Your BAG has several POCKETS.\p"
 	.string "Items you obtain are automatically\n"
-	.string "placed in the appropriate POCKETS.\p"
-	.string "No TRAINER can afford to be without\n"
-	.string "a BAG of their own.$"
+	.string "placed in the appropriate POCKETS.$"
 
 PlayersHouse_2F_Text_TrainerTipsDecoration:
-	.string "TRAINER TIPS\p"
+	.string "TRAINER TIPS:\p"
 	.string "Up to sixteen decorations and\n"
 	.string "furniture items can be placed in\l"
-	.string "a SECRET BASE.\p"
-	.string "Pick your favorite items and create\n"
-	.string "your very own SECRET BASE exactly the\l"
-	.string "way you want.$"
+	.string "a SECRET BASE.$"
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"

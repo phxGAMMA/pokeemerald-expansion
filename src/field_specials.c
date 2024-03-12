@@ -2393,7 +2393,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TRAINER_TIPS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 15;
-        task->tLeft = 15;
+        task->tLeft = 2;
         task->tTop = 1;
         task->tWidth = 14;
         task->tHeight = 12;
