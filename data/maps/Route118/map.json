@@ -80,7 +80,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route118_EventScript_Perry",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_REPORTER_F",
@@ -223,7 +223,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route118_EventScript_Wade",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -236,7 +236,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route118_EventScript_Chester",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -249,7 +249,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "Route118_EventScript_Barny",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
@@ -301,7 +301,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route118_EventScript_Deandre",
-      "flag": "0"
+      "flag": "FLAG_HIDE_GAME_CLEAR_TRAINERS"
     }
   ],
   "warp_events": [
