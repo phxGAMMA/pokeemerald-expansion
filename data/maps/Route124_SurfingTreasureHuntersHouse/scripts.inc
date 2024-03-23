@@ -1,0 +1,235 @@
+Route124_SurfingTreasureHuntersHouse_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route124_SurfingTreasureHuntersHouse_OnTransition
+	.byte 0
+
+Route124_SurfingTreasureHuntersHouse_OnTransition:
+	setflag FLAG_LANDMARK_SURFERS_HOUSE
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TreasureHunter::
+	lock
+	faceplayer
+	goto_if_set FLAG_MET_DIVING_TREASURE_HUNTER, Route124_SurfingTreasureHuntersHouse_EventScript_SkipGreeting
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_Greeting, MSGBOX_DEFAULT
+	setflag FLAG_MET_DIVING_TREASURE_HUNTER
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_CheckPlayerHasShoal
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_SkipGreeting::
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_HaveYouSeenAnyShoals, MSGBOX_DEFAULT
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_CheckPlayerHasShoal
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_CheckPlayerHasShoal::
+	call Route124_SurfingTreasureHuntersHouse_EventScript_GetPlayersShoals
+	goto_if_eq VAR_TEMP_1, 0, Route124_SurfingTreasureHuntersHouse_EventScript_NoShoals
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_HasShoal
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_GetPlayersShoals::
+	setvar VAR_TEMP_1, 0
+	checkitem ITEM_SHOAL_SHELL
+	call_if_eq VAR_RESULT, TRUE, Route124_SurfingTreasureHuntersHouse_EventScript_HasShoalShell
+	checkitem ITEM_SHOAL_SALT
+	call_if_eq VAR_RESULT, TRUE, Route124_SurfingTreasureHuntersHouse_EventScript_HasShoalSalt
+	return
+
+Route124_SurfingTreasureHuntersHouse_EventScript_HasShoalShell::
+	addvar VAR_TEMP_1, 1
+	return
+
+Route124_SurfingTreasureHuntersHouse_EventScript_HasShoalSalt::
+	addvar VAR_TEMP_1, 2
+	return
+
+Route124_SurfingTreasureHuntersHouse_EventScript_HasShoal::
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_ThatsAShoalIllTradeYou, MSGBOX_DEFAULT
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions::
+	message Route124_SurfingTreasureHuntersHouse_Text_WhatDoYouWantToTrade
+	waitmessage
+	switch VAR_TEMP_1
+	case 1,  Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsA
+	case 2,  Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsB
+	case 3,  Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsAB
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsA::
+	multichoice 0, 0, MULTI_SHOAL_A, FALSE
+	switch VAR_RESULT
+	case 0, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalShell
+	case 1, Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsB::
+	multichoice 0, 0, MULTI_SHOAL_B, FALSE
+	switch VAR_RESULT
+	case 0, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalSalt
+	case 1, Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_ShoalOptionsAB::
+	multichoice 0, 0, MULTI_SHOAL_AB, FALSE
+	switch VAR_RESULT
+	case 0, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalShell
+	case 1, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalSalt
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalShell::
+	setvar VAR_0x8008, ITEM_SHOAL_SHELL
+	multichoice 0, 0, MULTI_SHOAL_SHELL, FALSE
+	switch VAR_RESULT
+	case 0, Route124_SurfingTreasureHuntersHouse_EventScript_TradeSkullFossil
+	case 1, Route124_SurfingTreasureHuntersHouse_EventScript_TradeArmorFossil
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradeCoverFossil
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradePlumeFossil
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradeJawFossil
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradeSailFossil
+	case 3, Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeSkullFossil::
+	setvar VAR_0x8009, ITEM_SKULL_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeArmorFossil::
+	setvar VAR_0x8009, ITEM_ARMOR_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeCoverFossil::
+	setvar VAR_0x8009, ITEM_COVER_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradePlumeFossil::
+	setvar VAR_0x8009, ITEM_PLUME_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeJawFossil::
+	setvar VAR_0x8009, ITEM_JAW_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeSailFossil::
+	setvar VAR_0x8009, ITEM_SAIL_FOSSIL
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoalSalt::
+	setvar VAR_0x8008, ITEM_SHOAL_SALT
+	multichoice 0, 0, MULTI_SHOAL_SALT, FALSE
+	switch VAR_RESULT
+	case 0, Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedBird
+	case 1, Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedFish
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedDrake
+	case 2, Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedDino
+	case 3, Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedBird::
+	setvar VAR_0x8009, ITEM_FOSSILIZED_BIRD
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedFish::
+	setvar VAR_0x8009, ITEM_FOSSILIZED_FISH
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedDrake::
+	setvar VAR_0x8009, ITEM_FOSSILIZED_DRAKE
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeFossilizedDino::
+	setvar VAR_0x8009, ITEM_FOSSILIZED_DINO
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TryTradeShoal::
+	bufferitemname STR_VAR_1, VAR_0x8008
+	bufferitemname STR_VAR_2, VAR_0x8009
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_YoullTradeShoalForFossil, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	checkitemspace VAR_0x8009
+	goto_if_eq VAR_RESULT, TRUE, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoal
+	checkitem VAR_0x8008, 2
+	goto_if_eq VAR_RESULT, FALSE, Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoal
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_BagFull
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_TradeShoal::
+	removeitem VAR_0x8008
+	giveitem VAR_0x8009
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_ItsADeal, MSGBOX_DEFAULT
+	call Route124_SurfingTreasureHuntersHouse_EventScript_GetPlayersShoals
+	goto_if_eq VAR_TEMP_1, 0, Route124_SurfingTreasureHuntersHouse_EventScript_EndTrade
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_TradeSomethingElse, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route124_SurfingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_BagFull::
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_BagFull, MSGBOX_DEFAULT
+	release
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_DeclineTrade::
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind, MSGBOX_DEFAULT
+	release
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_NoShoals::
+	msgbox Route124_SurfingTreasureHuntersHouse_Text_YouHaventGotAnyShoals, MSGBOX_DEFAULT
+	release
+	end
+
+Route124_SurfingTreasureHuntersHouse_EventScript_EndTrade::
+	release
+	end
+
+Route124_SurfingTreasureHuntersHouse_Text_Greeting:
+	.string "I'm the SURFING TREASURE HUNTER!\p"
+	.string "I'm the awesome dude who surfs\n"
+	.string "around SHOAL CAVE to gather\l"
+	.string "treasures hidden by the tide.$"
+
+Route124_SurfingTreasureHuntersHouse_Text_HaveYouSeenAnyShoals:
+	.string "Tell me, have you seen any\n"
+	.string "SHOAL SHELLS or SHOAL SALT?$"
+
+Route124_SurfingTreasureHuntersHouse_Text_YouHaventGotAnyShoals:
+	.string "You haven't got any treasures\n"
+	.string "for me…\p"
+	.string "If you see any treasures, like the\n"
+	.string "SHOAL SHELL, trade it with me!$"
+
+Route124_SurfingTreasureHuntersHouse_Text_ThatsAShoalIllTradeYou:
+	.string "Oh, hey! That…\n"
+	.string "That's a treasure!\p"
+	.string "Oh, man, you've got to trade that\n"
+	.string "with me! I'll give you something good!$"
+
+Route124_SurfingTreasureHuntersHouse_Text_WhatDoYouWantToTrade:
+	.string "What do you want to trade?$"
+
+Route124_SurfingTreasureHuntersHouse_Text_YoullTradeShoalForFossil:
+	.string "You'll trade your {STR_VAR_1} for\n"
+	.string "my {STR_VAR_2}, then?$"
+
+Route124_SurfingTreasureHuntersHouse_Text_ItsADeal:
+	.string "It's a done deal!\n"
+	.string "Use that wisely!$"
+
+Route124_SurfingTreasureHuntersHouse_Text_TradeSomethingElse:
+	.string "Do you want to trade something else?$"
+
+Route124_SurfingTreasureHuntersHouse_Text_BagFull:
+	.string "Whoops, your BAG's full.\n"
+	.string "Get rid of some items, friend!$"
+
+Route124_SurfingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind:
+	.string "No? That's a bummer.\n"
+	.string "Well, if you change your mind, come back.$"
+

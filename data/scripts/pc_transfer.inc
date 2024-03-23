@@ -44,7 +44,11 @@ EventScript_LanettesPCBoxFull::
 	msgbox gText_PkmnTransferredLanettesPCBoxFull, MSGBOX_DEFAULT
 	return
 
-Common_EventScript_NoMoreRoomForPokemon::
+Common_EventScript_ShowNoMoreRoomForPokemon::
 	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
 	release
 	end
+
+Common_EventScript_NoMoreRoomForPokemon::
+	msgbox gText_NoMoreRoomForPokemon, MSGBOX_DEFAULT
+	return

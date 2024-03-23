@@ -1060,37 +1060,47 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
 #define _ 0
 
 static const struct PickupItem sPickupTable[] =
-{//   Item                      1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
-    { ITEM_POTION,          {  35,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_TINY_MUSHROOM,   {  25,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_REPEL,           {   8,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_POTION,    {   8,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_POKE_DOLL,       {   8,  10,   9,  30,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_BIG_MUSHROOM,    {   3,  10,   9,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_REPEL,     {   3,  10,   9,   9,  30,   _,   _,   _,   _,   _, } },
-    { ITEM_FULL_HEAL,       {   3,   3,   9,   8,   9,  30,   _,   _,   _,   _, } },
-    { ITEM_REVIVE,          {   3,   3,   3,   8,   8,   9,  30,   _,   _,   _, } },
-    { ITEM_HYPER_POTION,    {   3,   3,   3,   4,   8,   9,   8,  30,   _,   _, } },
-    { ITEM_ETHER,           {   1,   1,   3,   4,   4,   _,   _,   _,   _,   _, } },
-    { ITEM_MAX_REPEL,       {   _,   3,   3,   4,   4,   9,   8,   8,  30,   _, } },
-    { ITEM_MOON_STONE,      {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_SUN_STONE,       {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_RARE_CANDY,      {   _,   1,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_NUGGET,          {   _,   _,   3,   4,   4,   4,   4,   5,   4,   5, } },
-    { ITEM_MAX_POTION,      {   _,   _,   3,   4,   4,   4,   8,   8,   9,  30, } },
-    { ITEM_MAX_ETHER,       {   _,   _,   1,   1,   4,   4,   4,   _,   _,   _, } },
-    { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_DESTINY_KNOT,    {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_LEFTOVERS,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_MENTAL_HERB,     {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_POWER_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_WHITE_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_BALM_MUSHROOM,   {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
-    { ITEM_MAX_REVIVE,      {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
-    { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_MAX_ELIXIR,      {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
-    { ITEM_BOTTLE_CAP,      {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
+{//   Item                       1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
+    { ITEM_STRANGE_SOUVENIR,  {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_PRETTY_FEATHER,    {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_HEALTH_FEATHER,    {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_MUSCLE_FEATHER,    {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_RESIST_FEATHER,    {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_GENIUS_FEATHER,    {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_CLEVER_FEATHER,    {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_SWIFT_FEATHER,     {  10,  10,  10,  10,  10,  10,  10,  10,  10,  10, } },
+    { ITEM_NUGGET,            {   4,   4,   4,   4,   4,   4,   4,   4,   4,   4, } },
+    { ITEM_BIG_NUGGET,        {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_TINY_MUSHROOM,     {   6,   6,   6,   6,   6,   6,   6,   6,   6,   6, } },
+    { ITEM_BIG_MUSHROOM,      {   4,   4,   4,   4,   4,   4,   4,   4,   4,   4, } },
+    { ITEM_BALM_MUSHROOM,     {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_STARDUST,          {   6,   6,   6,   6,   6,   6,   6,   6,   6,   6, } },
+    { ITEM_STAR_PIECE,        {   4,   4,   4,   4,   4,   4,   4,   4,   4,   4, } },
+    { ITEM_COMET_SHARD,       {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_TINY_BAMBOO_SHOOT, {   4,   4,   4,   4,   4,   4,   4,   4,   4,   4, } },
+    { ITEM_BIG_BAMBOO_SHOOT,  {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+};
+
+static const struct PickupItem sWreckDiverTable[] =
+{//   Item                       1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
+    { ITEM_STRANGE_SOUVENIR, {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_HEART_SCALE,      {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_BLUE_SHARD,       {  15,  15,  15,  15,  15,  15,  15,  15,  15,  15, } },
+    { ITEM_GREEN_SHARD,      {  15,  15,  15,  15,  15,  15,  15,  15,  15,  15, } },
+    { ITEM_RED_SHARD,        {  15,  15,  15,  15,  15,  15,  15,  15,  15,  15, } },
+    { ITEM_YELLOW_SHARD,     {  15,  15,  15,  15,  15,  15,  15,  15,  15,  15, } },
+    { ITEM_BOTTLE_CAP,       {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_GOLD_BOTTLE_CAP,  {   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_PEARL,            {   3,   3,   3,   3,   3,   3,   3,   3,   3,   3, } },
+    { ITEM_BIG_PEARL,        {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_PEARL_STRING,     {   1,   1,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_RELIC_COPPER,     {   6,   6,   6,   6,   6,   6,   6,   6,   6,   6, } },
+    { ITEM_RELIC_SILVER,     {   6,   6,   6,   6,   6,   6,   6,   6,   6,   6, } },
+    { ITEM_RELIC_GOLD,       {   5,   5,   5,   5,   5,   5,   5,   5,   5,   5, } },
+    { ITEM_RELIC_VASE,       {   4,   4,   4,   4,   4,   4,   4,   4,   4,   4, } },
+    { ITEM_RELIC_BAND,       {   3,   3,   3,   3,   3,   3,   3,   3,   3,   3, } },
+    { ITEM_RELIC_STATUE,     {   2,   2,   2,   2,   2,   2,   2,   2,   2,   2, } },
+    { ITEM_RELIC_CROWN,      {   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, } },
 };
 
 #undef _
@@ -14550,7 +14560,8 @@ static void Cmd_pickup(void)
                 && species != SPECIES_NONE
                 && species != SPECIES_EGG
                 && heldItem == ITEM_NONE
-                && (Random() % 10) == 0)
+                && (Random() % 20) == 0
+                && gMapHeader.mapType != (MAP_TYPE_UNDERWATER || MAP_TYPE_OCEAN_ROUTE))
             {
                 if (isInPyramid)
                 {
@@ -14570,6 +14581,26 @@ static void Cmd_pickup(void)
                             SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupTable[j].itemId);
                             break;
                         }
+                    }
+                }
+            }
+            else if (ability == ABILITY_WRECK_DIVER
+                && species != SPECIES_NONE
+                && species != SPECIES_EGG
+                && heldItem == ITEM_NONE
+                && (Random() % 20) == 0
+                && gMapHeader.mapType == (MAP_TYPE_UNDERWATER || MAP_TYPE_OCEAN_ROUTE))
+            {
+                u32 rand = Random() % 100;
+                u32 percentTotal = 0;
+
+                for (j = 0; j < ARRAY_COUNT(sWreckDiverTable); j++)
+                {
+                    percentTotal += sWreckDiverTable[j].percentage[lvlDivBy10];
+                    if (rand < percentTotal)
+                    {
+                        SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sWreckDiverTable[j].itemId);
+                        break;
                     }
                 }
             }

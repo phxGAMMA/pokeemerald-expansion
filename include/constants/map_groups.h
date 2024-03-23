@@ -117,13 +117,13 @@
 #define MAP_VERDANTURF_TOWN_HOUSE                   (8 | (6 << 8))
 
 // gMapGroup_IndoorPacifidlog
-#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F (0 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F (1 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE1            (2 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE2            (3 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE3            (4 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE4            (5 | (7 << 8))
-#define MAP_PACIFIDLOG_TOWN_HOUSE5            (6 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F             (0 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F             (1 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE1                        (2 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE2                        (3 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE3                        (4 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_HOUSE4                        (5 | (7 << 8))
+#define MAP_PACIFIDLOG_TOWN_DIVING_TREASURE_HUNTERS_HOUSE (6 | (7 << 8))
 
 // gMapGroup_IndoorPetalburg
 #define MAP_PETALBURG_CITY_WALLYS_HOUSE      (0 | (8 << 8))
@@ -161,23 +161,23 @@
 #define MAP_MAUVILLE_CITY_MART              (7 | (10 << 8))
 
 // gMapGroup_IndoorRustboro
-#define MAP_RUSTBORO_CITY_DEVON_CORP_1F     (0 | (11 << 8))
-#define MAP_RUSTBORO_CITY_DEVON_CORP_2F     (1 | (11 << 8))
-#define MAP_RUSTBORO_CITY_DEVON_CORP_3F     (2 | (11 << 8))
-#define MAP_RUSTBORO_CITY_GYM               (3 | (11 << 8))
-#define MAP_RUSTBORO_CITY_POKEMON_SCHOOL    (4 | (11 << 8))
-#define MAP_RUSTBORO_CITY_POKEMON_CENTER_1F (5 | (11 << 8))
-#define MAP_RUSTBORO_CITY_POKEMON_CENTER_2F (6 | (11 << 8))
-#define MAP_RUSTBORO_CITY_MART              (7 | (11 << 8))
-#define MAP_RUSTBORO_CITY_FLAT1_1F          (8 | (11 << 8))
-#define MAP_RUSTBORO_CITY_FLAT1_2F          (9 | (11 << 8))
-#define MAP_RUSTBORO_CITY_HOUSE1            (10 | (11 << 8))
-#define MAP_RUSTBORO_CITY_CUTTERS_HOUSE     (11 | (11 << 8))
-#define MAP_RUSTBORO_CITY_HOUSE2            (12 | (11 << 8))
-#define MAP_RUSTBORO_CITY_FLAT2_1F          (13 | (11 << 8))
-#define MAP_RUSTBORO_CITY_FLAT2_2F          (14 | (11 << 8))
-#define MAP_RUSTBORO_CITY_FLAT2_3F          (15 | (11 << 8))
-#define MAP_RUSTBORO_CITY_HOUSE3            (16 | (11 << 8))
+#define MAP_RUSTBORO_CITY_DEVON_CORP_1F                  (0 | (11 << 8))
+#define MAP_RUSTBORO_CITY_DEVON_CORP_2F                  (1 | (11 << 8))
+#define MAP_RUSTBORO_CITY_DEVON_CORP_3F                  (2 | (11 << 8))
+#define MAP_RUSTBORO_CITY_GYM                            (3 | (11 << 8))
+#define MAP_RUSTBORO_CITY_POKEMON_SCHOOL                 (4 | (11 << 8))
+#define MAP_RUSTBORO_CITY_POKEMON_CENTER_1F              (5 | (11 << 8))
+#define MAP_RUSTBORO_CITY_POKEMON_CENTER_2F              (6 | (11 << 8))
+#define MAP_RUSTBORO_CITY_MART                           (7 | (11 << 8))
+#define MAP_RUSTBORO_CITY_FLAT1_1F                       (8 | (11 << 8))
+#define MAP_RUSTBORO_CITY_FLAT1_2F                       (9 | (11 << 8))
+#define MAP_RUSTBORO_CITY_HOUSE1                         (10 | (11 << 8))
+#define MAP_RUSTBORO_CITY_CUTTING_TREASURE_HUNTERS_HOUSE (11 | (11 << 8))
+#define MAP_RUSTBORO_CITY_HOUSE2                         (12 | (11 << 8))
+#define MAP_RUSTBORO_CITY_FLAT2_1F                       (13 | (11 << 8))
+#define MAP_RUSTBORO_CITY_FLAT2_2F                       (14 | (11 << 8))
+#define MAP_RUSTBORO_CITY_FLAT2_3F                       (15 | (11 << 8))
+#define MAP_RUSTBORO_CITY_HOUSE3                         (16 | (11 << 8))
 
 // gMapGroup_IndoorFortree
 #define MAP_FORTREE_CITY_HOUSE1            (0 | (12 << 8))
@@ -278,9 +278,9 @@
 #define MAP_MT_CHIMNEY_CABLE_CAR_STATION (1 | (19 << 8))
 
 // gMapGroup_IndoorRoute114
-#define MAP_ROUTE114_FOSSIL_MANIACS_HOUSE  (0 | (20 << 8))
-#define MAP_ROUTE114_FOSSIL_MANIACS_TUNNEL (1 | (20 << 8))
-#define MAP_ROUTE114_LANETTES_HOUSE        (2 | (20 << 8))
+#define MAP_ROUTE114_SMASHING_TREASURE_HUNTERS_HOUSE  (0 | (20 << 8))
+#define MAP_ROUTE114_SMASHING_TREASURE_HUNTERS_TUNNEL (1 | (20 << 8))
+#define MAP_ROUTE114_LANETTES_HOUSE                   (2 | (20 << 8))
 
 // gMapGroup_IndoorRoute116
 #define MAP_ROUTE116_TUNNELERS_REST_HOUSE (0 | (21 << 8))
@@ -589,7 +589,7 @@
 #define MAP_ROUTE119_HOUSE                (2 | (32 << 8))
 
 // gMapGroup_IndoorRoute124
-#define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
+#define MAP_ROUTE124_SURFING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

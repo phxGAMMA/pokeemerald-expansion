@@ -71,8 +71,8 @@ Route114_EventScript_MeteorFallsSign::
 	msgbox Route114_Text_MeteorFallsSign, MSGBOX_SIGN
 	end
 
-Route114_EventScript_FossilManiacsHouseSign::
-	msgbox Route114_Text_FossilManiacsHouseSign, MSGBOX_SIGN
+Route114_EventScript_SmashersHouseSign::
+	msgbox Route114_Text_SmashersHouse, MSGBOX_SIGN
 	end
 
 Route114_EventScript_LanettesHouseSign::
@@ -193,9 +193,8 @@ Route114_Text_MeteorFallsSign:
 	.string "METEOR FALLS\n"
 	.string "RUSTBORO CITY THROUGH HERE$"
 
-Route114_Text_FossilManiacsHouseSign:
-	.string "FOSSIL MANIAC'S HOUSE\n"
-	.string "“Fossils gratefully accepted!”$"
+Route114_Text_SmashersHouse:
+	.string "SMASHER'S HOUSE$"
 
 Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE$"

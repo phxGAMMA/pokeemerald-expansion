@@ -148,7 +148,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveLileep::
 	givemon SPECIES_LILEEP, 20
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepPC
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveLileepParty::
@@ -184,7 +184,6 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedLileepFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_FinishReceivingLileep::
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 0
-	setflag FLAG_RECEIVED_REVIVED_FOSSIL_MON
 	release
 	end
 
@@ -193,7 +192,7 @@ RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorith::
 	givemon SPECIES_ANORITH, 20
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithPC
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 RustboroCity_DevonCorp_2F_EventScript_ReceiveAnorithParty::
@@ -229,7 +228,6 @@ RustboroCity_DevonCorp_2F_EventScript_ReceivedAnorithFanfare::
 
 RustboroCity_DevonCorp_2F_EventScript_FinishReceivingAnorith::
 	setvar VAR_FOSSIL_RESURRECTION_STATE, 0
-	setflag FLAG_RECEIVED_REVIVED_FOSSIL_MON
 	release
 	end
 

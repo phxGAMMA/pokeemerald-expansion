@@ -1,4 +1,5 @@
 .set LOCALID_OWNER, 1
+.set LOCALID_GIRL,  2
 
 Route104_PrettyPetalFlowerShop_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_PrettyPetalFlowerShop_OnTransition
@@ -7,12 +8,18 @@ Route104_PrettyPetalFlowerShop_MapScripts::
 Route104_PrettyPetalFlowerShop_OnTransition:
 	setflag FLAG_LANDMARK_FLOWER_SHOP
 	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
-	goto_if_unset FLAG_BADGE03_GET, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
-	setflag FLAG_TEMP_1
+	goto_if_unset FLAG_RECEIVED_SECRET_POWER, Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, Route104_PrettyPetalFlowerShop_EventScript_MoveWailmerPailGirl
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
 	setobjectxyperm LOCALID_OWNER, 4, 6
+	setflag FLAG_TEMP_1
+	end
+
+Route104_PrettyPetalFlowerShop_EventScript_MoveWailmerPailGirl::
+	setobjectxyperm LOCALID_GIRL, 10, 3
+	setflag FLAG_TEMP_2
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
@@ -66,6 +73,7 @@ Route104_PrettyPetalFlowerShop_Pokemart_Plants:
 Route104_PrettyPetalFlowerShop_EventScript_WailmerPailGirl::
 	lock
 	faceplayer
+	goto_if_set FLAG_TEMP_2, Route104_PrettyPetalFlowerShop_EventScript_SellDecorations
 	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, Route104_PrettyPetalFlowerShop_EventScript_GiveWailmerPail
 	msgbox Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
 	release
@@ -77,6 +85,39 @@ Route104_PrettyPetalFlowerShop_EventScript_GiveWailmerPail::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox Route104_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_WAILMER_PAIL
+	release
+	end
+
+Route104_PrettyPetalFlowerShop_EventScript_SellMulch::
+	message gText_PlayerWhatCanIDoForYou
+	waitmessage
+	pokemart Route104_PrettyPetalFlowerShop_Pokemart_Plants
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+Route104_PrettyPetalFlowerShop_Pokemart_Mulch:
+	.2byte ITEM_HONEY
+	.2byte ITEM_MAX_HONEY
+	.2byte ITEM_MAX_MUSHROOMS
+	.2byte ITEM_GROWTH_MULCH
+	.2byte ITEM_DAMP_MULCH
+	.2byte ITEM_STABLE_MULCH
+	.2byte ITEM_GOOEY_MULCH
+	.2byte ITEM_RICH_MULCH
+	.2byte ITEM_SURPRISE_MULCH
+	.2byte ITEM_BOOST_MULCH
+	.2byte ITEM_AMAZE_MULCH
+	.2byte ITEM_ELECTRIC_SEED
+	.2byte ITEM_PSYCHIC_SEED
+	.2byte ITEM_MISTY_SEED
+	.2byte ITEM_GRASSY_SEED
+	.2byte ITEM_RED_NECTAR
+	.2byte ITEM_YELLOW_NECTAR
+	.2byte ITEM_PINK_NECTAR
+	.2byte ITEM_PURPLE_NECTAR
+	.2byte ITEM_NONE
 	release
 	end
 

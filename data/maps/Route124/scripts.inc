@@ -6,8 +6,8 @@ Route124_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	end
 
-Route124_EventScript_HuntersHouseSign::
-	msgbox Route124_Text_HuntersHouse, MSGBOX_SIGN
+Route124_EventScript_SurfersHouseSign::
+	msgbox Route124_Text_SurfersHouse, MSGBOX_SIGN
 	end
 
 Route124_EventScript_Spencer::
@@ -99,6 +99,6 @@ Route124_EventScript_Isabella::
 	msgbox Route124_Text_IsabellaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route124_Text_HuntersHouse:
-	.string "HUNTER'S HOUSE$"
+Route124_Text_SurfersHouse:
+	.string "SURFER'S HOUSE$"
 

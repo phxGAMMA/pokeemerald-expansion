@@ -797,34 +797,34 @@ static const u8 sCometShardDesc[] = _(
     "high price.");
 
 static const u8 sShoalSaltDesc[] = _(
-    "Salt obtained from\n"
-    "deep inside the\n"
-    "Shoal Cave.");
+    "A very rare salt.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sShoalShellDesc[] = _(
-    "A seashell found\n"
-    "deep inside the\n"
-    "Shoal Cave.");
+    "A rare seashell.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sRedShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "An ancient shard.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sBlueShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "An ancient shard.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sYellowShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "An ancient shard.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sGreenShardDesc[] = _(
-    "A shard from an\n"
-    "ancient item. Can\n"
-    "be sold cheaply.");
+    "An ancient shard.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sHeartScaleDesc[] = _(
     "A lovely scale.\n"
@@ -838,18 +838,18 @@ static const u8 sHoneyDesc[] = _(
 
 static const u8 sRareBoneDesc[] = _(
     "A very rare bone.\n"
-    "It can be sold at\n"
-    "a high price.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sOddKeystoneDesc[] = _(
-    "Voices can be heard\n"
-    "from this odd stone\n"
-    "occasionally.");
+    "A very odd bone.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sPrettyFeatherDesc[] = _(
-    "A beautiful yet\n"
-    "plain feather that\n"
-    "does nothing.");
+    "A rare feather.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sRelicCopperDesc[] = _(
     "A copper coin used\n"
@@ -887,9 +887,9 @@ static const u8 sRelicCrownDesc[] = _(
     "high price.");
 
 static const u8 sStrangeSouvenirDesc[] = _(
-    "An ornament that\n"
-    "depicts a Pokémon\n"
-    "from Alola.");
+    "A rare ornament.\n"
+    "It is coveted by\n"
+    "collectors.");
 
 // Fossils
 static const u8 sHelixFossilDesc[] = _(
@@ -1011,38 +1011,38 @@ static const u8 sAmazeMulchDesc[] = _(
 // Apricorns
 static const u8 sRedApricornDesc[] = _(
     "A red apricorn.\n"
-    "It assails your\n"
-    "nostrils.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sBlueApricornDesc[] = _(
     "A blue apricorn.\n"
-    "It smells a bit\n"
-    "like grass.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sYellowApricornDesc[] = _(
     "A yellow apricorn.\n"
-    "It has an invigor-\n"
-    "ating scent.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sGreenApricornDesc[] = _(
     "A green apricorn.\n"
-    "It has a strange,\n"
-    "aromatic scent.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sPinkApricornDesc[] = _(
     "A pink apricorn.\n"
-    "It has a nice,\n"
-    "sweet scent.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sWhiteApricornDesc[] = _(
     "A white apricorn.\n"
-    "It doesn't smell\n"
-    "like anything.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sBlackApricornDesc[] = _(
     "A black apricorn.\n"
-    "It has an inde-\n"
-    "scribable scent.");
+    "It is coveted by\n"
+    "collectors.");
 
 static const u8 sWishingPieceDesc[] = _(
     "Throw into a\n"

@@ -118,7 +118,7 @@
       "x": 17,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_PACIFIDLOG_TOWN_HOUSE5",
+      "dest_map": "MAP_PACIFIDLOG_TOWN_DIVING_TREASURE_HUNTERS_HOUSE",
       "dest_warp_id": "0"
     }
   ],
@@ -147,6 +147,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PacifidlogTown_EventScript_DiversHouseSign"
     }
   ]
 }

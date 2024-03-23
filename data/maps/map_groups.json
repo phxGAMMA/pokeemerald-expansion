@@ -153,7 +153,7 @@
     "PacifidlogTown_House2",
     "PacifidlogTown_House3",
     "PacifidlogTown_House4",
-    "PacifidlogTown_House5"
+    "PacifidlogTown_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_IndoorPetalburg": [
     "PetalburgCity_WallysHouse",
@@ -202,7 +202,7 @@
     "RustboroCity_Flat1_1F",
     "RustboroCity_Flat1_2F",
     "RustboroCity_House1",
-    "RustboroCity_CuttersHouse",
+    "RustboroCity_CuttingTreasureHuntersHouse",
     "RustboroCity_House2",
     "RustboroCity_Flat2_1F",
     "RustboroCity_Flat2_2F",
@@ -308,8 +308,8 @@
     "MtChimney_CableCarStation"
   ],
   "gMapGroup_IndoorRoute114": [
-    "Route114_FossilManiacsHouse",
-    "Route114_FossilManiacsTunnel",
+    "Route114_SmashingTreasureHuntersHouse",
+    "Route114_SmashingTreasureHuntersTunnel",
     "Route114_LanettesHouse"
   ],
   "gMapGroup_IndoorRoute116": [
@@ -619,7 +619,7 @@
     "Route119_House"
   ],
   "gMapGroup_IndoorRoute124": [
-    "Route124_DivingTreasureHuntersHouse"
+    "Route124_SurfingTreasureHuntersHouse"
   ],
   "connections_include_order": [
     "LittlerootTown",

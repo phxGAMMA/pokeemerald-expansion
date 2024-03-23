@@ -94,18 +94,23 @@ EventScript_PkmnMartClerk_GameClearItems:
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
-	.2byte ITEM_EXP_CANDY_L
-	.2byte ITEM_EXP_CANDY_XL
-	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_ELIXIR
+	.2byte ITEM_MAX_ELIXIR
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
 	.2byte ITEM_MAX_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_XL
+	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_DYNAMAX_CANDY
 	.2byte ITEM_NONE
 	release
 	end
@@ -127,17 +132,21 @@ EventScript_PkmnMartClerk_Badge08Items:
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
-	.2byte ITEM_EXP_CANDY_L
-	.2byte ITEM_EXP_CANDY_XL
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_ELIXIR
+	.2byte ITEM_MAX_ELIXIR
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
 	.2byte ITEM_MAX_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_XL
 	.2byte ITEM_NONE
 	release
 	end
@@ -158,16 +167,20 @@ EventScript_PkmnMartClerk_Badge07Items:
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
-	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_ELIXIR
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
 	.2byte ITEM_MAX_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_XL
 	.2byte ITEM_NONE
 	release
 	end
@@ -188,14 +201,17 @@ EventScript_PkmnMartClerk_Badge06Items:
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
-	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_ELIXIR
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	.2byte ITEM_NONE
 	release
 	end
@@ -215,13 +231,16 @@ EventScript_PkmnMartClerk_Badge05Items:
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_FULL_HEAL
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	.2byte ITEM_NONE
 	release
 	end
@@ -239,13 +258,15 @@ EventScript_PkmnMartClerk_Badge04Items:
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
-	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_ETHER
+	.2byte ITEM_MAX_ETHER
 	.2byte ITEM_REPEL
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_LURE
 	.2byte ITEM_SUPER_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
 	.2byte ITEM_NONE
 	release
 	end
@@ -262,10 +283,12 @@ EventScript_PkmnMartClerk_Badge03Items:
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_ETHER
 	.2byte ITEM_REPEL
 	.2byte ITEM_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
 	.2byte ITEM_NONE
 	release
 	end
@@ -281,10 +304,11 @@ EventScript_PkmnMartClerk_Badge02Items:
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_EXP_CANDY_XS
-	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_ETHER
 	.2byte ITEM_REPEL
 	.2byte ITEM_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
 	.2byte ITEM_NONE
 	release
 	end
@@ -299,9 +323,10 @@ EventScript_PkmnMartClerk_Badge01Items:
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_EXP_CANDY_XS
 	.2byte ITEM_REPEL
 	.2byte ITEM_LURE
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
 	.2byte ITEM_NONE
 	release
 	end
@@ -311,9 +336,9 @@ EventScript_PkmnMartClerk_ExpandedItems:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_REVIVE
-	.2byte ITEM_EXP_CANDY_XS
 	.2byte ITEM_REPEL
 	.2byte ITEM_LURE
+	.2byte ITEM_EXP_CANDY_XS
 	.2byte ITEM_NONE
 	release
 	end
@@ -324,6 +349,7 @@ EventScript_PkmnMartClerk_BasicItems:
 	.2byte ITEM_REVIVE
 	.2byte ITEM_REPEL
 	.2byte ITEM_LURE
+	.2byte ITEM_EXP_CANDY_XS
 	.2byte ITEM_NONE
 	release
 	end

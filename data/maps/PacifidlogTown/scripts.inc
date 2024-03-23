@@ -28,6 +28,10 @@ PacifidlogTown_EventScript_TownSign::
 	msgbox PacifidlogTown_Text_TownSign, MSGBOX_SIGN
 	end
 
+PacifidlogTown_EventScript_DiversHouseSign::
+	msgbox PacifidlogTown_Text_DiversHouse, MSGBOX_SIGN
+	end
+
 PacifidlogTown_Text_FastRunningCurrent:
 	.string "The sea between PACIFIDLOG and\n"
 	.string "SLATEPORT has a fast-running tide.\p"
@@ -52,4 +56,7 @@ PacifidlogTown_Text_TownSign:
 	.string "PACIFIDLOG TOWN\p"
 	.string "“Where the morning sun smiles upon\n"
 	.string "the waters.”$"
+
+PacifidlogTown_Text_DiversHouse:
+	.string "DIVER'S HOUSE$"
 

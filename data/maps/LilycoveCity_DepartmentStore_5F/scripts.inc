@@ -29,18 +29,16 @@ LilycoveCity_DepartmentStore_5F_EventScript_ClerkFarLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_5F_Pokemart_Dolls:
-	.2byte DECOR_PICHU_DOLL
-	.2byte DECOR_PIKACHU_DOLL
-	.2byte DECOR_MARILL_DOLL
-	.2byte DECOR_JIGGLYPUFF_DOLL
-	.2byte DECOR_DUSKULL_DOLL
-	.2byte DECOR_WYNAUT_DOLL
-	.2byte DECOR_BALTOY_DOLL
-	.2byte DECOR_KECLEON_DOLL
-	.2byte DECOR_AZURILL_DOLL
-	.2byte DECOR_SKITTY_DOLL
-	.2byte DECOR_SWABLU_DOLL
-	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_SNORLAX_DOLL
+	.2byte DECOR_RHYDON_DOLL
+	.2byte DECOR_LAPRAS_DOLL
+	.2byte DECOR_VENUSAUR_DOLL
+	.2byte DECOR_CHARIZARD_DOLL
+	.2byte DECOR_BLASTOISE_DOLL
+	.2byte DECOR_WAILMER_DOLL
+	.2byte DECOR_REGIROCK_DOLL
+	.2byte DECOR_REGICE_DOLL
+	.2byte DECOR_REGISTEEL_DOLL
 	.2byte DECOR_NONE
 	release
 	end
@@ -59,6 +57,7 @@ LilycoveCity_DepartmentStore_5F_EventScript_ClerkMidLeft::
 LilycoveCity_DepartmentStore_5F_Pokemart_Cushions:
 	.2byte DECOR_PIKA_CUSHION
 	.2byte DECOR_ROUND_CUSHION
+	.2byte DECOR_KISS_CUSHION
 	.2byte DECOR_ZIGZAG_CUSHION
 	.2byte DECOR_SPIN_CUSHION
 	.2byte DECOR_DIAMOND_CUSHION

@@ -149,13 +149,13 @@ SlateportCity_EventScript_EnergyGuru::
 
 	.align 2
 SlateportCity_Pokemart_EnergyGuru:
-	.2byte ITEM_MACHO_BRACE
-	.2byte ITEM_POWER_WEIGHT
-	.2byte ITEM_POWER_BRACER
-	.2byte ITEM_POWER_BELT
-	.2byte ITEM_POWER_LENS
-	.2byte ITEM_POWER_BAND
-	.2byte ITEM_POWER_ANKLET
+	.2byte ITEM_FRESH_START_MOCHI
+	.2byte ITEM_HEALTH_MOCHI
+	.2byte ITEM_MUSCLE_MOCHI
+	.2byte ITEM_RESIST_MOCHI
+	.2byte ITEM_GENIUS_MOCHI
+	.2byte ITEM_CLEVER_MOCHI
+	.2byte ITEM_SWIFT_MOCHI
 	.2byte ITEM_NONE
 	release
 	end
@@ -164,27 +164,34 @@ SlateportCity_EventScript_EffortRibbonWoman::
 	lock
 	faceplayer
 	bufferleadmonspeciesname STR_VAR_1
-	msgbox SlateportCity_Text_OhYourPokemon, MSGBOX_DEFAULT
 	specialvar VAR_RESULT, LeadMonHasEffortRibbon
-	call_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_MonHasEffortRibbon
+	goto_if_eq VAR_RESULT, TRUE, SlateportCity_EventScript_EffortGuru
 	specialvar VAR_RESULT, Special_AreLeadMonEVsMaxedOut
-	call_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_MonEVsNotMaxed
+	goto_if_eq VAR_RESULT, FALSE, SlateportCity_EventScript_EffortGuru
 	msgbox SlateportCity_Text_PleaseGiveItThisEffortRibbon, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message SlateportCity_Text_ReceivedEffortRibbon
 	waitfanfare
 	msgbox SlateportCity_Text_PutEffortRibbonOnMon, MSGBOX_DEFAULT
 	special GiveLeadMonEffortRibbon
+SlateportCity_EventScript_EffortGuru::
+	message SlateportCity_Text_EffortGuruSellWhatYouNeed
+	waitmessage
+	pokemart SlateportCity_Pokemart_EffortGuru
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
-SlateportCity_EventScript_MonEVsNotMaxed::
-	msgbox SlateportCity_Text_GoForItLittleHarder, MSGBOX_DEFAULT
-	release
-	end
-
-SlateportCity_EventScript_MonHasEffortRibbon::
-	msgbox SlateportCity_Text_EffortRibbonLooksGoodOnIt, MSGBOX_DEFAULT
+	.align 2
+SlateportCity_Pokemart_EffortGuru:
+	.2byte ITEM_MACHO_BRACE
+	.2byte ITEM_POWER_WEIGHT
+	.2byte ITEM_POWER_BRACER
+	.2byte ITEM_POWER_BELT
+	.2byte ITEM_POWER_LENS
+	.2byte ITEM_POWER_BAND
+	.2byte ITEM_POWER_ANKLET
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -513,9 +520,31 @@ SlateportCity_EventScript_DollClerk::
 
 	.align 2
 SlateportCity_PokemartDecor_Dolls:
-	.2byte DECOR_AZURILL_DOLL
+	.2byte DECOR_PICHU_DOLL
+	.2byte DECOR_PIKACHU_DOLL
 	.2byte DECOR_MARILL_DOLL
+	.2byte DECOR_TOGEPI_DOLL
+	.2byte DECOR_CYNDAQUIL_DOLL
+	.2byte DECOR_CHIKORITA_DOLL
+	.2byte DECOR_TOTODILE_DOLL
+	.2byte DECOR_JIGGLYPUFF_DOLL
+	.2byte DECOR_MEOWTH_DOLL
+	.2byte DECOR_CLEFAIRY_DOLL
+	.2byte DECOR_DITTO_DOLL
+	.2byte DECOR_SMOOCHUM_DOLL
+	.2byte DECOR_TREECKO_DOLL
+	.2byte DECOR_TORCHIC_DOLL
+	.2byte DECOR_MUDKIP_DOLL
+	.2byte DECOR_DUSKULL_DOLL
+	.2byte DECOR_WYNAUT_DOLL
+	.2byte DECOR_BALTOY_DOLL
+	.2byte DECOR_KECLEON_DOLL
+	.2byte DECOR_AZURILL_DOLL
 	.2byte DECOR_SKITTY_DOLL
+	.2byte DECOR_SWABLU_DOLL
+	.2byte DECOR_GULPIN_DOLL
+	.2byte DECOR_LOTAD_DOLL
+	.2byte DECOR_SEEDOT_DOLL
 	.2byte DECOR_NONE
 	release
 	end
@@ -539,43 +568,59 @@ SlateportCity_EventScript_DecorClerk::
 	.align 2
 SlateportCity_PokemartDecor:
 	.2byte DECOR_RED_BRICK
-	.2byte DECOR_BLUE_BRICK
 	.2byte DECOR_YELLOW_BRICK
+	.2byte DECOR_BLUE_BRICK
 	.2byte DECOR_RED_BALLOON
 	.2byte DECOR_BLUE_BALLOON
 	.2byte DECOR_YELLOW_BALLOON
-	.2byte DECOR_C_LOW_NOTE_MAT
-	.2byte DECOR_D_NOTE_MAT
-	.2byte DECOR_E_NOTE_MAT
-	.2byte DECOR_F_NOTE_MAT
-	.2byte DECOR_G_NOTE_MAT
-	.2byte DECOR_A_NOTE_MAT
-	.2byte DECOR_B_NOTE_MAT
-	.2byte DECOR_C_HIGH_NOTE_MAT
+	.2byte DECOR_RED_TENT
+	.2byte DECOR_BLUE_TENT
+	.2byte DECOR_SOLID_BOARD
+	.2byte DECOR_SLIDE
+	.2byte DECOR_FENCE_LENGTH
+	.2byte DECOR_FENCE_WIDTH
+	.2byte DECOR_TIRE
+	.2byte DECOR_STAND
+	.2byte DECOR_MUD_BALL
+	.2byte DECOR_BREAKABLE_DOOR
+	.2byte DECOR_SAND_ORNAMENT
+	.2byte DECOR_TV
+	.2byte DECOR_ROUND_TV
+	.2byte DECOR_CUTE_TV
 	.2byte DECOR_NONE
 	release
 	end
 
-SlateportCity_EventScript_PowerTMClerk::
+SlateportCity_EventScript_PowerItemClerk::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart SlateportCity_Pokemart_PowerTMs
+	pokemart SlateportCity_Pokemart_PowerItems
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-SlateportCity_Pokemart_PowerTMs:
-	.2byte ITEM_HEALTH_FEATHER
-	.2byte ITEM_MUSCLE_FEATHER
-	.2byte ITEM_RESIST_FEATHER
-	.2byte ITEM_GENIUS_FEATHER
-	.2byte ITEM_CLEVER_FEATHER
-	.2byte ITEM_SWIFT_FEATHER
-	.2byte ITEM_ABILITY_CAPSULE
-	.2byte ITEM_ABILITY_PATCH
+SlateportCity_Pokemart_PowerItems:
+	.2byte ITEM_SILK_SCARF
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_MAGNET
+	.2byte ITEM_MIRACLE_SEED
+	.2byte ITEM_NEVER_MELT_ICE
+	.2byte ITEM_BLACK_BELT
+	.2byte ITEM_POISON_BARB
+	.2byte ITEM_SOFT_SAND
+	.2byte ITEM_SHARP_BEAK
+	.2byte ITEM_TWISTED_SPOON
+	.2byte ITEM_SILVER_POWDER
+	.2byte ITEM_HARD_STONE
+	.2byte ITEM_SPELL_TAG
+	.2byte ITEM_DRAGON_FANG
+	.2byte ITEM_BLACK_GLASSES
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_FAIRY_FEATHER
 	.2byte ITEM_NONE
 	release
 	end
@@ -777,92 +822,76 @@ SlateportCity_EventScript_ChooseBerryPowderItem::
 	special ShowScrollableMultichoice
 	waitstate
 	switch VAR_RESULT
-	case 0, SlateportCity_EventScript_EnergyPowder
-	case 1, SlateportCity_EventScript_EnergyRoot
-	case 2, SlateportCity_EventScript_HealPowder
-	case 3, SlateportCity_EventScript_RevivalHerb
-	case 4, SlateportCity_EventScript_Protein
-	case 5, SlateportCity_EventScript_Iron
+	case 0, SlateportCity_EventScript_BerryJuice
+	case 1, SlateportCity_EventScript_HPUp
+	case 2, SlateportCity_EventScript_Protein
+	case 3, SlateportCity_EventScript_Iron
+	case 4, SlateportCity_EventScript_Calcium
+	case 5, SlateportCity_EventScript_Zinc
 	case 6, SlateportCity_EventScript_Carbos
-	case 7, SlateportCity_EventScript_Calcium
-	case 8, SlateportCity_EventScript_Zinc
-	case 9, SlateportCity_EventScript_HPUp
-	case 10, SlateportCity_EventScript_PPUp
-	case 11, SlateportCity_EventScript_CancelPowderItemSelect
+	case 7, SlateportCity_EventScript_PPUp
+	case 8, SlateportCity_EventScript_PPMax
+	case 9, SlateportCity_EventScript_CancelPowderItemSelect
 	case MULTI_B_PRESSED, SlateportCity_EventScript_CancelPowderItemSelect
 	end
 
-SlateportCity_EventScript_EnergyPowder::
-	bufferitemname STR_VAR_1, ITEM_ENERGY_POWDER
-	setvar VAR_0x8008, ITEM_ENERGY_POWDER
-	setvar VAR_0x8009, 50
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_EnergyRoot::
-	bufferitemname STR_VAR_1, ITEM_ENERGY_ROOT
-	setvar VAR_0x8008, ITEM_ENERGY_ROOT
-	setvar VAR_0x8009, 80
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_HealPowder::
-	bufferitemname STR_VAR_1, ITEM_HEAL_POWDER
-	setvar VAR_0x8008, ITEM_HEAL_POWDER
-	setvar VAR_0x8009, 50
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_RevivalHerb::
-	bufferitemname STR_VAR_1, ITEM_REVIVAL_HERB
-	setvar VAR_0x8008, ITEM_REVIVAL_HERB
-	setvar VAR_0x8009, 300
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_Protein::
-	bufferitemname STR_VAR_1, ITEM_PROTEIN
-	setvar VAR_0x8008, ITEM_PROTEIN
-	setvar VAR_0x8009, 1000
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_Iron::
-	bufferitemname STR_VAR_1, ITEM_IRON
-	setvar VAR_0x8008, ITEM_IRON
-	setvar VAR_0x8009, 1000
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_Carbos::
-	bufferitemname STR_VAR_1, ITEM_CARBOS
-	setvar VAR_0x8008, ITEM_CARBOS
-	setvar VAR_0x8009, 1000
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_Calcium::
-	bufferitemname STR_VAR_1, ITEM_CALCIUM
-	setvar VAR_0x8008, ITEM_CALCIUM
-	setvar VAR_0x8009, 1000
-	goto SlateportCity_EventScript_TryBuyBerryPowderItem
-	end
-
-SlateportCity_EventScript_Zinc::
-	bufferitemname STR_VAR_1, ITEM_ZINC
-	setvar VAR_0x8008, ITEM_ZINC
-	setvar VAR_0x8009, 1000
+SlateportCity_EventScript_BerryJuice::
+	bufferitemname STR_VAR_1, ITEM_BERRY_JUICE
+	setvar VAR_0x8008, ITEM_BERRY_JUICE
+	setvar VAR_0x8009, 20
 	goto SlateportCity_EventScript_TryBuyBerryPowderItem
 	end
 
 SlateportCity_EventScript_HPUp::
 	bufferitemname STR_VAR_1, ITEM_HP_UP
 	setvar VAR_0x8008, ITEM_HP_UP
-	setvar VAR_0x8009, 1000
+	setvar VAR_0x8009, 100
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_Protein::
+	bufferitemname STR_VAR_1, ITEM_PROTEIN
+	setvar VAR_0x8008, ITEM_PROTEIN
+	setvar VAR_0x8009, 100
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_Iron::
+	bufferitemname STR_VAR_1, ITEM_IRON
+	setvar VAR_0x8008, ITEM_IRON
+	setvar VAR_0x8009, 100
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_Calcium::
+	bufferitemname STR_VAR_1, ITEM_CALCIUM
+	setvar VAR_0x8008, ITEM_CALCIUM
+	setvar VAR_0x8009, 100
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_Zinc::
+	bufferitemname STR_VAR_1, ITEM_ZINC
+	setvar VAR_0x8008, ITEM_ZINC
+	setvar VAR_0x8009, 100
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_Carbos::
+	bufferitemname STR_VAR_1, ITEM_CARBOS
+	setvar VAR_0x8008, ITEM_CARBOS
+	setvar VAR_0x8009, 100
 	goto SlateportCity_EventScript_TryBuyBerryPowderItem
 	end
 
 SlateportCity_EventScript_PPUp::
+	bufferitemname STR_VAR_1, ITEM_PP_UP
+	setvar VAR_0x8008, ITEM_PP_UP
+	setvar VAR_0x8009, 300
+	goto SlateportCity_EventScript_TryBuyBerryPowderItem
+	end
+
+SlateportCity_EventScript_PPMax::
 	bufferitemname STR_VAR_1, ITEM_PP_UP
 	setvar VAR_0x8008, ITEM_PP_UP
 	setvar VAR_0x8009, 3000
@@ -961,16 +990,72 @@ SlateportCity_EventScript_BerryCrushRankingsSign::
 	releaseall
 	end
 
+SlateportCity_EventScript_PowerGemClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_PowerGems
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_PowerGems:
+	.2byte ITEM_NORMAL_GEM
+	.2byte ITEM_FIRE_GEM
+	.2byte ITEM_WATER_GEM
+	.2byte ITEM_ELECTRIC_GEM
+	.2byte ITEM_GRASS_GEM
+	.2byte ITEM_ICE_GEM
+	.2byte ITEM_FIGHTING_GEM
+	.2byte ITEM_POISON_GEM
+	.2byte ITEM_GROUND_GEM
+	.2byte ITEM_FLYING_GEM
+	.2byte ITEM_PSYCHIC_GEM
+	.2byte ITEM_BUG_GEM
+	.2byte ITEM_ROCK_GEM
+	.2byte ITEM_GHOST_GEM
+	.2byte ITEM_DRAGON_GEM
+	.2byte ITEM_DARK_GEM
+	.2byte ITEM_STEEL_GEM
+	.2byte ITEM_FAIRY_GEM
+	.2byte ITEM_NONE
+	release
+	end
+
+SlateportCity_EventScript_IncenseClerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart SlateportCity_Pokemart_Incense
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+SlateportCity_Pokemart_Incense:
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
+	.2byte ITEM_ODD_INCENSE
+	.2byte ITEM_ROCK_INCENSE
+	.2byte ITEM_FULL_INCENSE
+	.2byte ITEM_WAVE_INCENSE
+	.2byte ITEM_ROSE_INCENSE
+	.2byte ITEM_LUCK_INCENSE
+	.2byte ITEM_PURE_INCENSE
+	.2byte ITEM_NONE
+	release
+	end
+
 SlateportCity_Text_EnergyGuruSellWhatYouNeed:
 	.string "I'm the ENERGY GURU! I'll go for it and\n"
 	.string "sell you what you need!$"
 
-SlateportCity_Text_OhYourPokemon:
-	.string "Oh?\n"
-	.string "Your {STR_VAR_1}…$"
-
 SlateportCity_Text_PleaseGiveItThisEffortRibbon:
-	.string "Went for it stupendously!\p"
+	.string "Oh?\n"
+	.string "Your {STR_VAR_1} went for it!\p"
 	.string "As its reward, please give it this\n"
 	.string "EFFORT RIBBON.$"
 
@@ -981,14 +1066,9 @@ SlateportCity_Text_PutEffortRibbonOnMon:
 	.string "{PLAYER} put the EFFORT RIBBON\n"
 	.string "on {STR_VAR_1}.$"
 
-SlateportCity_Text_GoForItLittleHarder:
-	.string "You have to go for it a little harder.\p"
-	.string "If you do, I'll give your POKéMON\n"
-	.string "something nice.$"
-
-SlateportCity_Text_EffortRibbonLooksGoodOnIt:
-	.string "Oh! Your {STR_VAR_1}, that EFFORT\n"
-	.string "RIBBON looks good on it!$"
+SlateportCity_Text_EffortGuruSellWhatYouNeed:
+	.string "I'm the EFFORT GURU! I'll go for it and\n"
+	.string "sell you what you need!$"
 
 SlateportCity_Text_WonderIfLighthouseStartlesPokemon:
 	.string "The light of the lighthouse reaches\n"

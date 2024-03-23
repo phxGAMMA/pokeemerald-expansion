@@ -265,32 +265,6 @@ static const struct MenuAction MultichoiceList_UnusedAshVendor[] =
     {gText_Cancel2},
 };
 
-static const struct MenuAction MultichoiceList_GameCornerDolls[] =
-{
-    {gText_TreeckoDollAndPrice},
-    {gText_TorchicDollAndPrice},
-    {gText_MudkipDollAndPrice},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_GameCornerRegis[] =
-{
-    {gText_RegirockDollAndPrice},
-    {gText_RegiceDollAndPrice},
-    {gText_RegisteelDollAndPrice},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_GameCornerTMs[] =
-{
-    {gText_TM32AndPrice},
-    {gText_TM29AndPrice},
-    {gText_TM35AndPrice},
-    {gText_TM24AndPrice},
-    {gText_TM13AndPrice},
-    {gText_Exit},
-};
-
 static const struct MenuAction MultichoiceList_GameCornerCoins[] =
 {
     {gText_50CoinsAndPrice},
@@ -337,113 +311,6 @@ static const struct MenuAction MultichoiceList_Floors[] =
     {gText_3F},
     {gText_2F},
     {gText_1F},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsR[] =
-{
-    {gText_RedShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsY[] =
-{
-    {gText_YellowShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRY[] =
-{
-    {gText_RedShard},
-    {gText_YellowShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsB[] =
-{
-    {gText_BlueShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRB[] =
-{
-    {gText_RedShard},
-    {gText_BlueShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsYB[] =
-{
-    {gText_YellowShard},
-    {gText_BlueShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRYB[] =
-{
-    {gText_RedShard},
-    {gText_YellowShard},
-    {gText_BlueShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsG[] =
-{
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRG[] =
-{
-    {gText_RedShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsYG[] =
-{
-    {gText_YellowShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRYG[] =
-{
-    {gText_RedShard},
-    {gText_YellowShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsBG[] =
-{
-    {gText_BlueShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRBG[] =
-{
-    {gText_RedShard},
-    {gText_BlueShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsYBG[] =
-{
-    {gText_YellowShard},
-    {gText_BlueShard},
-    {gText_GreenShard},
-    {gText_Exit},
-};
-
-static const struct MenuAction MultichoiceList_ShardsRYBG[] =
-{
-    {gText_RedShard},
-    {gText_YellowShard},
-    {gText_BlueShard},
-    {gText_GreenShard},
     {gText_Exit},
 };
 
@@ -787,6 +654,373 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_ShardsR[] =
+{
+    {gText_RedShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsY[] =
+{
+    {gText_YellowShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRY[] =
+{
+    {gText_RedShard},
+    {gText_YellowShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsB[] =
+{
+    {gText_BlueShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRB[] =
+{
+    {gText_RedShard},
+    {gText_BlueShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsYB[] =
+{
+    {gText_YellowShard},
+    {gText_BlueShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRYB[] =
+{
+    {gText_RedShard},
+    {gText_YellowShard},
+    {gText_BlueShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsG[] =
+{
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRG[] =
+{
+    {gText_RedShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsYG[] =
+{
+    {gText_YellowShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRYG[] =
+{
+    {gText_RedShard},
+    {gText_YellowShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsBG[] =
+{
+    {gText_BlueShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRBG[] =
+{
+    {gText_RedShard},
+    {gText_BlueShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsYBG[] =
+{
+    {gText_YellowShard},
+    {gText_BlueShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRYBG[] =
+{
+    {gText_RedShard},
+    {gText_YellowShard},
+    {gText_BlueShard},
+    {gText_GreenShard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsRed[] =
+{
+    {gText_FireStone},
+    {gText_SunStone},
+    {gText_HeartScale},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsYellow[] =
+{
+    {gText_ThunderStone},
+    {gText_ShinyStone},
+    {gText_OvalStone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsBlue[] =
+{
+    {gText_WaterStone},
+    {gText_DuskStone},
+    {gText_IceStone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShardsGreen[] =
+{
+    {gText_LeafStone},
+    {gText_MoonStone},
+    {gText_Dawn_Stone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsP[] =
+{
+    {gText_PinkApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsR[] =
+{
+    {gText_RedApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPR[] =
+{
+    {gText_PinkApricorn},
+    {gText_RedApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsG[] =
+{
+    {gText_GreenApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPG[] =
+{
+    {gText_PinkApricorn},
+    {gText_GreenApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsRG[] =
+{
+    {gText_RedApricorn},
+    {gText_GreenApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPRG[] =
+{
+    {gText_PinkApricorn},
+    {gText_RedApricorn},
+    {gText_GreenApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsW[] =
+{
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPW[] =
+{
+    {gText_PinkApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsRW[] =
+{
+    {gText_RedApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPRW[] =
+{
+    {gText_PinkApricorn},
+    {gText_RedApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsGW[] =
+{
+    {gText_GreenApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPGW[] =
+{
+    {gText_PinkApricorn},
+    {gText_GreenApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsRGW[] =
+{
+    {gText_RedApricorn},
+    {gText_GreenApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsPRGW[] =
+{
+    {gText_PinkApricorn},
+    {gText_RedApricorn},
+    {gText_GreenApricorn},
+    {gText_WhiteApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsB[] =
+{
+    {gText_BlueApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsY[] =
+{
+    {gText_YellowApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsBY[] =
+{
+    {gText_BlueApricorn},
+    {gText_YellowApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsK[] =
+{
+    {gText_BlackApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsBK[] =
+{
+    {gText_BlueApricorn},
+    {gText_BlackApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsYK[] =
+{
+    {gText_YellowApricorn},
+    {gText_BlackApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ApricornsBYK[] =
+{
+    {gText_BlueApricorn},
+    {gText_YellowApricorn},
+    {gText_BlackApricorn},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BonesA[] =
+{
+    {gText_RareBone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BonesB[] =
+{
+    {gText_OddBone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BonesAB[] =
+{
+    {gText_RareBone},
+    {gText_OddBone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BonesRare[] =
+{
+    {gText_HelixFossil},
+    {gText_DomeFossil},
+    {gText_RootFossil},
+    {gText_ClawFossil},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BonesOdd[] =
+{
+    {gText_OldAmber},
+    {gText_PrettyFeather},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShoalA[] =
+{
+    {gText_ShoalShell},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShoalB[] =
+{
+    {gText_ShoalSalt},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShoalAB[] =
+{
+    {gText_ShoalShell},
+    {gText_ShoalSalt},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShoalShell[] =
+{
+    {gText_SkullFossil},
+    {gText_ArmorFossil},
+    {gText_CoverFossil},
+    {gText_PlumeFossil},
+    {gText_JawFossil},
+    {gText_SailFossil},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ShoalSalt[] =
+{
+    {gText_FossilizedBird},
+    {gText_FossilizedFish},
+    {gText_FossilizedDrake},
+    {gText_FossilizedDino},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -840,7 +1074,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_MECHADOLL5_Q1]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q1),
     [MULTI_MECHADOLL5_Q2]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q2),
     [MULTI_MECHADOLL5_Q3]              = MULTICHOICE(MultichoiceList_Mechadoll5_Q3),
-    [MULTI_GAME_CORNER_REGIS]          = MULTICHOICE(MultichoiceList_GameCornerRegis),
+    [MULTI_UNUSED_40]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_UNUSED_41]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_VENDING_MACHINE]            = MULTICHOICE(MultichoiceList_VendingMachine),
     [MULTI_MACH_BIKE_INFO]             = MULTICHOICE(MultichoiceList_MachBikeInfo),
@@ -848,31 +1082,31 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SATISFACTION]               = MULTICHOICE(MultichoiceList_Satisfaction),
     [MULTI_STERN_DEEPSEA]              = MULTICHOICE(MultichoiceList_SternDeepSea),
     [MULTI_UNUSED_ASH_VENDOR]          = MULTICHOICE(MultichoiceList_UnusedAshVendor),
-    [MULTI_GAME_CORNER_DOLLS]          = MULTICHOICE(MultichoiceList_GameCornerDolls),
+    [MULTI_UNUSED_48]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_GAME_CORNER_COINS]          = MULTICHOICE(MultichoiceList_GameCornerCoins),
     [MULTI_HOWS_FISHING]               = MULTICHOICE(MultichoiceList_HowsFishing),
     [MULTI_UNUSED_51]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_SSTIDAL_SLATEPORT_WITH_BF]  = MULTICHOICE(MultichoiceList_SSTidalSlateportWithBF),
     [MULTI_SSTIDAL_BATTLE_FRONTIER]    = MULTICHOICE(MultichoiceList_SSTidalBattleFrontier),
     [MULTI_RIGHTLEFT]                  = MULTICHOICE(MultichoiceList_RightLeft),
-    [MULTI_GAME_CORNER_TMS]            = MULTICHOICE(MultichoiceList_GameCornerTMs),
+    [MULTI_UNUSED_55]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_SSTIDAL_SLATEPORT_NO_BF]    = MULTICHOICE(MultichoiceList_SSTidalSlateportNoBF),
     [MULTI_FLOORS]                     = MULTICHOICE(MultichoiceList_Floors),
-    [MULTI_SHARDS_R]                   = MULTICHOICE(MultichoiceList_ShardsR),
-    [MULTI_SHARDS_Y]                   = MULTICHOICE(MultichoiceList_ShardsY),
-    [MULTI_SHARDS_RY]                  = MULTICHOICE(MultichoiceList_ShardsRY),
-    [MULTI_SHARDS_B]                   = MULTICHOICE(MultichoiceList_ShardsB),
-    [MULTI_SHARDS_RB]                  = MULTICHOICE(MultichoiceList_ShardsRB),
-    [MULTI_SHARDS_YB]                  = MULTICHOICE(MultichoiceList_ShardsYB),
-    [MULTI_SHARDS_RYB]                 = MULTICHOICE(MultichoiceList_ShardsRYB),
-    [MULTI_SHARDS_G]                   = MULTICHOICE(MultichoiceList_ShardsG),
-    [MULTI_SHARDS_RG]                  = MULTICHOICE(MultichoiceList_ShardsRG),
-    [MULTI_SHARDS_YG]                  = MULTICHOICE(MultichoiceList_ShardsYG),
-    [MULTI_SHARDS_RYG]                 = MULTICHOICE(MultichoiceList_ShardsRYG),
-    [MULTI_SHARDS_BG]                  = MULTICHOICE(MultichoiceList_ShardsBG),
-    [MULTI_SHARDS_RBG]                 = MULTICHOICE(MultichoiceList_ShardsRBG),
-    [MULTI_SHARDS_YBG]                 = MULTICHOICE(MultichoiceList_ShardsYBG),
-    [MULTI_SHARDS_RYBG]                = MULTICHOICE(MultichoiceList_ShardsRYBG),
+    [MULTI_UNUSED_58]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_59]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_60]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_61]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_62]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_63]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_64]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_65]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_66]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_67]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_68]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_69]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_70]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_71]                  = MULTICHOICE(MultichoiceList_Exit),
+    [MULTI_UNUSED_72]                  = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_TOURNEY_WITH_RECORD]        = MULTICHOICE(MultichoiceList_TourneyWithRecord),
     [MULTI_CABLE_CLUB_NO_RECORD_MIX]   = MULTICHOICE(MultichoiceList_LinkServicesNoRecordBerry),
     [MULTI_WIRELESS_NO_RECORD_BERRY]   = MULTICHOICE(MultichoiceList_LinkServicesNoRecordBerry),
@@ -914,6 +1148,57 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+    [MULTI_SHARDS_R]                   = MULTICHOICE(MultichoiceList_ShardsR),
+    [MULTI_SHARDS_Y]                   = MULTICHOICE(MultichoiceList_ShardsY),
+    [MULTI_SHARDS_RY]                  = MULTICHOICE(MultichoiceList_ShardsRY),
+    [MULTI_SHARDS_B]                   = MULTICHOICE(MultichoiceList_ShardsB),
+    [MULTI_SHARDS_RB]                  = MULTICHOICE(MultichoiceList_ShardsRB),
+    [MULTI_SHARDS_YB]                  = MULTICHOICE(MultichoiceList_ShardsYB),
+    [MULTI_SHARDS_RYB]                 = MULTICHOICE(MultichoiceList_ShardsRYB),
+    [MULTI_SHARDS_G]                   = MULTICHOICE(MultichoiceList_ShardsG),
+    [MULTI_SHARDS_RG]                  = MULTICHOICE(MultichoiceList_ShardsRG),
+    [MULTI_SHARDS_YG]                  = MULTICHOICE(MultichoiceList_ShardsYG),
+    [MULTI_SHARDS_RYG]                 = MULTICHOICE(MultichoiceList_ShardsRYG),
+    [MULTI_SHARDS_BG]                  = MULTICHOICE(MultichoiceList_ShardsBG),
+    [MULTI_SHARDS_RBG]                 = MULTICHOICE(MultichoiceList_ShardsRBG),
+    [MULTI_SHARDS_YBG]                 = MULTICHOICE(MultichoiceList_ShardsYBG),
+    [MULTI_SHARDS_RYBG]                = MULTICHOICE(MultichoiceList_ShardsRYBG),
+    [MULTI_SHARDS_RED]                 = MULTICHOICE(MultichoiceList_ShardsRed),
+    [MULTI_SHARDS_YELLOW]              = MULTICHOICE(MultichoiceList_ShardsYellow),
+    [MULTI_SHARDS_BLUE]                = MULTICHOICE(MultichoiceList_ShardsBlue),
+    [MULTI_SHARDS_GREEN]               = MULTICHOICE(MultichoiceList_ShardsGreen),
+    [MULTI_APRICORNS_P]                = MULTICHOICE(MultichoiceList_ApricornsP),
+    [MULTI_APRICORNS_R]                = MULTICHOICE(MultichoiceList_ApricornsR),
+    [MULTI_APRICORNS_PR]               = MULTICHOICE(MultichoiceList_ApricornsPR),
+    [MULTI_APRICORNS_G]                = MULTICHOICE(MultichoiceList_ApricornsG),
+    [MULTI_APRICORNS_PG]               = MULTICHOICE(MultichoiceList_ApricornsPG),
+    [MULTI_APRICORNS_RG]               = MULTICHOICE(MultichoiceList_ApricornsRG),
+    [MULTI_APRICORNS_PRG]              = MULTICHOICE(MultichoiceList_ApricornsPRG),
+    [MULTI_APRICORNS_W]                = MULTICHOICE(MultichoiceList_ApricornsW),
+    [MULTI_APRICORNS_PW]               = MULTICHOICE(MultichoiceList_ApricornsPW),
+    [MULTI_APRICORNS_RW]               = MULTICHOICE(MultichoiceList_ApricornsRW),
+    [MULTI_APRICORNS_PRW]              = MULTICHOICE(MultichoiceList_ApricornsPRW),
+    [MULTI_APRICORNS_GW]               = MULTICHOICE(MultichoiceList_ApricornsGW),
+    [MULTI_APRICORNS_PGW]              = MULTICHOICE(MultichoiceList_ApricornsPGW),
+    [MULTI_APRICORNS_RGW]              = MULTICHOICE(MultichoiceList_ApricornsRGW),
+    [MULTI_APRICORNS_PRGW]             = MULTICHOICE(MultichoiceList_ApricornsPRGW),
+    [MULTI_APRICORNS_B]                = MULTICHOICE(MultichoiceList_ApricornsB),
+    [MULTI_APRICORNS_Y]                = MULTICHOICE(MultichoiceList_ApricornsY),
+    [MULTI_APRICORNS_BY]               = MULTICHOICE(MultichoiceList_ApricornsBY),
+    [MULTI_APRICORNS_K]                = MULTICHOICE(MultichoiceList_ApricornsK),
+    [MULTI_APRICORNS_BK]               = MULTICHOICE(MultichoiceList_ApricornsBK),
+    [MULTI_APRICORNS_YK]               = MULTICHOICE(MultichoiceList_ApricornsYK),
+    [MULTI_APRICORNS_BYK]              = MULTICHOICE(MultichoiceList_ApricornsBYK),
+    [MULTI_BONES_A]                    = MULTICHOICE(MultichoiceList_BonesA),
+    [MULTI_BONES_B]                    = MULTICHOICE(MultichoiceList_BonesB),
+    [MULTI_BONES_AB]                   = MULTICHOICE(MultichoiceList_BonesAB),
+    [MULTI_BONES_RARE]                 = MULTICHOICE(MultichoiceList_BonesRare),
+    [MULTI_BONES_ODD]                  = MULTICHOICE(MultichoiceList_BonesOdd),
+    [MULTI_SHOAL_A]                    = MULTICHOICE(MultichoiceList_ShoalA),
+    [MULTI_SHOAL_B]                    = MULTICHOICE(MultichoiceList_ShoalB),
+    [MULTI_SHOAL_AB]                   = MULTICHOICE(MultichoiceList_ShoalAB),
+    [MULTI_SHOAL_SHELL]                = MULTICHOICE(MultichoiceList_ShoalShell),
+    [MULTI_SHOAL_SALT]                 = MULTICHOICE(MultichoiceList_ShoalSalt),
 };
 
 const u8 *const gStdStrings[] =

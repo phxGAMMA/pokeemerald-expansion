@@ -41,6 +41,10 @@
 #define SCROLL_MULTI_SS_TIDAL_DESTINATION                 11
 #define SCROLL_MULTI_BATTLE_TENT_RULES                    12
 #define SCROLL_MULTI_TRAINER_TIPS                         13
+#define SCROLL_MULTI_GAME_CORNER_VENDOR_1                 14
+#define SCROLL_MULTI_GAME_CORNER_VENDOR_2                 15
+#define SCROLL_MULTI_GAME_CORNER_VENDOR_3                 16
+#define SCROLL_MULTI_GAME_CORNER_VENDOR_4                 17
 
 #define MAX_SCROLL_MULTI_ON_SCREEN 6
 #define MAX_SCROLL_MULTI_LENGTH 16

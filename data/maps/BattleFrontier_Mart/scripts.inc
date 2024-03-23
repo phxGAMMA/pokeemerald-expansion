@@ -3,22 +3,42 @@
 BattleFrontier_Mart_MapScripts::
 	.byte 0
 
-BattleFrontier_Mart_EventScript_Clerk::
-	goto Common_EventScript_PkmnMartClerk
-	end
-
-BattleFrontier_Mart_EventScript_Cashier::
+BattleFrontier_Mart_EventScript_ClerkLeft::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart BattleFrontier_Mart_Pokemart
+	pokemart BattleFrontier_Mart_Pokemart_Vitamins
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-BattleFrontier_Mart_Pokemart:
+BattleFrontier_Mart_Pokemart_Vitamins:
+	.2byte ITEM_HP_UP
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_IRON
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_ZINC
+	.2byte ITEM_CARBOS
+	.2byte ITEM_PP_UP
+	.2byte ITEM_PP_MAX
+	.2byte ITEM_NONE
+	release
+	end
+
+BattleFrontier_Mart_EventScript_ClerkRight::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart BattleFrontier_Mart_Pokemart_Mints
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+BattleFrontier_Mart_Pokemart_Mints:
 	.2byte ITEM_LONELY_MINT
 	.2byte ITEM_ADAMANT_MINT
 	.2byte ITEM_NAUGHTY_MINT
@@ -40,6 +60,8 @@ BattleFrontier_Mart_Pokemart:
 	.2byte ITEM_JOLLY_MINT
 	.2byte ITEM_NAIVE_MINT
 	.2byte ITEM_SERIOUS_MINT
+	.2byte ITEM_ABILITY_CAPSULE
+	.2byte ITEM_ABILITY_PATCH
 	.2byte ITEM_NONE
 	release
 	end

@@ -28,21 +28,27 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_SaleWoman::
 
 	.align 2
 LilycoveCity_DepartmentStoreRooftop_PokemartDecor_ClearOutSale:
-	.2byte DECOR_MUD_BALL
+	.2byte DECOR_RED_BRICK
+	.2byte DECOR_YELLOW_BRICK
+	.2byte DECOR_BLUE_BRICK
+	.2byte DECOR_RED_BALLOON
+	.2byte DECOR_BLUE_BALLOON
+	.2byte DECOR_YELLOW_BALLOON
+	.2byte DECOR_RED_TENT
+	.2byte DECOR_BLUE_TENT
+	.2byte DECOR_SOLID_BOARD
+	.2byte DECOR_SLIDE
 	.2byte DECOR_FENCE_LENGTH
 	.2byte DECOR_FENCE_WIDTH
 	.2byte DECOR_TIRE
-	.2byte DECOR_BREAKABLE_DOOR
-	.2byte DECOR_SOLID_BOARD
-	.2byte DECOR_SAND_ORNAMENT
 	.2byte DECOR_STAND
-	.2byte DECOR_SLIDE
+	.2byte DECOR_MUD_BALL
+	.2byte DECOR_BREAKABLE_DOOR
+	.2byte DECOR_SAND_ORNAMENT
 	.2byte DECOR_TV
 	.2byte DECOR_ROUND_TV
 	.2byte DECOR_CUTE_TV
-	.2byte DECOR_WAILMER_DOLL
-	.2byte DECOR_RHYDON_DOLL
-	.2byte 0
+	.2byte DECOR_NONE
 	release
 	end
 

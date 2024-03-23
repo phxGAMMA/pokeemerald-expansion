@@ -50,8 +50,8 @@ static const u8 LandmarkName_DesertRuins[] = _("DESERT RUINS");
 static const u8 LandmarkName_ScorchedSlab[] = _("SCORCHED SLAB");
 static const u8 LandmarkName_AncientTomb[] = _("ANCIENT TOMB");
 static const u8 LandmarkName_SealedChamber[] = _("SEALED CHAMBER");
-static const u8 LandmarkName_FossilManiacsHouse[] = _("FOSSIL MANIAC'S HOUSE");
-static const u8 LandmarkName_HuntersHouse[] = _("HUNTER'S HOUSE");
+static const u8 LandmarkName_SmashersHouse[] = _("SMASHER'S HOUSE");
+static const u8 LandmarkName_SurfersHouse[] = _("SURFER'S HOUSE");
 static const u8 LandmarkName_MagmaHideout[] = _("MAGMA HIDEOUT");
 static const u8 LandmarkName_MirageTower[] = _("MIRAGE TOWER");
 static const u8 LandmarkName_AlteringCave[] = _("ALTERING CAVE");
@@ -92,8 +92,8 @@ static const struct Landmark Landmark_DesertRuins = {LandmarkName_DesertRuins, F
 static const struct Landmark Landmark_ScorchedSlab = {LandmarkName_ScorchedSlab, FLAG_LANDMARK_SCORCHED_SLAB};
 static const struct Landmark Landmark_AncientTomb = {LandmarkName_AncientTomb, FLAG_LANDMARK_ANCIENT_TOMB};
 static const struct Landmark Landmark_SealedChamber = {LandmarkName_SealedChamber, FLAG_LANDMARK_SEALED_CHAMBER};
-static const struct Landmark Landmark_FossilManiacsHouse = {LandmarkName_FossilManiacsHouse, FLAG_LANDMARK_FOSSIL_MANIACS_HOUSE};
-static const struct Landmark Landmark_HuntersHouse = {LandmarkName_HuntersHouse, FLAG_LANDMARK_HUNTERS_HOUSE};
+static const struct Landmark Landmark_SmashersHouse = {LandmarkName_SmashersHouse, FLAG_LANDMARK_SMASHERS_HOUSE};
+static const struct Landmark Landmark_SurfersHouse = {LandmarkName_SurfersHouse, FLAG_LANDMARK_SURFERS_HOUSE};
 static const struct Landmark Landmark_SkyPillar = {LandmarkName_SkyPillar, FLAG_LANDMARK_SKY_PILLAR};
 static const struct Landmark Landmark_MirageTower = {LandmarkName_MirageTower, FLAG_LANDMARK_MIRAGE_TOWER};
 static const struct Landmark Landmark_AlteringCave = {LandmarkName_AlteringCave, FLAG_LANDMARK_ALTERING_CAVE};
@@ -221,7 +221,7 @@ static const struct Landmark *const Landmarks_Route113_1[]  =
 static const struct Landmark *const Landmarks_Route114_1[]  =
 {
     &Landmark_DesertUnderpass,
-    &Landmark_FossilManiacsHouse,
+    &Landmark_SmashersHouse,
     NULL,
 };
 
@@ -294,7 +294,7 @@ static const struct Landmark *const Landmarks_Route123_0[]  =
 
 static const struct Landmark *const Landmarks_Route124_7[]  =
 {
-    &Landmark_HuntersHouse,
+    &Landmark_SurfersHouse,
     NULL,
 };
 

@@ -2341,7 +2341,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_BERRY_POWDER_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 12;
+        task->tNumItems = 10;
         task->tLeft = 15;
         task->tTop = 1;
         task->tWidth = 14;
@@ -2397,6 +2397,46 @@ void ShowScrollableMultichoice(void)
         task->tTop = 1;
         task->tWidth = 14;
         task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GAME_CORNER_VENDOR_1:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 16;
+        task->tHeight = 16;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GAME_CORNER_VENDOR_2:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 16;
+        task->tHeight = 16;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GAME_CORNER_VENDOR_3:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 16;
+        task->tHeight = 16;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_GAME_CORNER_VENDOR_4:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 1;
+        task->tTop = 1;
+        task->tWidth = 16;
+        task->tHeight = 16;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
@@ -2487,17 +2527,15 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
     {
-        gText_EnergyPowder50,
-        gText_EnergyRoot80,
-        gText_HealPowder50,
-        gText_RevivalHerb300,
-        gText_Protein1000,
-        gText_Iron1000,
-        gText_Carbos1000,
-        gText_Calcium1000,
-        gText_Zinc1000,
-        gText_HPUp1000,
-        gText_PPUp3000,
+        gText_BerryJuice20,
+        gText_HPUp100,
+        gText_Protein100,
+        gText_Iron100,
+        gText_Calcium100,
+        gText_Zinc100,
+        gText_Carbos100,
+        gText_PPUp300,
+        gText_PPMax3000,
         gText_Exit
     },
     [SCROLL_MULTI_BF_RECEPTIONIST] =
@@ -2577,6 +2615,78 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_TrainerTipsEvolution,
         gText_TrainerTipsPockets,
         gText_TrainerTipsDecoration,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAME_CORNER_VENDOR_1] =
+    {
+        gText_PorygonAndPrice,
+        gText_DratiniAndPrice,
+        gText_LarvitarAndPrice,
+        gText_BagonAndPrice,
+        gText_BeldumAndPrice,
+        gText_GibleAndPrice,
+        gText_DeinoAndPrice,
+        gText_GoomyAndPrice,
+        gText_JangmoOAndPrice,
+        gText_DreepyAndPrice,
+        gText_FrigibaxAndPrice,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAME_CORNER_VENDOR_2] =
+    {
+        gText_GimmighoulCoinAndPrice,
+        gText_LeekAndPrice,
+        gText_LightBallAndPrice,
+        gText_LuckyPunchAndPrice,
+        gText_MetalPowderAndPrice,
+        gText_QuickPowderAndPrice,
+        gText_ThickClubAndPrice,
+        gText_DragonScaleAndPrice,
+        gText_PrismScaleAndPrice,
+        gText_DeepSeaScaleAndPrice,
+        gText_DeepSeaToothAndPrice,
+        gText_LeadersCrestAndPrice,
+        gText_AmuletCoinAndPrice,
+        gText_ExpShareAndPrice,
+        gText_LuckyEggAndPrice,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAME_CORNER_VENDOR_3] =
+    {
+        gText_SweetAppleAndPrice,
+        gText_SyrupyAppleAndPrice,
+        gText_TartAppleAndPrice,
+        gText_CrackedPotAndPrice,
+        gText_UnremarkableTeacupAndPrice,
+        gText_AuspiciousArmorAndPrice,
+        gText_MaliciousArmorAndPrice,
+        gText_GalaricaCuffAndPrice,
+        gText_GalaricaWreathAndPrice,
+        gText_BlackAuguriteAndPrice,
+        gText_LinkingCordAndPrice,
+        gText_MetalAlloyAndPrice,
+        gText_PeatBlockAndPrice,
+        gText_ChippedPotAndPrice,
+        gText_MasterpieceTeacupAndPrice,
+        gText_Exit
+    },
+    [SCROLL_MULTI_GAME_CORNER_VENDOR_4] =
+    {
+        gText_BerrySweetAndPrice,
+        gText_CloverSweetAndPrice,
+        gText_FlowerSweetAndPrice,
+        gText_LoveSweetAndPrice,
+        gText_RibbonSweetAndPrice,
+        gText_StarSweetAndPrice,
+        gText_StrawberrySweetAndPrice,
+        gText_UpgradeAndPrice,
+        gText_DubiousDiscAndPrice,
+        gText_ElectirizerAndPrice,
+        gText_MagmarizerAndPrice,
+        gText_ProtectorAndPrice,
+        gText_ReaperClothAndPrice,
+        gText_SachetAndPrice,
+        gText_WhippedDreamAndPrice,
         gText_Exit
     }
 };

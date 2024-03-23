@@ -389,7 +389,7 @@
       "x": 29,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE114_FOSSIL_MANIACS_HOUSE",
+      "dest_map": "MAP_ROUTE114_SMASHING_TREASURE_HUNTERS_HOUSE",
       "dest_warp_id": "0"
     },
     {
@@ -430,7 +430,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route114_EventScript_FossilManiacsHouseSign"
+      "script": "Route114_EventScript_SmashersHouseSign"
     },
     {
       "type": "secret_base",

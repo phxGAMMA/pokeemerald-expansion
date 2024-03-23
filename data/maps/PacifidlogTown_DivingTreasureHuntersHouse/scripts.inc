@@ -1,0 +1,413 @@
+PacifidlogTown_DivingTreasureHuntersHouse_MapScripts::
+	.byte 0
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_MirageIslandWatcher::
+	lock
+	faceplayer
+	specialvar VAR_RESULT, IsMirageIslandPresent
+	goto_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_MirageIslandPresent
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_CantSeeMirageIslandToday, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_MirageIslandPresent::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_CanSeeMirageIslandToday, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TreasureHunter::
+	lock
+	faceplayer
+	goto_if_set FLAG_MET_DIVING_TREASURE_HUNTER, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_SkipGreeting
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_Greeting, MSGBOX_DEFAULT
+	setflag FLAG_MET_DIVING_TREASURE_HUNTER
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_CheckPlayerHasShard
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_SkipGreeting::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_HaveYouSeenAnyShards, MSGBOX_DEFAULT
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_CheckPlayerHasShard
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_CheckPlayerHasShard::
+	call PacifidlogTown_DivingTreasureHuntersHouse_EventScript_GetPlayersShards
+	goto_if_eq VAR_TEMP_1, 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_NoShards
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasShard
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_GetPlayersShards::
+	setvar VAR_TEMP_1, 0
+	checkitem ITEM_RED_SHARD
+	call_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasRedShard
+	checkitem ITEM_YELLOW_SHARD
+	call_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasYellowShard
+	checkitem ITEM_BLUE_SHARD
+	call_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasBlueShard
+	checkitem ITEM_GREEN_SHARD
+	call_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasGreenShard
+	return
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasRedShard::
+	addvar VAR_TEMP_1, 1
+	return
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasYellowShard::
+	addvar VAR_TEMP_1, 2
+	return
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasBlueShard::
+	addvar VAR_TEMP_1, 4
+	return
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasGreenShard::
+	addvar VAR_TEMP_1, 8
+	return
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_HasShard::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_ThatsAShardIllTradeYou, MSGBOX_DEFAULT
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions::
+	message PacifidlogTown_DivingTreasureHuntersHouse_Text_WhatDoYouWantToTrade
+	waitmessage
+	switch VAR_TEMP_1
+	case 1,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsR
+	case 2,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsY
+	case 3,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRY
+	case 4,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsB
+	case 5,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRB
+	case 6,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYB
+	case 7,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYB
+	case 8,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsG
+	case 9,  PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRG
+	case 10, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYG
+	case 11, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYG
+	case 12, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsBG
+	case 13, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRBG
+	case 14, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYBG
+	case 15, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYBG
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsR::
+	multichoice 0, 0, MULTI_SHARDS_R, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsY::
+	multichoice 0, 0, MULTI_SHARDS_Y, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRY::
+	multichoice 0, 0, MULTI_SHARDS_RY, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsB::
+	multichoice 0, 0, MULTI_SHARDS_B, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRB::
+	multichoice 0, 0, MULTI_SHARDS_RB, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYB::
+	multichoice 0, 0, MULTI_SHARDS_YB, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYB::
+	multichoice 0, 0, MULTI_SHARDS_RYB, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsG::
+	multichoice 0, 0, MULTI_SHARDS_G, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRG::
+	multichoice 0, 0, MULTI_SHARDS_RG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYG::
+	multichoice 0, 0, MULTI_SHARDS_YG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYG::
+	multichoice 0, 0, MULTI_SHARDS_RYG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsBG::
+	multichoice 0, 0, MULTI_SHARDS_BG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRBG::
+	multichoice 0, 0, MULTI_SHARDS_RBG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsYBG::
+	multichoice 0, 0, MULTI_SHARDS_YBG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShardOptionsRYBG::
+	multichoice 0, 0, MULTI_SHARDS_RYBG, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard
+	case 4, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeRedShard::
+	setvar VAR_0x8008, ITEM_RED_SHARD
+	multichoice 0, 0, MULTI_SHARDS_RED, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeFireStone
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeSunStone
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeHeartScale
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeFireStone::
+	setvar VAR_0x8009, ITEM_FIRE_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeSunStone::
+	setvar VAR_0x8009, ITEM_SUN_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeHeartScale::
+	setvar VAR_0x8009, ITEM_HEART_SCALE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeYellowShard::
+	setvar VAR_0x8008, ITEM_YELLOW_SHARD
+	multichoice 0, 0, MULTI_SHARDS_YELLOW, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeThunderStone
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeShinyStone
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeOvalStone
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeThunderStone::
+	setvar VAR_0x8009, ITEM_THUNDER_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeShinyStone::
+	setvar VAR_0x8009, ITEM_SHINY_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeOvalStone::
+	setvar VAR_0x8009, ITEM_OVAL_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeBlueShard::
+	setvar VAR_0x8008, ITEM_BLUE_SHARD
+	multichoice 0, 0, MULTI_SHARDS_BLUE, FALSE
+	switch VAR_RESULT
+	case 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeWaterStone
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeDuskStone
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeIceStone
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeWaterStone::
+	setvar VAR_0x8009, ITEM_WATER_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeDuskStone::
+	setvar VAR_0x8009, ITEM_DUSK_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeIceStone::
+	setvar VAR_0x8009, ITEM_ICE_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeGreenShard::
+	setvar VAR_0x8008, ITEM_GREEN_SHARD
+	multichoice 0, 0, MULTI_SHARDS_GREEN, FALSE
+	switch VAR_RESULT
+	case 1, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeLeafStone
+	case 2, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeMoonStone
+	case 3, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeDawnStone
+	case 4, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeLeafStone::
+	setvar VAR_0x8009, ITEM_LEAF_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeMoonStone::
+	setvar VAR_0x8009, ITEM_MOON_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeDawnStone::
+	setvar VAR_0x8009, ITEM_DAWN_STONE
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TryTradeShard::
+	bufferitemname STR_VAR_1, VAR_0x8008
+	bufferitemname STR_VAR_2, VAR_0x8009
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	checkitemspace VAR_0x8009
+	goto_if_eq VAR_RESULT, TRUE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeShard
+	checkitem VAR_0x8008, 2
+	goto_if_eq VAR_RESULT, FALSE, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeShard
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_BagFull
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_TradeShard::
+	removeitem VAR_0x8008
+	giveitem VAR_0x8009
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_ItsADeal, MSGBOX_DEFAULT
+	call PacifidlogTown_DivingTreasureHuntersHouse_EventScript_GetPlayersShards
+	goto_if_eq VAR_TEMP_1, 0, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_EndTrade
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_TradeSomethingElse, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, PacifidlogTown_DivingTreasureHuntersHouse_EventScript_ShowTradeOptions
+	goto PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_BagFull::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_BagFull, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_DeclineTrade::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_NoShards::
+	msgbox PacifidlogTown_DivingTreasureHuntersHouse_Text_YouHaventGotAnyShards, MSGBOX_DEFAULT
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_EventScript_EndTrade::
+	release
+	end
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_Greeting:
+	.string "I'm the DIVING TREASURE HUNTER!\p"
+	.string "I'm the awesome dude who makes\n"
+	.string "deep-sea dives to gather treasures\l"
+	.string "resting at the bottom of the sea.$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_HaveYouSeenAnyShards:
+	.string "Tell me, have you seen any SHARDS of\n"
+	.string "tools made in ancient times?$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_YouHaventGotAnyShards:
+	.string "You haven't got any treasures\n"
+	.string "for me…\p"
+	.string "If you see any SHARDS, like the RED\n"
+	.string "SHARD, you've got to trade it with me!$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_ThatsAShardIllTradeYou:
+	.string "Oh, hey! That…\n"
+	.string "That's a SHARD! I'm looking for those!\p"
+	.string "Oh, man, you've got to trade that\n"
+	.string "with me! I'll give you something good!$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_WhatDoYouWantToTrade:
+	.string "What do you want to trade?$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_YoullTradeShardForStone:
+	.string "You'll trade your {STR_VAR_1} for\n"
+	.string "my {STR_VAR_2}, then?$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_ItsADeal:
+	.string "It's a done deal!\n"
+	.string "Use that wisely!$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_TradeSomethingElse:
+	.string "Do you want to trade something else?$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_BagFull:
+	.string "Whoops, your BAG's full.\n"
+	.string "Get rid of some items, friend!$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_ComeBackIfYouChangeMind:
+	.string "No? That's a bummer.\n"
+	.string "Well, if you change your mind, come back.$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_CantSeeMirageIslandToday:
+	.string "I can't see MIRAGE ISLAND today…$"
+
+PacifidlogTown_DivingTreasureHuntersHouse_Text_CanSeeMirageIslandToday:
+	.string "Oh! Oh my!\n"
+	.string "I can see MIRAGE ISLAND today!$"
+

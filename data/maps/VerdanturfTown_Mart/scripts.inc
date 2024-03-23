@@ -10,13 +10,36 @@ VerdanturfTown_Mart_EventScript_Cashier::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart VerdanturfTown_Mart_Pokemart
+	goto_if_unset FLAG_MET_DEVON_EMPLOYEE, VerdanturfTown_Mart_EventScript_CashierBasic
+	goto_if_set FLAG_MET_DEVON_EMPLOYEE, VerdanturfTown_Mart_EventScript_CashierExpanded
+	end
+
+VerdanturfTown_Mart_EventScript_CashierBasic::
+	pokemart VerdanturfTown_Mart_Pokemart_CashierBasic
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-VerdanturfTown_Mart_Pokemart:
+VerdanturfTown_Mart_Pokemart_CashierBasic:
+	.2byte ITEM_NET_BALL
+	.2byte ITEM_NEST_BALL
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_TIMER_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_LUXURY_BALL
+	.2byte ITEM_NONE
+	release
+	end
+
+VerdanturfTown_Mart_EventScript_CashierExpanded::
+	pokemart VerdanturfTown_Mart_Pokemart_CashierExpanded
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+VerdanturfTown_Mart_Pokemart_CashierExpanded:
 	.2byte ITEM_HEAL_BALL
 	.2byte ITEM_NET_BALL
 	.2byte ITEM_NEST_BALL

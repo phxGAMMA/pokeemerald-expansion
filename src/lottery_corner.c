@@ -13,10 +13,10 @@ static EWRAM_DATA u16 sOtIdDigit = 0;
 
 static const u16 sLotteryPrizes[] =
 {
-    ITEM_PP_UP,
-    ITEM_EXP_SHARE,
-    ITEM_MAX_REVIVE,
-    ITEM_MASTER_BALL,
+    ITEM_POKE_DOLL,
+    ITEM_FLUFFY_TAIL,
+    ITEM_POKE_TOY,
+    ITEM_CHERISH_BALL,
 };
 
 static u8 GetMatchingDigits(u16, u16);

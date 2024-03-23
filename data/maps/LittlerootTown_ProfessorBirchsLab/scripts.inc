@@ -344,7 +344,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveCyndaquil::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToPC
 	hidemonpic
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SendCyndaquilToParty::
@@ -385,7 +385,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveTotodile::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToPC
 	hidemonpic
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty::
@@ -426,7 +426,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_GiveChikorita::
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToPC
 	hidemonpic
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty::

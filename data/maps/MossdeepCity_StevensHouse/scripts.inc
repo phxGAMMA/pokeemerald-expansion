@@ -89,7 +89,7 @@ MossdeepCity_StevensHouse_EventScript_GiveBeldum::
 	givemon SPECIES_BELDUM, 5
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, MossdeepCity_StevensHouse_EventScript_SendBeldumParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, MossdeepCity_StevensHouse_EventScript_SendBeldumPC
-	goto Common_EventScript_NoMoreRoomForPokemon
+	goto Common_EventScript_ShowNoMoreRoomForPokemon
 	end
 
 MossdeepCity_StevensHouse_EventScript_SendBeldumParty::

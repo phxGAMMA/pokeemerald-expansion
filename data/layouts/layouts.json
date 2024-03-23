@@ -972,14 +972,14 @@
       "blockdata_filepath": "data/layouts/RustboroCity_House1/map.bin"
     },
     {
-      "id": "LAYOUT_RUSTBORO_CITY_CUTTERS_HOUSE",
-      "name": "RustboroCity_CuttersHouse_Layout",
+      "id": "LAYOUT_RUSTBORO_CITY_CUTTING_TREASURE_HUNTERS_HOUSE",
+      "name": "RustboroCity_CuttingTreasureHuntersHouse_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/RustboroCity_CuttersHouse/border.bin",
-      "blockdata_filepath": "data/layouts/RustboroCity_CuttersHouse/map.bin"
+      "border_filepath": "data/layouts/RustboroCity_CuttingTreasureHuntersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/RustboroCity_CuttingTreasureHuntersHouse/map.bin"
     },
     {
       "id": "LAYOUT_FORTREE_CITY_HOUSE1",
@@ -1182,24 +1182,24 @@
       "blockdata_filepath": "data/layouts/CableCarStation/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE114_FOSSIL_MANIACS_HOUSE",
-      "name": "Route114_FossilManiacsHouse_Layout",
+      "id": "LAYOUT_ROUTE114_SMASHING_TREASURE_HUNTERS_HOUSE",
+      "name": "Route114_SmashingTreasureHuntersHouse_Layout",
       "width": 10,
       "height": 8,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route114_FossilManiacsHouse/border.bin",
-      "blockdata_filepath": "data/layouts/Route114_FossilManiacsHouse/map.bin"
+      "border_filepath": "data/layouts/Route114_SmashingTreasureHuntersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route114_SmashingTreasureHuntersHouse/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE114_FOSSIL_MANIACS_TUNNEL",
-      "name": "Route114_FossilManiacsTunnel_Layout",
+      "id": "LAYOUT_ROUTE114_SMASHING_TREASURE_HUNTERS_TUNNEL",
+      "name": "Route114_SmashingTreasureHuntersTunnel_Layout",
       "width": 13,
       "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Fallarbor",
-      "border_filepath": "data/layouts/Route114_FossilManiacsTunnel/border.bin",
-      "blockdata_filepath": "data/layouts/Route114_FossilManiacsTunnel/map.bin"
+      "border_filepath": "data/layouts/Route114_SmashingTreasureHuntersTunnel/border.bin",
+      "blockdata_filepath": "data/layouts/Route114_SmashingTreasureHuntersTunnel/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE114_LANETTES_HOUSE",
@@ -3002,14 +3002,14 @@
       "blockdata_filepath": "data/layouts/LilycoveCity_CoveLilyMotel_2F/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE",
-      "name": "Route124_DivingTreasureHuntersHouse_Layout",
+      "id": "LAYOUT_ROUTE124_SURFING_TREASURE_HUNTERS_HOUSE",
+      "name": "Route124_SurfingTreasureHuntersHouse_Layout",
       "width": 10,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route124_DivingTreasureHuntersHouse/border.bin",
-      "blockdata_filepath": "data/layouts/Route124_DivingTreasureHuntersHouse/map.bin"
+      "border_filepath": "data/layouts/Route124_SurfingTreasureHuntersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route124_SurfingTreasureHuntersHouse/map.bin"
     },
     {
       "id": "LAYOUT_MT_PYRE_EXTERIOR",
@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_PACIFIDLOG_TOWN_DIVING_TREASURE_HUNTERS_HOUSE",
+      "name": "PacifidlogTown_DivingTreasureHuntersHouse_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/PacifidlogTown_DivingTreasureHuntersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PacifidlogTown_DivingTreasureHuntersHouse/map.bin"
     }
   ]
 }
