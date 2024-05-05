@@ -1659,11 +1659,12 @@ static const u16 sNoStarSpecies[] =
 
 static u16 PickRaidSpecies(void)
 {
-    u16 rnd = Random() % 100 + 1;
-    u8 raidStarLevel = 0;
+    u16 rnd = (Random() % 100) + 1;
+    u8 raidStarLevel = NO_STAR;
     u16 species;
+    u32 flag;
 /*
-    if (FlagGet(FLAG_SYS_POST_GAME_CLEAR))
+    if (FlagGet(FLAG_SYS_POSTGAME_CLEAR))
     {
         if (rnd > 80)
             raidStarLevel = SEVEN_STAR;
@@ -1713,57 +1714,56 @@ static u16 PickRaidSpecies(void)
     {
         if (rnd > 80)
             raidStarLevel = ONE_STAR;
+        else // (rnd > 0)
+            raidStarLevel = NO_STAR;
     }
 
     switch (raidStarLevel)
     {
     case SEVEN_STAR:
-        if (raidStarLevel == SEVEN_STAR && !FlagGet(FLAG_DAILY_SEVEN_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_SEVEN_STAR_RAID))
             raidStarLevel--;
         species = sSevenStarSpecies[Random() % NELEMS(sSevenStarSpecies)];
-        FlagSet(FLAG_DAILY_SEVEN_STAR_RAID);
         break;
     case SIX_STAR:
-        if (raidStarLevel == SIX_STAR && !FlagGet(FLAG_DAILY_SIX_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_SIX_STAR_RAID))
             raidStarLevel--;
         species = sSixStarSpecies[Random() % NELEMS(sSixStarSpecies)];
-        FlagSet(FLAG_DAILY_SIX_STAR_RAID);
         break;
     case FIVE_STAR:
-        if (raidStarLevel == FIVE_STAR && !FlagGet(FLAG_DAILY_FIVE_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_FIVE_STAR_RAID))
             raidStarLevel--;
         species = sFiveStarSpecies[Random() % NELEMS(sFiveStarSpecies)];
-        FlagSet(FLAG_DAILY_FIVE_STAR_RAID);
         break;
     case FOUR_STAR:
-        if (raidStarLevel == FOUR_STAR && !FlagGet(FLAG_DAILY_FOUR_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_FOUR_STAR_RAID))
             raidStarLevel--;
         species = sFourStarSpecies[Random() % NELEMS(sFourStarSpecies)];
-        FlagSet(FLAG_DAILY_FOUR_STAR_RAID);
         break;
     case THREE_STAR:
-        if (raidStarLevel == THREE_STAR && !FlagGet(FLAG_DAILY_THREE_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_THREE_STAR_RAID))
             raidStarLevel--;
         species = sThreeStarSpecies[Random() % NELEMS(sThreeStarSpecies)];
-        FlagSet(FLAG_DAILY_THREE_STAR_RAID);
         break;
     case TWO_STAR:
-        if (raidStarLevel == TWO_STAR && !FlagGet(FLAG_DAILY_TWO_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_TWO_STAR_RAID))
             raidStarLevel--;
         species = sTwoStarSpecies[Random() % NELEMS(sTwoStarSpecies)];
-        FlagSet(FLAG_DAILY_TWO_STAR_RAID);
         break;
     case ONE_STAR:
-        if (raidStarLevel == ONE_STAR && !FlagGet(FLAG_DAILY_ONE_STAR_RAID))
+        if (FlagGet(FLAG_DAILY_ONE_STAR_RAID))
             raidStarLevel--;
         species = sOneStarSpecies[Random() % NELEMS(sOneStarSpecies)];
-        FlagSet(FLAG_DAILY_ONE_STAR_RAID);
         break;
     case NO_STAR:
         species = sNoStarSpecies[Random() % NELEMS(sNoStarSpecies)];
         break;
     }
 
+    flag = (DAILY_FLAGS_START + 0x2) + raidStarLevel;
+    if (flag > (DAILY_FLAGS_START + 0x2)
+     && flag < (DAILY_FLAGS_START + 0xA))
+        FlagSet(flag);
     return species;
 }
 
@@ -1774,7 +1774,7 @@ void RaidDenWildEncounter(void)
     FlagSet(B_SMART_WILD_AI_FLAG);
     FlagSet(B_FLAG_DYNAMAX_BATTLE);
     gIsRaidEncounter = TRUE;
-    CreateWildMon(species, Random() % 100 + 1);
+    CreateWildMon(species, GetMonScaledLevel(FALSE));
     BattleSetup_StartWildBattle();
     gIsRaidEncounter = FALSE;
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
