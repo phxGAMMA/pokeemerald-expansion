@@ -4559,122 +4559,6 @@ static const struct TrainerMon sParty_WallyVR1[] = {
 
 static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
     {
-    .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
-    .species = SPECIES_TORCHIC,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_BLAZE,
-    .lvl = 5,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute110Mudkip[] = {
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_ICICLE_SPEAR, MOVE_TACKLE, MOVE_SUPERSONIC},
-    .species = SPECIES_SHELLDER,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_SHELL_ARMOR,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_HYPNOSIS},
-    .species = SPECIES_EXEGGCUTE,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_CHLOROPHYLL,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_PECK, MOVE_BULK_UP},
-    .species = SPECIES_COMBUSKEN,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_BLAZE,
-    .lvl = 19,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute119Mudkip[] = {
-    {
-    .moves = {MOVE_CLAMP, MOVE_ICICLE_SPEAR, MOVE_SWIFT, MOVE_SUPERSONIC},
-    .species = SPECIES_SHELLDER,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_SHELL_ARMOR,
-    .lvl = 32,
-    },
-    {
-    .moves = {MOVE_SEED_BOMB, MOVE_CONFUSION, MOVE_EGG_BOMB, MOVE_SLEEP_POWDER},
-    .species = SPECIES_EXEGGUTOR,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_HARVEST,
-    .lvl = 33,
-    },
-    {
-    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_QUICK_ATTACK, MOVE_BULK_UP},
-    .species = SPECIES_COMBUSKEN,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_BLAZE,
-    .lvl = 34,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute103Treecko[] = {
-    {
-    .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
-    .species = SPECIES_MUDKIP,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_TORRENT,
-    .lvl = 5,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
-    {
-    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_HYPNOSIS},
-    .species = SPECIES_EXEGGCUTE,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_CHLOROPHYLL,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_REVERSAL, MOVE_ROAR},
-    .species = SPECIES_GROWLITHE,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_FLASH_FIRE,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_MUD_SHOT, MOVE_TACKLE, MOVE_BIDE},
-    .species = SPECIES_MARSHTOMP,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_TORRENT,
-    .lvl = 19,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
-    {
-    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_SLEEP_POWDER},
-    .species = SPECIES_EXEGGCUTE,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_CHLOROPHYLL,
-    .lvl = 32,
-    },
-    {
-    .moves = {MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_REVERSAL, MOVE_AGILITY},
-    .species = SPECIES_ARCANINE,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_INTIMIDATE,
-    .lvl = 33,
-    },
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_TOMB, MOVE_BIDE},
-    .species = SPECIES_MARSHTOMP,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_TORRENT,
-    .lvl = 34,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
-    {
     .moves = {MOVE_POUND, MOVE_LEER, MOVE_NONE, MOVE_NONE},
     .species = SPECIES_TREECKO,
     .heldItem = ITEM_NONE,
@@ -4683,7 +4567,7 @@ static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute110Torchic[] = {
+static const struct TrainerMon sParty_BrendanRoute110Mudkip[] = {
     {
     .moves = {MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_REVERSAL, MOVE_ROAR},
     .species = SPECIES_GROWLITHE,
@@ -4707,7 +4591,7 @@ static const struct TrainerMon sParty_BrendanRoute110Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
+static const struct TrainerMon sParty_BrendanRoute119Mudkip[] = {
     {
     .moves = {MOVE_FIRE_FANG, MOVE_BITE, MOVE_REVERSAL, MOVE_AGILITY},
     .species = SPECIES_GROWLITHE,
@@ -4727,6 +4611,122 @@ static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
     .species = SPECIES_GROVYLE,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_OVERGROW,
+    .lvl = 34,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute103Treecko[] = {
+    {
+    .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
+    .species = SPECIES_TORCHIC,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_BLAZE,
+    .lvl = 5,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute110Treecko[] = {
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_ICICLE_SPEAR, MOVE_TACKLE, MOVE_SUPERSONIC},
+    .species = SPECIES_SHELLDER,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_SHELL_ARMOR,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_HYPNOSIS},
+    .species = SPECIES_EXEGGCUTE,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_CHLOROPHYLL,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_PECK, MOVE_BULK_UP},
+    .species = SPECIES_COMBUSKEN,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_BLAZE,
+    .lvl = 19,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
+    {
+    .moves = {MOVE_CLAMP, MOVE_ICICLE_SPEAR, MOVE_SWIFT, MOVE_SUPERSONIC},
+    .species = SPECIES_SHELLDER,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_SHELL_ARMOR,
+    .lvl = 32,
+    },
+    {
+    .moves = {MOVE_SEED_BOMB, MOVE_CONFUSION, MOVE_EGG_BOMB, MOVE_SLEEP_POWDER},
+    .species = SPECIES_EXEGGUTOR,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_HARVEST,
+    .lvl = 33,
+    },
+    {
+    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_QUICK_ATTACK, MOVE_BULK_UP},
+    .species = SPECIES_COMBUSKEN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_BLAZE,
+    .lvl = 34,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
+    {
+    .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
+    .species = SPECIES_MUDKIP,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_TORRENT,
+    .lvl = 5,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute110Torchic[] = {
+    {
+    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_HYPNOSIS},
+    .species = SPECIES_EXEGGCUTE,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_CHLOROPHYLL,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_FLAME_WHEEL, MOVE_BITE, MOVE_REVERSAL, MOVE_ROAR},
+    .species = SPECIES_GROWLITHE,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_FLASH_FIRE,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_MUD_SHOT, MOVE_TACKLE, MOVE_BIDE},
+    .species = SPECIES_MARSHTOMP,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_TORRENT,
+    .lvl = 19,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
+    {
+    .moves = {MOVE_BULLET_SEED, MOVE_CONFUSION, MOVE_BARRAGE, MOVE_SLEEP_POWDER},
+    .species = SPECIES_EXEGGCUTE,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_CHLOROPHYLL,
+    .lvl = 32,
+    },
+    {
+    .moves = {MOVE_FIRE_FANG, MOVE_THUNDER_FANG, MOVE_REVERSAL, MOVE_AGILITY},
+    .species = SPECIES_ARCANINE,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_INTIMIDATE,
+    .lvl = 33,
+    },
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_TOMB, MOVE_BIDE},
+    .species = SPECIES_MARSHTOMP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_TORRENT,
     .lvl = 34,
     }
 };
@@ -5393,23 +5393,6 @@ static const struct TrainerMon sParty_Macey[] = {
 
 static const struct TrainerMon sParty_BrendanRustboroTreecko[] = {
     {
-    .moves = {MOVE_EMBER, MOVE_BITE, MOVE_ROAR, MOVE_NONE},
-    .species = SPECIES_GROWLITHE,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_FLASH_FIRE,
-    .lvl = 13,
-    },
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_MUD_SLAP, MOVE_GROWL, MOVE_NONE},
-    .species = SPECIES_MUDKIP,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_TORRENT,
-    .lvl = 14,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
-    {
     .moves = {MOVE_LEECH_SEED, MOVE_BARRAGE, MOVE_HYPNOSIS, MOVE_NONE},
     .species = SPECIES_EXEGGCUTE,
     .heldItem = ITEM_NONE,
@@ -5421,6 +5404,23 @@ static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
     .species = SPECIES_TORCHIC,
     .heldItem = ITEM_ORAN_BERRY,
     .ability = ABILITY_BLAZE,
+    .lvl = 14,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanRustboroMudkip[] = {
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_TACKLE, MOVE_SUPERSONIC, MOVE_NONE},
+    .species = SPECIES_SHELLDER,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_SHELL_ARMOR,
+    .lvl = 13,
+    },
+    {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_QUICK_ATTACK, MOVE_LEER, MOVE_NONE},
+    .species = SPECIES_TREECKO,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_OVERGROW,
     .lvl = 14,
     }
 };
@@ -5486,17 +5486,17 @@ static const struct TrainerMon sParty_Jonathan[] = {
 
 static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
     {
-    .moves = {MOVE_WATER_GUN, MOVE_TACKLE, MOVE_SUPERSONIC, MOVE_NONE},
-    .species = SPECIES_SHELLDER,
+    .moves = {MOVE_EMBER, MOVE_BITE, MOVE_ROAR, MOVE_NONE},
+    .species = SPECIES_GROWLITHE,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_SHELL_ARMOR,
+    .ability = ABILITY_FLASH_FIRE,
     .lvl = 13,
     },
     {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_QUICK_ATTACK, MOVE_LEER, MOVE_NONE},
-    .species = SPECIES_TREECKO,
+    .moves = {MOVE_WATER_GUN, MOVE_MUD_SLAP, MOVE_GROWL, MOVE_NONE},
+    .species = SPECIES_MUDKIP,
     .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_OVERGROW,
+    .ability = ABILITY_TORRENT,
     .lvl = 14,
     }
 };
@@ -6086,6 +6086,37 @@ static const struct TrainerMon sParty_BrendanLilycoveMudkip[] = {
     .lvl = 37,
     },
     {
+    .moves = {MOVE_FLAMETHROWER, MOVE_THUNDER_FANG, MOVE_RETALIATE, MOVE_AGILITY},
+    .species = SPECIES_ARCANINE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_INTIMIDATE,
+    .lvl = 38,
+    },
+    {
+    .moves = {MOVE_RAZOR_SHELL, MOVE_ICICLE_SPEAR, MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES},
+    .species = SPECIES_CLOYSTER,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_SKILL_LINK,
+    .lvl = 38,
+    },
+    {
+    .moves = {MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_DUAL_CHOP, MOVE_AGILITY},
+    .species = SPECIES_SCEPTILE,
+    .heldItem = ITEM_AGUAV_BERRY,
+    .ability = ABILITY_OVERGROW,
+    .lvl = 39,
+    }
+};
+
+static const struct TrainerMon sParty_BrendanLilycoveTreecko[] = {
+    {
+    .moves = {MOVE_PLUCK, MOVE_FURY_ATTACK, MOVE_PURSUIT, MOVE_AGILITY},
+    .species = SPECIES_FEAROW,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_SNIPER,
+    .lvl = 37,
+    },
+    {
     .moves = {MOVE_RAZOR_SHELL, MOVE_ICICLE_SPEAR, MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES},
     .species = SPECIES_CLOYSTER,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -6108,7 +6139,7 @@ static const struct TrainerMon sParty_BrendanLilycoveMudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanLilycoveTreecko[] = {
+static const struct TrainerMon sParty_BrendanLilycoveTorchic[] = {
     {
     .moves = {MOVE_PLUCK, MOVE_FURY_ATTACK, MOVE_PURSUIT, MOVE_AGILITY},
     .species = SPECIES_FEAROW,
@@ -6135,37 +6166,6 @@ static const struct TrainerMon sParty_BrendanLilycoveTreecko[] = {
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_AGUAV_BERRY,
     .ability = ABILITY_TORRENT,
-    .lvl = 39,
-    }
-};
-
-static const struct TrainerMon sParty_BrendanLilycoveTorchic[] = {
-    {
-    .moves = {MOVE_PLUCK, MOVE_FURY_ATTACK, MOVE_PURSUIT, MOVE_AGILITY},
-    .species = SPECIES_FEAROW,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_SNIPER,
-    .lvl = 37,
-    },
-    {
-    .moves = {MOVE_FLAMETHROWER, MOVE_THUNDER_FANG, MOVE_RETALIATE, MOVE_AGILITY},
-    .species = SPECIES_ARCANINE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_INTIMIDATE,
-    .lvl = 38,
-    },
-    {
-    .moves = {MOVE_RAZOR_SHELL, MOVE_ICICLE_SPEAR, MOVE_SPIKE_CANNON, MOVE_TOXIC_SPIKES},
-    .species = SPECIES_CLOYSTER,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_SKILL_LINK,
-    .lvl = 38,
-    },
-    {
-    .moves = {MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_DUAL_CHOP, MOVE_AGILITY},
-    .species = SPECIES_SCEPTILE,
-    .heldItem = ITEM_AGUAV_BERRY,
-    .ability = ABILITY_OVERGROW,
     .lvl = 39,
     }
 };
