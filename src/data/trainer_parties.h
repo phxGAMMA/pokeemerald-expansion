@@ -2442,7 +2442,6 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     .heldItem = ITEM_SHELL_BELL,
     .ability = ABILITY_WEAK_ARMOR,
     .lvl = 9,
-    //ball = ITEM_NONE,
     },
     {
     .moves = {MOVE_ROCK_TOMB, MOVE_WHIRLPOOL, MOVE_FLAIL, MOVE_AMNESIA},
@@ -4733,122 +4732,6 @@ static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
 
 static const struct TrainerMon sParty_MayRoute103Mudkip[] = {
     {
-    .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
-    .species = SPECIES_TORCHIC,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_BLAZE,
-    .lvl = 5,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute110Mudkip[] = {
-    {
-    .moves = {MOVE_BUBBLE_BEAM, MOVE_PSYWAVE, MOVE_RAPID_SPIN, MOVE_HARDEN},
-    .species = SPECIES_STARYU,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_NATURAL_CURE,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GROWTH},
-    .species = SPECIES_ROSELIA,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_POISON_POINT,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_PECK, MOVE_BULK_UP},
-    .species = SPECIES_COMBUSKEN,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_BLAZE,
-    .lvl = 19,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute119Mudkip[] = {
-    {
-    .moves = {MOVE_BUBBLE_BEAM, MOVE_PSYWAVE, MOVE_RAPID_SPIN, MOVE_RECOVER},
-    .species = SPECIES_STARYU,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_NATURAL_CURE,
-    .lvl = 32,
-    },
-    {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_CUT, MOVE_GRASS_WHISTLE},
-    .species = SPECIES_ROSERADE,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_TECHNICIAN,
-    .lvl = 33,
-    },
-    {
-    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_QUICK_ATTACK, MOVE_BULK_UP},
-    .species = SPECIES_COMBUSKEN,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_BLAZE,
-    .lvl = 34,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute103Treecko[] = {
-    {
-    .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
-    .species = SPECIES_MUDKIP,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_TORRENT,
-    .lvl = 5,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute110Treecko[] = {
-    {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GROWTH},
-    .species = SPECIES_ROSELIA,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_POISON_POINT,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_FIRE_SPIN, MOVE_PAYBACK, MOVE_QUICK_ATTACK, MOVE_CONFUSE_RAY},
-    .species = SPECIES_VULPIX,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_FLASH_FIRE,
-    .lvl = 18,
-    },
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_MUD_SHOT, MOVE_TACKLE, MOVE_BIDE},
-    .species = SPECIES_MARSHTOMP,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_TORRENT,
-    .lvl = 19,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute119Treecko[] = {
-    {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GRASS_WHISTLE},
-    .species = SPECIES_ROSELIA,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_POISON_POINT,
-    .lvl = 32,
-    },
-    {
-    .moves = {MOVE_FLAME_BURST, MOVE_PAYBACK, MOVE_HEX, MOVE_WILL_O_WISP},
-    .species = SPECIES_NINETALES,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_DROUGHT,
-    .lvl = 33,
-    },
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_TOMB, MOVE_BIDE},
-    .species = SPECIES_MARSHTOMP,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_TORRENT,
-    .lvl = 34,
-    }
-};
-
-static const struct TrainerMon sParty_MayRoute103Torchic[] = {
-    {
     .moves = {MOVE_POUND, MOVE_LEER, MOVE_NONE, MOVE_NONE},
     .species = SPECIES_TREECKO,
     .heldItem = ITEM_NONE,
@@ -4857,7 +4740,7 @@ static const struct TrainerMon sParty_MayRoute103Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute110Torchic[] = {
+static const struct TrainerMon sParty_MayRoute110Mudkip[] = {
     {
     .moves = {MOVE_FIRE_SPIN, MOVE_PAYBACK, MOVE_QUICK_ATTACK, MOVE_CONFUSE_RAY},
     .species = SPECIES_VULPIX,
@@ -4881,7 +4764,7 @@ static const struct TrainerMon sParty_MayRoute110Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute119Torchic[] = {
+static const struct TrainerMon sParty_MayRoute119Mudkip[] = {
     {
     .moves = {MOVE_FIRE_SPIN, MOVE_PAYBACK, MOVE_HEX, MOVE_WILL_O_WISP},
     .species = SPECIES_VULPIX,
@@ -4901,6 +4784,122 @@ static const struct TrainerMon sParty_MayRoute119Torchic[] = {
     .species = SPECIES_GROVYLE,
     .heldItem = ITEM_SITRUS_BERRY,
     .ability = ABILITY_OVERGROW,
+    .lvl = 34,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute103Treecko[] = {
+    {
+    .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
+    .species = SPECIES_TORCHIC,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_BLAZE,
+    .lvl = 5,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute110Treecko[] = {
+    {
+    .moves = {MOVE_BUBBLE_BEAM, MOVE_PSYWAVE, MOVE_RAPID_SPIN, MOVE_HARDEN},
+    .species = SPECIES_STARYU,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_NATURAL_CURE,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GROWTH},
+    .species = SPECIES_ROSELIA,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_POISON_POINT,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_PECK, MOVE_BULK_UP},
+    .species = SPECIES_COMBUSKEN,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_BLAZE,
+    .lvl = 19,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute119Treecko[] = {
+    {
+    .moves = {MOVE_BUBBLE_BEAM, MOVE_PSYWAVE, MOVE_RAPID_SPIN, MOVE_RECOVER},
+    .species = SPECIES_STARYU,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_NATURAL_CURE,
+    .lvl = 32,
+    },
+    {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_SLUDGE_BOMB, MOVE_CUT, MOVE_GRASS_WHISTLE},
+    .species = SPECIES_ROSERADE,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_TECHNICIAN,
+    .lvl = 33,
+    },
+    {
+    .moves = {MOVE_FLAME_CHARGE, MOVE_DOUBLE_KICK, MOVE_QUICK_ATTACK, MOVE_BULK_UP},
+    .species = SPECIES_COMBUSKEN,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_BLAZE,
+    .lvl = 34,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute103Torchic[] = {
+    {
+    .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_NONE, MOVE_NONE},
+    .species = SPECIES_MUDKIP,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_TORRENT,
+    .lvl = 5,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute110Torchic[] = {
+    {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GROWTH},
+    .species = SPECIES_ROSELIA,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_POISON_POINT,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_FIRE_SPIN, MOVE_PAYBACK, MOVE_QUICK_ATTACK, MOVE_CONFUSE_RAY},
+    .species = SPECIES_VULPIX,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_FLASH_FIRE,
+    .lvl = 18,
+    },
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_MUD_SHOT, MOVE_TACKLE, MOVE_BIDE},
+    .species = SPECIES_MARSHTOMP,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_TORRENT,
+    .lvl = 19,
+    }
+};
+
+static const struct TrainerMon sParty_MayRoute119Torchic[] = {
+    {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_CUT, MOVE_GRASS_WHISTLE},
+    .species = SPECIES_ROSELIA,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_POISON_POINT,
+    .lvl = 32,
+    },
+    {
+    .moves = {MOVE_FLAME_BURST, MOVE_PAYBACK, MOVE_HEX, MOVE_WILL_O_WISP},
+    .species = SPECIES_NINETALES,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_DROUGHT,
+    .lvl = 33,
+    },
+    {
+    .moves = {MOVE_WATER_GUN, MOVE_MUD_BOMB, MOVE_ROCK_TOMB, MOVE_BIDE},
+    .species = SPECIES_MARSHTOMP,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_TORRENT,
     .lvl = 34,
     }
 };
@@ -5503,17 +5502,17 @@ static const struct TrainerMon sParty_BrendanRustboroTorchic[] = {
 
 static const struct TrainerMon sParty_MayRustboroMudkip[] = {
     {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_STUN_SPORE, MOVE_NONE},
-    .species = SPECIES_ROSELIA,
+    .moves = {MOVE_WATER_GUN, MOVE_RAPID_SPIN, MOVE_HARDEN, MOVE_NONE},
+    .species = SPECIES_STARYU,
     .heldItem = ITEM_NONE,
-    .ability = ABILITY_POISON_POINT,
+    .ability = ABILITY_NATURAL_CURE,
     .lvl = 13,
     },
     {
-    .moves = {MOVE_EMBER, MOVE_PECK, MOVE_SAND_ATTACK, MOVE_NONE},
-    .species = SPECIES_TORCHIC,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_QUICK_ATTACK, MOVE_LEER, MOVE_NONE},
+    .species = SPECIES_TREECKO,
     .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_BLAZE,
+    .ability = ABILITY_OVERGROW,
     .lvl = 14,
     }
 };
@@ -6179,6 +6178,37 @@ static const struct TrainerMon sParty_MayLilycoveMudkip[] = {
     .lvl = 37,
     },
     {
+    .moves = {MOVE_FLAMETHROWER, MOVE_PAYBACK, MOVE_HEX, MOVE_WILL_O_WISP},
+    .species = SPECIES_NINETALES,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_DROUGHT,
+    .lvl = 38,
+    },
+    {
+    .moves = {MOVE_BRINE, MOVE_PSYWAVE, MOVE_GYRO_BALL, MOVE_RECOVER},
+    .species = SPECIES_STARMIE,
+    .heldItem = ITEM_SITRUS_BERRY,
+    .ability = ABILITY_ANALYTIC,
+    .lvl = 38,
+    },
+    {
+    .moves = {MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_DUAL_CHOP, MOVE_AGILITY},
+    .species = SPECIES_SCEPTILE,
+    .heldItem = ITEM_AGUAV_BERRY,
+    .ability = ABILITY_OVERGROW,
+    .lvl = 39,
+    }
+};
+
+static const struct TrainerMon sParty_MayLilycoveTreecko[] = {
+    {
+    .moves = {MOVE_AIR_SLASH, MOVE_TAKE_DOWN, MOVE_EXTRASENSORY, MOVE_HYPNOSIS},
+    .species = SPECIES_NOCTOWL,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_TINTED_LENS,
+    .lvl = 37,
+    },
+    {
     .moves = {MOVE_BRINE, MOVE_PSYWAVE, MOVE_GYRO_BALL, MOVE_RECOVER},
     .species = SPECIES_STARMIE,
     .heldItem = ITEM_SITRUS_BERRY,
@@ -6201,7 +6231,7 @@ static const struct TrainerMon sParty_MayLilycoveMudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayLilycoveTreecko[] = {
+static const struct TrainerMon sParty_MayLilycoveTorchic[] = {
     {
     .moves = {MOVE_AIR_SLASH, MOVE_TAKE_DOWN, MOVE_EXTRASENSORY, MOVE_HYPNOSIS},
     .species = SPECIES_NOCTOWL,
@@ -6228,37 +6258,6 @@ static const struct TrainerMon sParty_MayLilycoveTreecko[] = {
     .species = SPECIES_SWAMPERT,
     .heldItem = ITEM_AGUAV_BERRY,
     .ability = ABILITY_TORRENT,
-    .lvl = 39,
-    }
-};
-
-static const struct TrainerMon sParty_MayLilycoveTorchic[] = {
-    {
-    .moves = {MOVE_AIR_SLASH, MOVE_TAKE_DOWN, MOVE_EXTRASENSORY, MOVE_HYPNOSIS},
-    .species = SPECIES_NOCTOWL,
-    .heldItem = ITEM_BERRY_JUICE,
-    .ability = ABILITY_TINTED_LENS,
-    .lvl = 37,
-    },
-    {
-    .moves = {MOVE_FLAMETHROWER, MOVE_PAYBACK, MOVE_HEX, MOVE_WILL_O_WISP},
-    .species = SPECIES_NINETALES,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_DROUGHT,
-    .lvl = 38,
-    },
-    {
-    .moves = {MOVE_BRINE, MOVE_PSYWAVE, MOVE_GYRO_BALL, MOVE_RECOVER},
-    .species = SPECIES_STARMIE,
-    .heldItem = ITEM_SITRUS_BERRY,
-    .ability = ABILITY_ANALYTIC,
-    .lvl = 38,
-    },
-    {
-    .moves = {MOVE_LEAF_BLADE, MOVE_NIGHT_SLASH, MOVE_DUAL_CHOP, MOVE_AGILITY},
-    .species = SPECIES_SCEPTILE,
-    .heldItem = ITEM_AGUAV_BERRY,
-    .ability = ABILITY_OVERGROW,
     .lvl = 39,
     }
 };
@@ -7024,6 +7023,23 @@ static const struct TrainerMon sParty_Cristin1[] = {
 
 static const struct TrainerMon sParty_MayRustboroTreecko[] = {
     {
+    .moves = {MOVE_MEGA_DRAIN, MOVE_POISON_STING, MOVE_STUN_SPORE, MOVE_NONE},
+    .species = SPECIES_ROSELIA,
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_POISON_POINT,
+    .lvl = 13,
+    },
+    {
+    .moves = {MOVE_EMBER, MOVE_PECK, MOVE_SAND_ATTACK, MOVE_NONE},
+    .species = SPECIES_TORCHIC,
+    .heldItem = ITEM_ORAN_BERRY,
+    .ability = ABILITY_BLAZE,
+    .lvl = 14,
+    }
+};
+
+static const struct TrainerMon sParty_MayRustboroTorchic[] = {
+    {
     .moves = {MOVE_EMBER, MOVE_QUICK_ATTACK, MOVE_CONFUSE_RAY, MOVE_NONE},
     .species = SPECIES_VULPIX,
     .heldItem = ITEM_NONE,
@@ -7035,23 +7051,6 @@ static const struct TrainerMon sParty_MayRustboroTreecko[] = {
     .species = SPECIES_MUDKIP,
     .heldItem = ITEM_ORAN_BERRY,
     .ability = ABILITY_TORRENT,
-    .lvl = 14,
-    }
-};
-
-static const struct TrainerMon sParty_MayRustboroTorchic[] = {
-    {
-    .moves = {MOVE_WATER_GUN, MOVE_RAPID_SPIN, MOVE_HARDEN, MOVE_NONE},
-    .species = SPECIES_STARYU,
-    .heldItem = ITEM_NONE,
-    .ability = ABILITY_NATURAL_CURE,
-    .lvl = 13,
-    },
-    {
-    .moves = {MOVE_MEGA_DRAIN, MOVE_QUICK_ATTACK, MOVE_LEER, MOVE_NONE},
-    .species = SPECIES_TREECKO,
-    .heldItem = ITEM_ORAN_BERRY,
-    .ability = ABILITY_OVERGROW,
     .lvl = 14,
     }
 };
