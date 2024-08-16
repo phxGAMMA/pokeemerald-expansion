@@ -4456,6 +4456,9 @@ u16 ModifyStatByNature(u8 nature, u16 stat, u8 statIndex)
      || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_LEADER        \
      || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION))    \
 
+#define IS_DYNAMAX_BATTLE                                                               \
+    ((gBattleTypeFlags & BATTLE_TYPE_RAID))                                             \
+
 void AdjustFriendship(struct Pokemon *mon, u8 event)
 {
     u16 species, heldItem;
@@ -6165,10 +6168,11 @@ u8 GetObedienceLevel(void)
 u8 GetMonScaledLevel(bool8 isTrainer)
 {
     u8 partyMon;
-    u8 boxCount, boxMon;
+    u16 boxCount, boxMon;
     s32 levelCount = 0;
     s32 monCount = 0;
-    u8 monLevel, minLevel, maxLevel;
+    u8 monLevel;
+    u16 minLevel, maxLevel;
     u8 obedienceLevel = GetObedienceLevel();
 
     for (partyMon = 0; partyMon < PARTY_SIZE; partyMon++)
@@ -6201,21 +6205,21 @@ u8 GetMonScaledLevel(bool8 isTrainer)
     }
 
     maxLevel = levelCount / monCount;
-    if (maxLevel < obedienceLevel - 5)
-        maxLevel = obedienceLevel - 5;
     if (maxLevel > obedienceLevel)
         maxLevel = obedienceLevel;
+    if (maxLevel < obedienceLevel - 5)
+        maxLevel = obedienceLevel - 5;
     minLevel = maxLevel - 5;
 
     if (isTrainer == TRUE)
     {
-        if (IS_LEAGUE_BATTLE)
+        if (IS_LEAGUE_BATTLE | IS_DYNAMAX_BATTLE)
             return obedienceLevel;
         else
-            return maxLevel - 4 + 1;
+            return minLevel + 1;
     }
     else
     {
-        return minLevel + Random() % (maxLevel - minLevel) + 1;
+        return minLevel + (Random() % maxLevel - minLevel);
     }
 }
