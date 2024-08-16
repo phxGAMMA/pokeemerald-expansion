@@ -61,7 +61,7 @@ SafariZone_EventScript_PokeblockPlaced::
 	message SafariZone_Text_PokeblockWasPlaced
 	waitmessage
 	closemessage
-	special RaidDenWildEncounter
+	special StartRaidEncounter
 	releaseall
 	end
 

@@ -67,7 +67,6 @@ EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
 EWRAM_DATA bool8 gIsFishingEncounter = 0;
 EWRAM_DATA bool8 gIsSurfingEncounter = 0;
-EWRAM_DATA bool8 gIsRaidEncounter = 0;
 
 #include "data/wild_encounters.h"
 
@@ -520,7 +519,7 @@ static void CreateWildMon(u16 species, u8 level)
     }
 
     CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, PickWildMonNature());
-    if (gIsRaidEncounter == TRUE)
+    if (FlagGet(B_SMART_WILD_AI_FLAG | B_FLAG_DYNAMAX_BATTLE))
         SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
 }
 #ifdef BUGFIX
@@ -1767,16 +1766,41 @@ static u16 PickRaidSpecies(void)
     return species;
 }
 
-void RaidDenWildEncounter(void)
+void SetRaidFlags(void)
 {
-    u16 species = PickRaidSpecies();
-
     FlagSet(B_SMART_WILD_AI_FLAG);
     FlagSet(B_FLAG_DYNAMAX_BATTLE);
-    gIsRaidEncounter = TRUE;
-    CreateWildMon(species, GetMonScaledLevel(FALSE));
-    BattleSetup_StartWildBattle();
-    gIsRaidEncounter = FALSE;
-    FlagClear(B_FLAG_DYNAMAX_BATTLE);
+}
+
+void ClearRaidFlags(void)
+{
     FlagClear(B_SMART_WILD_AI_FLAG);
+    FlagClear(B_FLAG_DYNAMAX_BATTLE);
+}
+
+void CreateRaidMons(u16 species, u8 lvl1, u8 lvl2)
+{
+    CreateWildMon(species, lvl1);
+    if (TryDoDoubleWildBattle())
+    {
+        struct Pokemon mon1 = gEnemyParty[0];
+        CreateWildMon(species, lvl2);
+        gEnemyParty[1] = mon1;
+        BattleSetup_StartDoubleWildBattle();
+    }
+    else
+    {
+        BattleSetup_StartWildBattle();
+    }
+}
+
+void StartRaidEncounter(void)
+{
+    u16 species = PickRaidSpecies();
+    u8 lvl1 = GetMonScaledLevel(Random() % 2);
+    u8 lvl2 = GetMonScaledLevel(Random() % 2);
+
+    SetRaidFlags();
+    CreateRaidMons(species, lvl1, lvl2);
+    ClearRaidFlags();
 }
