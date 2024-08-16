@@ -6141,25 +6141,29 @@ u16 GetSpeciesPreEvolution(u16 species)
 
 u8 GetObedienceLevel(void)
 {
-    u8 obedienceLevel = 10;
-    if (FlagGet(FLAG_BADGE01_GET))
-        obedienceLevel = 15;
-    if (FlagGet(FLAG_BADGE02_GET))
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE03_GET))
-        obedienceLevel = 25;
-    if (FlagGet(FLAG_BADGE04_GET))
-        obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE05_GET))
-        obedienceLevel = 35;
-    if (FlagGet(FLAG_BADGE06_GET))
-        obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE07_GET))
-        obedienceLevel = 45;
-    if (FlagGet(FLAG_BADGE08_GET))
-        obedienceLevel = 50;
+    u8 obedienceLevel;
+
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
         obedienceLevel = 60;
+    else if (FlagGet(FLAG_BADGE08_GET))
+        obedienceLevel = 50;
+    else if (FlagGet(FLAG_BADGE07_GET))
+        obedienceLevel = 45;
+    else if (FlagGet(FLAG_BADGE06_GET))
+        obedienceLevel = 40;
+    else if (FlagGet(FLAG_BADGE05_GET))
+        obedienceLevel = 35;
+    else if (FlagGet(FLAG_BADGE04_GET))
+        obedienceLevel = 30;
+    else if (FlagGet(FLAG_BADGE03_GET))
+        obedienceLevel = 25;
+    else if (FlagGet(FLAG_BADGE02_GET))
+        obedienceLevel = 20;
+    else if (FlagGet(FLAG_BADGE01_GET))
+        obedienceLevel = 15;
+    else
+        obedienceLevel = 10;
+
     return obedienceLevel;
 }
 
@@ -6167,22 +6171,25 @@ u8 GetMonScaledLevel(bool8 isTrainer)
 {
     u8 partyMon;
     u16 boxCount, boxMon;
-    s32 levelCount = 0;
-    s32 monCount = 0;
-    u8 monLevel;
-    u16 minLevel, maxLevel;
     u8 obedienceLevel = GetObedienceLevel();
+    u32 levelCount = 0;
+    u16 monCount = 0;
+    u8 monLevel = 0;
+    u8 maxLevel = 0;
+    u8 minLevel = 0;
 
     for (partyMon = 0; partyMon < PARTY_SIZE; partyMon++)
     {
         if (GetMonData(&gPlayerParty[partyMon], MON_DATA_SANITY_HAS_SPECIES, NULL)
-            && !(GetMonData(&gPlayerParty[partyMon], MON_DATA_IS_EGG, NULL))
-            && !(GetMonData(&gPlayerParty[partyMon], MON_DATA_SANITY_IS_BAD_EGG, NULL)))
+        && !GetMonData(&gPlayerParty[partyMon], MON_DATA_IS_EGG, NULL)
+        && !GetMonData(&gPlayerParty[partyMon], MON_DATA_SANITY_IS_BAD_EGG, NULL))
         {
             monLevel = GetLevelFromMonExp(&gPlayerParty[partyMon]);
-            if (monLevel >= obedienceLevel - 5)
+            if (monLevel > obedienceLevel - 5)
+            {
                 levelCount += monLevel;
-            monCount++;
+                monCount++;
+            }
         }
     }
 
@@ -6191,33 +6198,32 @@ u8 GetMonScaledLevel(bool8 isTrainer)
         for (boxMon = 0; boxMon < IN_BOX_COUNT; boxMon++)
         {
             if (GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_SANITY_HAS_SPECIES, NULL)
-                && !(GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_IS_EGG, NULL))
-                && !(GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_SANITY_IS_BAD_EGG, NULL)))
+            && !GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_IS_EGG, NULL)
+            && !GetBoxMonData(&gPokemonStoragePtr->boxes[boxCount][boxMon], MON_DATA_SANITY_IS_BAD_EGG, NULL))
             {
                 monLevel = GetLevelFromBoxMonExp(&gPokemonStoragePtr->boxes[boxCount][boxMon]);
-                if (monLevel >= obedienceLevel - 5)
+                if (monLevel > obedienceLevel - 5)
+                {
                     levelCount += monLevel;
-                monCount++;
+                    monCount++;
+                }
             }
         }
     }
 
-    maxLevel = levelCount / monCount;
-    if (maxLevel > obedienceLevel)
-        maxLevel = obedienceLevel;
-    if (maxLevel < obedienceLevel - 5)
+    maxLevel = (levelCount > 0 && monCount > 0) ? levelCount / monCount : obedienceLevel - 5;
+    if (maxLevel > obedienceLevel - 5)
         maxLevel = obedienceLevel - 5;
     minLevel = maxLevel - 5;
 
-    if (isTrainer == TRUE)
+    if (isTrainer)
     {
-        if (IS_LEAGUE_BATTLE | IS_DYNAMAX_BATTLE)
-            return obedienceLevel;
-        else
-            return minLevel + 1;
+        return IS_LEAGUE_BATTLE ? obedienceLevel : maxLevel + 
+            (gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_EASY ? 1 :
+             gSaveBlock2Ptr->optionsDifficultyMode == OPTIONS_DIFFICULTY_MODE_HARD ? 3 : 2);
     }
     else
     {
-        return minLevel + (Random() % maxLevel - minLevel);
+        return minLevel + (maxLevel > minLevel ? Random() % (maxLevel - minLevel) + 1 : 1);
     }
 }
