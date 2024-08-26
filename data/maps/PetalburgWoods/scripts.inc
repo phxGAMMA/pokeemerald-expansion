@@ -357,7 +357,7 @@ PetalburgWoods_Text_YouveGotSomeNerve:
 PetalburgWoods_Text_ThatWasAwfullyClose:
 	.string "Whew…\n"
 	.string "That was awfully close!\p"
-	.string "Thanks to you, he didn't rob me of\n"
+	.string "Thanks to you, she didn't rob me of\n"
 	.string "these important papers.\p"
 	.string "I know, I'll give you a GREAT BALL as\n"
 	.string "my thanks!$"
