@@ -10110,6 +10110,7 @@ static inline uq4_12_t GetParentalBondModifier(u32 battlerAtk)
     return B_PARENTAL_BOND_DMG >= GEN_7 ? UQ_4_12(0.25) : UQ_4_12(0.5);
 }
 
+/*
 static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationData *damageCalcData, u32 abilityAtk)
 {
     u32 battlerAtk = damageCalcData->battlerAtk;
@@ -10123,6 +10124,24 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationDa
     else if (!IS_BATTLER_OF_TYPE(battlerAtk, moveType) || move == MOVE_STRUGGLE || move == MOVE_NONE)
         return UQ_4_12(1.0);
     return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
+}
+*/
+
+static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageCalculationData *damageCalcData, u32 abilityAtk)
+{
+    u32 battlerAtk = damageCalcData->battlerAtk;
+    u32 battlerDef = damageCalcData->battlerDef;
+    u8 atkType1 = gBattleMons[battlerAtk].types[0];
+    u8 defType1 = gBattleMons[battlerDef].types[0];
+
+    if (UQ_4_12_TO_INT(GetTypeModifier(atkType1, defType1) == 2))
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.5) : UQ_4_12(2.0);
+    else if (UQ_4_12_TO_INT(GetTypeModifier(atkType1, defType1) == 1))
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
+    else if (UQ_4_12_TO_INT(GetTypeModifier(atkType1, defType1) == 0.5))
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(1.5) : UQ_4_12(1.0);
+    else
+        return (abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(0.5) : UQ_4_12(0.0);
 }
 
 // Utility Umbrella holders take normal damage from what would be rain- and sun-weakened attacks.
@@ -10442,10 +10461,13 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
         dmg /= 100;
     }
 
+/*
     if (GetActiveGimmick(battlerAtk) == GIMMICK_TERA)
         DAMAGE_APPLY_MODIFIER(GetTeraMultiplier(battlerAtk, damageCalcData->moveType));
     else
         DAMAGE_APPLY_MODIFIER(GetSameTypeAttackBonusModifier(damageCalcData, abilityAtk));
+*/
+    DAMAGE_APPLY_MODIFIER(GetSameTypeAttackBonusModifier(damageCalcData, abilityAtk));
     DAMAGE_APPLY_MODIFIER(typeEffectivenessModifier);
     DAMAGE_APPLY_MODIFIER(GetBurnOrFrostBiteModifier(damageCalcData, abilityAtk));
     DAMAGE_APPLY_MODIFIER(GetZMaxMoveAgainstProtectionModifier(damageCalcData));
