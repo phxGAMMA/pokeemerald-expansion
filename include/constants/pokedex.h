@@ -5,6 +5,9 @@
 // These constants are NOT disabled by P_GEN_X_POKEMON to keep pokedex_orders.h clean.
 enum {
     NATIONAL_DEX_NONE,
+    // Digimon
+    NATIONAL_DEX_AGUMON,
+    NATIONAL_DEX_GABUMON,
     // Kanto
     NATIONAL_DEX_BULBASAUR,
     NATIONAL_DEX_IVYSAUR,
@@ -1065,6 +1068,10 @@ enum {
 // Hoenn Pokédex order
 enum {
     HOENN_DEX_NONE,
+    // Digimon
+    HOENN_DEX_AGUMON,
+    HOENN_DEX_GABUMON,
+    // Pokémon
     HOENN_DEX_TREECKO,
     HOENN_DEX_GROVYLE,
     HOENN_DEX_SCEPTILE,

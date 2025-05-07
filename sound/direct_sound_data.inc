@@ -6154,6 +6154,18 @@ Cry_Terapagos::
 Cry_Pecharunt::
 	.incbin "sound/direct_sound_samples/cries/pecharunt.bin"
 .endif @ P_FAMILY_PECHARUNT
+
+.if P_FAMILY_AGUMON == TRUE
+	.align 2
+Cry_Agumon::
+	.incbin "sound/direct_sound_samples/unknown_01.bin"
+.endif @ P_FAMILY_AGUMON
+
+.if P_FAMILY_AGUMON == TRUE
+	.align 2
+Cry_Gabumon::
+	.incbin "sound/direct_sound_samples/unknown_01.bin"
+.endif @ P_FAMILY_AGUMON
 .endif @ P_CRIES_ENABLED
 
 	.align 2

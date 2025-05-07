@@ -35838,3 +35838,22 @@ static const u16 sPecharuntTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PECHARUNT
+
+#if P_FAMILY_AGUMON
+static const u16 sAgumonTeachableLearnset[] = {
+    MOVE_PROTECT,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_AGUMON
+
+#if P_FAMILY_GABUMON
+static const u16 sGabumonTeachableLearnset[] = {
+    MOVE_PROTECT,
+    MOVE_REST,
+    MOVE_ICY_WIND,
+    MOVE_SLEEP_TALK,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_GABUMON

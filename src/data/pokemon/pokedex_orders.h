@@ -1,4 +1,5 @@
 // Only list base species here.
+/*
 const u16 gPokedexOrder_Alphabetical[] =
 {
     NATIONAL_DEX_ABOMASNOW,
@@ -1053,6 +1054,13 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_ZYGARDE,
 };
 
+*/
+const u16 gPokedexOrder_Alphabetical[] =
+{
+    NATIONAL_DEX_AGUMON,
+    NATIONAL_DEX_GABUMON,
+};
+/*
 const u16 gPokedexOrder_Weight[] =
 {
     // 0.0 - 21.8 lbs / 0.0 - 9.9 kg
@@ -2934,6 +2942,13 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_CELESTEELA,
 };
 
+*/
+const u16 gPokedexOrder_Weight[] =
+{
+    NATIONAL_DEX_AGUMON,
+    NATIONAL_DEX_GABUMON,
+};
+/*
 const u16 gPokedexOrder_Height[] =
 {
     // 0'04" / 0.1m
@@ -4306,4 +4321,10 @@ const u16 gPokedexOrder_Height[] =
     NATIONAL_DEX_ETERNATUS,
     // 328'01" / 100m
     //NATIONAL_DEX_ETERNATUS_ETERNAMAX,
+};
+*/
+const u16 gPokedexOrder_Height[] =
+{
+    NATIONAL_DEX_AGUMON,
+    NATIONAL_DEX_GABUMON,
 };

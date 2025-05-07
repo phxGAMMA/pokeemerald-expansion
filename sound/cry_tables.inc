@@ -2424,6 +2424,12 @@ gCryTable::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+.if P_FAMILY_AGUMON == TRUE
+	cry Cry_Agumon
+.endif @ P_FAMILY_AGUMON
+.if P_FAMILY_GABUMON == TRUE
+	cry Cry_Gabumon
+.endif @ P_FAMILY_GABUMON
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -4852,4 +4858,10 @@ gCryTable_Reverse::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+.if P_FAMILY_AGUMON == TRUE
+	cry_reverse Cry_Agumon
+.endif @ P_FAMILY_AGUMON
+.if P_FAMILY_GABUMON == TRUE
+	cry_reverse Cry_Gabumon
+.endif @ P_FAMILY_GABUMON
 .endif @ P_CRIES_ENABLED

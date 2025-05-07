@@ -116,6 +116,10 @@ static const struct CombinedMove sCombinedMoves[2] =
 // Assigns all Hoenn Dex Indexes to a National Dex Index
 static const u16 sHoennToNationalOrder[HOENN_DEX_COUNT - 1] =
 {
+    // Digimon
+    HOENN_TO_NATIONAL(AGUMON),
+    HOENN_TO_NATIONAL(GABUMON),
+    // Pokémon
     HOENN_TO_NATIONAL(TREECKO),
     HOENN_TO_NATIONAL(GROVYLE),
     HOENN_TO_NATIONAL(SCEPTILE),
@@ -699,6 +703,8 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #include "data/pokemon/level_up_learnsets/gen_2.h" // Crystal
 #elif P_LVL_UP_LEARNSETS >= GEN_1
 #include "data/pokemon/level_up_learnsets/gen_1.h" // Yellow
+#elif P_LVL_UP_LEARNSETS >= GEN_0
+#include "data/pokemon/level_up_learnsets/gen_0.h"
 #endif
 
 #include "data/pokemon/teachable_learnsets.h"

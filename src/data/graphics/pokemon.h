@@ -26732,6 +26732,42 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_PECHARUNT
 
+#if P_FAMILY_AGUMON
+    const u32 gMonFrontPic_Agumon[] = INCBIN_U32("graphics/digimon/agumon/anim_front.4bpp.lz");
+    const u32 gMonPalette_Agumon[] = INCBIN_U32("graphics/digimon/agumon/normal.gbapal.lz");
+    const u32 gMonBackPic_Agumon[] = INCBIN_U32("graphics/digimon/agumon/back.4bpp.lz");
+    const u32 gMonShinyPalette_Agumon[] = INCBIN_U32("graphics/digimon/agumon/shiny.gbapal.lz");
+    const u8 gMonIcon_Agumon[] = INCBIN_U8("graphics/digimon/agumon/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Agumon[] = INCBIN_U8("graphics/digimon/agumon/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Agumon[] = INCBIN_COMP("graphics/digimon/agumon/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_Agumon[] = INCBIN_U32("graphics/digimon/agumon/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_Agumon[] = INCBIN_U32("graphics/digimon/agumon/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_AGUMON
+
+#if P_FAMILY_GABUMON
+    const u32 gMonFrontPic_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/anim_front.4bpp.lz");
+    const u32 gMonPalette_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/normal.gbapal.lz");
+    const u32 gMonBackPic_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/back.4bpp.lz");
+    const u32 gMonShinyPalette_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/shiny.gbapal.lz");
+    const u8 gMonIcon_Gabumon[] = INCBIN_U8("graphics/digimon/gabumon/icon.4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Gabumon[] = INCBIN_U8("graphics/digimon/gabumon/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Gabumon[] = INCBIN_COMP("graphics/digimon/gabumon/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u32 gOverworldPalette_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/overworld_normal.gbapal.lz");
+    const u32 gShinyOverworldPalette_Gabumon[] = INCBIN_U32("graphics/digimon/gabumon/overworld_shiny.gbapal.lz");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_FAMILY_GABUMON
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u32 gMonPalette_Egg[] = INCBIN_U32("graphics/pokemon/egg/normal.gbapal.lz");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
